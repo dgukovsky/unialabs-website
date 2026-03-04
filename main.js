@@ -620,9 +620,7 @@ const applyLanguage = () => {
   setText("#contact .cta-box .eyebrow", copy.ctaEyebrow);
   setText("#contact .cta-box h2", copy.ctaTitle);
   setText("#contact .cta-box > p", copy.ctaText);
-  setText("#emailCta", copy.contactEmailCta);
-  setText("#linkedinCta", copy.contactLinkedinCta);
-  setText(".site-footer .footer-wrap p:last-child", copy.footerTagline);
+  setText("#footerTagline", copy.footerTagline);
 
   const typewriterEl = document.querySelector(".hero-type");
   if (typewriterEl) {
@@ -633,14 +631,13 @@ const applyLanguage = () => {
 
 applyLanguage();
 
-const emailCta = document.getElementById("emailCta");
-if (emailCta) {
-  const emailUser = emailCta.getAttribute("data-email-user");
-  const emailDomain = emailCta.getAttribute("data-email-domain");
+document.querySelectorAll("[data-email-user][data-email-domain]").forEach((emailLink) => {
+  const emailUser = emailLink.getAttribute("data-email-user");
+  const emailDomain = emailLink.getAttribute("data-email-domain");
   if (emailUser && emailDomain) {
-    emailCta.setAttribute("href", `mailto:${emailUser}@${emailDomain}`);
+    emailLink.setAttribute("href", `mailto:${emailUser}@${emailDomain}`);
   }
-}
+});
 
 const menuBtn = document.getElementById("menuBtn");
 const siteNav = document.getElementById("siteNav");
