@@ -480,6 +480,7 @@ h2 {
   transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.32s ease,
     background-color 0.32s ease;
   will-change: transform;
+  isolation: isolate;
 }
 
 .showcase-card:hover,
@@ -491,6 +492,7 @@ h2 {
   background: #fff;
   border-color: #d9d9df;
   box-shadow: 0 16px 34px rgba(32, 38, 55, 0.09);
+  z-index: 2;
 }
 
 .showcase-card {
@@ -515,11 +517,16 @@ h2 {
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
 }
 
-.showcase-card:hover .card-surface,
-.mosaic-card:hover .viz {
+.showcase-card:hover .card-surface {
   transform: translateY(-2px);
   border-color: #d4d6dc;
   background: #f9f9fb;
+  box-shadow: 0 10px 18px rgba(22, 28, 45, 0.08);
+}
+
+.mosaic-card:hover .viz {
+  transform: translateY(-2px);
+  border-color: #d4d6dc;
   box-shadow: 0 10px 18px rgba(22, 28, 45, 0.08);
 }
 
