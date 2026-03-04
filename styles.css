@@ -441,6 +441,61 @@ h2 {
   padding: 4rem 0;
 }
 
+.clients {
+  padding-top: 2.9rem;
+}
+
+.clients-head {
+  margin-bottom: 1.1rem;
+}
+
+.clients-head h2 {
+  max-width: 16ch;
+}
+
+.client-marquee {
+  display: flex;
+  gap: 0.8rem;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 0.8rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.client-track {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: max-content;
+  animation: clientsScroll 30s linear infinite;
+}
+
+.client-marquee:hover .client-track {
+  animation-play-state: paused;
+}
+
+.client-pill {
+  width: 236px;
+  height: 76px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.1rem;
+}
+
+.client-pill img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.94;
+}
+
 .section-head {
   margin-bottom: 1.6rem;
 }
@@ -1483,6 +1538,15 @@ h2 {
   }
 }
 
+@keyframes clientsScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 0.8rem));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1517,6 +1581,10 @@ h2 {
 
   .stack-wrap {
     grid-template-columns: 1fr;
+  }
+
+  .client-pill {
+    width: 216px;
   }
 }
 
@@ -1597,6 +1665,31 @@ h2 {
 
   .section {
     padding: 3.2rem 0;
+  }
+
+  .clients {
+    padding-top: 2.4rem;
+  }
+
+  .client-marquee {
+    border-radius: 16px;
+    padding: 0.62rem;
+    gap: 0.62rem;
+  }
+
+  .client-track {
+    gap: 0.62rem;
+    animation-duration: 22s;
+  }
+
+  .client-pill {
+    width: 180px;
+    height: 64px;
+    padding: 0 0.75rem;
+  }
+
+  .client-pill img {
+    width: 138px;
   }
 
   .cta-box {

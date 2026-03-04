@@ -42,6 +42,9 @@ const translations = {
     roadmap3Html: "<span>Month 3</span> QA + Deploy + Scale-up",
     floatingRightValue: "50% less manual effort",
     floatingRightText: "End-to-end tax operations",
+    clientsEyebrow: "Clients",
+    clientsTitle: "Teams we work with",
+    clientsSub: "Brands and products that trust UNIA to build, automate, and scale.",
     servicesEyebrow: "Services",
     servicesTitleHtml:
       'Transform your operation into a <span class="grad-text"><span class="spark">⚡</span>growth platform</span>',
@@ -187,6 +190,9 @@ const translations = {
     roadmap3Html: "<span>Mes 3</span> QA + Despliegue + Escalamiento",
     floatingRightValue: "50% menos trabajo manual",
     floatingRightText: "Operación tributaria end-to-end",
+    clientsEyebrow: "Clientes",
+    clientsTitle: "Equipos con los que trabajamos",
+    clientsSub: "Marcas y productos que confían en UNIA para construir, automatizar y escalar.",
     servicesEyebrow: "Servicios",
     servicesTitleHtml:
       'Transforma tu operación en una <span class="grad-text"><span class="spark">⚡</span>plataforma de crecimiento</span>',
@@ -332,6 +338,9 @@ const translations = {
     roadmap3Html: "<span>Mesec 3</span> QA + Deploy + Skaliranje",
     floatingRightValue: "50% manje ručnog rada",
     floatingRightText: "Poreske operacije od početka do kraja",
+    clientsEyebrow: "Klijenti",
+    clientsTitle: "Timovi sa kojima radimo",
+    clientsSub: "Brendovi i proizvodi koji veruju UNIA timu za izradu, automatizaciju i skaliranje.",
     servicesEyebrow: "Usluge",
     servicesTitleHtml:
       'Transformišite poslovanje u <span class="grad-text"><span class="spark">⚡</span>platformu za rast</span>',
@@ -523,6 +532,9 @@ const applyLanguage = () => {
   setHtml(".screen-roadmap div:nth-child(3)", copy.roadmap3Html);
   setText(".floating-right strong", copy.floatingRightValue);
   setText(".floating-right span", copy.floatingRightText);
+  setText("#clientsEyebrow", copy.clientsEyebrow);
+  setText("#clientsTitle", copy.clientsTitle);
+  setText("#clientsSub", copy.clientsSub);
 
   setText("#services .section-head .eyebrow", copy.servicesEyebrow);
   setHtml("#services .section-head h2", copy.servicesTitleHtml);
@@ -657,6 +669,7 @@ navLinks.forEach((link) => {
 
 const staggerGroups = [
   ".hero-shell.reveal",
+  ".clients .reveal",
   ".showcase-row .reveal",
   ".case-mosaic .reveal",
   ".flow .reveal",
