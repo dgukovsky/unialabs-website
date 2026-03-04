@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIA Software Factory</title>
+    <meta
+      name="description"
+      content="UNIA Software Factory: software development, applied AI, and automation for high-impact business operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a" aria-hidden="true"></div>
+    <div class="bg-orb orb-b" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand">
+          <span class="brand-mark">UNIA</span>
+          <span class="brand-sub">Software Factory</span>
+        </a>
+
+        <button id="menuBtn" class="menu-btn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav">
+          <a href="#services">Services</a>
+          <a href="#solutions">Success Cases</a>
+          <a href="#methodology">Methodology</a>
+          <a href="#stack">Stack</a>
+          <a href="#contact" class="cta-link">Book a discovery call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero container">
+        <div class="hero-shell reveal">
+          <p class="eyebrow">Development · AI · Automation</p>
+          <h1
+            class="hero-type"
+            data-typewriter="Software Factory to design, automate, and scale."
+          >
+            Software Factory to design, automate, and scale.
+          </h1>
+          <p class="hero-text">
+            We design and build mission-critical software powered by applied AI.
+            From discovery to production, we ship fast and focus on measurable
+            business impact.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book a discovery call</a>
+            <a href="#solutions" class="btn btn-ghost">Explore success cases</a>
+          </div>
+
+          <div class="hero-visual">
+            <article class="floating-card floating-left">
+              <p class="floating-title">Cloud Ops</p>
+              <strong>30% lower OPEX</strong>
+              <span>Automation powered by Celestia</span>
+            </article>
+
+            <div class="visual-screen">
+              <div class="screen-top">
+                <p>UNIA Delivery OS</p>
+                <span>Live</span>
+              </div>
+              <div class="screen-grid">
+                <article class="kpi">
+                  <p>Automation</p>
+                  <strong>90%</strong>
+                </article>
+                <article class="kpi">
+                  <p>Productivity</p>
+                  <strong>+40%</strong>
+                </article>
+                <article class="kpi">
+                  <p>Sprint</p>
+                  <strong>2 weeks</strong>
+                </article>
+              </div>
+              <div class="screen-roadmap">
+                <div><span>Month 1</span> Discovery + Architecture</div>
+                <div><span>Month 2</span> Core product + Integrations</div>
+                <div><span>Month 3</span> QA + Deploy + Scale-up</div>
+              </div>
+            </div>
+
+            <article class="floating-card floating-right">
+              <p class="floating-title">ATLAS</p>
+              <strong>50% less manual effort</strong>
+              <span>End-to-end tax operations</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="container section">
+        <div class="section-head centered reveal">
+          <p class="eyebrow">Services</p>
+          <h2>
+            Transform your operation into a
+            <span class="grad-text"><span class="spark">⚡</span>growth platform</span>
+          </h2>
+          <p class="section-sub">
+            We combine software, AI, and automation to remove operational friction,
+            improve revenue performance, and scale your core workflows with control.
+          </p>
+        </div>
+
+        <div class="showcase-row">
+          <article class="showcase-card reveal">
+            <h3>Custom Software Engineering</h3>
+            <p>
+              We design and build web platforms, internal systems, and APIs
+              tailored to your business model and operating workflows.
+            </p>
+            <div class="card-surface log-surface">
+              <div class="log-item">
+                <span class="log-badge">01</span>
+                <div class="log-copy">
+                  <strong>Product Discovery</strong>
+                  <p>Business mapping, scope, and architecture definition</p>
+                </div>
+                <time>Week 1</time>
+              </div>
+              <div class="log-item">
+                <span class="log-badge">02</span>
+                <div class="log-copy">
+                  <strong>Build & Integrate</strong>
+                  <p>Frontend, backend, APIs, and mission-critical modules</p>
+                </div>
+                <time>Weeks 2-8</time>
+              </div>
+              <div class="log-item">
+                <span class="log-badge">03</span>
+                <div class="log-copy">
+                  <strong>Release & Scale</strong>
+                  <p>Production deployment, monitoring, and product evolution</p>
+                </div>
+                <time>Continuous</time>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card reveal">
+            <h3>AI, Agents, and Workflow Automation</h3>
+            <p>
+              We automate repetitive operations with AI copilots, RAG systems,
+              and task agents connected to your internal tools.
+            </p>
+            <div class="card-surface checkout-surface">
+              <div class="cart-line">
+                <span>Automation Pipeline</span>
+                <b>3 layers</b>
+              </div>
+              <div class="upsell-box">
+                <div class="upsell-thumb"></div>
+                <div class="upsell-copy">
+                  <strong>Deploy AI Agent</strong>
+                  <p>Knowledge + tool integrations + action rules</p>
+                </div>
+                <button>Deploy</button>
+              </div>
+              <div class="ghost-line"></div>
+              <div class="ghost-line short"></div>
+            </div>
+          </article>
+
+          <article class="showcase-card reveal">
+            <h3>Cloud, DevOps, and Reliability</h3>
+            <p>
+              We deliver secure cloud architecture, CI/CD, observability, and
+              performance governance for stable and scalable operations.
+            </p>
+            <div class="card-surface chart-surface">
+              <p class="chart-label">Platform Reliability Snapshot</p>
+              <strong class="chart-total">99.95% Uptime</strong>
+              <span class="chart-delta">SLA trend in real time</span>
+              <div class="bars" data-live-bars data-live-mode="percent">
+                <div class="bar" style="--h: 34%">
+                  <span>92%</span>
+                  <em>JAN</em>
+                </div>
+                <div class="bar" style="--h: 28%">
+                  <span>90%</span>
+                  <em>FEB</em>
+                </div>
+                <div class="bar" style="--h: 42%">
+                  <span>94%</span>
+                  <em>MAR</em>
+                </div>
+                <div class="bar" style="--h: 52%">
+                  <span>96%</span>
+                  <em>APR</em>
+                </div>
+                <div class="bar" style="--h: 66%">
+                  <span>98%</span>
+                  <em>MAY</em>
+                </div>
+                <div class="bar active" style="--h: 82%">
+                  <span>99%</span>
+                  <em>JUN</em>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="solutions" class="container section">
+        <div class="section-head centered reveal">
+          <p class="eyebrow">Success Cases</p>
+          <h2>
+            Solutions designed to
+            <span class="grad-text"><span class="spark">⚡</span>help you scale</span>
+          </h2>
+          <p class="section-sub">
+            Each solution combines product thinking, architecture, and automation
+            to solve real operational and growth bottlenecks.
+          </p>
+        </div>
+
+        <div class="case-mosaic">
+          <article class="mosaic-card case-1 reveal">
+            <div class="viz viz-funnel">
+              <span class="dot one"></span>
+              <span class="dot two"></span>
+              <span class="dot three"></span>
+              <span class="dot four"></span>
+              <span class="dot five"></span>
+              <div class="core">∞</div>
+              <div class="lead-pill">New subscriber onboarded</div>
+            </div>
+            <h3>Build Monthly Recurring Revenue</h3>
+            <p>
+              Convert one-time customers into loyal subscribers with traceable
+              onboarding and retention automations across your enterprise workflows.
+            </p>
+          </article>
+
+          <article class="mosaic-card case-2 reveal">
+            <div class="viz viz-wave">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span>
+            </div>
+            <h3>Real-Time Revenue Insights</h3>
+            <p>
+              Track cloud performance, operating margins, and growth trends from
+              one live dashboard powered by Celestia.
+            </p>
+          </article>
+
+          <article class="mosaic-card case-3 reveal">
+            <div class="viz viz-recovery">
+              <div class="status-item fail">Payment failed · $99.9</div>
+              <div class="status-item fail">Payment failed · $149.9</div>
+              <div class="recovery-band">UNIA Pay Recovery</div>
+              <div class="status-item ok">Recovered payment · $60.0</div>
+              <div class="status-item ok">Recovered payment · $99.9</div>
+            </div>
+            <h3>Fewer Failed Payments</h3>
+            <p>
+              Smart retries, payment logic, and proactive alerts recover revenue
+              automatically and keep your cash flow stable.
+            </p>
+          </article>
+
+          <article class="mosaic-card case-4 reveal">
+            <div class="viz viz-checkout">
+              <div class="checkout-head">
+                <span>Your cart</span>
+                <b>2 items</b>
+              </div>
+              <div class="checkout-row">
+                <em></em>
+                <p>Tax advisory package</p>
+                <strong>$60.49</strong>
+              </div>
+              <div class="checkout-row">
+                <em></em>
+                <p>Cloud optimization report</p>
+                <strong>$75.99</strong>
+              </div>
+              <div class="checkout-upsell">Add one more service for FREE onboarding</div>
+            </div>
+            <h3>2X Your Average Order Value</h3>
+            <p>
+              Increase value per account with built-in upsells and post-purchase
+              automation across your operational service catalog.
+            </p>
+          </article>
+
+          <article class="mosaic-card case-5 reveal">
+            <div class="viz viz-orbit">
+              <div class="orbit-core">UNIA</div>
+              <span class="orbit a">ERP</span>
+              <span class="orbit b">CRM</span>
+              <span class="orbit c">SRI</span>
+              <span class="orbit d">BI</span>
+            </div>
+            <h3>Less Busywork, More Growth</h3>
+            <p>
+              Connect all core systems in one layer and remove repetitive manual
+              tasks so your team can focus on strategic growth.
+            </p>
+          </article>
+
+          <article class="mosaic-card case-7 reveal">
+            <div class="viz viz-gradient">
+              <span>Recurring Revenue Engine</span>
+            </div>
+            <h3>Skyrocket Profits With Monthly Recurring Revenue</h3>
+            <p>
+              Build predictable growth with retention-first workflows, recovery
+              logic, and recurring monetization powered by your own platform.
+            </p>
+            <a class="mini-cta" href="#contact">Request a Demo</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="methodology" class="container section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Methodology</p>
+          <h2>Disciplined engineering, fast delivery</h2>
+        </div>
+
+        <div class="flow">
+          <article class="flow-step reveal">
+            <span>01</span>
+            <h3>Discovery and diagnosis</h3>
+            <p>
+              We map processes, bottlenecks, and business objectives before
+              writing production code.
+            </p>
+          </article>
+          <article class="flow-step reveal">
+            <span>02</span>
+            <h3>Solution design</h3>
+            <p>
+              We define architecture, workflows, and release plans with
+              controlled technical risk.
+            </p>
+          </article>
+          <article class="flow-step reveal">
+            <span>03</span>
+            <h3>Iterative development</h3>
+            <p>
+              Two-week sprints with incremental delivery, feedback loops, and
+              full traceability.
+            </p>
+          </article>
+          <article class="flow-step reveal">
+            <span>04</span>
+            <h3>QA and validation</h3>
+            <p>
+              Functional and technical testing in controlled environments with a
+              clear definition of done.
+            </p>
+          </article>
+          <article class="flow-step reveal">
+            <span>05</span>
+            <h3>Implementation</h3>
+            <p>
+              Production rollout with monitoring, release checklists, and
+              stabilization support.
+            </p>
+          </article>
+          <article class="flow-step reveal">
+            <span>06</span>
+            <h3>Continuous evolution</h3>
+            <p>
+              Ongoing optimization of product, AI, and processes to improve
+              operational efficiency.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" class="container section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Stack</p>
+          <h2>Technology built for real-world scalability</h2>
+        </div>
+        <div class="stack-wrap reveal">
+          <div class="stack-col">
+            <h3>Platform</h3>
+            <p>Web apps, APIs, cloud architecture, observability, and security.</p>
+          </div>
+          <div class="stack-col">
+            <h3>Data &amp; AI</h3>
+            <p>RAG, specialized agents, process automation, and operational analytics.</p>
+          </div>
+          <div class="stack-col">
+            <h3>Delivery</h3>
+            <p>SCRUM, CI/CD, continuous QA, and post-release operational support.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section model">
+        <article class="model-card reveal">
+          <p class="eyebrow">Model 1</p>
+          <h3>Software Partnership</h3>
+          <p>
+            We design and build digital products with a dedicated team, a
+            prioritized roadmap, and KPI-driven deliveries.
+          </p>
+        </article>
+        <article class="model-card reveal">
+          <p class="eyebrow">Model 2</p>
+          <h3>In Situ Factory</h3>
+          <p>
+            Embedded senior talent inside your operation to evolve internal
+            systems, automate workflows, and sustain performance.
+          </p>
+        </article>
+      </section>
+
+      <section id="contact" class="container section cta">
+        <div class="cta-box reveal">
+          <p class="eyebrow">Ready to scale?</p>
+          <h2>Turn your operations into a competitive advantage</h2>
+          <p>
+            Frictionless discovery: architecture assessment, AI opportunities,
+            and a phased execution roadmap.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:dgukovsky@unia.cl"
+              >dgukovsky@unia.cl</a
+            >
+            <a class="btn btn-ghost" href="https://www.unia.cl" target="_blank"
+              >www.unia.cl</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>UNIA Software Factory</p>
+        <p>Development · AI · Automation</p>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
