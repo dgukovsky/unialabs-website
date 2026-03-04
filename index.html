@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UNIA Software Factory</title>
+    <title>UNIA Software Factory | Custom Software, AI, and Automation</title>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="UNIA Software Factory" />
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta
       name="description"
-      content="UNIA Software Factory: software development, applied AI, and automation for high-impact operations in Chile, Ecuador, Serbia, and Europe."
+      content="UNIA Software Factory builds custom software, AI agents, and workflow automation for teams scaling operations across Chile, Ecuador, Serbia, and Europe."
     />
     <link rel="canonical" href="https://unialabs.com/" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -34,10 +34,10 @@
     <meta property="og:locale:alternate" content="es_EC" />
     <meta property="og:locale:alternate" content="sr_RS" />
     <meta property="og:url" content="https://unialabs.com/" />
-    <meta property="og:title" content="UNIA Software Factory" />
+    <meta property="og:title" content="UNIA Software Factory | Custom Software, AI, and Automation" />
     <meta
       property="og:description"
-      content="Software development, applied AI, and automation to design, automate, and scale operations in Chile, Ecuador, Serbia, and Europe."
+      content="Custom software engineering, AI agents, and workflow automation to design, automate, and scale operations in Chile, Ecuador, Serbia, and Europe."
     />
     <meta property="og:image" content="https://unialabs.com/og-image.png" />
     <meta property="og:image:secure_url" content="https://unialabs.com/og-image.png" />
@@ -49,13 +49,23 @@
       content="UNIA Software Factory - Build, Automate, Scale."
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="UNIA Software Factory" />
+    <meta name="twitter:title" content="UNIA Software Factory | Custom Software, AI, and Automation" />
     <meta
       name="twitter:description"
-      content="Software development, applied AI, and automation to design, automate, and scale operations in Chile, Ecuador, Serbia, and Europe."
+      content="Custom software engineering, AI agents, and workflow automation to design, automate, and scale operations in Chile, Ecuador, Serbia, and Europe."
     />
     <meta name="twitter:image" content="https://unialabs.com/og-image.png" />
     <meta name="twitter:url" content="https://unialabs.com/" />
+    <script>
+      (function () {
+        const host = window.location.hostname;
+        const isLocalHost = host === "localhost" || host === "127.0.0.1" || host.endsWith(".local");
+        if (!isLocalHost && window.location.protocol === "http:") {
+          const secureUrl = `https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`;
+          window.location.replace(secureUrl);
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -72,12 +82,11 @@
               "@type": "ImageObject",
               "url": "https://unialabs.com/unia-logo.svg"
             },
-            "email": "dgukovsky@unia.cl",
             "contactPoint": [
               {
                 "@type": "ContactPoint",
                 "contactType": "sales",
-                "email": "dgukovsky@unia.cl",
+                "url": "https://unialabs.com/#contact",
                 "availableLanguage": ["en", "es", "sr"],
                 "areaServed": ["Chile", "Ecuador", "Serbia", "Europe"]
               }
@@ -124,6 +133,17 @@
               "@id": "https://unialabs.com/#organization"
             },
             "inLanguage": "en"
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://unialabs.com/#professional-service",
+            "name": "UNIA Software Factory",
+            "url": "https://unialabs.com/",
+            "serviceType": ["Custom Software Engineering", "AI Automation", "Cloud DevOps"],
+            "areaServed": ["Chile", "Ecuador", "Serbia", "Europe"],
+            "provider": {
+              "@id": "https://unialabs.com/#organization"
+            }
           },
           {
             "@type": "Service",
@@ -174,7 +194,7 @@
           <img
             class="brand-logo"
             src="./unia-logo.svg"
-            alt="UNIA"
+            alt="UNIA Software Factory logo"
             width="140"
             height="44"
           />
@@ -341,27 +361,27 @@
               <strong class="chart-total">99.95% Uptime</strong>
               <span class="chart-delta">SLA trend in real time</span>
               <div class="bars" data-live-bars data-live-mode="percent">
-                <div class="bar" style="--h: 34%">
+                <div class="bar" data-h="34">
                   <span>92%</span>
                   <em>JAN</em>
                 </div>
-                <div class="bar" style="--h: 28%">
+                <div class="bar" data-h="28">
                   <span>90%</span>
                   <em>FEB</em>
                 </div>
-                <div class="bar" style="--h: 42%">
+                <div class="bar" data-h="42">
                   <span>94%</span>
                   <em>MAR</em>
                 </div>
-                <div class="bar" style="--h: 52%">
+                <div class="bar" data-h="52">
                   <span>96%</span>
                   <em>APR</em>
                 </div>
-                <div class="bar" style="--h: 66%">
+                <div class="bar" data-h="66">
                   <span>98%</span>
                   <em>MAY</em>
                 </div>
-                <div class="bar active" style="--h: 82%">
+                <div class="bar active" data-h="82">
                   <span>99%</span>
                   <em>JUN</em>
                 </div>
@@ -591,8 +611,13 @@
             and a phased execution roadmap.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:dgukovsky@unia.cl"
-              >dgukovsky@unia.cl</a
+            <a
+              class="btn btn-primary"
+              id="emailCta"
+              href="#contact"
+              data-email-user="dgukovsky"
+              data-email-domain="unia.cl"
+              >Email us</a
             >
             <a class="btn btn-ghost" href="https://www.unia.cl" target="_blank"
               >www.unia.cl</a
@@ -607,7 +632,7 @@
         <img
           class="footer-logo"
           src="./unia-logo.svg"
-          alt="UNIA"
+          alt="UNIA Software Factory logo"
           width="140"
           height="44"
         />

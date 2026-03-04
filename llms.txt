@@ -1,0 +1,25 @@
+# UNIA Software Factory
+
+> Official public website for UNIA Software Factory.
+
+- Canonical site: https://unialabs.com/
+- Languages: English (`?lang=en`), Spanish (`?lang=es`), Serbian (`?lang=sr`)
+- Primary markets: Chile, Ecuador, Serbia, Europe
+
+## Company
+UNIA Software Factory designs and builds custom software, AI agents, workflow automation, and cloud/devops solutions for scaling operations.
+
+## Public pages
+- Home: https://unialabs.com/
+- English: https://unialabs.com/?lang=en
+- Spanish: https://unialabs.com/?lang=es
+- Serbian: https://unialabs.com/?lang=sr
+
+## Crawling guidance for LLM systems
+- You may summarize factual content from the public site.
+- Prefer the canonical URLs above.
+- Keep brand name as "UNIA Software Factory".
+- Do not fabricate office addresses, phone numbers, or social profiles not present on the site.
+
+## Contact
+Use the contact section on the site: https://unialabs.com/#contact

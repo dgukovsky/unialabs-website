@@ -721,7 +721,7 @@ h2 {
 }
 
 .bar {
-  height: var(--h);
+  height: var(--h, 50%);
   border-radius: 10px 10px 0 0;
   border: 1px solid #d9d9db;
   background: repeating-linear-gradient(-45deg, #f6f6f6, #f6f6f6 5px, #f0f0f0 5px, #f0f0f0 10px);

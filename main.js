@@ -13,9 +13,9 @@ const ogLocaleByLanguage = {
 
 const translations = {
   en: {
-    metaTitle: "UNIA Software Factory",
+    metaTitle: "UNIA Software Factory | Custom Software, AI, and Automation",
     metaDescription:
-      "UNIA Software Factory: software development, applied AI, and automation for high-impact operations in Chile, Ecuador, Serbia, and Europe.",
+      "UNIA Software Factory builds custom software, AI agents, and workflow automation for teams scaling operations across Chile, Ecuador, Serbia, and Europe.",
     menuOpenLabel: "Open menu",
     brandSub: "Software Factory",
     navServices: "Services",
@@ -149,6 +149,7 @@ const translations = {
     ctaEyebrow: "Ready to scale?",
     ctaTitle: "Turn your operations into a competitive advantage",
     ctaText: "Frictionless discovery: architecture assessment, AI opportunities, and a phased execution roadmap.",
+    contactEmailCta: "Email us",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Development · AI · Automation",
     liveBarsUptimeSuffix: "Uptime",
@@ -156,9 +157,9 @@ const translations = {
     liveBarsVsBaseline: "vs baseline",
   },
   es: {
-    metaTitle: "UNIA Software Factory",
+    metaTitle: "UNIA Software Factory | Desarrollo, IA y Automatización",
     metaDescription:
-      "UNIA Software Factory: desarrollo de software, IA aplicada y automatización para operaciones de alto impacto en Chile, Ecuador, Serbia y Europa.",
+      "UNIA Software Factory diseña software a medida, agentes de IA y automatización de flujos para operaciones que escalan en Chile, Ecuador, Serbia y Europa.",
     menuOpenLabel: "Abrir menú",
     brandSub: "Fábrica de Software",
     navServices: "Servicios",
@@ -292,6 +293,7 @@ const translations = {
     ctaEyebrow: "¿Listo para escalar?",
     ctaTitle: "Convierte tus operaciones en una ventaja competitiva",
     ctaText: "Discovery sin fricción: evaluación de arquitectura, oportunidades de IA y roadmap de ejecución por fases.",
+    contactEmailCta: "Escríbenos",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Desarrollo · IA · Automatización",
     liveBarsUptimeSuffix: "disponibilidad",
@@ -299,9 +301,9 @@ const translations = {
     liveBarsVsBaseline: "vs línea base",
   },
   sr: {
-    metaTitle: "UNIA Software Factory",
+    metaTitle: "UNIA Software Factory | Razvoj Softvera, AI i Automatizacija",
     metaDescription:
-      "UNIA Software Factory: razvoj softvera, primenjena AI i automatizacija za operacije visokog uticaja u Cileu, Ekvadoru, Srbiji i Evropi.",
+      "UNIA Software Factory razvija prilagođeni softver, AI agente i automatizaciju tokova za timove koji skaliraju operacije u Cileu, Ekvadoru, Srbiji i Evropi.",
     menuOpenLabel: "Otvori meni",
     brandSub: "Softverska Fabrika",
     navServices: "Usluge",
@@ -434,6 +436,7 @@ const translations = {
     ctaEyebrow: "Spremni za skaliranje?",
     ctaTitle: "Pretvorite operacije u konkurentsku prednost",
     ctaText: "Frictionless discovery: procena arhitekture, AI prilike i fazni plan izvršenja.",
+    contactEmailCta: "Kontaktirajte nas",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Razvoj · AI · Automatizacija",
     liveBarsUptimeSuffix: "dostupnost",
@@ -614,8 +617,8 @@ const applyLanguage = () => {
   setText("#contact .cta-box .eyebrow", copy.ctaEyebrow);
   setText("#contact .cta-box h2", copy.ctaTitle);
   setText("#contact .cta-box > p", copy.ctaText);
-  setText(".site-footer .footer-wrap p:nth-child(1)", copy.footerBrand);
-  setText(".site-footer .footer-wrap p:nth-child(2)", copy.footerTagline);
+  setText("#emailCta", copy.contactEmailCta);
+  setText(".site-footer .footer-wrap p:last-child", copy.footerTagline);
 
   const typewriterEl = document.querySelector(".hero-type");
   if (typewriterEl) {
@@ -625,6 +628,15 @@ const applyLanguage = () => {
 };
 
 applyLanguage();
+
+const emailCta = document.getElementById("emailCta");
+if (emailCta) {
+  const emailUser = emailCta.getAttribute("data-email-user");
+  const emailDomain = emailCta.getAttribute("data-email-domain");
+  if (emailUser && emailDomain) {
+    emailCta.setAttribute("href", `mailto:${emailUser}@${emailDomain}`);
+  }
+}
 
 const menuBtn = document.getElementById("menuBtn");
 const siteNav = document.getElementById("siteNav");
@@ -712,9 +724,11 @@ if (!prefersReducedMotion) {
     const mode = group.getAttribute("data-live-mode") || "currency-k";
 
     const baseHeights = bars.map((bar) => {
-      const raw = bar.style.getPropertyValue("--h").trim();
-      const parsed = Number.parseFloat(raw);
-      return Number.isFinite(parsed) ? parsed : 50;
+      const raw = bar.getAttribute("data-h");
+      const parsed = Number.parseFloat(raw || "");
+      const height = Number.isFinite(parsed) ? parsed : 50;
+      bar.style.setProperty("--h", `${height}%`);
+      return height;
     });
     const heights = [...baseHeights];
 
