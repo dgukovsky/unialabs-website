@@ -150,6 +150,7 @@ const translations = {
     ctaTitle: "Turn your operations into a competitive advantage",
     ctaText: "Frictionless discovery: architecture assessment, AI opportunities, and a phased execution roadmap.",
     contactEmailCta: "Email us",
+    contactLinkedinCta: "LinkedIn",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Development · AI · Automation",
     liveBarsUptimeSuffix: "Uptime",
@@ -294,6 +295,7 @@ const translations = {
     ctaTitle: "Convierte tus operaciones en una ventaja competitiva",
     ctaText: "Discovery sin fricción: evaluación de arquitectura, oportunidades de IA y roadmap de ejecución por fases.",
     contactEmailCta: "Escríbenos",
+    contactLinkedinCta: "LinkedIn",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Desarrollo · IA · Automatización",
     liveBarsUptimeSuffix: "disponibilidad",
@@ -437,6 +439,7 @@ const translations = {
     ctaTitle: "Pretvorite operacije u konkurentsku prednost",
     ctaText: "Frictionless discovery: procena arhitekture, AI prilike i fazni plan izvršenja.",
     contactEmailCta: "Kontaktirajte nas",
+    contactLinkedinCta: "LinkedIn",
     footerBrand: "UNIA Software Factory",
     footerTagline: "Razvoj · AI · Automatizacija",
     liveBarsUptimeSuffix: "dostupnost",
@@ -618,6 +621,7 @@ const applyLanguage = () => {
   setText("#contact .cta-box h2", copy.ctaTitle);
   setText("#contact .cta-box > p", copy.ctaText);
   setText("#emailCta", copy.contactEmailCta);
+  setText("#linkedinCta", copy.contactLinkedinCta);
   setText(".site-footer .footer-wrap p:last-child", copy.footerTagline);
 
   const typewriterEl = document.querySelector(".hero-type");
