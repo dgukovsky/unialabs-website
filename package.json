@@ -1,0 +1,16 @@
+{
+  "name": "unialabs-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UNIA Software Factory marketing site prepared for Cloudflare Workers/Pages deployments.",
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "pages:dev": "npm run build && wrangler pages dev dist",
+    "pages:deploy": "npm run build && wrangler pages deploy dist --project-name unialabs-website"
+  },
+  "devDependencies": {
+    "wrangler": "^4.55.0"
+  }
+}
