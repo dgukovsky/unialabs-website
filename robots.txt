@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unialabs.com/sitemap.xml
+Host: unialabs.com

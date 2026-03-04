@@ -5,11 +5,17 @@ const localeByLanguage = {
   sr: "sr-RS",
 };
 
+const ogLocaleByLanguage = {
+  en: "en_US",
+  es: "es_ES",
+  sr: "sr_RS",
+};
+
 const translations = {
   en: {
     metaTitle: "UNIA Software Factory",
     metaDescription:
-      "UNIA Software Factory: software development, applied AI, and automation for high-impact business operations.",
+      "UNIA Software Factory: software development, applied AI, and automation for high-impact operations in Chile, Ecuador, Serbia, and Europe.",
     menuOpenLabel: "Open menu",
     brandSub: "Software Factory",
     navServices: "Services",
@@ -152,7 +158,7 @@ const translations = {
   es: {
     metaTitle: "UNIA Software Factory",
     metaDescription:
-      "UNIA Software Factory: desarrollo de software, IA aplicada y automatización para operaciones de negocio de alto impacto.",
+      "UNIA Software Factory: desarrollo de software, IA aplicada y automatización para operaciones de alto impacto en Chile, Ecuador, Serbia y Europa.",
     menuOpenLabel: "Abrir menú",
     brandSub: "Fábrica de Software",
     navServices: "Servicios",
@@ -295,7 +301,7 @@ const translations = {
   sr: {
     metaTitle: "UNIA Software Factory",
     metaDescription:
-      "UNIA Software Factory: razvoj softvera, primenjena AI i automatizacija za poslovne operacije visokog uticaja.",
+      "UNIA Software Factory: razvoj softvera, primenjena AI i automatizacija za operacije visokog uticaja u Cileu, Ekvadoru, Srbiji i Evropi.",
     menuOpenLabel: "Otvori meni",
     brandSub: "Softverska Fabrika",
     navServices: "Usluge",
@@ -468,12 +474,21 @@ const setHtml = (selector, value) => {
   if (el && typeof value === "string") el.innerHTML = value;
 };
 
+const setMeta = (selector, value) => {
+  const el = document.querySelector(selector);
+  if (el && typeof value === "string") el.setAttribute("content", value);
+};
+
 const applyLanguage = () => {
   document.documentElement.setAttribute("lang", activeLanguage);
   document.title = copy.metaTitle;
 
-  const metaDescription = document.querySelector('meta[name="description"]');
-  if (metaDescription) metaDescription.setAttribute("content", copy.metaDescription);
+  setMeta('meta[name="description"]', copy.metaDescription);
+  setMeta('meta[property="og:title"]', copy.metaTitle);
+  setMeta('meta[property="og:description"]', copy.metaDescription);
+  setMeta('meta[property="og:locale"]', ogLocaleByLanguage[activeLanguage] || "en_US");
+  setMeta('meta[name="twitter:title"]', copy.metaTitle);
+  setMeta('meta[name="twitter:description"]', copy.metaDescription);
 
   setText(".brand-sub", copy.brandSub);
   setText('#siteNav a[href="#services"]', copy.navServices);
