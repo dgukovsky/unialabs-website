@@ -457,7 +457,7 @@ h2 {
   display: flex;
   gap: 0.8rem;
   overflow: hidden;
-  border: 1px solid #e3e3e3;
+  border: none;
   border-radius: 20px;
   background: transparent;
   padding: 0.8rem;
@@ -481,7 +481,7 @@ h2 {
   width: 236px;
   height: 76px;
   border-radius: 999px;
-  border: 1px solid #e5e5e5;
+  border: none;
   background: transparent;
   display: flex;
   align-items: center;
