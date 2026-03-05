@@ -20,7 +20,6 @@ const staticFiles = [
   "site.webmanifest",
   "sitemap.xml",
   "unia-logo.svg",
-  "_redirects",
 ];
 
 await rm(outDir, { recursive: true, force: true });
