@@ -490,8 +490,10 @@ h2 {
 }
 
 .client-pill img {
-  width: 180px;
+  width: auto;
   height: auto;
+  max-width: 180px;
+  max-height: 52px;
   object-fit: contain;
   opacity: 0.94;
 }
@@ -1689,7 +1691,8 @@ h2 {
   }
 
   .client-pill img {
-    width: 138px;
+    max-width: 138px;
+    max-height: 42px;
   }
 
   .cta-box {
