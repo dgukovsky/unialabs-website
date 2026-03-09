@@ -13,7 +13,7 @@ const staticFiles = [
   "client-banco-falabella.png",
   "client-fief.svg",
   "client-gestorcapitax.png",
-  "client-nudara.jpg",
+  "image-removebg-preview.png",
   "favicon-32.png",
   "favicon.png",
   "favicon.svg",
