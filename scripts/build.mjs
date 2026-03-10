@@ -14,7 +14,6 @@ const staticFiles = [
   "client-bym.png",
   "client-fief.svg",
   "client-gestorcapitax.png",
-  "client-lorak-capture.png",
   "client-lorak-logo.png",
   "client-loulous.png",
   "client-slim4life.png",
