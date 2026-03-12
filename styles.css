@@ -1,14 +1,14 @@
 :root {
-  --bg: #f2f3f3;
+  --bg: #f6f7f7;
   --surface: rgba(255, 255, 255, 0.72);
   --surface-soft: rgba(255, 255, 255, 0.56);
   --text: #111214;
   --muted: #5d6670;
   --line: rgba(255, 255, 255, 0.62);
-  --accent-violet: #40e7f2;
-  --accent-pink: #f0cf4d;
+  --accent-violet: #9de7ef;
+  --accent-pink: #f3dda2;
   --accent-blue: #15181c;
-  --accent-cyan: #8cdd72;
+  --accent-cyan: #b8e2ab;
   --radius: 20px;
   --shadow: 0 20px 44px rgba(16, 23, 33, 0.12);
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -31,9 +31,9 @@ html {
 body {
   font-family: "Geist", "Inter", sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at 90% 16%, rgba(240, 207, 77, 0.48), rgba(240, 207, 77, 0) 44%),
-    radial-gradient(circle at 13% 88%, rgba(64, 231, 242, 0.46), rgba(64, 231, 242, 0) 56%),
-    radial-gradient(circle at 72% 78%, rgba(140, 221, 114, 0.3), rgba(140, 221, 114, 0) 42%), var(--bg);
+  background: radial-gradient(circle at 90% 16%, rgba(243, 221, 162, 0.34), rgba(243, 221, 162, 0) 48%),
+    radial-gradient(circle at 13% 88%, rgba(157, 231, 239, 0.32), rgba(157, 231, 239, 0) 60%),
+    radial-gradient(circle at 72% 78%, rgba(184, 226, 171, 0.2), rgba(184, 226, 171, 0) 46%), var(--bg);
   min-height: 100vh;
   line-height: 1.55;
 }
@@ -54,7 +54,7 @@ a {
   height: 500px;
   border-radius: 999px;
   filter: blur(100px);
-  opacity: 0.34;
+  opacity: 0.2;
   pointer-events: none;
   z-index: -3;
 }
