@@ -571,7 +571,8 @@ h2 {
 .mosaic-card,
 .flow-step,
 .stack-col,
-.model-card {
+.model-card,
+.cta-box {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--surface-soft);
@@ -586,7 +587,8 @@ h2 {
 .mosaic-card:hover,
 .flow-step:hover,
 .stack-col:hover,
-.model-card:hover {
+.model-card:hover,
+.cta-box:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.95);
@@ -1339,10 +1341,6 @@ h2 {
 }
 
 .cta-box {
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  background: linear-gradient(130deg, rgba(64, 231, 242, 0.2), rgba(140, 221, 114, 0.16), rgba(240, 207, 77, 0.2));
-  backdrop-filter: blur(6px);
   padding: 2rem;
 }
 
