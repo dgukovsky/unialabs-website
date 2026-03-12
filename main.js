@@ -46,8 +46,7 @@ const translations = {
     clientsTitle: "Teams we work with",
     clientsSub: "Brands and products that trust UNIA to build, automate, and scale.",
     servicesEyebrow: "Services",
-    servicesTitleHtml:
-      'Transform your operation into a <span class="grad-text"><span class="spark">⚡</span>growth platform</span>',
+    servicesTitleHtml: 'Transform your operation into a <span class="grad-text">growth platform</span>',
     servicesSub:
       "We combine software, AI, and automation to remove operational friction, improve revenue performance, and scale your core workflows with control.",
     service1Title: "Custom Software Engineering",
@@ -83,8 +82,7 @@ const translations = {
     monthMay: "MAY",
     monthJun: "JUN",
     solutionsEyebrow: "Success Cases",
-    solutionsTitleHtml:
-      'Solutions designed to <span class="grad-text"><span class="spark">⚡</span>help you scale</span>',
+    solutionsTitleHtml: 'Solutions designed to <span class="grad-text">help you scale</span>',
     solutionsSub:
       "Each solution combines product thinking, architecture, and automation to solve real operational and growth bottlenecks.",
     case1Lead: "New subscriber onboarded",
@@ -194,8 +192,7 @@ const translations = {
     clientsTitle: "Equipos con los que trabajamos",
     clientsSub: "Marcas y productos que confían en UNIA para construir, automatizar y escalar.",
     servicesEyebrow: "Servicios",
-    servicesTitleHtml:
-      'Transforma tu operación en una <span class="grad-text"><span class="spark">⚡</span>plataforma de crecimiento</span>',
+    servicesTitleHtml: 'Transforma tu operación en una <span class="grad-text">plataforma de crecimiento</span>',
     servicesSub:
       "Combinamos software, IA y automatización para eliminar fricción operativa, mejorar el rendimiento de ingresos y escalar tus flujos críticos con control.",
     service1Title: "Ingeniería de Software a Medida",
@@ -231,8 +228,7 @@ const translations = {
     monthMay: "MAY",
     monthJun: "JUN",
     solutionsEyebrow: "Casos de éxito",
-    solutionsTitleHtml:
-      'Soluciones diseñadas para <span class="grad-text"><span class="spark">⚡</span>escalar contigo</span>',
+    solutionsTitleHtml: 'Soluciones diseñadas para <span class="grad-text">escalar contigo</span>',
     solutionsSub:
       "Cada solución combina visión de producto, arquitectura y automatización para resolver cuellos de botella operativos y de crecimiento.",
     case1Lead: "Nuevo suscriptor incorporado",
@@ -342,8 +338,7 @@ const translations = {
     clientsTitle: "Timovi sa kojima radimo",
     clientsSub: "Brendovi i proizvodi koji veruju UNIA timu za izradu, automatizaciju i skaliranje.",
     servicesEyebrow: "Usluge",
-    servicesTitleHtml:
-      'Transformišite poslovanje u <span class="grad-text"><span class="spark">⚡</span>platformu za rast</span>',
+    servicesTitleHtml: 'Transformišite poslovanje u <span class="grad-text">platformu za rast</span>',
     servicesSub:
       "Kombinujemo softver, AI i automatizaciju da uklonimo operativno trenje, unapredimo rezultate prihoda i skaliramo ključne tokove rada uz punu kontrolu.",
     service1Title: "Prilagođeni Softverski Inženjering",
@@ -379,8 +374,7 @@ const translations = {
     monthMay: "MAJ",
     monthJun: "JUN",
     solutionsEyebrow: "Primeri uspeha",
-    solutionsTitleHtml:
-      'Rešenja dizajnirana da <span class="grad-text"><span class="spark">⚡</span>vas skaliraju</span>',
+    solutionsTitleHtml: 'Rešenja dizajnirana da <span class="grad-text">vas skaliraju</span>',
     solutionsSub:
       "Svako rešenje kombinuje product pristup, arhitekturu i automatizaciju kako bi rešilo stvarna uska grla rasta i operacija.",
     case1Lead: "Novi pretplatnik aktiviran",
