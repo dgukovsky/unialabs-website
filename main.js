@@ -48,10 +48,10 @@ const translations = {
     servicesEyebrow: "Services",
     servicesTitleHtml: 'Transform your operation into a <span class="grad-text">growth platform</span>',
     servicesSub:
-      "We combine software, AI, and automation to remove operational friction, improve revenue performance, and scale your core workflows with control.",
+      "We turn fragmented operations into revenue-ready systems: custom software, applied AI, and automation aligned to growth, control, and execution speed.",
     service1Title: "Custom Software Engineering",
     service1Text:
-      "We design and build web platforms, internal systems, and APIs tailored to your business model and operating workflows.",
+      "We build platforms, internal systems, and APIs that centralize operations, remove bottlenecks, and give your team control over business-critical workflows.",
     service1Step1Title: "Product Discovery",
     service1Step1Text: "Business mapping, scope, and architecture definition",
     service1Step1Time: "Week 1",
@@ -63,7 +63,7 @@ const translations = {
     service1Step3Time: "Continuous",
     service2Title: "AI, Agents, and Workflow Automation",
     service2Text:
-      "We automate repetitive operations with AI copilots, RAG systems, and task agents connected to your internal tools.",
+      "We deploy AI copilots, RAG layers, and task agents that read context, trigger actions, and automate repetitive decisions across your core tools.",
     service2Pipeline: "Automation Pipeline",
     service2Layers: "3 layers",
     service2UpsellTitle: "Deploy AI Agent",
@@ -71,7 +71,7 @@ const translations = {
     service2Deploy: "Deploy",
     service3Title: "Cloud, DevOps, and Reliability",
     service3Text:
-      "We deliver secure cloud architecture, CI/CD, observability, and performance governance for stable and scalable operations.",
+      "We design cloud architecture, CI/CD, observability, and recovery flows so your product can scale without sacrificing stability, security, or delivery speed.",
     chartLabel: "Platform Reliability Snapshot",
     chartTotal: "99.95% Uptime",
     chartDelta: "SLA trend in real time",
@@ -131,14 +131,19 @@ const translations = {
     method5Text: "Production rollout with monitoring, release checklists, and stabilization support.",
     method6Title: "Continuous evolution",
     method6Text: "Ongoing optimization of product, AI, and processes to improve operational efficiency.",
-    stackEyebrow: "Stack",
-    stackTitle: "Technology built for real-world scalability",
-    stack1Title: "Platform",
-    stack1Text: "Web apps, APIs, cloud architecture, observability, and security.",
-    stack2Title: "Data & AI",
-    stack2Text: "RAG, specialized agents, process automation, and operational analytics.",
-    stack3Title: "Delivery",
-    stack3Text: "SCRUM, CI/CD, continuous QA, and post-release operational support.",
+    stackEyebrow: "Technologies",
+    stackTitle: "Technologies we use to ship fast and scale safely",
+    stackSub:
+      "Concrete tools, not generic promises: the stack we rely on to build products, automate operations, and keep critical systems running.",
+    stack1Title: "Applications & APIs",
+    stack1Text:
+      "Product interfaces, business logic, secure integrations, and internal platforms for day-to-day operations.",
+    stack2Title: "Data, AI & Automation",
+    stack2Text:
+      "Operational intelligence, AI orchestration, and automation layers connected to real workflows.",
+    stack3Title: "Cloud & Delivery",
+    stack3Text:
+      "Release pipelines, runtime infrastructure, monitoring, and support for reliable scale.",
     model1Eyebrow: "Model 1",
     model1Title: "Software Partnership",
     model1Text:
@@ -194,10 +199,10 @@ const translations = {
     servicesEyebrow: "Servicios",
     servicesTitleHtml: 'Transforma tu operación en una <span class="grad-text">plataforma de crecimiento</span>',
     servicesSub:
-      "Combinamos software, IA y automatización para eliminar fricción operativa, mejorar el rendimiento de ingresos y escalar tus flujos críticos con control.",
+      "Convertimos operaciones fragmentadas en sistemas listos para crecer: software a medida, IA aplicada y automatización alineadas con ingresos, control y velocidad de ejecución.",
     service1Title: "Ingeniería de Software a Medida",
     service1Text:
-      "Diseñamos y construimos plataformas web, sistemas internos y APIs adaptados a tu modelo de negocio y forma de operar.",
+      "Construimos plataformas, sistemas internos y APIs que centralizan la operación, eliminan cuellos de botella y dan control sobre flujos críticos de negocio.",
     service1Step1Title: "Descubrimiento del producto",
     service1Step1Text: "Mapeo de negocio, alcance y definición de arquitectura",
     service1Step1Time: "Semana 1",
@@ -209,7 +214,7 @@ const translations = {
     service1Step3Time: "Continuo",
     service2Title: "IA, Agentes y Automatización de Flujos",
     service2Text:
-      "Automatizamos tareas repetitivas con copilotos de IA, sistemas RAG y agentes conectados a tus herramientas internas.",
+      "Desplegamos copilotos de IA, capas RAG y agentes que entienden contexto, disparan acciones y automatizan decisiones repetitivas en tus herramientas core.",
     service2Pipeline: "Pipeline de automatización",
     service2Layers: "3 capas",
     service2UpsellTitle: "Desplegar agente de IA",
@@ -217,7 +222,7 @@ const translations = {
     service2Deploy: "Desplegar",
     service3Title: "Cloud, DevOps y Confiabilidad",
     service3Text:
-      "Entregamos arquitectura cloud segura, CI/CD, observabilidad y gobierno de performance para operaciones estables y escalables.",
+      "Diseñamos arquitectura cloud, CI/CD, observabilidad y flujos de recuperación para escalar sin sacrificar estabilidad, seguridad ni velocidad de entrega.",
     chartLabel: "Panorama de confiabilidad de plataforma",
     chartTotal: "99.95% disponibilidad",
     chartDelta: "Tendencia de SLA en tiempo real",
@@ -277,14 +282,19 @@ const translations = {
     method5Text: "Salida a producción con monitoreo, checklists de release y soporte de estabilización.",
     method6Title: "Evolución continua",
     method6Text: "Optimización continua de producto, IA y procesos para mejorar la eficiencia operativa.",
-    stackEyebrow: "Stack",
-    stackTitle: "Tecnología construida para escalar en el mundo real",
-    stack1Title: "Plataforma",
-    stack1Text: "Apps web, APIs, arquitectura cloud, observabilidad y seguridad.",
-    stack2Title: "Datos e IA",
-    stack2Text: "RAG, agentes especializados, automatización de procesos y analítica operativa.",
-    stack3Title: "Entrega",
-    stack3Text: "SCRUM, CI/CD, QA continuo y soporte operativo post-lanzamiento.",
+    stackEyebrow: "Tecnologías",
+    stackTitle: "Tecnologías que usamos para entregar rápido y escalar con seguridad",
+    stackSub:
+      "Herramientas concretas, no promesas genéricas: este es el stack con el que construimos productos, automatizamos operaciones y mantenemos sistemas críticos en marcha.",
+    stack1Title: "Aplicaciones y APIs",
+    stack1Text:
+      "Interfaces de producto, lógica de negocio, integraciones seguras y plataformas internas para la operación diaria.",
+    stack2Title: "Datos, IA y Automatización",
+    stack2Text:
+      "Inteligencia operativa, orquestación de IA y capas de automatización conectadas a workflows reales.",
+    stack3Title: "Cloud y Delivery",
+    stack3Text:
+      "Pipelines de release, infraestructura de ejecución, monitoreo y soporte para escalar con confiabilidad.",
     model1Eyebrow: "Modelo 1",
     model1Title: "Software Partnership",
     model1Text:
@@ -340,10 +350,10 @@ const translations = {
     servicesEyebrow: "Usluge",
     servicesTitleHtml: 'Transformišite poslovanje u <span class="grad-text">platformu za rast</span>',
     servicesSub:
-      "Kombinujemo softver, AI i automatizaciju da uklonimo operativno trenje, unapredimo rezultate prihoda i skaliramo ključne tokove rada uz punu kontrolu.",
+      "Pretvaramo fragmentirane operacije u sisteme spremne za rast: prilagođeni softver, primenjena AI i automatizacija usklađeni sa prihodima, kontrolom i brzinom izvršenja.",
     service1Title: "Prilagođeni Softverski Inženjering",
     service1Text:
-      "Dizajniramo i gradimo web platforme, interne sisteme i API-je prilagođene vašem poslovnom modelu i operativnim procesima.",
+      "Gradimo platforme, interne sisteme i API-je koji centralizuju operacije, uklanjaju uska grla i daju timu kontrolu nad ključnim poslovnim tokovima.",
     service1Step1Title: "Product discovery",
     service1Step1Text: "Mapiranje poslovanja, opseg i definicija arhitekture",
     service1Step1Time: "Nedelja 1",
@@ -355,7 +365,7 @@ const translations = {
     service1Step3Time: "Kontinuirano",
     service2Title: "AI, Agenti i Automatizacija Tokova",
     service2Text:
-      "Automatizujemo repetitivne operacije pomoću AI kopilota, RAG sistema i agenata povezanih sa vašim internim alatima.",
+      "Postavljamo AI kopilote, RAG slojeve i agente koji razumeju kontekst, pokreću akcije i automatizuju ponavljajuće odluke u vašim ključnim alatima.",
     service2Pipeline: "Automatizacioni pipeline",
     service2Layers: "3 sloja",
     service2UpsellTitle: "Postavi AI agenta",
@@ -363,7 +373,7 @@ const translations = {
     service2Deploy: "Postavi",
     service3Title: "Cloud, DevOps i Pouzdanost",
     service3Text:
-      "Isporučujemo bezbednu cloud arhitekturu, CI/CD, observability i upravljanje performansama za stabilne i skalabilne operacije.",
+      "Dizajniramo cloud arhitekturu, CI/CD, observability i recovery tokove kako biste skalirali bez žrtvovanja stabilnosti, bezbednosti i brzine isporuke.",
     chartLabel: "Pregled pouzdanosti platforme",
     chartTotal: "99.95% dostupnost",
     chartDelta: "SLA trend u realnom vremenu",
@@ -422,14 +432,19 @@ const translations = {
     method5Text: "Puštanje u produkciju uz monitoring, release checkliste i podršku stabilizaciji.",
     method6Title: "Kontinuirana evolucija",
     method6Text: "Kontinuirana optimizacija proizvoda, AI i procesa radi bolje operativne efikasnosti.",
-    stackEyebrow: "Stack",
-    stackTitle: "Tehnologija napravljena za skaliranje u realnim uslovima",
-    stack1Title: "Platforma",
-    stack1Text: "Web aplikacije, API-ji, cloud arhitektura, observability i bezbednost.",
-    stack2Title: "Podaci i AI",
-    stack2Text: "RAG, specijalizovani agenti, automatizacija procesa i operativna analitika.",
-    stack3Title: "Isporuka",
-    stack3Text: "SCRUM, CI/CD, kontinuirani QA i operativna podrška nakon lansiranja.",
+    stackEyebrow: "Tehnologije",
+    stackTitle: "Tehnologije koje koristimo za brzu isporuku i sigurno skaliranje",
+    stackSub:
+      "Konkretni alati, ne generička obećanja: stack na koji se oslanjamo za razvoj proizvoda, automatizaciju operacija i pouzdan rad kritičnih sistema.",
+    stack1Title: "Aplikacije i API-ji",
+    stack1Text:
+      "Produkt interfejsi, poslovna logika, bezbedne integracije i interne platforme za svakodnevne operacije.",
+    stack2Title: "Podaci, AI i Automatizacija",
+    stack2Text:
+      "Operativna inteligencija, AI orkestracija i slojevi automatizacije povezani sa realnim tokovima rada.",
+    stack3Title: "Cloud i Delivery",
+    stack3Text:
+      "Release pipeline-i, runtime infrastruktura, monitoring i podrška za pouzdano skaliranje.",
     model1Eyebrow: "Model 1",
     model1Title: "Software Partnership",
     model1Text:
@@ -609,6 +624,7 @@ const applyLanguage = () => {
 
   setText("#stack .section-head .eyebrow", copy.stackEyebrow);
   setText("#stack .section-head h2", copy.stackTitle);
+  setText("#stack .section-sub", copy.stackSub);
   setText("#stack .stack-col:nth-child(1) h3", copy.stack1Title);
   setText("#stack .stack-col:nth-child(1) p", copy.stack1Text);
   setText("#stack .stack-col:nth-child(2) h3", copy.stack2Title);
