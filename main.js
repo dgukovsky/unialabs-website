@@ -20,36 +20,36 @@ const translations = {
     menuOpenLabel: "Open navigation",
     brandSub: "Software Factory",
     navServices: "Capabilities",
-    navSuccessCases: "Outcomes",
-    navMethodology: "Execution",
-    navStack: "Technologies",
+    navSuccessCases: "Factory model",
+    navMethodology: "Process",
+    navStack: "Stack",
     navBookCall: "Book a call",
     heroEyebrow: "Software Factory · AI Systems · Automation",
-    heroTitleHtml: 'Infrastructure-grade software for <span>operators who need to move fast</span>',
+    heroTitleHtml: 'Software infrastructure for <span>complex operations in motion</span>',
     heroText:
-      "UNIA designs, builds, and scales custom platforms, AI systems, and automation layers for companies handling real operational complexity.",
+      "UNIA designs and ships custom platforms, AI systems, and automation layers for teams that need better control, faster execution, and software they can actually grow on top of.",
     heroPrimaryCta: "Book a discovery call",
     heroSecondaryCta: "Explore capabilities",
     heroStat1Value: "2-week",
-    heroStat1Label: "sprint cadence",
+    heroStat1Label: "delivery cadence",
     heroStat2Value: "Multi-region",
     heroStat2Label: "Chile, Ecuador, Serbia, Europe",
     heroStat3Value: "Applied AI",
     heroStat3Label: "agents, RAG, automations",
-    heroPanelEyebrow: "Execution Layer",
-    heroPanelTitle: "From business diagnosis to production systems",
-    heroCard1Eyebrow: "Architecture",
-    heroCard1Title: "Platforms built around real workflows",
+    heroPanelEyebrow: "Factory in production",
+    heroPanelTitle: "Built to centralize workflows, decisions, and delivery",
+    heroCard1Eyebrow: "Platforms",
+    heroCard1Value: "Custom systems",
     heroCard1Text:
-      "Internal systems, client-facing products, and integrations designed around throughput, control, and scale.",
-    heroCard2Eyebrow: "AI Operations",
-    heroCard2Title: "Agents that assist, route, and trigger action",
+      "Internal tooling, client-facing portals, APIs, and product layers shaped around real business throughput.",
+    heroCard2Eyebrow: "AI systems",
+    heroCard2Value: "Assist + route + act",
     heroCard2Text:
-      "AI copilots, RAG layers, and automations connected to the tools your team already depends on.",
-    heroCard3Eyebrow: "Reliability",
-    heroCard3Title: "Delivery discipline for serious operations",
+      "Retrieval, copilots, and agents embedded into operations instead of living as isolated experiments.",
+    heroCard3Eyebrow: "Cloud delivery",
+    heroCard3Value: "Reliable releases",
     heroCard3Text:
-      "CI/CD, observability, release control, and cloud decisions that protect uptime and execution speed.",
+      "CI/CD, observability, release control, and infrastructure decisions that protect speed and stability together.",
     heroStrip1: "Architecture-first",
     heroStrip2: "Senior execution",
     heroStrip3: "Operational scale",
@@ -57,102 +57,84 @@ const translations = {
     clientsSub:
       "Teams across finance, commerce, operations, and professional services trust UNIA to build, automate, and evolve critical software.",
     servicesEyebrow: "Capabilities",
-    servicesTitleHtml: 'A software factory shaped for <span>complex operations</span>',
+    servicesTitleHtml: 'A software factory built around <span>execution quality</span>',
     servicesSub:
-      "We combine product thinking, engineering, AI, and delivery governance to turn fragmented workflows into durable systems.",
-    service1Eyebrow: "01 Platform engineering",
-    service1Title: "Custom software that becomes operational infrastructure",
+      "We do not sell isolated features. We design systems that improve how the business operates, decides, and scales.",
+    service1Eyebrow: "Custom platforms",
+    service1Title: "Platforms and internal systems that become the operating layer",
     service1Text:
-      "Web apps, portals, internal systems, and APIs that centralize the parts of the business you cannot afford to run manually.",
-    service2Eyebrow: "02 AI systems",
-    service2Title: "Applied AI that assists teams and accelerates decisions",
+      "When spreadsheets, inboxes, and disconnected tools start slowing the business down, we replace them with software shaped around real workflows.",
+    service1Point1: "Client portals and internal dashboards",
+    service1Point2: "Process-specific APIs and integrations",
+    service1Point3: "Products built for operational traceability",
+    service1Aside:
+      "Useful when the business needs one source of truth instead of more manual coordination.",
+    service2Eyebrow: "AI systems",
+    service2Title: "Applied AI that assists teams and activates the next step",
     service2Text:
-      "Copilots, retrieval systems, and agents that read context, surface knowledge, and trigger the next action with control.",
-    service3Eyebrow: "03 Workflow automation",
-    service3Title: "Automation layers that remove drag across departments",
+      "We implement copilots, retrieval systems, and agents that live inside the operating flow instead of sitting outside the work.",
+    service2Point1: "RAG and knowledge retrieval for internal teams",
+    service2Point2: "Agents connected to tools, data, and action rules",
+    service2Point3: "Decision support for repetitive high-volume tasks",
+    service2Aside:
+      "Useful when teams need better throughput without adding more human routing and context switching.",
+    service3Eyebrow: "Automation and cloud delivery",
+    service3Title: "Automation, release control, and cloud reliability in the same layer",
     service3Text:
-      "Connected flows for finance, support, commerce, reporting, and back-office operations without adding more coordination overhead.",
-    service4Eyebrow: "04 Cloud and delivery",
-    service4Title: "Release, reliability, and scale built into the stack",
-    service4Text:
-      "Cloud architecture, CI/CD, observability, and security practices that keep execution fast without compromising stability.",
-    solutionsEyebrow: "Outcomes",
-    solutionsTitleHtml: 'What UNIA builds into your <span>operating model</span>',
+      "We connect business logic, orchestration, CI/CD, observability, and infrastructure choices so the product can move faster without breaking trust.",
+    service3Point1: "Cross-functional workflow automation",
+    service3Point2: "Cloud architecture and release governance",
+    service3Point3: "Monitoring and operational support after launch",
+    service3Aside:
+      "Useful when growth is no longer limited by ideas, but by execution friction and unstable delivery.",
+    solutionsEyebrow: "Factory model",
+    solutionsTitleHtml: 'Work with UNIA as a <span>build partner</span>',
     solutionsSub:
-      "The goal is not more code. The goal is more control, faster execution, and a software layer that compounds over time.",
-    outcome1Value: "Control",
-    outcome1Title: "Connected operations",
-    outcome1Text:
-      "One software layer across the workflows that currently live in spreadsheets, inboxes, and disconnected tools.",
-    outcome2Value: "Speed",
-    outcome2Title: "Faster decision cycles",
-    outcome2Text:
-      "Less waiting between inputs, approvals, and execution thanks to clearer systems and lower coordination cost.",
-    outcome3Value: "Leverage",
-    outcome3Title: "AI where it actually matters",
-    outcome3Text:
-      "Knowledge retrieval, task routing, and action logic embedded in real operational processes.",
-    outcome4Value: "Reliability",
-    outcome4Title: "Production discipline from day one",
-    outcome4Text:
-      "Release readiness, monitoring, and architecture decisions that support scale instead of reacting to it later.",
-    spotlight1Eyebrow: "Finance operations",
-    spotlight1Title: "Tax, treasury, and internal control flows",
-    spotlight1Text:
-      "Systems that reduce handoffs, improve traceability, and support teams working with sensitive operational logic.",
-    spotlight2Eyebrow: "Commercial operations",
-    spotlight2Title: "Commerce, subscriptions, and service workflows",
-    spotlight2Text:
-      "Experiences and automations that help revenue teams move faster without losing visibility across the funnel.",
-    spotlight3Eyebrow: "Internal platforms",
-    spotlight3Title: "Dashboards, APIs, and orchestration layers",
-    spotlight3Text:
-      "The connective tissue between product, data, and operations when the business outgrows off-the-shelf tools.",
-    methodologyEyebrow: "Execution",
-    methodologyTitleHtml: 'From diagnosis to <span>production</span>',
+      "We adapt around your product stage, internal team, and operational urgency. The structure changes, but the standard of execution does not.",
+    model1Eyebrow: "Model 01",
+    model1Title: "Software Partnership",
+    model1Text:
+      "A dedicated senior team to design, build, and evolve core software with a shared roadmap and controlled delivery rhythm.",
+    model2Eyebrow: "Model 02",
+    model2Title: "Embedded Factory",
+    model2Text:
+      "Senior product and engineering capacity embedded into your operation to modernize systems, automate flows, and raise throughput.",
+    modelNoteTitle: "The objective",
+    modelNoteText:
+      "Reduce coordination drag, centralize critical workflows, and leave the team with software leverage it can keep compounding.",
+    methodologyEyebrow: "Process",
+    methodologyTitleHtml: 'From diagnosis to <span>production discipline</span>',
     methodologySub:
-      "UNIA works with a disciplined sequence so business context, architecture, and delivery stay aligned.",
-    method1Title: "Diagnose the operation",
+      "Business context, architecture, and delivery are handled as one continuous system.",
+    method1Title: "Map the operation",
     method1Text:
-      "We map the workflow, bottlenecks, dependencies, stakeholders, and business risk before choosing the build path.",
+      "We define constraints, bottlenecks, stakeholders, and operating risk before committing to scope.",
     method2Title: "Design the system",
     method2Text:
-      "Architecture, interfaces, automation logic, and delivery scope are defined around real operating constraints.",
-    method3Title: "Ship in controlled increments",
+      "Product structure, interfaces, automation logic, and architecture are aligned around the workflow.",
+    method3Title: "Ship in increments",
     method3Text:
-      "Two-week releases, visible priorities, and feedback loops keep progress tangible without losing technical rigor.",
+      "Two-week releases and clear priorities keep progress visible while preserving rigor.",
     method4Title: "Stabilize and evolve",
     method4Text:
-      "After go-live, we optimize performance, add automation, and keep the product aligned with changing operations.",
-    stackEyebrow: "Technologies",
-    stackTitleHtml: 'A pragmatic stack for <span>high-stakes delivery</span>',
+      "After launch, we continue improving performance, automation depth, and operational fit.",
+    stackEyebrow: "Stack",
+    stackTitleHtml: 'Technologies chosen for <span>reliability and speed</span>',
     stackSub:
-      "We choose technologies for reliability, speed, and maintainability, not for trend-chasing.",
+      "The goal is a stack that can be maintained, scaled, and evolved under real business pressure.",
     stack1Title: "Applications & APIs",
     stack1Text:
-      "Modern web applications, internal systems, integrations, and API layers for operational throughput.",
+      "Modern applications, internal platforms, and API layers built around operational throughput.",
     stack2Title: "Data, AI & Automation",
     stack2Text:
       "Retrieval systems, agents, orchestration logic, automation pipelines, and operational analytics.",
     stack3Title: "Cloud & Delivery",
     stack3Text:
-      "Cloudflare, CI/CD, observability, performance controls, and security practices for production environments.",
-    modelEyebrow: "Engagement models",
-    modelTitleHtml: 'Work with UNIA as a <span>partner, not a vendor</span>',
-    modelSub:
-      "We structure delivery based on the maturity of your product, your internal team, and the pace the operation demands.",
-    model1Eyebrow: "Model 01",
-    model1Title: "Software Partnership",
-    model1Text:
-      "A dedicated senior team to design, build, and evolve the product roadmap with shared priorities and measurable delivery.",
-    model2Eyebrow: "Model 02",
-    model2Title: "Embedded Factory",
-    model2Text:
-      "Senior engineering and product capacity embedded into your operation to modernize systems, automate workflows, and sustain execution.",
+      "Cloudflare, CI/CD, observability, performance control, and security practices for production systems.",
     ctaEyebrow: "Start the build",
-    ctaTitleHtml: 'Let’s turn operational complexity into <span>software leverage</span>',
+    ctaTitleHtml: 'Turn operational complexity into <span>software leverage</span>',
     ctaText:
-      "We can start with discovery, architecture review, automation opportunities, or a phased build roadmap.",
+      "We can start with discovery, architecture review, automation opportunities, or a phased execution roadmap.",
     contactEmailCta: "Email UNIA",
     contactLinkedinCta: "Connect on LinkedIn",
     contactWebsiteCta: "Visit unia.cl",
@@ -165,36 +147,36 @@ const translations = {
     menuOpenLabel: "Abrir navegación",
     brandSub: "Fábrica de Software",
     navServices: "Capacidades",
-    navSuccessCases: "Resultados",
-    navMethodology: "Ejecución",
-    navStack: "Tecnologías",
+    navSuccessCases: "Modelo factory",
+    navMethodology: "Proceso",
+    navStack: "Stack",
     navBookCall: "Agenda una llamada",
     heroEyebrow: "Software Factory · Sistemas de IA · Automatización",
-    heroTitleHtml: 'Software de nivel infraestructura para <span>operaciones que necesitan moverse rápido</span>',
+    heroTitleHtml: 'Infraestructura de software para <span>operaciones complejas en movimiento</span>',
     heroText:
-      "UNIA diseña, construye y escala plataformas a medida, sistemas de IA y capas de automatización para empresas con complejidad operativa real.",
+      "UNIA diseña y entrega plataformas a medida, sistemas de IA y capas de automatización para equipos que necesitan más control, más velocidad de ejecución y software sobre el que realmente puedan crecer.",
     heroPrimaryCta: "Agenda una llamada de discovery",
     heroSecondaryCta: "Explora capacidades",
     heroStat1Value: "2 semanas",
-    heroStat1Label: "cadencia de sprint",
+    heroStat1Label: "cadencia de entrega",
     heroStat2Value: "Multi-región",
     heroStat2Label: "Chile, Ecuador, Serbia, Europa",
     heroStat3Value: "IA aplicada",
     heroStat3Label: "agentes, RAG, automatizaciones",
-    heroPanelEyebrow: "Capa de ejecución",
-    heroPanelTitle: "Del diagnóstico del negocio a sistemas en producción",
-    heroCard1Eyebrow: "Arquitectura",
-    heroCard1Title: "Plataformas construidas sobre workflows reales",
+    heroPanelEyebrow: "Factory en producción",
+    heroPanelTitle: "Diseñado para centralizar workflows, decisiones y delivery",
+    heroCard1Eyebrow: "Plataformas",
+    heroCard1Value: "Sistemas a medida",
     heroCard1Text:
-      "Sistemas internos, productos para clientes e integraciones diseñadas alrededor de throughput, control y escalabilidad.",
-    heroCard2Eyebrow: "Operación con IA",
-    heroCard2Title: "Agentes que asisten, enrutan y disparan acción",
+      "Herramientas internas, portales para clientes, APIs y capas de producto definidas alrededor del throughput real del negocio.",
+    heroCard2Eyebrow: "Sistemas de IA",
+    heroCard2Value: "Asistir + enrutar + accionar",
     heroCard2Text:
-      "Copilotos, capas RAG y automatizaciones conectadas con las herramientas de las que ya depende tu equipo.",
-    heroCard3Eyebrow: "Confiabilidad",
-    heroCard3Title: "Disciplina de entrega para operaciones serias",
+      "Retrieval, copilotos y agentes embebidos en la operación en lugar de vivir como experimentos aislados.",
+    heroCard3Eyebrow: "Cloud delivery",
+    heroCard3Value: "Releases confiables",
     heroCard3Text:
-      "CI/CD, observabilidad, control de releases y decisiones cloud para proteger uptime y velocidad de ejecución.",
+      "CI/CD, observabilidad, control de releases y decisiones de infraestructura para proteger velocidad y estabilidad al mismo tiempo.",
     heroStrip1: "Arquitectura primero",
     heroStrip2: "Ejecución senior",
     heroStrip3: "Escala operativa",
@@ -202,102 +184,84 @@ const translations = {
     clientsSub:
       "Equipos de finanzas, comercio, operaciones y servicios profesionales confían en UNIA para construir, automatizar y evolucionar software crítico.",
     servicesEyebrow: "Capacidades",
-    servicesTitleHtml: 'Una software factory diseñada para <span>operaciones complejas</span>',
+    servicesTitleHtml: 'Una software factory construida alrededor de la <span>calidad de ejecución</span>',
     servicesSub:
-      "Combinamos visión de producto, ingeniería, IA y gobierno de delivery para convertir workflows fragmentados en sistemas duraderos.",
-    service1Eyebrow: "01 Ingeniería de plataforma",
-    service1Title: "Software a medida que se convierte en infraestructura operativa",
+      "No vendemos features aisladas. Diseñamos sistemas que mejoran cómo opera, decide y escala el negocio.",
+    service1Eyebrow: "Plataformas a medida",
+    service1Title: "Plataformas y sistemas internos que se convierten en la capa operativa",
     service1Text:
-      "Apps web, portales, sistemas internos y APIs que centralizan las partes del negocio que no puedes seguir operando manualmente.",
-    service2Eyebrow: "02 Sistemas de IA",
-    service2Title: "IA aplicada que asiste equipos y acelera decisiones",
+      "Cuando planillas, correos y herramientas desconectadas empiezan a frenar el negocio, las reemplazamos con software diseñado alrededor de workflows reales.",
+    service1Point1: "Portales para clientes y dashboards internos",
+    service1Point2: "APIs e integraciones específicas del proceso",
+    service1Point3: "Productos construidos para trazabilidad operativa",
+    service1Aside:
+      "Útil cuando el negocio necesita una sola fuente de verdad en lugar de más coordinación manual.",
+    service2Eyebrow: "Sistemas de IA",
+    service2Title: "IA aplicada que asiste equipos y activa el siguiente paso",
     service2Text:
-      "Copilotos, sistemas de recuperación y agentes que entienden contexto, entregan conocimiento y activan la siguiente acción con control.",
-    service3Eyebrow: "03 Automatización de workflows",
-    service3Title: "Capas de automatización que quitan fricción entre áreas",
+      "Implementamos copilotos, sistemas de retrieval y agentes que viven dentro del flujo operativo en lugar de sentarse fuera del trabajo.",
+    service2Point1: "RAG y recuperación de conocimiento para equipos internos",
+    service2Point2: "Agentes conectados a herramientas, datos y reglas de acción",
+    service2Point3: "Soporte a decisiones para tareas repetitivas de alto volumen",
+    service2Aside:
+      "Útil cuando los equipos necesitan más throughput sin sumar más routing humano ni cambios de contexto.",
+    service3Eyebrow: "Automatización y cloud delivery",
+    service3Title: "Automatización, control de releases y confiabilidad cloud en una misma capa",
     service3Text:
-      "Flujos conectados para finanzas, soporte, comercio, reportes y back office sin sumar más sobrecarga de coordinación.",
-    service4Eyebrow: "04 Cloud y delivery",
-    service4Title: "Release, confiabilidad y escala integrados al stack",
-    service4Text:
-      "Arquitectura cloud, CI/CD, observabilidad y prácticas de seguridad para mantener velocidad de ejecución sin comprometer estabilidad.",
-    solutionsEyebrow: "Resultados",
-    solutionsTitleHtml: 'Lo que UNIA incorpora en tu <span>modelo operativo</span>',
+      "Conectamos lógica de negocio, orquestación, CI/CD, observabilidad y decisiones de infraestructura para que el producto avance más rápido sin romper la confianza operativa.",
+    service3Point1: "Automatización de workflows entre áreas",
+    service3Point2: "Arquitectura cloud y gobierno de release",
+    service3Point3: "Monitoreo y soporte operativo después del lanzamiento",
+    service3Aside:
+      "Útil cuando el crecimiento ya no está limitado por ideas, sino por fricción de ejecución y delivery inestable.",
+    solutionsEyebrow: "Modelo factory",
+    solutionsTitleHtml: 'Trabaja con UNIA como <span>socio de construcción</span>',
     solutionsSub:
-      "La meta no es escribir más código. La meta es ganar control, ejecutar más rápido y construir una capa de software que acumule valor.",
-    outcome1Value: "Control",
-    outcome1Title: "Operaciones conectadas",
-    outcome1Text:
-      "Una sola capa de software para los workflows que hoy viven en planillas, correos y herramientas desconectadas.",
-    outcome2Value: "Velocidad",
-    outcome2Title: "Ciclos de decisión más rápidos",
-    outcome2Text:
-      "Menos espera entre inputs, aprobaciones y ejecución gracias a sistemas más claros y menor costo de coordinación.",
-    outcome3Value: "Leverage",
-    outcome3Title: "IA donde realmente importa",
-    outcome3Text:
-      "Recuperación de conocimiento, enrutamiento de tareas y lógica de acción embebidas en procesos operativos reales.",
-    outcome4Value: "Confiabilidad",
-    outcome4Title: "Disciplina productiva desde el día uno",
-    outcome4Text:
-      "Preparación para release, monitoreo y decisiones de arquitectura que soportan escala en lugar de reaccionar tarde.",
-    spotlight1Eyebrow: "Operaciones financieras",
-    spotlight1Title: "Flujos de impuestos, tesorería y control interno",
-    spotlight1Text:
-      "Sistemas que reducen handoffs, mejoran trazabilidad y soportan equipos que trabajan con lógica operativa sensible.",
-    spotlight2Eyebrow: "Operaciones comerciales",
-    spotlight2Title: "Commerce, suscripciones y workflows de servicio",
-    spotlight2Text:
-      "Experiencias y automatizaciones que ayudan a los equipos de ingresos a moverse más rápido sin perder visibilidad del funnel.",
-    spotlight3Eyebrow: "Plataformas internas",
-    spotlight3Title: "Dashboards, APIs y capas de orquestación",
-    spotlight3Text:
-      "El tejido conectivo entre producto, datos y operaciones cuando el negocio supera las herramientas estándar.",
-    methodologyEyebrow: "Ejecución",
-    methodologyTitleHtml: 'Del diagnóstico a <span>producción</span>',
-    methodologySub:
-      "UNIA trabaja con una secuencia disciplinada para mantener alineados el contexto de negocio, la arquitectura y la entrega.",
-    method1Title: "Diagnosticar la operación",
-    method1Text:
-      "Mapeamos workflow, cuellos de botella, dependencias, stakeholders y riesgo de negocio antes de definir la ruta de construcción.",
-    method2Title: "Diseñar el sistema",
-    method2Text:
-      "Arquitectura, interfaces, lógica de automatización y alcance de delivery se definen sobre restricciones operativas reales.",
-    method3Title: "Entregar en incrementos controlados",
-    method3Text:
-      "Releases de dos semanas, prioridades visibles y ciclos de feedback hacen tangible el progreso sin perder rigor técnico.",
-    method4Title: "Estabilizar y evolucionar",
-    method4Text:
-      "Después del go-live optimizamos performance, agregamos automatización y mantenemos el producto alineado a la operación cambiante.",
-    stackEyebrow: "Tecnologías",
-    stackTitleHtml: 'Un stack pragmático para <span>delivery de alto impacto</span>',
-    stackSub:
-      "Elegimos tecnologías por confiabilidad, velocidad y mantenibilidad, no por tendencia.",
-    stack1Title: "Aplicaciones y APIs",
-    stack1Text:
-      "Aplicaciones web modernas, sistemas internos, integraciones y capas API para throughput operativo.",
-    stack2Title: "Datos, IA y Automatización",
-    stack2Text:
-      "Sistemas de recuperación, agentes, lógica de orquestación, pipelines de automatización y analítica operativa.",
-    stack3Title: "Cloud y delivery",
-    stack3Text:
-      "Cloudflare, CI/CD, observabilidad, control de performance y prácticas de seguridad para entornos productivos.",
-    modelEyebrow: "Modelos de trabajo",
-    modelTitleHtml: 'Trabaja con UNIA como <span>socio, no como proveedor</span>',
-    modelSub:
-      "Estructuramos la entrega según la madurez del producto, el equipo interno y el ritmo que exige la operación.",
+      "Nos adaptamos al estado del producto, al equipo interno y a la urgencia operativa. La estructura cambia, el estándar de ejecución no.",
     model1Eyebrow: "Modelo 01",
     model1Title: "Software Partnership",
     model1Text:
-      "Un equipo senior dedicado para diseñar, construir y evolucionar el roadmap con prioridades compartidas y entregables medibles.",
+      "Un equipo senior dedicado para diseñar, construir y evolucionar software core con roadmap compartido y ritmo de entrega controlado.",
     model2Eyebrow: "Modelo 02",
     model2Title: "Embedded Factory",
     model2Text:
-      "Capacidad senior de ingeniería y producto integrada a tu operación para modernizar sistemas, automatizar workflows y sostener ejecución.",
+      "Capacidad senior de producto e ingeniería integrada a tu operación para modernizar sistemas, automatizar flujos y elevar throughput.",
+    modelNoteTitle: "El objetivo",
+    modelNoteText:
+      "Reducir fricción de coordinación, centralizar workflows críticos y dejar al equipo con apalancamiento de software que siga acumulando valor.",
+    methodologyEyebrow: "Proceso",
+    methodologyTitleHtml: 'Del diagnóstico a la <span>disciplina productiva</span>',
+    methodologySub:
+      "El contexto de negocio, la arquitectura y la entrega se manejan como un solo sistema continuo.",
+    method1Title: "Mapear la operación",
+    method1Text:
+      "Definimos restricciones, cuellos de botella, stakeholders y riesgo operativo antes de cerrar alcance.",
+    method2Title: "Diseñar el sistema",
+    method2Text:
+      "La estructura del producto, interfaces, lógica de automatización y arquitectura se alinean alrededor del workflow.",
+    method3Title: "Entregar en incrementos",
+    method3Text:
+      "Releases quincenales y prioridades claras mantienen el progreso visible sin perder rigor.",
+    method4Title: "Estabilizar y evolucionar",
+    method4Text:
+      "Después del lanzamiento seguimos mejorando performance, profundidad de automatización y encaje operativo.",
+    stackEyebrow: "Stack",
+    stackTitleHtml: 'Tecnologías elegidas por <span>confiabilidad y velocidad</span>',
+    stackSub:
+      "La meta es un stack que pueda mantenerse, escalar y evolucionar bajo presión real de negocio.",
+    stack1Title: "Aplicaciones y APIs",
+    stack1Text:
+      "Aplicaciones modernas, plataformas internas y capas API construidas para throughput operativo.",
+    stack2Title: "Datos, IA y Automatización",
+    stack2Text:
+      "Retrieval, agentes, lógica de orquestación, pipelines de automatización y analítica operativa.",
+    stack3Title: "Cloud y Delivery",
+    stack3Text:
+      "Cloudflare, CI/CD, observabilidad, control de performance y prácticas de seguridad para sistemas productivos.",
     ctaEyebrow: "Empecemos",
-    ctaTitleHtml: 'Convirtamos la complejidad operativa en <span>apalancamiento de software</span>',
+    ctaTitleHtml: 'Convierte la complejidad operativa en <span>apalancamiento de software</span>',
     ctaText:
-      "Podemos comenzar con discovery, revisión de arquitectura, oportunidades de automatización o un roadmap de construcción por fases.",
+      "Podemos comenzar con discovery, revisión de arquitectura, oportunidades de automatización o un roadmap de ejecución por fases.",
     contactEmailCta: "Escríbenos",
     contactLinkedinCta: "Conecta por LinkedIn",
     contactWebsiteCta: "Visita unia.cl",
@@ -306,151 +270,131 @@ const translations = {
   sr: {
     metaTitle: "UNIA Software Factory | Softver, AI i Automatizacija za Ozbiljne Operacije",
     metaDescription:
-      "UNIA Software Factory dizajnira prilagođene platforme, AI sisteme i automatizaciju za timove koji skaliraju kompleksne operacije u Cileu, Ekvadoru, Srbiji i Evropi.",
+      "UNIA Software Factory dizajnira prilagođene platforme, AI sisteme i automatizaciju za timove koji skaliraju kompleksne operacije u Čileu, Ekvadoru, Srbiji i Evropi.",
     menuOpenLabel: "Otvori navigaciju",
     brandSub: "Softverska Fabrika",
     navServices: "Mogućnosti",
-    navSuccessCases: "Rezultati",
-    navMethodology: "Izvršenje",
-    navStack: "Tehnologije",
+    navSuccessCases: "Factory model",
+    navMethodology: "Proces",
+    navStack: "Stack",
     navBookCall: "Zakaži poziv",
     heroEyebrow: "Softverska Fabrika · AI Sistemi · Automatizacija",
-    heroTitleHtml: 'Softver infrastrukturnog nivoa za <span>operacije koje moraju da se kreću brzo</span>',
+    heroTitleHtml: 'Softverska infrastruktura za <span>kompleksne operacije u pokretu</span>',
     heroText:
-      "UNIA dizajnira, razvija i skalira prilagođene platforme, AI sisteme i slojeve automatizacije za kompanije sa stvarnom operativnom kompleksnošću.",
+      "UNIA dizajnira i isporučuje prilagođene platforme, AI sisteme i slojeve automatizacije za timove kojima je potrebno više kontrole, više brzine izvršenja i softver na kome zaista mogu da rastu.",
     heroPrimaryCta: "Zakaži discovery poziv",
     heroSecondaryCta: "Pogledaj mogućnosti",
     heroStat1Value: "2 nedelje",
-    heroStat1Label: "ritam sprinta",
+    heroStat1Label: "ritam isporuke",
     heroStat2Value: "Više regiona",
     heroStat2Label: "Čile, Ekvador, Srbija, Evropa",
     heroStat3Value: "Primenjena AI",
     heroStat3Label: "agenti, RAG, automatizacije",
-    heroPanelEyebrow: "Sloj izvršenja",
-    heroPanelTitle: "Od poslovne dijagnoze do produkcionih sistema",
-    heroCard1Eyebrow: "Arhitektura",
-    heroCard1Title: "Platforme izgrađene oko stvarnih tokova rada",
+    heroPanelEyebrow: "Factory u produkciji",
+    heroPanelTitle: "Napravljen da centralizuje tokove rada, odluke i delivery",
+    heroCard1Eyebrow: "Platforme",
+    heroCard1Value: "Prilagođeni sistemi",
     heroCard1Text:
-      "Interni sistemi, proizvodi za klijente i integracije dizajnirani oko throughput-a, kontrole i skaliranja.",
-    heroCard2Eyebrow: "AI operacije",
-    heroCard2Title: "Agenti koji pomažu, usmeravaju i pokreću akciju",
+      "Interni alati, portali za klijente, API-ji i produkt slojevi oblikovani oko stvarnog poslovnog throughput-a.",
+    heroCard2Eyebrow: "AI sistemi",
+    heroCard2Value: "Pomoć + rutiranje + akcija",
     heroCard2Text:
-      "AI kopiloti, RAG slojevi i automatizacije povezane sa alatima od kojih vaš tim već zavisi.",
-    heroCard3Eyebrow: "Pouzdanost",
-    heroCard3Title: "Disciplina isporuke za ozbiljne operacije",
+      "Retrieval, kopiloti i agenti ugrađeni u operacije umesto da žive kao izolovani eksperimenti.",
+    heroCard3Eyebrow: "Cloud delivery",
+    heroCard3Value: "Pouzdani release-i",
     heroCard3Text:
-      "CI/CD, observability, kontrola release-a i cloud odluke koje štite uptime i brzinu izvršenja.",
+      "CI/CD, observability, kontrola release-a i infrastrukturne odluke koje zajedno štite brzinu i stabilnost.",
     heroStrip1: "Arhitektura na prvom mestu",
     heroStrip2: "Senior izvršenje",
     heroStrip3: "Operativno skaliranje",
     clientsEyebrow: "Odabrani klijenti",
     clientsSub:
-      "Timovi iz finansija, komerca, operacija i profesionalnih usluga veruju UNIA timu za izradu, automatizaciju i evoluciju kritičnog softvera.",
+      "Timovi iz finansija, komerca, operacija i profesionalnih usluga veruju UNIA timu za razvoj, automatizaciju i evoluciju kritičnog softvera.",
     servicesEyebrow: "Mogućnosti",
-    servicesTitleHtml: 'Softverska fabrika oblikovana za <span>kompleksne operacije</span>',
+    servicesTitleHtml: 'Softverska fabrika izgrađena oko <span>kvaliteta izvršenja</span>',
     servicesSub:
-      "Spajamo product pristup, inženjering, AI i delivery upravljanje kako bismo fragmentirane tokove pretvorili u trajne sisteme.",
-    service1Eyebrow: "01 Inženjering platforme",
-    service1Title: "Prilagođeni softver koji postaje operativna infrastruktura",
+      "Ne prodajemo izolovane feature-e. Dizajniramo sisteme koji unapređuju način na koji poslovanje funkcioniše, odlučuje i skalira.",
+    service1Eyebrow: "Prilagođene platforme",
+    service1Title: "Platforme i interni sistemi koji postaju operativni sloj",
     service1Text:
-      "Web aplikacije, portali, interni sistemi i API slojevi koji centralizuju delove poslovanja koje više ne smete voditi ručno.",
-    service2Eyebrow: "02 AI sistemi",
-    service2Title: "Primenjena AI koja pomaže timovima i ubrzava odluke",
+      "Kada tabele, inbox-i i nepovezani alati počnu da usporavaju poslovanje, zamenjujemo ih softverom oblikovanim oko stvarnih tokova rada.",
+    service1Point1: "Klijentski portali i interni dashboard-i",
+    service1Point2: "API-ji i integracije specifične za proces",
+    service1Point3: "Proizvodi građeni za operativnu sledljivost",
+    service1Aside:
+      "Korisno kada poslovanju treba jedan izvor istine umesto više ručne koordinacije.",
+    service2Eyebrow: "AI sistemi",
+    service2Title: "Primenjena AI koja pomaže timovima i aktivira sledeći korak",
     service2Text:
-      "Kopiloti, sistemi za pretragu znanja i agenti koji razumeju kontekst, iznose informacije i pokreću sledeću akciju uz kontrolu.",
-    service3Eyebrow: "03 Automatizacija tokova rada",
-    service3Title: "Slojevi automatizacije koji uklanjaju trenje između timova",
+      "Implementiramo kopilote, retrieval sisteme i agente koji žive unutar operativnog toka umesto da sede izvan rada.",
+    service2Point1: "RAG i pretraga znanja za interne timove",
+    service2Point2: "Agenti povezani sa alatima, podacima i pravilima akcije",
+    service2Point3: "Podrška odlučivanju za repetitivne zadatke velikog obima",
+    service2Aside:
+      "Korisno kada timovima treba veći throughput bez dodatnog ljudskog rutiranja i prebacivanja konteksta.",
+    service3Eyebrow: "Automatizacija i cloud delivery",
+    service3Title: "Automatizacija, kontrola release-a i cloud pouzdanost u istom sloju",
     service3Text:
-      "Povezani tokovi za finansije, podršku, komercu, izveštavanje i back-office bez dodatnog troška koordinacije.",
-    service4Eyebrow: "04 Cloud i delivery",
-    service4Title: "Release, pouzdanost i skaliranje ugrađeni u stack",
-    service4Text:
-      "Cloud arhitektura, CI/CD, observability i bezbednosne prakse koje održavaju brzinu izvršenja bez žrtvovanja stabilnosti.",
-    solutionsEyebrow: "Rezultati",
-    solutionsTitleHtml: 'Šta UNIA ugrađuje u vaš <span>operativni model</span>',
+      "Povezujemo poslovnu logiku, orkestraciju, CI/CD, observability i infrastrukturne odluke kako bi proizvod napredovao brže bez gubitka poverenja.",
+    service3Point1: "Automatizacija tokova između timova",
+    service3Point2: "Cloud arhitektura i release governance",
+    service3Point3: "Monitoring i operativna podrška nakon lansiranja",
+    service3Aside:
+      "Korisno kada rast više nije ograničen idejama, već trenjem izvršenja i nestabilnom isporukom.",
+    solutionsEyebrow: "Factory model",
+    solutionsTitleHtml: 'Radite sa UNIA timom kao <span>partnerom za izgradnju</span>',
     solutionsSub:
-      "Cilj nije više koda. Cilj je više kontrole, brže izvršenje i softverski sloj koji vremenom stvara dodatnu vrednost.",
-    outcome1Value: "Kontrola",
-    outcome1Title: "Povezane operacije",
-    outcome1Text:
-      "Jedan softverski sloj preko tokova koji danas žive u tabelama, inboxima i nepovezanim alatima.",
-    outcome2Value: "Brzina",
-    outcome2Title: "Brži ciklusi odlučivanja",
-    outcome2Text:
-      "Manje čekanja između inputa, odobrenja i izvršenja zahvaljujući jasnijim sistemima i nižem trošku koordinacije.",
-    outcome3Value: "Leverage",
-    outcome3Title: "AI tamo gde zaista pravi razliku",
-    outcome3Text:
-      "Pretraga znanja, rutiranje zadataka i logika akcije ugrađeni u stvarne operativne procese.",
-    outcome4Value: "Pouzdanost",
-    outcome4Title: "Produktivna disciplina od prvog dana",
-    outcome4Text:
-      "Release spremnost, monitoring i arhitektonske odluke koje podržavaju skaliranje umesto kasnog reagovanja.",
-    spotlight1Eyebrow: "Finansijske operacije",
-    spotlight1Title: "Porezi, treasury i interni kontrolni tokovi",
-    spotlight1Text:
-      "Sistemi koji smanjuju handoff-e, poboljšavaju sledljivost i podržavaju timove koji rade sa osetljivom operativnom logikom.",
-    spotlight2Eyebrow: "Komercijalne operacije",
-    spotlight2Title: "Komerca, pretplate i servisni tokovi rada",
-    spotlight2Text:
-      "Iskustva i automatizacije koje revenue timovima pomažu da se kreću brže bez gubitka vidljivosti kroz funnel.",
-    spotlight3Eyebrow: "Interne platforme",
-    spotlight3Title: "Dashboard-i, API-ji i orkestracioni slojevi",
-    spotlight3Text:
-      "Vezivno tkivo između proizvoda, podataka i operacija kada poslovanje preraste gotove alate.",
-    methodologyEyebrow: "Izvršenje",
-    methodologyTitleHtml: 'Od dijagnoze do <span>produkcije</span>',
-    methodologySub:
-      "UNIA radi kroz disciplinovan sled kako bi poslovni kontekst, arhitektura i isporuka ostali usklađeni.",
-    method1Title: "Dijagnostikovati operaciju",
-    method1Text:
-      "Mapiramo tok rada, uska grla, zavisnosti, stakeholder-e i poslovni rizik pre nego što odaberemo put izgradnje.",
-    method2Title: "Dizajnirati sistem",
-    method2Text:
-      "Arhitektura, interfejsi, logika automatizacije i scope isporuke definišu se prema stvarnim operativnim ograničenjima.",
-    method3Title: "Isporučivati u kontrolisanim inkrementima",
-    method3Text:
-      "Dvonedeljni release-i, jasni prioriteti i feedback petlje čine napredak vidljivim bez gubitka tehničke rigoroznosti.",
-    method4Title: "Stabilizovati i razvijati",
-    method4Text:
-      "Posle go-live faze optimizujemo performanse, dodajemo automatizaciju i držimo proizvod usklađenim sa promenama u operacijama.",
-    stackEyebrow: "Tehnologije",
-    stackTitleHtml: 'Pragmatičan stack za <span>isporuku visokog uloga</span>',
-    stackSub:
-      "Tehnologije biramo zbog pouzdanosti, brzine i održavanja, a ne zbog trendova.",
-    stack1Title: "Aplikacije i API-ji",
-    stack1Text:
-      "Moderne web aplikacije, interni sistemi, integracije i API slojevi za operativni throughput.",
-    stack2Title: "Podaci, AI i automatizacija",
-    stack2Text:
-      "Sistemi za retrieval, agenti, orkestraciona logika, automatizacioni pipeline-i i operativna analitika.",
-    stack3Title: "Cloud i delivery",
-    stack3Text:
-      "Cloudflare, CI/CD, observability, kontrola performansi i bezbednosne prakse za produkciona okruženja.",
-    modelEyebrow: "Modeli saradnje",
-    modelTitleHtml: 'Radite sa UNIA timom kao <span>partnerom, ne vendorom</span>',
-    modelSub:
-      "Način isporuke prilagođavamo zrelosti proizvoda, internom timu i tempu koji operacija zahteva.",
+      "Prilagođavamo se fazi proizvoda, internom timu i operativnoj hitnosti. Struktura se menja, ali standard izvršenja ne.",
     model1Eyebrow: "Model 01",
     model1Title: "Software Partnership",
     model1Text:
-      "Posvećen senior tim za dizajn, razvoj i evoluciju roadmap-a uz zajedničke prioritete i merljivu isporuku.",
+      "Posvećen senior tim za dizajn, razvoj i evoluciju core softvera uz zajednički roadmap i kontrolisan ritam isporuke.",
     model2Eyebrow: "Model 02",
     model2Title: "Embedded Factory",
     model2Text:
-      "Senior inženjerski i product kapacitet ugrađen u vašu operaciju radi modernizacije sistema, automatizacije tokova i održavanja izvršenja.",
+      "Senior product i inženjerski kapacitet ugrađen u vašu operaciju radi modernizacije sistema, automatizacije tokova i povećanja throughput-a.",
+    modelNoteTitle: "Cilj",
+    modelNoteText:
+      "Smanjiti koordinaciono trenje, centralizovati kritične tokove rada i ostaviti timu softversku polugu koja nastavlja da stvara vrednost.",
+    methodologyEyebrow: "Proces",
+    methodologyTitleHtml: 'Od dijagnoze do <span>produkcione discipline</span>',
+    methodologySub:
+      "Poslovni kontekst, arhitektura i isporuka tretiraju se kao jedan kontinuirani sistem.",
+    method1Title: "Mapirati operaciju",
+    method1Text:
+      "Definišemo ograničenja, uska grla, stakeholder-e i operativni rizik pre zaključavanja scope-a.",
+    method2Title: "Dizajnirati sistem",
+    method2Text:
+      "Struktura proizvoda, interfejsi, logika automatizacije i arhitektura usklađuju se oko workflow-a.",
+    method3Title: "Isporučivati u inkrementima",
+    method3Text:
+      "Dvonedeljni release-i i jasni prioriteti čine napredak vidljivim uz očuvanje rigoroznosti.",
+    method4Title: "Stabilizovati i razvijati",
+    method4Text:
+      "Posle lansiranja nastavljamo da unapređujemo performanse, dubinu automatizacije i operativni fit.",
+    stackEyebrow: "Stack",
+    stackTitleHtml: 'Tehnologije izabrane zbog <span>pouzdanosti i brzine</span>',
+    stackSub:
+      "Cilj je stack koji može da se održava, skalira i razvija pod stvarnim poslovnim pritiskom.",
+    stack1Title: "Aplikacije i API-ji",
+    stack1Text:
+      "Moderne aplikacije, interne platforme i API slojevi izgrađeni za operativni throughput.",
+    stack2Title: "Podaci, AI i Automatizacija",
+    stack2Text:
+      "Retrieval sistemi, agenti, orkestraciona logika, automatizacioni pipeline-i i operativna analitika.",
+    stack3Title: "Cloud i Delivery",
+    stack3Text:
+      "Cloudflare, CI/CD, observability, kontrola performansi i bezbednosne prakse za produkcione sisteme.",
     ctaEyebrow: "Počnimo",
-    ctaTitleHtml: 'Pretvorimo operativnu kompleksnost u <span>softversku polugu</span>',
+    ctaTitleHtml: 'Pretvorite operativnu kompleksnost u <span>softversku polugu</span>',
     ctaText:
-      "Možemo krenuti od discovery-ja, pregleda arhitekture, AI i automatizacionih prilika ili faznog roadmap-a izgradnje.",
+      "Možemo početi discovery fazom, pregledom arhitekture, automatizacionim prilikama ili faznim roadmap-om izvršenja.",
     contactEmailCta: "Pišite nam",
     contactLinkedinCta: "Povežite se na LinkedIn-u",
     contactWebsiteCta: "Posetite unia.cl",
     footerTagline: "Softverska fabrika za prilagođene platforme, AI sisteme i automatizaciju",
   },
 };
-
-const hasKey = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
 
 const detectLanguage = () => {
   const normalize = (value) => {
@@ -463,17 +407,14 @@ const detectLanguage = () => {
   if (supportedLanguages.includes(langParam)) return langParam;
 
   const browserLanguages = Array.isArray(navigator.languages) ? navigator.languages : [];
-  const matchingLanguage = browserLanguages.find((candidate) =>
-    supportedLanguages.includes(normalize(candidate))
-  );
-  if (matchingLanguage) return normalize(matchingLanguage);
+  const browserMatch = browserLanguages.find((value) => supportedLanguages.includes(normalize(value)));
+  if (browserMatch) return normalize(browserMatch);
 
   const fallback = normalize(navigator.language || "");
   return supportedLanguages.includes(fallback) ? fallback : "en";
 };
 
 const activeLanguage = detectLanguage();
-const activeLocale = localeByLanguage[activeLanguage] || "en-US";
 const copy = translations[activeLanguage] || translations.en;
 
 const setMeta = (selector, value) => {
@@ -495,16 +436,16 @@ const applyLanguage = () => {
   setMeta('meta[name="twitter:description"]', copy.metaDescription);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const { i18n } = element.dataset;
-    if (i18n && hasKey(copy, i18n)) {
-      element.textContent = copy[i18n];
+    const key = element.dataset.i18n;
+    if (key && Object.prototype.hasOwnProperty.call(copy, key)) {
+      element.textContent = copy[key];
     }
   });
 
   document.querySelectorAll("[data-i18n-html]").forEach((element) => {
-    const { i18nHtml } = element.dataset;
-    if (i18nHtml && hasKey(copy, i18nHtml)) {
-      element.innerHTML = copy[i18nHtml];
+    const key = element.dataset.i18nHtml;
+    if (key && Object.prototype.hasOwnProperty.call(copy, key)) {
+      element.innerHTML = copy[key];
     }
   });
 
@@ -513,10 +454,11 @@ const applyLanguage = () => {
     menuButton.setAttribute("aria-label", copy.menuOpenLabel);
   }
 
-  const dateFormatter = new Intl.DateTimeFormat(activeLocale, {
-    year: "numeric",
-  });
-  document.documentElement.style.setProperty("--active-year", `"${dateFormatter.format(new Date())}"`);
+  const locale = localeByLanguage[activeLanguage] || "en-US";
+  document.documentElement.style.setProperty(
+    "--active-year",
+    `"${new Intl.DateTimeFormat(locale, { year: "numeric" }).format(new Date())}"`
+  );
 };
 
 applyLanguage();
@@ -545,13 +487,13 @@ if (menuButton && siteNav) {
 }
 
 const header = document.querySelector(".site-header");
-const updateHeaderState = () => {
+const syncHeader = () => {
   if (!header) return;
-  header.classList.toggle("is-scrolled", window.scrollY > 12);
+  header.classList.toggle("is-scrolled", window.scrollY > 10);
 };
 
-updateHeaderState();
-window.addEventListener("scroll", updateHeaderState, { passive: true });
+syncHeader();
+window.addEventListener("scroll", syncHeader, { passive: true });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
