@@ -1,4 +1,5 @@
 const supportedLanguages = ["en", "es", "sr"];
+
 const localeByLanguage = {
   en: "en-US",
   es: "es-ES",
@@ -13,494 +14,473 @@ const ogLocaleByLanguage = {
 
 const translations = {
   en: {
-    metaTitle: "UNIA Software Factory | Custom Software, AI, and Automation",
+    metaTitle: "UNIA Software Factory | High-Stakes Software, AI, and Automation",
     metaDescription:
-      "UNIA Software Factory builds custom software, AI agents, and workflow automation for teams scaling operations across Chile, Ecuador, Serbia, and Europe.",
-    menuOpenLabel: "Open menu",
+      "UNIA Software Factory designs custom platforms, AI systems, and automation for teams scaling complex operations across Chile, Ecuador, Serbia, and Europe.",
+    menuOpenLabel: "Open navigation",
     brandSub: "Software Factory",
-    navServices: "Services",
-    navSuccessCases: "Success Cases",
-    navMethodology: "Methodology",
-    navStack: "Stack",
-    navBookCall: "Book a discovery call",
-    heroEyebrow: "Development · AI · Automation",
-    heroTypewriter: "Software Factory to design, automate, and scale.",
+    navServices: "Capabilities",
+    navSuccessCases: "Outcomes",
+    navMethodology: "Execution",
+    navStack: "Technologies",
+    navBookCall: "Book a call",
+    heroEyebrow: "Software Factory · AI Systems · Automation",
+    heroTitleHtml: 'Infrastructure-grade software for <span>operators who need to move fast</span>',
     heroText:
-      "We design and build mission-critical software powered by applied AI. From discovery to production, we ship fast and focus on measurable business impact.",
+      "UNIA designs, builds, and scales custom platforms, AI systems, and automation layers for companies handling real operational complexity.",
     heroPrimaryCta: "Book a discovery call",
-    heroSecondaryCta: "Explore success cases",
-    floatingLeftTitle: "Cloud Ops",
-    floatingLeftValue: "30% lower OPEX",
-    floatingLeftText: "Automation powered by Celestia",
-    screenTopStatus: "Live",
-    kpiAutomation: "Automation",
-    kpiProductivity: "Productivity",
-    kpiSprint: "Sprint",
-    kpiSprintValue: "2 weeks",
-    roadmap1Html: "<span>Month 1</span> Discovery + Architecture",
-    roadmap2Html: "<span>Month 2</span> Core product + Integrations",
-    roadmap3Html: "<span>Month 3</span> QA + Deploy + Scale-up",
-    floatingRightValue: "50% less manual effort",
-    floatingRightText: "End-to-end tax operations",
-    clientsEyebrow: "Clients",
-    clientsTitle: "Teams we work with",
-    clientsSub: "Brands and products that trust UNIA to build, automate, and scale.",
-    servicesEyebrow: "Services",
-    servicesTitleHtml: 'Transform your operation into a <span class="grad-text">growth platform</span>',
+    heroSecondaryCta: "Explore capabilities",
+    heroStat1Value: "2-week",
+    heroStat1Label: "sprint cadence",
+    heroStat2Value: "Multi-region",
+    heroStat2Label: "Chile, Ecuador, Serbia, Europe",
+    heroStat3Value: "Applied AI",
+    heroStat3Label: "agents, RAG, automations",
+    heroPanelEyebrow: "Execution Layer",
+    heroPanelTitle: "From business diagnosis to production systems",
+    heroCard1Eyebrow: "Architecture",
+    heroCard1Title: "Platforms built around real workflows",
+    heroCard1Text:
+      "Internal systems, client-facing products, and integrations designed around throughput, control, and scale.",
+    heroCard2Eyebrow: "AI Operations",
+    heroCard2Title: "Agents that assist, route, and trigger action",
+    heroCard2Text:
+      "AI copilots, RAG layers, and automations connected to the tools your team already depends on.",
+    heroCard3Eyebrow: "Reliability",
+    heroCard3Title: "Delivery discipline for serious operations",
+    heroCard3Text:
+      "CI/CD, observability, release control, and cloud decisions that protect uptime and execution speed.",
+    heroStrip1: "Architecture-first",
+    heroStrip2: "Senior execution",
+    heroStrip3: "Operational scale",
+    clientsEyebrow: "Selected clients",
+    clientsSub:
+      "Teams across finance, commerce, operations, and professional services trust UNIA to build, automate, and evolve critical software.",
+    servicesEyebrow: "Capabilities",
+    servicesTitleHtml: 'A software factory shaped for <span>complex operations</span>',
     servicesSub:
-      "We turn fragmented operations into revenue-ready systems: custom software, applied AI, and automation aligned to growth, control, and execution speed.",
-    service1Title: "Custom Software Engineering",
+      "We combine product thinking, engineering, AI, and delivery governance to turn fragmented workflows into durable systems.",
+    service1Eyebrow: "01 Platform engineering",
+    service1Title: "Custom software that becomes operational infrastructure",
     service1Text:
-      "We build platforms, internal systems, and APIs that centralize operations, remove bottlenecks, and give your team control over business-critical workflows.",
-    service1Step1Title: "Product Discovery",
-    service1Step1Text: "Business mapping, scope, and architecture definition",
-    service1Step1Time: "Week 1",
-    service1Step2Title: "Build & Integrate",
-    service1Step2Text: "Frontend, backend, APIs, and mission-critical modules",
-    service1Step2Time: "Weeks 2-8",
-    service1Step3Title: "Release & Scale",
-    service1Step3Text: "Production deployment, monitoring, and product evolution",
-    service1Step3Time: "Continuous",
-    service2Title: "AI, Agents, and Workflow Automation",
+      "Web apps, portals, internal systems, and APIs that centralize the parts of the business you cannot afford to run manually.",
+    service2Eyebrow: "02 AI systems",
+    service2Title: "Applied AI that assists teams and accelerates decisions",
     service2Text:
-      "We deploy AI copilots, RAG layers, and task agents that read context, trigger actions, and automate repetitive decisions across your core tools.",
-    service2Pipeline: "Automation Pipeline",
-    service2Layers: "3 layers",
-    service2UpsellTitle: "Deploy AI Agent",
-    service2UpsellText: "Knowledge + tool integrations + action rules",
-    service2Deploy: "Deploy",
-    service3Title: "Cloud, DevOps, and Reliability",
+      "Copilots, retrieval systems, and agents that read context, surface knowledge, and trigger the next action with control.",
+    service3Eyebrow: "03 Workflow automation",
+    service3Title: "Automation layers that remove drag across departments",
     service3Text:
-      "We design cloud architecture, CI/CD, observability, and recovery flows so your product can scale without sacrificing stability, security, or delivery speed.",
-    chartLabel: "Platform Reliability Snapshot",
-    chartTotal: "99.95% Uptime",
-    chartDelta: "SLA trend in real time",
-    monthJan: "JAN",
-    monthFeb: "FEB",
-    monthMar: "MAR",
-    monthApr: "APR",
-    monthMay: "MAY",
-    monthJun: "JUN",
-    solutionsEyebrow: "Success Cases",
-    solutionsTitleHtml: 'Solutions designed to <span class="grad-text">help you scale</span>',
+      "Connected flows for finance, support, commerce, reporting, and back-office operations without adding more coordination overhead.",
+    service4Eyebrow: "04 Cloud and delivery",
+    service4Title: "Release, reliability, and scale built into the stack",
+    service4Text:
+      "Cloud architecture, CI/CD, observability, and security practices that keep execution fast without compromising stability.",
+    solutionsEyebrow: "Outcomes",
+    solutionsTitleHtml: 'What UNIA builds into your <span>operating model</span>',
     solutionsSub:
-      "Each solution combines product thinking, architecture, and automation to solve real operational and growth bottlenecks.",
-    case1Lead: "New subscriber onboarded",
-    case1Title: "Build Monthly Recurring Revenue",
-    case1Text:
-      "Convert one-time customers into loyal subscribers with traceable onboarding and retention automations across your enterprise workflows.",
-    case2Title: "Real-Time Revenue Insights",
-    case2Text:
-      "Track cloud performance, operating margins, and growth trends from one live dashboard powered by Celestia.",
-    case3Fail1: "Payment failed · $99.9",
-    case3Fail2: "Payment failed · $149.9",
-    case3Band: "UNIA Pay Recovery",
-    case3Ok1: "Recovered payment · $60.0",
-    case3Ok2: "Recovered payment · $99.9",
-    case3Title: "Fewer Failed Payments",
-    case3Text:
-      "Smart retries, payment logic, and proactive alerts recover revenue automatically and keep your cash flow stable.",
-    case4Cart: "Your cart",
-    case4Items: "2 items",
-    case4Item1: "Tax advisory package",
-    case4Item2: "Cloud optimization report",
-    case4Upsell: "Add one more service for FREE onboarding",
-    case4Title: "2X Your Average Order Value",
-    case4Text:
-      "Increase value per account with built-in upsells and post-purchase automation across your operational service catalog.",
-    case5Title: "Less Busywork, More Growth",
-    case5Text:
-      "Connect all core systems in one layer and remove repetitive manual tasks so your team can focus on strategic growth.",
-    case6Badge: "Recurring Revenue Engine",
-    case6Title: "Skyrocket Profits With Monthly Recurring Revenue",
-    case6Text:
-      "Build predictable growth with retention-first workflows, recovery logic, and recurring monetization powered by your own platform.",
-    case6Cta: "Request a Demo",
-    methodologyEyebrow: "Methodology",
-    methodologyTitle: "Disciplined engineering, fast delivery",
-    method1Title: "Discovery and diagnosis",
-    method1Text: "We map processes, bottlenecks, and business objectives before writing production code.",
-    method2Title: "Solution design",
-    method2Text: "We define architecture, workflows, and release plans with controlled technical risk.",
-    method3Title: "Iterative development",
-    method3Text: "Two-week sprints with incremental delivery, feedback loops, and full traceability.",
-    method4Title: "QA and validation",
+      "The goal is not more code. The goal is more control, faster execution, and a software layer that compounds over time.",
+    outcome1Value: "Control",
+    outcome1Title: "Connected operations",
+    outcome1Text:
+      "One software layer across the workflows that currently live in spreadsheets, inboxes, and disconnected tools.",
+    outcome2Value: "Speed",
+    outcome2Title: "Faster decision cycles",
+    outcome2Text:
+      "Less waiting between inputs, approvals, and execution thanks to clearer systems and lower coordination cost.",
+    outcome3Value: "Leverage",
+    outcome3Title: "AI where it actually matters",
+    outcome3Text:
+      "Knowledge retrieval, task routing, and action logic embedded in real operational processes.",
+    outcome4Value: "Reliability",
+    outcome4Title: "Production discipline from day one",
+    outcome4Text:
+      "Release readiness, monitoring, and architecture decisions that support scale instead of reacting to it later.",
+    spotlight1Eyebrow: "Finance operations",
+    spotlight1Title: "Tax, treasury, and internal control flows",
+    spotlight1Text:
+      "Systems that reduce handoffs, improve traceability, and support teams working with sensitive operational logic.",
+    spotlight2Eyebrow: "Commercial operations",
+    spotlight2Title: "Commerce, subscriptions, and service workflows",
+    spotlight2Text:
+      "Experiences and automations that help revenue teams move faster without losing visibility across the funnel.",
+    spotlight3Eyebrow: "Internal platforms",
+    spotlight3Title: "Dashboards, APIs, and orchestration layers",
+    spotlight3Text:
+      "The connective tissue between product, data, and operations when the business outgrows off-the-shelf tools.",
+    methodologyEyebrow: "Execution",
+    methodologyTitleHtml: 'From diagnosis to <span>production</span>',
+    methodologySub:
+      "UNIA works with a disciplined sequence so business context, architecture, and delivery stay aligned.",
+    method1Title: "Diagnose the operation",
+    method1Text:
+      "We map the workflow, bottlenecks, dependencies, stakeholders, and business risk before choosing the build path.",
+    method2Title: "Design the system",
+    method2Text:
+      "Architecture, interfaces, automation logic, and delivery scope are defined around real operating constraints.",
+    method3Title: "Ship in controlled increments",
+    method3Text:
+      "Two-week releases, visible priorities, and feedback loops keep progress tangible without losing technical rigor.",
+    method4Title: "Stabilize and evolve",
     method4Text:
-      "Functional and technical testing in controlled environments with a clear definition of done.",
-    method5Title: "Implementation",
-    method5Text: "Production rollout with monitoring, release checklists, and stabilization support.",
-    method6Title: "Continuous evolution",
-    method6Text: "Ongoing optimization of product, AI, and processes to improve operational efficiency.",
+      "After go-live, we optimize performance, add automation, and keep the product aligned with changing operations.",
     stackEyebrow: "Technologies",
-    stackTitle: "Technologies we use to ship fast and scale safely",
+    stackTitleHtml: 'A pragmatic stack for <span>high-stakes delivery</span>',
     stackSub:
-      "Concrete tools, not generic promises: the stack we rely on to build products, automate operations, and keep critical systems running.",
+      "We choose technologies for reliability, speed, and maintainability, not for trend-chasing.",
     stack1Title: "Applications & APIs",
     stack1Text:
-      "Product interfaces, business logic, secure integrations, and internal platforms for day-to-day operations.",
+      "Modern web applications, internal systems, integrations, and API layers for operational throughput.",
     stack2Title: "Data, AI & Automation",
     stack2Text:
-      "Operational intelligence, AI orchestration, and automation layers connected to real workflows.",
+      "Retrieval systems, agents, orchestration logic, automation pipelines, and operational analytics.",
     stack3Title: "Cloud & Delivery",
     stack3Text:
-      "Release pipelines, runtime infrastructure, monitoring, and support for reliable scale.",
-    model1Eyebrow: "Model 1",
+      "Cloudflare, CI/CD, observability, performance controls, and security practices for production environments.",
+    modelEyebrow: "Engagement models",
+    modelTitleHtml: 'Work with UNIA as a <span>partner, not a vendor</span>',
+    modelSub:
+      "We structure delivery based on the maturity of your product, your internal team, and the pace the operation demands.",
+    model1Eyebrow: "Model 01",
     model1Title: "Software Partnership",
     model1Text:
-      "We design and build digital products with a dedicated team, a prioritized roadmap, and KPI-driven deliveries.",
-    model2Eyebrow: "Model 2",
-    model2Title: "In Situ Factory",
+      "A dedicated senior team to design, build, and evolve the product roadmap with shared priorities and measurable delivery.",
+    model2Eyebrow: "Model 02",
+    model2Title: "Embedded Factory",
     model2Text:
-      "Embedded senior talent inside your operation to evolve internal systems, automate workflows, and sustain performance.",
-    ctaEyebrow: "Ready to scale?",
-    ctaTitle: "Turn your operations into a competitive advantage",
-    ctaText: "Frictionless discovery: architecture assessment, AI opportunities, and a phased execution roadmap.",
-    contactEmailCta: "Email us",
-    contactLinkedinCta: "LinkedIn",
-    footerBrand: "UNIA Software Factory",
-    footerTagline: "Development · AI · Automation",
-    liveBarsUptimeSuffix: "Uptime",
-    liveBarsPointsVsBaseline: "pts vs baseline",
-    liveBarsVsBaseline: "vs baseline",
+      "Senior engineering and product capacity embedded into your operation to modernize systems, automate workflows, and sustain execution.",
+    ctaEyebrow: "Start the build",
+    ctaTitleHtml: 'Let’s turn operational complexity into <span>software leverage</span>',
+    ctaText:
+      "We can start with discovery, architecture review, automation opportunities, or a phased build roadmap.",
+    contactEmailCta: "Email UNIA",
+    contactLinkedinCta: "Connect on LinkedIn",
+    contactWebsiteCta: "Visit unia.cl",
+    footerTagline: "Software Factory for custom platforms, AI systems, and automation",
   },
   es: {
-    metaTitle: "UNIA Software Factory | Desarrollo, IA y Automatización",
+    metaTitle: "UNIA Software Factory | Software Crítico, IA y Automatización",
     metaDescription:
-      "UNIA Software Factory diseña software a medida, agentes de IA y automatización de flujos para operaciones que escalan en Chile, Ecuador, Serbia y Europa.",
-    menuOpenLabel: "Abrir menú",
+      "UNIA Software Factory diseña plataformas a medida, sistemas de IA y automatización para equipos que escalan operaciones complejas en Chile, Ecuador, Serbia y Europa.",
+    menuOpenLabel: "Abrir navegación",
     brandSub: "Fábrica de Software",
-    navServices: "Servicios",
-    navSuccessCases: "Casos de éxito",
-    navMethodology: "Metodología",
-    navStack: "Stack",
+    navServices: "Capacidades",
+    navSuccessCases: "Resultados",
+    navMethodology: "Ejecución",
+    navStack: "Tecnologías",
     navBookCall: "Agenda una llamada",
-    heroEyebrow: "Desarrollo · IA · Automatización",
-    heroTypewriter: "Software Factory para diseñar, automatizar y escalar.",
+    heroEyebrow: "Software Factory · Sistemas de IA · Automatización",
+    heroTitleHtml: 'Software de nivel infraestructura para <span>operaciones que necesitan moverse rápido</span>',
     heroText:
-      "Diseñamos y construimos software de misión crítica potenciado por IA aplicada. Desde el discovery hasta producción, entregamos rápido y con impacto de negocio medible.",
-    heroPrimaryCta: "Agenda una llamada",
-    heroSecondaryCta: "Explora casos de éxito",
-    floatingLeftTitle: "Cloud Ops",
-    floatingLeftValue: "30% menos OPEX",
-    floatingLeftText: "Automatización impulsada por Celestia",
-    screenTopStatus: "En vivo",
-    kpiAutomation: "Automatización",
-    kpiProductivity: "Productividad",
-    kpiSprint: "Sprint",
-    kpiSprintValue: "2 semanas",
-    roadmap1Html: "<span>Mes 1</span> Discovery + Arquitectura",
-    roadmap2Html: "<span>Mes 2</span> Producto core + Integraciones",
-    roadmap3Html: "<span>Mes 3</span> QA + Despliegue + Escalamiento",
-    floatingRightValue: "50% menos trabajo manual",
-    floatingRightText: "Operación tributaria end-to-end",
-    clientsEyebrow: "Clientes",
-    clientsTitle: "Equipos con los que trabajamos",
-    clientsSub: "Marcas y productos que confían en UNIA para construir, automatizar y escalar.",
-    servicesEyebrow: "Servicios",
-    servicesTitleHtml: 'Transforma tu operación en una <span class="grad-text">plataforma de crecimiento</span>',
+      "UNIA diseña, construye y escala plataformas a medida, sistemas de IA y capas de automatización para empresas con complejidad operativa real.",
+    heroPrimaryCta: "Agenda una llamada de discovery",
+    heroSecondaryCta: "Explora capacidades",
+    heroStat1Value: "2 semanas",
+    heroStat1Label: "cadencia de sprint",
+    heroStat2Value: "Multi-región",
+    heroStat2Label: "Chile, Ecuador, Serbia, Europa",
+    heroStat3Value: "IA aplicada",
+    heroStat3Label: "agentes, RAG, automatizaciones",
+    heroPanelEyebrow: "Capa de ejecución",
+    heroPanelTitle: "Del diagnóstico del negocio a sistemas en producción",
+    heroCard1Eyebrow: "Arquitectura",
+    heroCard1Title: "Plataformas construidas sobre workflows reales",
+    heroCard1Text:
+      "Sistemas internos, productos para clientes e integraciones diseñadas alrededor de throughput, control y escalabilidad.",
+    heroCard2Eyebrow: "Operación con IA",
+    heroCard2Title: "Agentes que asisten, enrutan y disparan acción",
+    heroCard2Text:
+      "Copilotos, capas RAG y automatizaciones conectadas con las herramientas de las que ya depende tu equipo.",
+    heroCard3Eyebrow: "Confiabilidad",
+    heroCard3Title: "Disciplina de entrega para operaciones serias",
+    heroCard3Text:
+      "CI/CD, observabilidad, control de releases y decisiones cloud para proteger uptime y velocidad de ejecución.",
+    heroStrip1: "Arquitectura primero",
+    heroStrip2: "Ejecución senior",
+    heroStrip3: "Escala operativa",
+    clientsEyebrow: "Clientes seleccionados",
+    clientsSub:
+      "Equipos de finanzas, comercio, operaciones y servicios profesionales confían en UNIA para construir, automatizar y evolucionar software crítico.",
+    servicesEyebrow: "Capacidades",
+    servicesTitleHtml: 'Una software factory diseñada para <span>operaciones complejas</span>',
     servicesSub:
-      "Convertimos operaciones fragmentadas en sistemas listos para crecer: software a medida, IA aplicada y automatización alineadas con ingresos, control y velocidad de ejecución.",
-    service1Title: "Ingeniería de Software a Medida",
+      "Combinamos visión de producto, ingeniería, IA y gobierno de delivery para convertir workflows fragmentados en sistemas duraderos.",
+    service1Eyebrow: "01 Ingeniería de plataforma",
+    service1Title: "Software a medida que se convierte en infraestructura operativa",
     service1Text:
-      "Construimos plataformas, sistemas internos y APIs que centralizan la operación, eliminan cuellos de botella y dan control sobre flujos críticos de negocio.",
-    service1Step1Title: "Descubrimiento del producto",
-    service1Step1Text: "Mapeo de negocio, alcance y definición de arquitectura",
-    service1Step1Time: "Semana 1",
-    service1Step2Title: "Construcción e integración",
-    service1Step2Text: "Frontend, backend, APIs y módulos de misión crítica",
-    service1Step2Time: "Semanas 2-8",
-    service1Step3Title: "Lanzamiento y escalado",
-    service1Step3Text: "Despliegue en producción, monitoreo y evolución del producto",
-    service1Step3Time: "Continuo",
-    service2Title: "IA, Agentes y Automatización de Flujos",
+      "Apps web, portales, sistemas internos y APIs que centralizan las partes del negocio que no puedes seguir operando manualmente.",
+    service2Eyebrow: "02 Sistemas de IA",
+    service2Title: "IA aplicada que asiste equipos y acelera decisiones",
     service2Text:
-      "Desplegamos copilotos de IA, capas RAG y agentes que entienden contexto, disparan acciones y automatizan decisiones repetitivas en tus herramientas core.",
-    service2Pipeline: "Pipeline de automatización",
-    service2Layers: "3 capas",
-    service2UpsellTitle: "Desplegar agente de IA",
-    service2UpsellText: "Conocimiento + integraciones + reglas de acción",
-    service2Deploy: "Desplegar",
-    service3Title: "Cloud, DevOps y Confiabilidad",
+      "Copilotos, sistemas de recuperación y agentes que entienden contexto, entregan conocimiento y activan la siguiente acción con control.",
+    service3Eyebrow: "03 Automatización de workflows",
+    service3Title: "Capas de automatización que quitan fricción entre áreas",
     service3Text:
-      "Diseñamos arquitectura cloud, CI/CD, observabilidad y flujos de recuperación para escalar sin sacrificar estabilidad, seguridad ni velocidad de entrega.",
-    chartLabel: "Panorama de confiabilidad de plataforma",
-    chartTotal: "99.95% disponibilidad",
-    chartDelta: "Tendencia de SLA en tiempo real",
-    monthJan: "ENE",
-    monthFeb: "FEB",
-    monthMar: "MAR",
-    monthApr: "ABR",
-    monthMay: "MAY",
-    monthJun: "JUN",
-    solutionsEyebrow: "Casos de éxito",
-    solutionsTitleHtml: 'Soluciones diseñadas para <span class="grad-text">escalar contigo</span>',
+      "Flujos conectados para finanzas, soporte, comercio, reportes y back office sin sumar más sobrecarga de coordinación.",
+    service4Eyebrow: "04 Cloud y delivery",
+    service4Title: "Release, confiabilidad y escala integrados al stack",
+    service4Text:
+      "Arquitectura cloud, CI/CD, observabilidad y prácticas de seguridad para mantener velocidad de ejecución sin comprometer estabilidad.",
+    solutionsEyebrow: "Resultados",
+    solutionsTitleHtml: 'Lo que UNIA incorpora en tu <span>modelo operativo</span>',
     solutionsSub:
-      "Cada solución combina visión de producto, arquitectura y automatización para resolver cuellos de botella operativos y de crecimiento.",
-    case1Lead: "Nuevo suscriptor incorporado",
-    case1Title: "Construye ingresos recurrentes mensuales",
-    case1Text:
-      "Convierte clientes de una sola compra en suscriptores leales con automatizaciones trazables de onboarding y retención.",
-    case2Title: "Insights de ingresos en tiempo real",
-    case2Text:
-      "Monitorea performance cloud, márgenes operativos y tendencias de crecimiento en un dashboard en vivo impulsado por Celestia.",
-    case3Fail1: "Pago fallido · $99.9",
-    case3Fail2: "Pago fallido · $149.9",
-    case3Band: "Recuperación UNIA Pay",
-    case3Ok1: "Pago recuperado · $60.0",
-    case3Ok2: "Pago recuperado · $99.9",
-    case3Title: "Menos pagos fallidos",
-    case3Text:
-      "Reintentos inteligentes, lógica de pagos y alertas proactivas recuperan ingresos automáticamente y estabilizan tu flujo de caja.",
-    case4Cart: "Tu carrito",
-    case4Items: "2 ítems",
-    case4Item1: "Paquete de asesoría tributaria",
-    case4Item2: "Reporte de optimización cloud",
-    case4Upsell: "Agrega un servicio más y obtén onboarding GRATIS",
-    case4Title: "Duplica tu ticket promedio",
-    case4Text:
-      "Aumenta el valor por cuenta con upsells integrados y automatización post-compra en tu catálogo de servicios.",
-    case5Title: "Menos tareas manuales, más crecimiento",
-    case5Text:
-      "Conecta tus sistemas críticos en una sola capa y elimina trabajo repetitivo para enfocar al equipo en crecimiento estratégico.",
-    case6Badge: "Motor de ingresos recurrentes",
-    case6Title: "Dispara las ganancias con ingresos recurrentes mensuales",
-    case6Text:
-      "Construye crecimiento predecible con flujos orientados a retención, lógica de recuperación y monetización recurrente.",
-    case6Cta: "Solicitar demo",
-    methodologyEyebrow: "Metodología",
-    methodologyTitle: "Ingeniería disciplinada, entrega rápida",
-    method1Title: "Discovery y diagnóstico",
-    method1Text: "Mapeamos procesos, cuellos de botella y objetivos de negocio antes de escribir código productivo.",
-    method2Title: "Diseño de solución",
-    method2Text: "Definimos arquitectura, workflows y plan de releases con riesgo técnico controlado.",
-    method3Title: "Desarrollo iterativo",
-    method3Text: "Sprints de dos semanas con entrega incremental, ciclos de feedback y trazabilidad completa.",
-    method4Title: "QA y validación",
+      "La meta no es escribir más código. La meta es ganar control, ejecutar más rápido y construir una capa de software que acumule valor.",
+    outcome1Value: "Control",
+    outcome1Title: "Operaciones conectadas",
+    outcome1Text:
+      "Una sola capa de software para los workflows que hoy viven en planillas, correos y herramientas desconectadas.",
+    outcome2Value: "Velocidad",
+    outcome2Title: "Ciclos de decisión más rápidos",
+    outcome2Text:
+      "Menos espera entre inputs, aprobaciones y ejecución gracias a sistemas más claros y menor costo de coordinación.",
+    outcome3Value: "Leverage",
+    outcome3Title: "IA donde realmente importa",
+    outcome3Text:
+      "Recuperación de conocimiento, enrutamiento de tareas y lógica de acción embebidas en procesos operativos reales.",
+    outcome4Value: "Confiabilidad",
+    outcome4Title: "Disciplina productiva desde el día uno",
+    outcome4Text:
+      "Preparación para release, monitoreo y decisiones de arquitectura que soportan escala en lugar de reaccionar tarde.",
+    spotlight1Eyebrow: "Operaciones financieras",
+    spotlight1Title: "Flujos de impuestos, tesorería y control interno",
+    spotlight1Text:
+      "Sistemas que reducen handoffs, mejoran trazabilidad y soportan equipos que trabajan con lógica operativa sensible.",
+    spotlight2Eyebrow: "Operaciones comerciales",
+    spotlight2Title: "Commerce, suscripciones y workflows de servicio",
+    spotlight2Text:
+      "Experiencias y automatizaciones que ayudan a los equipos de ingresos a moverse más rápido sin perder visibilidad del funnel.",
+    spotlight3Eyebrow: "Plataformas internas",
+    spotlight3Title: "Dashboards, APIs y capas de orquestación",
+    spotlight3Text:
+      "El tejido conectivo entre producto, datos y operaciones cuando el negocio supera las herramientas estándar.",
+    methodologyEyebrow: "Ejecución",
+    methodologyTitleHtml: 'Del diagnóstico a <span>producción</span>',
+    methodologySub:
+      "UNIA trabaja con una secuencia disciplinada para mantener alineados el contexto de negocio, la arquitectura y la entrega.",
+    method1Title: "Diagnosticar la operación",
+    method1Text:
+      "Mapeamos workflow, cuellos de botella, dependencias, stakeholders y riesgo de negocio antes de definir la ruta de construcción.",
+    method2Title: "Diseñar el sistema",
+    method2Text:
+      "Arquitectura, interfaces, lógica de automatización y alcance de delivery se definen sobre restricciones operativas reales.",
+    method3Title: "Entregar en incrementos controlados",
+    method3Text:
+      "Releases de dos semanas, prioridades visibles y ciclos de feedback hacen tangible el progreso sin perder rigor técnico.",
+    method4Title: "Estabilizar y evolucionar",
     method4Text:
-      "Pruebas funcionales y técnicas en entornos controlados con una definición clara de terminado.",
-    method5Title: "Implementación",
-    method5Text: "Salida a producción con monitoreo, checklists de release y soporte de estabilización.",
-    method6Title: "Evolución continua",
-    method6Text: "Optimización continua de producto, IA y procesos para mejorar la eficiencia operativa.",
+      "Después del go-live optimizamos performance, agregamos automatización y mantenemos el producto alineado a la operación cambiante.",
     stackEyebrow: "Tecnologías",
-    stackTitle: "Tecnologías que usamos para entregar rápido y escalar con seguridad",
+    stackTitleHtml: 'Un stack pragmático para <span>delivery de alto impacto</span>',
     stackSub:
-      "Herramientas concretas, no promesas genéricas: este es el stack con el que construimos productos, automatizamos operaciones y mantenemos sistemas críticos en marcha.",
+      "Elegimos tecnologías por confiabilidad, velocidad y mantenibilidad, no por tendencia.",
     stack1Title: "Aplicaciones y APIs",
     stack1Text:
-      "Interfaces de producto, lógica de negocio, integraciones seguras y plataformas internas para la operación diaria.",
+      "Aplicaciones web modernas, sistemas internos, integraciones y capas API para throughput operativo.",
     stack2Title: "Datos, IA y Automatización",
     stack2Text:
-      "Inteligencia operativa, orquestación de IA y capas de automatización conectadas a workflows reales.",
-    stack3Title: "Cloud y Delivery",
+      "Sistemas de recuperación, agentes, lógica de orquestación, pipelines de automatización y analítica operativa.",
+    stack3Title: "Cloud y delivery",
     stack3Text:
-      "Pipelines de release, infraestructura de ejecución, monitoreo y soporte para escalar con confiabilidad.",
-    model1Eyebrow: "Modelo 1",
+      "Cloudflare, CI/CD, observabilidad, control de performance y prácticas de seguridad para entornos productivos.",
+    modelEyebrow: "Modelos de trabajo",
+    modelTitleHtml: 'Trabaja con UNIA como <span>socio, no como proveedor</span>',
+    modelSub:
+      "Estructuramos la entrega según la madurez del producto, el equipo interno y el ritmo que exige la operación.",
+    model1Eyebrow: "Modelo 01",
     model1Title: "Software Partnership",
     model1Text:
-      "Diseñamos y construimos productos digitales con un equipo dedicado, roadmap priorizado y entregas orientadas a KPIs.",
-    model2Eyebrow: "Modelo 2",
-    model2Title: "Factory In Situ",
+      "Un equipo senior dedicado para diseñar, construir y evolucionar el roadmap con prioridades compartidas y entregables medibles.",
+    model2Eyebrow: "Modelo 02",
+    model2Title: "Embedded Factory",
     model2Text:
-      "Talento senior embebido en tu operación para evolucionar sistemas internos, automatizar flujos y sostener performance.",
-    ctaEyebrow: "¿Listo para escalar?",
-    ctaTitle: "Convierte tus operaciones en una ventaja competitiva",
-    ctaText: "Discovery sin fricción: evaluación de arquitectura, oportunidades de IA y roadmap de ejecución por fases.",
+      "Capacidad senior de ingeniería y producto integrada a tu operación para modernizar sistemas, automatizar workflows y sostener ejecución.",
+    ctaEyebrow: "Empecemos",
+    ctaTitleHtml: 'Convirtamos la complejidad operativa en <span>apalancamiento de software</span>',
+    ctaText:
+      "Podemos comenzar con discovery, revisión de arquitectura, oportunidades de automatización o un roadmap de construcción por fases.",
     contactEmailCta: "Escríbenos",
-    contactLinkedinCta: "LinkedIn",
-    footerBrand: "UNIA Software Factory",
-    footerTagline: "Desarrollo · IA · Automatización",
-    liveBarsUptimeSuffix: "disponibilidad",
-    liveBarsPointsVsBaseline: "pts vs línea base",
-    liveBarsVsBaseline: "vs línea base",
+    contactLinkedinCta: "Conecta por LinkedIn",
+    contactWebsiteCta: "Visita unia.cl",
+    footerTagline: "Software Factory para plataformas a medida, sistemas de IA y automatización",
   },
   sr: {
-    metaTitle: "UNIA Software Factory | Razvoj Softvera, AI i Automatizacija",
+    metaTitle: "UNIA Software Factory | Softver, AI i Automatizacija za Ozbiljne Operacije",
     metaDescription:
-      "UNIA Software Factory razvija prilagođeni softver, AI agente i automatizaciju tokova za timove koji skaliraju operacije u Cileu, Ekvadoru, Srbiji i Evropi.",
-    menuOpenLabel: "Otvori meni",
+      "UNIA Software Factory dizajnira prilagođene platforme, AI sisteme i automatizaciju za timove koji skaliraju kompleksne operacije u Cileu, Ekvadoru, Srbiji i Evropi.",
+    menuOpenLabel: "Otvori navigaciju",
     brandSub: "Softverska Fabrika",
-    navServices: "Usluge",
-    navSuccessCases: "Primeri uspeha",
-    navMethodology: "Metodologija",
-    navStack: "Stack",
-    navBookCall: "Zakaži discovery poziv",
-    heroEyebrow: "Razvoj · AI · Automatizacija",
-    heroTypewriter: "Softverska fabrika za dizajn, automatizaciju i skaliranje.",
+    navServices: "Mogućnosti",
+    navSuccessCases: "Rezultati",
+    navMethodology: "Izvršenje",
+    navStack: "Tehnologije",
+    navBookCall: "Zakaži poziv",
+    heroEyebrow: "Softverska Fabrika · AI Sistemi · Automatizacija",
+    heroTitleHtml: 'Softver infrastrukturnog nivoa za <span>operacije koje moraju da se kreću brzo</span>',
     heroText:
-      "Dizajniramo i gradimo mission-critical softver uz primenjenu AI. Od discovery faze do produkcije, isporučujemo brzo i fokusirano na merljiv poslovni uticaj.",
+      "UNIA dizajnira, razvija i skalira prilagođene platforme, AI sisteme i slojeve automatizacije za kompanije sa stvarnom operativnom kompleksnošću.",
     heroPrimaryCta: "Zakaži discovery poziv",
-    heroSecondaryCta: "Pogledaj primere uspeha",
-    floatingLeftTitle: "Cloud Ops",
-    floatingLeftValue: "30% niži OPEX",
-    floatingLeftText: "Automatizacija uz Celestia platformu",
-    screenTopStatus: "Uživo",
-    kpiAutomation: "Automatizacija",
-    kpiProductivity: "Produktivnost",
-    kpiSprint: "Sprint",
-    kpiSprintValue: "2 nedelje",
-    roadmap1Html: "<span>Mesec 1</span> Discovery + Arhitektura",
-    roadmap2Html: "<span>Mesec 2</span> Core proizvod + Integracije",
-    roadmap3Html: "<span>Mesec 3</span> QA + Deploy + Skaliranje",
-    floatingRightValue: "50% manje ručnog rada",
-    floatingRightText: "Poreske operacije od početka do kraja",
-    clientsEyebrow: "Klijenti",
-    clientsTitle: "Timovi sa kojima radimo",
-    clientsSub: "Brendovi i proizvodi koji veruju UNIA timu za izradu, automatizaciju i skaliranje.",
-    servicesEyebrow: "Usluge",
-    servicesTitleHtml: 'Transformišite poslovanje u <span class="grad-text">platformu za rast</span>',
+    heroSecondaryCta: "Pogledaj mogućnosti",
+    heroStat1Value: "2 nedelje",
+    heroStat1Label: "ritam sprinta",
+    heroStat2Value: "Više regiona",
+    heroStat2Label: "Čile, Ekvador, Srbija, Evropa",
+    heroStat3Value: "Primenjena AI",
+    heroStat3Label: "agenti, RAG, automatizacije",
+    heroPanelEyebrow: "Sloj izvršenja",
+    heroPanelTitle: "Od poslovne dijagnoze do produkcionih sistema",
+    heroCard1Eyebrow: "Arhitektura",
+    heroCard1Title: "Platforme izgrađene oko stvarnih tokova rada",
+    heroCard1Text:
+      "Interni sistemi, proizvodi za klijente i integracije dizajnirani oko throughput-a, kontrole i skaliranja.",
+    heroCard2Eyebrow: "AI operacije",
+    heroCard2Title: "Agenti koji pomažu, usmeravaju i pokreću akciju",
+    heroCard2Text:
+      "AI kopiloti, RAG slojevi i automatizacije povezane sa alatima od kojih vaš tim već zavisi.",
+    heroCard3Eyebrow: "Pouzdanost",
+    heroCard3Title: "Disciplina isporuke za ozbiljne operacije",
+    heroCard3Text:
+      "CI/CD, observability, kontrola release-a i cloud odluke koje štite uptime i brzinu izvršenja.",
+    heroStrip1: "Arhitektura na prvom mestu",
+    heroStrip2: "Senior izvršenje",
+    heroStrip3: "Operativno skaliranje",
+    clientsEyebrow: "Odabrani klijenti",
+    clientsSub:
+      "Timovi iz finansija, komerca, operacija i profesionalnih usluga veruju UNIA timu za izradu, automatizaciju i evoluciju kritičnog softvera.",
+    servicesEyebrow: "Mogućnosti",
+    servicesTitleHtml: 'Softverska fabrika oblikovana za <span>kompleksne operacije</span>',
     servicesSub:
-      "Pretvaramo fragmentirane operacije u sisteme spremne za rast: prilagođeni softver, primenjena AI i automatizacija usklađeni sa prihodima, kontrolom i brzinom izvršenja.",
-    service1Title: "Prilagođeni Softverski Inženjering",
+      "Spajamo product pristup, inženjering, AI i delivery upravljanje kako bismo fragmentirane tokove pretvorili u trajne sisteme.",
+    service1Eyebrow: "01 Inženjering platforme",
+    service1Title: "Prilagođeni softver koji postaje operativna infrastruktura",
     service1Text:
-      "Gradimo platforme, interne sisteme i API-je koji centralizuju operacije, uklanjaju uska grla i daju timu kontrolu nad ključnim poslovnim tokovima.",
-    service1Step1Title: "Product discovery",
-    service1Step1Text: "Mapiranje poslovanja, opseg i definicija arhitekture",
-    service1Step1Time: "Nedelja 1",
-    service1Step2Title: "Izrada i integracija",
-    service1Step2Text: "Frontend, backend, API-ji i mission-critical moduli",
-    service1Step2Time: "Nedelje 2-8",
-    service1Step3Title: "Lansiranje i skaliranje",
-    service1Step3Text: "Deploy u produkciju, monitoring i evolucija proizvoda",
-    service1Step3Time: "Kontinuirano",
-    service2Title: "AI, Agenti i Automatizacija Tokova",
+      "Web aplikacije, portali, interni sistemi i API slojevi koji centralizuju delove poslovanja koje više ne smete voditi ručno.",
+    service2Eyebrow: "02 AI sistemi",
+    service2Title: "Primenjena AI koja pomaže timovima i ubrzava odluke",
     service2Text:
-      "Postavljamo AI kopilote, RAG slojeve i agente koji razumeju kontekst, pokreću akcije i automatizuju ponavljajuće odluke u vašim ključnim alatima.",
-    service2Pipeline: "Automatizacioni pipeline",
-    service2Layers: "3 sloja",
-    service2UpsellTitle: "Postavi AI agenta",
-    service2UpsellText: "Znanje + integracije alata + pravila akcije",
-    service2Deploy: "Postavi",
-    service3Title: "Cloud, DevOps i Pouzdanost",
+      "Kopiloti, sistemi za pretragu znanja i agenti koji razumeju kontekst, iznose informacije i pokreću sledeću akciju uz kontrolu.",
+    service3Eyebrow: "03 Automatizacija tokova rada",
+    service3Title: "Slojevi automatizacije koji uklanjaju trenje između timova",
     service3Text:
-      "Dizajniramo cloud arhitekturu, CI/CD, observability i recovery tokove kako biste skalirali bez žrtvovanja stabilnosti, bezbednosti i brzine isporuke.",
-    chartLabel: "Pregled pouzdanosti platforme",
-    chartTotal: "99.95% dostupnost",
-    chartDelta: "SLA trend u realnom vremenu",
-    monthJan: "JAN",
-    monthFeb: "FEB",
-    monthMar: "MAR",
-    monthApr: "APR",
-    monthMay: "MAJ",
-    monthJun: "JUN",
-    solutionsEyebrow: "Primeri uspeha",
-    solutionsTitleHtml: 'Rešenja dizajnirana da <span class="grad-text">vas skaliraju</span>',
+      "Povezani tokovi za finansije, podršku, komercu, izveštavanje i back-office bez dodatnog troška koordinacije.",
+    service4Eyebrow: "04 Cloud i delivery",
+    service4Title: "Release, pouzdanost i skaliranje ugrađeni u stack",
+    service4Text:
+      "Cloud arhitektura, CI/CD, observability i bezbednosne prakse koje održavaju brzinu izvršenja bez žrtvovanja stabilnosti.",
+    solutionsEyebrow: "Rezultati",
+    solutionsTitleHtml: 'Šta UNIA ugrađuje u vaš <span>operativni model</span>',
     solutionsSub:
-      "Svako rešenje kombinuje product pristup, arhitekturu i automatizaciju kako bi rešilo stvarna uska grla rasta i operacija.",
-    case1Lead: "Novi pretplatnik aktiviran",
-    case1Title: "Izgradite mesečni recurring prihod",
-    case1Text:
-      "Pretvorite jednokratne kupce u lojalne pretplatnike uz praćene onboarding i retention automatizacije.",
-    case2Title: "Uvid u prihode u realnom vremenu",
-    case2Text:
-      "Pratite cloud performanse, operativne marže i trendove rasta iz jednog live dashboard-a uz Celestia.",
-    case3Fail1: "Plaćanje neuspešno · $99.9",
-    case3Fail2: "Plaćanje neuspešno · $149.9",
-    case3Band: "UNIA Pay Recovery",
-    case3Ok1: "Plaćanje vraćeno · $60.0",
-    case3Ok2: "Plaćanje vraćeno · $99.9",
-    case3Title: "Manje neuspešnih plaćanja",
-    case3Text:
-      "Pametni retry mehanizmi, logika plaćanja i proaktivna upozorenja automatski vraćaju prihod i stabilizuju cash flow.",
-    case4Cart: "Vaša korpa",
-    case4Items: "2 stavke",
-    case4Item1: "Paket poreskog savetovanja",
-    case4Item2: "Izveštaj cloud optimizacije",
-    case4Upsell: "Dodajte još jednu uslugu i dobijte BESPLATAN onboarding",
-    case4Title: "2X veća prosečna vrednost porudžbine",
-    case4Text:
-      "Povećajte vrednost po nalogu kroz ugrađene upsell tokove i automatizaciju nakon kupovine.",
-    case5Title: "Manje rutinskog rada, više rasta",
-    case5Text:
-      "Povežite sve ključne sisteme u jedan sloj i uklonite ponavljajuće ručne zadatke da tim radi na strateškom rastu.",
-    case6Badge: "Engine za recurring prihod",
-    case6Title: "Ubrzajte profit kroz mesečni recurring prihod",
-    case6Text:
-      "Izgradite predvidiv rast kroz retention-first tokove, recovery logiku i recurring monetizaciju na vašoj platformi.",
-    case6Cta: "Zatraži demo",
-    methodologyEyebrow: "Metodologija",
-    methodologyTitle: "Disciplinovan inženjering, brza isporuka",
-    method1Title: "Discovery i dijagnoza",
-    method1Text: "Mapiramo procese, uska grla i poslovne ciljeve pre pisanja produkcionog koda.",
-    method2Title: "Dizajn rešenja",
-    method2Text: "Definišemo arhitekturu, tokove rada i release plan sa kontrolisanim tehničkim rizikom.",
-    method3Title: "Iterativni razvoj",
-    method3Text: "Sprintovi od dve nedelje, inkrementalna isporuka, feedback petlje i puna sledljivost.",
-    method4Title: "QA i validacija",
-    method4Text: "Funkcionalno i tehničko testiranje u kontrolisanim okruženjima uz jasan kriterijum završetka.",
-    method5Title: "Implementacija",
-    method5Text: "Puštanje u produkciju uz monitoring, release checkliste i podršku stabilizaciji.",
-    method6Title: "Kontinuirana evolucija",
-    method6Text: "Kontinuirana optimizacija proizvoda, AI i procesa radi bolje operativne efikasnosti.",
+      "Cilj nije više koda. Cilj je više kontrole, brže izvršenje i softverski sloj koji vremenom stvara dodatnu vrednost.",
+    outcome1Value: "Kontrola",
+    outcome1Title: "Povezane operacije",
+    outcome1Text:
+      "Jedan softverski sloj preko tokova koji danas žive u tabelama, inboxima i nepovezanim alatima.",
+    outcome2Value: "Brzina",
+    outcome2Title: "Brži ciklusi odlučivanja",
+    outcome2Text:
+      "Manje čekanja između inputa, odobrenja i izvršenja zahvaljujući jasnijim sistemima i nižem trošku koordinacije.",
+    outcome3Value: "Leverage",
+    outcome3Title: "AI tamo gde zaista pravi razliku",
+    outcome3Text:
+      "Pretraga znanja, rutiranje zadataka i logika akcije ugrađeni u stvarne operativne procese.",
+    outcome4Value: "Pouzdanost",
+    outcome4Title: "Produktivna disciplina od prvog dana",
+    outcome4Text:
+      "Release spremnost, monitoring i arhitektonske odluke koje podržavaju skaliranje umesto kasnog reagovanja.",
+    spotlight1Eyebrow: "Finansijske operacije",
+    spotlight1Title: "Porezi, treasury i interni kontrolni tokovi",
+    spotlight1Text:
+      "Sistemi koji smanjuju handoff-e, poboljšavaju sledljivost i podržavaju timove koji rade sa osetljivom operativnom logikom.",
+    spotlight2Eyebrow: "Komercijalne operacije",
+    spotlight2Title: "Komerca, pretplate i servisni tokovi rada",
+    spotlight2Text:
+      "Iskustva i automatizacije koje revenue timovima pomažu da se kreću brže bez gubitka vidljivosti kroz funnel.",
+    spotlight3Eyebrow: "Interne platforme",
+    spotlight3Title: "Dashboard-i, API-ji i orkestracioni slojevi",
+    spotlight3Text:
+      "Vezivno tkivo između proizvoda, podataka i operacija kada poslovanje preraste gotove alate.",
+    methodologyEyebrow: "Izvršenje",
+    methodologyTitleHtml: 'Od dijagnoze do <span>produkcije</span>',
+    methodologySub:
+      "UNIA radi kroz disciplinovan sled kako bi poslovni kontekst, arhitektura i isporuka ostali usklađeni.",
+    method1Title: "Dijagnostikovati operaciju",
+    method1Text:
+      "Mapiramo tok rada, uska grla, zavisnosti, stakeholder-e i poslovni rizik pre nego što odaberemo put izgradnje.",
+    method2Title: "Dizajnirati sistem",
+    method2Text:
+      "Arhitektura, interfejsi, logika automatizacije i scope isporuke definišu se prema stvarnim operativnim ograničenjima.",
+    method3Title: "Isporučivati u kontrolisanim inkrementima",
+    method3Text:
+      "Dvonedeljni release-i, jasni prioriteti i feedback petlje čine napredak vidljivim bez gubitka tehničke rigoroznosti.",
+    method4Title: "Stabilizovati i razvijati",
+    method4Text:
+      "Posle go-live faze optimizujemo performanse, dodajemo automatizaciju i držimo proizvod usklađenim sa promenama u operacijama.",
     stackEyebrow: "Tehnologije",
-    stackTitle: "Tehnologije koje koristimo za brzu isporuku i sigurno skaliranje",
+    stackTitleHtml: 'Pragmatičan stack za <span>isporuku visokog uloga</span>',
     stackSub:
-      "Konkretni alati, ne generička obećanja: stack na koji se oslanjamo za razvoj proizvoda, automatizaciju operacija i pouzdan rad kritičnih sistema.",
+      "Tehnologije biramo zbog pouzdanosti, brzine i održavanja, a ne zbog trendova.",
     stack1Title: "Aplikacije i API-ji",
     stack1Text:
-      "Produkt interfejsi, poslovna logika, bezbedne integracije i interne platforme za svakodnevne operacije.",
-    stack2Title: "Podaci, AI i Automatizacija",
+      "Moderne web aplikacije, interni sistemi, integracije i API slojevi za operativni throughput.",
+    stack2Title: "Podaci, AI i automatizacija",
     stack2Text:
-      "Operativna inteligencija, AI orkestracija i slojevi automatizacije povezani sa realnim tokovima rada.",
-    stack3Title: "Cloud i Delivery",
+      "Sistemi za retrieval, agenti, orkestraciona logika, automatizacioni pipeline-i i operativna analitika.",
+    stack3Title: "Cloud i delivery",
     stack3Text:
-      "Release pipeline-i, runtime infrastruktura, monitoring i podrška za pouzdano skaliranje.",
-    model1Eyebrow: "Model 1",
+      "Cloudflare, CI/CD, observability, kontrola performansi i bezbednosne prakse za produkciona okruženja.",
+    modelEyebrow: "Modeli saradnje",
+    modelTitleHtml: 'Radite sa UNIA timom kao <span>partnerom, ne vendorom</span>',
+    modelSub:
+      "Način isporuke prilagođavamo zrelosti proizvoda, internom timu i tempu koji operacija zahteva.",
+    model1Eyebrow: "Model 01",
     model1Title: "Software Partnership",
     model1Text:
-      "Dizajniramo i gradimo digitalne proizvode sa posvećenim timom, prioritetnim roadmap-om i KPI vođenim isporukama.",
-    model2Eyebrow: "Model 2",
-    model2Title: "In Situ Factory",
+      "Posvećen senior tim za dizajn, razvoj i evoluciju roadmap-a uz zajedničke prioritete i merljivu isporuku.",
+    model2Eyebrow: "Model 02",
+    model2Title: "Embedded Factory",
     model2Text:
-      "Senior stručnjaci u vašoj operaciji koji unapređuju interne sisteme, automatizuju tokove i održavaju performanse.",
-    ctaEyebrow: "Spremni za skaliranje?",
-    ctaTitle: "Pretvorite operacije u konkurentsku prednost",
-    ctaText: "Frictionless discovery: procena arhitekture, AI prilike i fazni plan izvršenja.",
-    contactEmailCta: "Kontaktirajte nas",
-    contactLinkedinCta: "LinkedIn",
-    footerBrand: "UNIA Software Factory",
-    footerTagline: "Razvoj · AI · Automatizacija",
-    liveBarsUptimeSuffix: "dostupnost",
-    liveBarsPointsVsBaseline: "pts u odnosu na osnovu",
-    liveBarsVsBaseline: "u odnosu na osnovu",
+      "Senior inženjerski i product kapacitet ugrađen u vašu operaciju radi modernizacije sistema, automatizacije tokova i održavanja izvršenja.",
+    ctaEyebrow: "Počnimo",
+    ctaTitleHtml: 'Pretvorimo operativnu kompleksnost u <span>softversku polugu</span>',
+    ctaText:
+      "Možemo krenuti od discovery-ja, pregleda arhitekture, AI i automatizacionih prilika ili faznog roadmap-a izgradnje.",
+    contactEmailCta: "Pišite nam",
+    contactLinkedinCta: "Povežite se na LinkedIn-u",
+    contactWebsiteCta: "Posetite unia.cl",
+    footerTagline: "Softverska fabrika za prilagođene platforme, AI sisteme i automatizaciju",
   },
 };
 
-const languageFromBrowser = () => {
+const hasKey = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+
+const detectLanguage = () => {
   const normalize = (value) => {
     if (!value || typeof value !== "string") return "";
     return value.toLowerCase().split("-")[0];
   };
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const langParam = normalize(urlParams.get("lang"));
+  const params = new URLSearchParams(window.location.search);
+  const langParam = normalize(params.get("lang"));
   if (supportedLanguages.includes(langParam)) return langParam;
 
-  const userLanguages = Array.isArray(navigator.languages) ? navigator.languages : [];
-  const primary = userLanguages.find((candidate) => supportedLanguages.includes(normalize(candidate)));
-  if (primary) return normalize(primary);
+  const browserLanguages = Array.isArray(navigator.languages) ? navigator.languages : [];
+  const matchingLanguage = browserLanguages.find((candidate) =>
+    supportedLanguages.includes(normalize(candidate))
+  );
+  if (matchingLanguage) return normalize(matchingLanguage);
 
   const fallback = normalize(navigator.language || "");
   return supportedLanguages.includes(fallback) ? fallback : "en";
 };
 
-const activeLanguage = languageFromBrowser();
+const activeLanguage = detectLanguage();
 const activeLocale = localeByLanguage[activeLanguage] || "en-US";
 const copy = translations[activeLanguage] || translations.en;
 
-const setText = (selector, value) => {
-  const el = document.querySelector(selector);
-  if (el && typeof value === "string") el.textContent = value;
-};
-
-const setHtml = (selector, value) => {
-  const el = document.querySelector(selector);
-  if (el && typeof value === "string") el.innerHTML = value;
-};
-
 const setMeta = (selector, value) => {
-  const el = document.querySelector(selector);
-  if (el && typeof value === "string") el.setAttribute("content", value);
+  const element = document.querySelector(selector);
+  if (element && typeof value === "string") {
+    element.setAttribute("content", value);
+  }
 };
 
 const applyLanguage = () => {
@@ -514,348 +494,81 @@ const applyLanguage = () => {
   setMeta('meta[name="twitter:title"]', copy.metaTitle);
   setMeta('meta[name="twitter:description"]', copy.metaDescription);
 
-  setText(".brand-sub", copy.brandSub);
-  setText('#siteNav a[href="#services"]', copy.navServices);
-  setText('#siteNav a[href="#solutions"]', copy.navSuccessCases);
-  setText('#siteNav a[href="#methodology"]', copy.navMethodology);
-  setText('#siteNav a[href="#stack"]', copy.navStack);
-  setText('#siteNav a[href="#contact"]', copy.navBookCall);
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const { i18n } = element.dataset;
+    if (i18n && hasKey(copy, i18n)) {
+      element.textContent = copy[i18n];
+    }
+  });
 
-  const menuBtn = document.getElementById("menuBtn");
-  if (menuBtn) menuBtn.setAttribute("aria-label", copy.menuOpenLabel);
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const { i18nHtml } = element.dataset;
+    if (i18nHtml && hasKey(copy, i18nHtml)) {
+      element.innerHTML = copy[i18nHtml];
+    }
+  });
 
-  setText(".hero .eyebrow", copy.heroEyebrow);
-  setText(".hero .hero-text", copy.heroText);
-  setText(".hero .hero-actions .btn-primary", copy.heroPrimaryCta);
-  setText(".hero .hero-actions .btn-ghost", copy.heroSecondaryCta);
-  setText(".floating-left .floating-title", copy.floatingLeftTitle);
-  setText(".floating-left strong", copy.floatingLeftValue);
-  setText(".floating-left span", copy.floatingLeftText);
-  setText(".screen-top span", copy.screenTopStatus);
-  setText(".screen-grid .kpi:nth-child(1) p", copy.kpiAutomation);
-  setText(".screen-grid .kpi:nth-child(2) p", copy.kpiProductivity);
-  setText(".screen-grid .kpi:nth-child(3) p", copy.kpiSprint);
-  setText(".screen-grid .kpi:nth-child(3) strong", copy.kpiSprintValue);
-  setHtml(".screen-roadmap div:nth-child(1)", copy.roadmap1Html);
-  setHtml(".screen-roadmap div:nth-child(2)", copy.roadmap2Html);
-  setHtml(".screen-roadmap div:nth-child(3)", copy.roadmap3Html);
-  setText(".floating-right strong", copy.floatingRightValue);
-  setText(".floating-right span", copy.floatingRightText);
-  setText("#clientsEyebrow", copy.clientsEyebrow);
-  setText("#clientsTitle", copy.clientsTitle);
-  setText("#clientsSub", copy.clientsSub);
-
-  setText("#services .section-head .eyebrow", copy.servicesEyebrow);
-  setHtml("#services .section-head h2", copy.servicesTitleHtml);
-  setText("#services .section-sub", copy.servicesSub);
-  setText(".showcase-row .showcase-card:nth-child(1) h3", copy.service1Title);
-  setText(".showcase-row .showcase-card:nth-child(1) > p", copy.service1Text);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(1) strong", copy.service1Step1Title);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(1) .log-copy p", copy.service1Step1Text);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(1) time", copy.service1Step1Time);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(2) strong", copy.service1Step2Title);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(2) .log-copy p", copy.service1Step2Text);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(2) time", copy.service1Step2Time);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(3) strong", copy.service1Step3Title);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(3) .log-copy p", copy.service1Step3Text);
-  setText(".showcase-row .showcase-card:nth-child(1) .log-item:nth-child(3) time", copy.service1Step3Time);
-  setText(".showcase-row .showcase-card:nth-child(2) h3", copy.service2Title);
-  setText(".showcase-row .showcase-card:nth-child(2) > p", copy.service2Text);
-  setText(".showcase-row .showcase-card:nth-child(2) .cart-line span", copy.service2Pipeline);
-  setText(".showcase-row .showcase-card:nth-child(2) .cart-line b", copy.service2Layers);
-  setText(".showcase-row .showcase-card:nth-child(2) .upsell-copy strong", copy.service2UpsellTitle);
-  setText(".showcase-row .showcase-card:nth-child(2) .upsell-copy p", copy.service2UpsellText);
-  setText(".showcase-row .showcase-card:nth-child(2) .upsell-box button", copy.service2Deploy);
-  setText(".showcase-row .showcase-card:nth-child(3) h3", copy.service3Title);
-  setText(".showcase-row .showcase-card:nth-child(3) > p", copy.service3Text);
-  setText(".chart-label", copy.chartLabel);
-  setText(".chart-total", copy.chartTotal);
-  setText(".chart-delta", copy.chartDelta);
-  setText(".bars .bar:nth-child(1) em", copy.monthJan);
-  setText(".bars .bar:nth-child(2) em", copy.monthFeb);
-  setText(".bars .bar:nth-child(3) em", copy.monthMar);
-  setText(".bars .bar:nth-child(4) em", copy.monthApr);
-  setText(".bars .bar:nth-child(5) em", copy.monthMay);
-  setText(".bars .bar:nth-child(6) em", copy.monthJun);
-
-  setText("#solutions .section-head .eyebrow", copy.solutionsEyebrow);
-  setHtml("#solutions .section-head h2", copy.solutionsTitleHtml);
-  setText("#solutions .section-sub", copy.solutionsSub);
-  setText(".case-mosaic .mosaic-card:nth-child(1) .lead-pill", copy.case1Lead);
-  setText(".case-mosaic .mosaic-card:nth-child(1) h3", copy.case1Title);
-  setText(".case-mosaic .mosaic-card:nth-child(1) p", copy.case1Text);
-  setText(".case-mosaic .mosaic-card:nth-child(2) h3", copy.case2Title);
-  setText(".case-mosaic .mosaic-card:nth-child(2) p", copy.case2Text);
-  setText(".case-mosaic .mosaic-card:nth-child(3) .viz-recovery > .status-item.fail:nth-child(1)", copy.case3Fail1);
-  setText(".case-mosaic .mosaic-card:nth-child(3) .viz-recovery > .status-item.fail:nth-child(2)", copy.case3Fail2);
-  setText(".case-mosaic .mosaic-card:nth-child(3) .viz-recovery > .recovery-band:nth-child(3)", copy.case3Band);
-  setText(".case-mosaic .mosaic-card:nth-child(3) .viz-recovery > .status-item.ok:nth-child(4)", copy.case3Ok1);
-  setText(".case-mosaic .mosaic-card:nth-child(3) .viz-recovery > .status-item.ok:nth-child(5)", copy.case3Ok2);
-  setText(".case-mosaic .mosaic-card:nth-child(3) h3", copy.case3Title);
-  setText(".case-mosaic .mosaic-card:nth-child(3) p", copy.case3Text);
-  setText(".case-mosaic .mosaic-card:nth-child(4) .checkout-head span", copy.case4Cart);
-  setText(".case-mosaic .mosaic-card:nth-child(4) .checkout-head b", copy.case4Items);
-  setText(".case-mosaic .mosaic-card:nth-child(4) .checkout-row:nth-child(2) p", copy.case4Item1);
-  setText(".case-mosaic .mosaic-card:nth-child(4) .checkout-row:nth-child(3) p", copy.case4Item2);
-  setText(".case-mosaic .mosaic-card:nth-child(4) .checkout-upsell", copy.case4Upsell);
-  setText(".case-mosaic .mosaic-card:nth-child(4) h3", copy.case4Title);
-  setText(".case-mosaic .mosaic-card:nth-child(4) > p", copy.case4Text);
-  setText(".case-mosaic .mosaic-card:nth-child(5) h3", copy.case5Title);
-  setText(".case-mosaic .mosaic-card:nth-child(5) > p", copy.case5Text);
-  setText(".case-mosaic .mosaic-card:nth-child(6) .viz-gradient span", copy.case6Badge);
-  setText(".case-mosaic .mosaic-card:nth-child(6) h3", copy.case6Title);
-  setText(".case-mosaic .mosaic-card:nth-child(6) > p", copy.case6Text);
-  setText(".case-mosaic .mosaic-card:nth-child(6) .mini-cta", copy.case6Cta);
-
-  setText("#methodology .section-head .eyebrow", copy.methodologyEyebrow);
-  setText("#methodology .section-head h2", copy.methodologyTitle);
-  setText("#methodology .flow-step:nth-child(1) h3", copy.method1Title);
-  setText("#methodology .flow-step:nth-child(1) p", copy.method1Text);
-  setText("#methodology .flow-step:nth-child(2) h3", copy.method2Title);
-  setText("#methodology .flow-step:nth-child(2) p", copy.method2Text);
-  setText("#methodology .flow-step:nth-child(3) h3", copy.method3Title);
-  setText("#methodology .flow-step:nth-child(3) p", copy.method3Text);
-  setText("#methodology .flow-step:nth-child(4) h3", copy.method4Title);
-  setText("#methodology .flow-step:nth-child(4) p", copy.method4Text);
-  setText("#methodology .flow-step:nth-child(5) h3", copy.method5Title);
-  setText("#methodology .flow-step:nth-child(5) p", copy.method5Text);
-  setText("#methodology .flow-step:nth-child(6) h3", copy.method6Title);
-  setText("#methodology .flow-step:nth-child(6) p", copy.method6Text);
-
-  setText("#stack .section-head .eyebrow", copy.stackEyebrow);
-  setText("#stack .section-head h2", copy.stackTitle);
-  setText("#stack .section-sub", copy.stackSub);
-  setText("#stack .stack-col:nth-child(1) h3", copy.stack1Title);
-  setText("#stack .stack-col:nth-child(1) p", copy.stack1Text);
-  setText("#stack .stack-col:nth-child(2) h3", copy.stack2Title);
-  setText("#stack .stack-col:nth-child(2) p", copy.stack2Text);
-  setText("#stack .stack-col:nth-child(3) h3", copy.stack3Title);
-  setText("#stack .stack-col:nth-child(3) p", copy.stack3Text);
-
-  setText(".model .model-card:nth-child(1) .eyebrow", copy.model1Eyebrow);
-  setText(".model .model-card:nth-child(1) h3", copy.model1Title);
-  setText(".model .model-card:nth-child(1) p:last-child", copy.model1Text);
-  setText(".model .model-card:nth-child(2) .eyebrow", copy.model2Eyebrow);
-  setText(".model .model-card:nth-child(2) h3", copy.model2Title);
-  setText(".model .model-card:nth-child(2) p:last-child", copy.model2Text);
-
-  setText("#contact .cta-box .eyebrow", copy.ctaEyebrow);
-  setText("#contact .cta-box h2", copy.ctaTitle);
-  setText("#contact .cta-box > p", copy.ctaText);
-  setText("#footerTagline", copy.footerTagline);
-
-  const typewriterEl = document.querySelector(".hero-type");
-  if (typewriterEl) {
-    typewriterEl.setAttribute("data-typewriter", copy.heroTypewriter);
-    typewriterEl.textContent = copy.heroTypewriter;
+  const menuButton = document.getElementById("menuBtn");
+  if (menuButton) {
+    menuButton.setAttribute("aria-label", copy.menuOpenLabel);
   }
+
+  const dateFormatter = new Intl.DateTimeFormat(activeLocale, {
+    year: "numeric",
+  });
+  document.documentElement.style.setProperty("--active-year", `"${dateFormatter.format(new Date())}"`);
 };
 
 applyLanguage();
 
-document.querySelectorAll("[data-email-user][data-email-domain]").forEach((emailLink) => {
-  const emailUser = emailLink.getAttribute("data-email-user");
-  const emailDomain = emailLink.getAttribute("data-email-domain");
-  if (emailUser && emailDomain) {
-    emailLink.setAttribute("href", `mailto:${emailUser}@${emailDomain}`);
+document.querySelectorAll("[data-email-user][data-email-domain]").forEach((link) => {
+  const user = link.getAttribute("data-email-user");
+  const domain = link.getAttribute("data-email-domain");
+  if (user && domain) {
+    link.setAttribute("href", `mailto:${user}@${domain}`);
   }
 });
 
-const menuBtn = document.getElementById("menuBtn");
+const menuButton = document.getElementById("menuBtn");
 const siteNav = document.getElementById("siteNav");
-const navLinks = siteNav ? siteNav.querySelectorAll("a") : [];
 
-if (menuBtn && siteNav) {
-  menuBtn.addEventListener("click", () => {
+if (menuButton && siteNav) {
+  menuButton.addEventListener("click", () => {
     siteNav.classList.toggle("open");
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("open");
+    });
   });
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    siteNav.classList.remove("open");
-  });
-});
+const header = document.querySelector(".site-header");
+const updateHeaderState = () => {
+  if (!header) return;
+  header.classList.toggle("is-scrolled", window.scrollY > 12);
+};
 
-const staggerGroups = [
-  ".hero-shell.reveal",
-  ".clients .reveal",
-  ".showcase-row .reveal",
-  ".case-mosaic .reveal",
-  ".flow .reveal",
-  ".stack-wrap.reveal",
-  ".model .reveal",
-  ".cta-box.reveal",
-];
-
-staggerGroups.forEach((selector) => {
-  document.querySelectorAll(selector).forEach((el, index) => {
-    el.style.setProperty("--reveal-delay", `${index * 70}ms`);
-  });
-});
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-document.querySelectorAll("[data-typewriter]").forEach((el, index) => {
-  const fullText = el.getAttribute("data-typewriter");
-  if (!fullText) return;
-
-  if (prefersReducedMotion) {
-    el.textContent = fullText;
-    return;
-  }
-
-  el.textContent = "";
-  el.classList.add("is-typing");
-
-  let i = 0;
-  const startDelay = 420 + index * 180;
-
-  const typeNext = () => {
-    i += 1;
-    el.textContent = fullText.slice(0, i);
-
-    if (i < fullText.length) {
-      const speed = 58 + Math.random() * 36;
-      setTimeout(typeNext, speed);
-    } else {
-      el.classList.remove("is-typing");
-      el.classList.add("is-typed");
-    }
-  };
-
-  setTimeout(typeNext, startDelay);
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.18 }
-);
-
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
 if (!prefersReducedMotion) {
-  document.querySelectorAll("[data-live-bars]").forEach((group) => {
-    const bars = Array.from(group.querySelectorAll(".bar"));
-    if (bars.length < 2) return;
-    const mode = group.getAttribute("data-live-mode") || "currency-k";
-
-    const baseHeights = bars.map((bar) => {
-      const raw = bar.getAttribute("data-h");
-      const parsed = Number.parseFloat(raw || "");
-      const height = Number.isFinite(parsed) ? parsed : 50;
-      bar.style.setProperty("--h", `${height}%`);
-      return height;
-    });
-    const heights = [...baseHeights];
-
-    const parseLabelNumber = (text) => {
-      const normalized = text.replace(",", ".");
-      const match = normalized.match(/[\d.]+/);
-      if (!match) return 100;
-      return Number.parseFloat(match[0]);
-    };
-
-    const barValues = bars.map((bar, index) => {
-      const label = bar.querySelector("span");
-      const initialK = label ? parseLabelNumber(label.textContent) : baseHeights[index] * 3;
-      return {
-        label,
-        baseK: initialK,
-        currentK: initialK,
-      };
-    });
-
-    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
-    const compactCurrency = new Intl.NumberFormat(activeLocale, {
-      style: "currency",
-      currency: "USD",
-      notation: "compact",
-      maximumFractionDigits: 1,
-    });
-    const usdCurrency = new Intl.NumberFormat(activeLocale, {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    });
-    const oneDecimal = new Intl.NumberFormat(activeLocale, {
-      minimumFractionDigits: 1,
-      maximumFractionDigits: 1,
-    });
-    const twoDecimals = new Intl.NumberFormat(activeLocale, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-
-    const chartSurface = group.closest(".chart-surface");
-    const totalEl = chartSurface ? chartSurface.querySelector(".chart-total") : null;
-    const deltaEl = chartSurface ? chartSurface.querySelector(".chart-delta") : null;
-    const baseTotalK = barValues.reduce((acc, item) => acc + item.baseK, 0);
-    const baseAvg = baseTotalK / barValues.length;
-
-    const apply = () => {
-      bars.forEach((bar, index) => {
-        bar.style.setProperty("--h", `${heights[index].toFixed(1)}%`);
-
-        const proportionalK = (barValues[index].baseK * heights[index]) / baseHeights[index];
-        const maxCap = mode === "percent" ? 100 : barValues[index].baseK * 2;
-        barValues[index].currentK = clamp(proportionalK, barValues[index].baseK * 0.4, maxCap);
-        if (barValues[index].label) {
-          barValues[index].label.textContent =
-            mode === "percent"
-              ? `${oneDecimal.format(barValues[index].currentK)}%`
-              : compactCurrency.format(barValues[index].currentK * 1000);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
         }
       });
+    },
+    { threshold: 0.16 }
+  );
 
-      if (totalEl) {
-        const currentTotalK = barValues.reduce((acc, item) => acc + item.currentK, 0);
-        if (mode === "percent") {
-          const currentAvg = currentTotalK / barValues.length;
-          totalEl.textContent = `${twoDecimals.format(currentAvg)}% ${copy.liveBarsUptimeSuffix}`;
-          if (deltaEl) {
-            const deltaPts = currentAvg - baseAvg;
-            const sign = deltaPts >= 0 ? "+" : "-";
-            deltaEl.textContent = `${sign}${twoDecimals.format(Math.abs(deltaPts))} ${copy.liveBarsPointsVsBaseline}`;
-          }
-        } else {
-          totalEl.textContent = usdCurrency.format(currentTotalK * 1000);
-          if (deltaEl) {
-            const delta = ((currentTotalK - baseTotalK) / baseTotalK) * 100;
-            const sign = delta >= 0 ? "+" : "-";
-            deltaEl.textContent = `${sign}${oneDecimal.format(Math.abs(delta))}% ${copy.liveBarsVsBaseline}`;
-          }
-        }
-      }
-    };
-
-    const tick = () => {
-      const up = Math.floor(Math.random() * bars.length);
-      let down = Math.floor(Math.random() * bars.length);
-      while (down === up) down = Math.floor(Math.random() * bars.length);
-
-      const swing = 4 + Math.random() * 8;
-      heights[up] = clamp(heights[up] + swing, 24, 90);
-      heights[down] = clamp(heights[down] - swing, 24, 90);
-
-      if (Math.random() > 0.45) {
-        const driftIndex = Math.floor(Math.random() * bars.length);
-        const drift = (Math.random() - 0.5) * 6;
-        heights[driftIndex] = clamp(heights[driftIndex] + drift, 24, 90);
-      }
-
-      apply();
-    };
-
-    apply();
-    const intervalMs = 1100 + Math.random() * 700;
-    setInterval(tick, intervalMs);
-  });
+  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+} else {
+  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("in-view"));
 }
