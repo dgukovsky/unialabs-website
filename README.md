@@ -1,64 +1,26 @@
-# UNIA Website - Cloudflare Ready
+# UNIA Website
 
-Este repo quedo preparado para desplegar en Cloudflare usando:
+React + Vite frontend deployed through Cloudflare Workers static assets.
 
-- `Workers + Static Assets` (recomendado para este proyecto)
-- `Pages` (opcional)
-
-## Requisitos
-
-- Node.js 18+
-- Cuenta de Cloudflare
-
-## Instalacion
+## Commands
 
 ```bash
 npm install
-```
-
-## Build local
-
-```bash
+npm run dev
 npm run build
+npm run preview
 ```
 
-Genera la carpeta `dist/` con todos los archivos estaticos necesarios.
+## Deploy
 
-## Autenticacion Cloudflare
-
-```bash
-npx wrangler login
-npx wrangler whoami
-```
-
-## Deploy como Worker (recomendado)
+Worker + static assets:
 
 ```bash
 npm run deploy
 ```
 
-Esto usa:
-
-- `wrangler.toml`
-- `src/worker.js`
-- assets en `dist/`
-
-## Deploy como Pages (opcional)
+Cloudflare Pages:
 
 ```bash
 npm run pages:deploy
-```
-
-## Desarrollo local
-
-Worker local:
-
-```bash
-npm run dev
-```
-
-Pages local:
-
-```bash
-npm run pages:dev
 ```

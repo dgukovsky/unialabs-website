@@ -2,15 +2,17 @@
   "name": "unialabs-website",
   "version": "1.0.0",
   "private": true,
-  "description": "UNIA Software Factory marketing site prepared for Cloudflare Workers/Pages deployments.",
+  "description": "UNIA marketing site built as a static HTML, Tailwind, and JavaScript experience deployed through Cloudflare Workers static assets.",
   "scripts": {
-    "build": "node ./scripts/build.mjs",
-    "dev": "npm run build && wrangler dev",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4444",
     "deploy": "npm run build && wrangler deploy",
     "pages:dev": "npm run build && wrangler pages dev dist",
     "pages:deploy": "npm run build && wrangler pages deploy dist --project-name unialabs-website"
   },
   "devDependencies": {
+    "vite": "^7.1.12",
     "wrangler": "^4.55.0"
   }
 }

@@ -1,570 +1,887 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="light" lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UNIA Software Factory | High-Stakes Software, AI, and Automation</title>
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="UNIA Software Factory" />
+    <title>UNIA Labs | Software Infrastructure for Operations in Motion</title>
     <meta
-      name="keywords"
-      content="software factory, software development, AI automation, workflow automation, cloud devops, Chile software company, Ecuador software company, Serbia software company, Europe software engineering"
-    />
-    <meta name="theme-color" content="#061018" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta
+      id="meta-description"
       name="description"
-      content="UNIA Software Factory designs custom platforms, AI systems, and automation for teams scaling complex operations across Chile, Ecuador, Serbia, and Europe."
+      content="UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction."
     />
-    <link rel="canonical" href="https://unialabs.com/" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
-    <link rel="alternate" hreflang="en" href="https://unialabs.com/?lang=en" />
-    <link rel="alternate" hreflang="es" href="https://unialabs.com/?lang=es" />
-    <link rel="alternate" hreflang="sr" href="https://unialabs.com/?lang=sr" />
-    <link rel="alternate" hreflang="es-CL" href="https://unialabs.com/?lang=es" />
-    <link rel="alternate" hreflang="es-EC" href="https://unialabs.com/?lang=es" />
-    <link rel="alternate" hreflang="sr-RS" href="https://unialabs.com/?lang=sr" />
-    <link rel="alternate" hreflang="en-150" href="https://unialabs.com/?lang=en" />
-    <link rel="me" href="https://www.linkedin.com/company/uniafinance/" />
+    <link id="canonical-link" rel="canonical" href="https://unialabs.com/" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="https://unialabs.com/" />
+    <link id="alternate-es" rel="alternate" hreflang="es" href="https://unialabs.com/?lang=es" />
+    <link id="alternate-sr" rel="alternate" hreflang="sr" href="https://unialabs.com/?lang=sr" />
+    <link id="alternate-default" rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="UNIA Labs" />
+    <meta name="application-name" content="UNIA Labs" />
+    <meta name="apple-mobile-web-app-title" content="UNIA Labs" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta id="meta-og-site-name" property="og:site_name" content="UNIA Labs" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="UNIA Software Factory" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="es_CL" />
-    <meta property="og:locale:alternate" content="es_EC" />
-    <meta property="og:locale:alternate" content="sr_RS" />
-    <meta property="og:url" content="https://unialabs.com/" />
-    <meta property="og:title" content="UNIA Software Factory | High-Stakes Software, AI, and Automation" />
+    <meta id="meta-og-url" property="og:url" content="https://unialabs.com/" />
+    <meta id="meta-og-locale" property="og:locale" content="en_US" />
     <meta
+      id="meta-og-title"
+      property="og:title"
+      content="UNIA Labs | Software Infrastructure for Operations in Motion"
+    />
+    <meta
+      id="meta-og-description"
       property="og:description"
-      content="UNIA Software Factory designs custom platforms, AI systems, and automation for teams scaling complex operations across Chile, Ecuador, Serbia, and Europe."
+      content="Custom software, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction."
     />
-    <meta property="og:image" content="https://unialabs.com/og-image.png" />
-    <meta property="og:image:secure_url" content="https://unialabs.com/og-image.png" />
+    <meta id="meta-og-image" property="og:image" content="https://unialabs.com/og-image.png" />
+    <meta id="meta-og-image-secure" property="og:image:secure_url" content="https://unialabs.com/og-image.png" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="UNIA Software Factory - Build, Automate, Scale." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="UNIA Software Factory | High-Stakes Software, AI, and Automation" />
+    <meta property="og:image:width" content="2626" />
+    <meta property="og:image:height" content="1548" />
     <meta
-      name="twitter:description"
-      content="UNIA Software Factory designs custom platforms, AI systems, and automation for teams scaling complex operations across Chile, Ecuador, Serbia, and Europe."
+      id="meta-og-image-alt"
+      property="og:image:alt"
+      content="UNIA Labs preview featuring the brand identity and software infrastructure positioning."
     />
-    <meta name="twitter:image" content="https://unialabs.com/og-image.png" />
-    <meta name="twitter:url" content="https://unialabs.com/" />
-    <script>
-      (function () {
-        const host = window.location.hostname;
-        const isLocalHost = host === "localhost" || host === "127.0.0.1" || host.endsWith(".local");
-        if (!isLocalHost && window.location.protocol === "http:") {
-          const secureUrl = `https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`;
-          window.location.replace(secureUrl);
-        }
-      })();
-    </script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta id="meta-twitter-url" name="twitter:url" content="https://unialabs.com/" />
+    <meta
+      id="meta-twitter-title"
+      name="twitter:title"
+      content="UNIA Labs | Software Infrastructure for Operations in Motion"
+    />
+    <meta
+      id="meta-twitter-description"
+      name="twitter:description"
+      content="Custom software, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction."
+    />
+    <meta id="meta-twitter-image" name="twitter:image" content="https://unialabs.com/og-image.png" />
+    <meta
+      id="meta-twitter-image-alt"
+      name="twitter:image:alt"
+      content="UNIA Labs social preview for software infrastructure, AI agents, and workflow automation."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <script
-      defer
-      data-domain="unialabs.com"
-      src="https://plausible.io/js/script.js"
-    ></script>
-    <script type="application/ld+json">
+    <link rel="manifest" href="/site.webmanifest" />
+    <script id="structured-data" type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
             "@type": "Organization",
             "@id": "https://unialabs.com/#organization",
-            "name": "UNIA Software Factory",
+            "name": "UNIA Labs",
             "url": "https://unialabs.com/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://unialabs.com/unia-logo.svg"
-            },
-            "sameAs": ["https://www.linkedin.com/company/uniafinance/"],
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "contactType": "sales",
-                "url": "https://unialabs.com/#contact",
-                "availableLanguage": ["en", "es", "sr"],
-                "areaServed": ["Chile", "Ecuador", "Serbia", "Europe"]
-              }
-            ],
-            "areaServed": [
-              { "@type": "Country", "name": "Chile" },
-              { "@type": "Country", "name": "Ecuador" },
-              { "@type": "Country", "name": "Serbia" },
-              { "@type": "Place", "name": "Europe" }
-            ]
+            "logo": "https://unialabs.com/unia-logo.svg",
+            "image": "https://unialabs.com/og-image.png",
+            "email": "hello@unialabs.com",
+            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction."
           },
           {
             "@type": "WebSite",
             "@id": "https://unialabs.com/#website",
             "url": "https://unialabs.com/",
-            "name": "UNIA Software Factory",
-            "description": "Software Factory for software engineering, AI, and automation.",
-            "inLanguage": ["en", "es", "sr"],
-            "publisher": { "@id": "https://unialabs.com/#organization" }
+            "name": "UNIA Labs",
+            "publisher": {
+              "@id": "https://unialabs.com/#organization"
+            },
+            "inLanguage": "en"
           },
           {
-            "@type": "ProfessionalService",
-            "@id": "https://unialabs.com/#professional-service",
-            "name": "UNIA Software Factory",
+            "@type": "WebPage",
+            "@id": "https://unialabs.com/#webpage",
             "url": "https://unialabs.com/",
-            "serviceType": ["Custom Software Engineering", "AI Automation", "Cloud DevOps"],
-            "areaServed": ["Chile", "Ecuador", "Serbia", "Europe"],
-            "provider": { "@id": "https://unialabs.com/#organization" }
+            "name": "UNIA Labs | Software Infrastructure for Operations in Motion",
+            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction.",
+            "isPartOf": {
+              "@id": "https://unialabs.com/#website"
+            },
+            "about": {
+              "@id": "https://unialabs.com/#organization"
+            },
+            "primaryImageOfPage": "https://unialabs.com/og-image.png",
+            "inLanguage": "en"
           }
         ]
       }
     </script>
+    <script
+      defer
+      data-domain="unialabs.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00D1B2",
+              secondary: "#7BD0FF",
+              surface: "#F8FAFC",
+              "on-surface": "#0F172A",
+              "on-surface-variant": "#475569",
+              "outline-variant": "#E2E8F0",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              footer: ["Manrope", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 10px 40px -10px rgba(15, 23, 42, 0.10)",
+              glass: "0 8px 32px 0 rgba(15, 23, 42, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script defer type="module" src="./main.js"></script>
   </head>
-  <body>
-    <div class="site-bg" aria-hidden="true">
-      <div class="bg-orb orb-a"></div>
-      <div class="bg-orb orb-b"></div>
-      <div class="bg-grid"></div>
-    </div>
+  <body class="bg-surface font-body text-on-surface selection:bg-primary/20">
+    <div class="page-noise" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="container nav-shell">
-        <a href="#home" class="brand">
+    <nav
+      class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/60 bg-white/75 backdrop-blur-xl transition-all duration-300"
+      data-nav
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <a href="#top" class="flex items-center" aria-label="UNIA Labs home">
           <img
-            class="brand-logo"
-            src="./unia-logo.svg"
-            alt="UNIA Software Factory logo"
-            width="140"
-            height="44"
+            src="/logo_unia.png"
+            alt="UNIA Labs"
+            class="h-10 w-auto object-contain lg:h-11"
+            loading="eager"
           />
-          <span class="brand-sub" data-i18n="brandSub">Software Factory</span>
         </a>
 
-        <button id="menuBtn" class="menu-btn" aria-label="Open navigation">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="hidden items-center gap-6 md:flex">
+          <div class="flex items-center gap-10">
+            <a class="nav-link" href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+            <a class="nav-link" href="#process" data-i18n="nav.process">Process</a>
+            <a class="nav-link" href="#case-studies" data-i18n="nav.caseStudies">Case Studies</a>
+            <a class="nav-link" href="#insights" data-i18n="nav.insights">Insights</a>
+          </div>
+          <div class="language-switcher" data-language-switcher>
+            <button class="language-button" type="button" data-lang-option="en">EN</button>
+            <button class="language-button" type="button" data-lang-option="es">ES</button>
+            <button class="language-button" type="button" data-lang-option="sr">SR</button>
+          </div>
+        </div>
 
-        <nav id="siteNav" class="site-nav">
-          <a href="#services" data-i18n="navServices">Capabilities</a>
-          <a href="#solutions" data-i18n="navSuccessCases">Factory model</a>
-          <a href="#methodology" data-i18n="navMethodology">Process</a>
-          <a href="#stack" data-i18n="navStack">Stack</a>
-          <a href="#contact" class="nav-cta" data-i18n="navBookCall">Book a call</a>
-        </nav>
+        <div class="flex items-center gap-3">
+          <a class="cta-button hidden rounded-lg px-6 py-2.5 text-sm font-bold text-white md:inline-flex" href="#contact" data-i18n="common.bookCall">
+            Book a Discovery Call
+          </a>
+          <button
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 md:hidden"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            <span class="material-symbols-outlined text-[22px]">menu</span>
+          </button>
+        </div>
       </div>
-    </header>
 
-    <main id="home">
-      <section class="hero">
-        <div class="container hero-layout">
-          <div class="hero-copy reveal">
-            <p class="eyebrow" data-i18n="heroEyebrow">Software Factory · AI Systems · Automation</p>
-            <h1 data-i18n-html="heroTitleHtml">
-              Software infrastructure for <span>complex operations in motion</span>
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-slate-200/70 bg-white/95 px-6 py-4 md:hidden"
+        data-mobile-menu
+      >
+        <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
+          <div class="language-switcher language-switcher-mobile" data-language-switcher>
+            <button class="language-button" type="button" data-lang-option="en">English</button>
+            <button class="language-button" type="button" data-lang-option="es">Español</button>
+            <button class="language-button" type="button" data-lang-option="sr">Srpski</button>
+          </div>
+          <a href="#capabilities" data-menu-link data-i18n="nav.capabilities">Capabilities</a>
+          <a href="#process" data-menu-link data-i18n="nav.process">Process</a>
+          <a href="#case-studies" data-menu-link data-i18n="nav.caseStudies">Case Studies</a>
+          <a href="#insights" data-menu-link data-i18n="nav.insights">Insights</a>
+          <a class="cta-button mt-2 inline-flex w-full justify-center rounded-lg px-5 py-3 font-bold text-white" href="#contact" data-menu-link data-i18n="common.bookCall">
+            Book a Discovery Call
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="relative overflow-hidden pt-28 lg:min-h-screen lg:pt-24">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+
+        <div class="mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-10 lg:grid-cols-2 lg:items-center lg:px-8 lg:pb-32">
+          <div class="relative z-10" data-reveal>
+            <div class="mb-6 flex items-center gap-3">
+              <div class="ai-pulse h-2 w-2 rounded-full bg-primary"></div>
+              <span class="text-xs font-bold uppercase tracking-[0.28em] text-primary" data-i18n="hero.eyebrow">
+                Engineered for Momentum
+              </span>
+            </div>
+
+            <h1 class="max-w-2xl font-headline text-5xl font-extrabold leading-[1.02] tracking-[-0.07em] text-on-surface md:text-7xl" data-i18n-html="hero.title">
+              Software
+              <span class="text-gradient">Infrastructure</span>
+              for Operations in Motion.
             </h1>
-            <p class="hero-text" data-i18n="heroText">
-              UNIA designs and ships custom platforms, AI systems, and automation layers
-              for teams that need better control, faster execution, and software they can
-              actually grow on top of.
+
+            <p class="mt-8 max-w-xl text-lg leading-8 text-on-surface-variant md:text-xl" data-i18n="hero.body">
+              UNIA builds custom software, AI agents, and workflow automation for
+              the world's most ambitious companies.
             </p>
 
-            <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary" data-i18n="heroPrimaryCta">Book a discovery call</a>
-              <a href="#services" class="btn btn-secondary" data-i18n="heroSecondaryCta">Explore capabilities</a>
-            </div>
-
-            <div class="hero-meta">
-              <div>
-                <strong data-i18n="heroStat1Value">2-week</strong>
-                <span data-i18n="heroStat1Label">delivery cadence</span>
-              </div>
-              <div>
-                <strong data-i18n="heroStat2Value">Multi-region</strong>
-                <span data-i18n="heroStat2Label">Chile, Ecuador, Serbia, Europe</span>
-              </div>
-              <div>
-                <strong data-i18n="heroStat3Value">Applied AI</strong>
-                <span data-i18n="heroStat3Label">agents, RAG, automations</span>
-              </div>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a class="cta-button inline-flex items-center justify-center rounded-xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-i18n="common.bookCall">
+                Book a Discovery Call
+              </a>
+              <a class="inline-flex items-center justify-center rounded-xl border border-outline-variant bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="#capabilities" data-i18n="hero.exploreCapabilities">
+                Explore Capabilities
+              </a>
             </div>
           </div>
 
-          <aside class="hero-board reveal">
-            <div class="board-top">
-              <p class="eyebrow subdued" data-i18n="heroPanelEyebrow">Factory in production</p>
-              <h2 data-i18n="heroPanelTitle">Built to centralize workflows, decisions, and delivery</h2>
-            </div>
+          <div class="relative hidden lg:block" data-reveal>
+            <div class="relative aspect-square w-full">
+              <div class="absolute inset-0 rounded-full border border-slate-200/70 opacity-60"></div>
+              <div class="absolute inset-[10%] rounded-full border border-slate-200/60 opacity-60"></div>
+              <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 via-transparent to-secondary/20 blur-3xl"></div>
 
-            <div class="board-panels">
-              <article class="board-panel">
-                <div class="board-row">
-                  <span class="board-label" data-i18n="heroCard1Eyebrow">Platforms</span>
-                  <strong data-i18n="heroCard1Value">Custom systems</strong>
+              <img
+                alt="Smartphone render"
+                class="absolute left-1/2 top-1/2 z-10 w-[84%] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-2xl"
+                src="https://lh3.googleusercontent.com/aida/ADBb0ug0e9ExkzHewwX0JXCOiSjSu806omjDbx61V0naZvPy03ErF3wpji0M5whc6CmUtcAfDs-rIRzJ4PvhjRulzUZuUEZMUg2AmWTB-y5vJfbZ8FbR_EYI3-D2DYVEK4BtmT2BpDANLoN8ze2XNy91G4nOHqRDcmUH-8-EcpaRgMzQCPb4x9UMHRXyR9mi8yIgefrfs7EjKjgxGv5m6aJgjWvrZ4fWe2OYKhrOjrRyyGC5_FFXnzvGAFNKmqAOQ4c5DwGGN7oLlQPHqA"
+              />
+
+              <div class="glass-card absolute right-0 top-10 z-20 w-64 rounded-[1.6rem] p-6 shadow-soft">
+                <div class="mb-4 flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary">bolt</span>
+                  <div class="h-1.5 w-24 rounded-full bg-slate-100">
+                    <div class="h-full w-2/3 rounded-full bg-primary"></div>
+                  </div>
                 </div>
-                <p data-i18n="heroCard1Text">
-                  Internal tooling, client-facing portals, APIs, and product layers shaped
-                  around real business throughput.
-                </p>
-              </article>
-
-              <article class="board-panel">
-                <div class="board-row">
-                  <span class="board-label" data-i18n="heroCard2Eyebrow">AI systems</span>
-                  <strong data-i18n="heroCard2Value">Assist + route + act</strong>
+                <div class="space-y-2">
+                  <div class="h-2 w-full rounded-md bg-slate-100"></div>
+                  <div class="h-2 w-3/4 rounded-md bg-slate-100"></div>
                 </div>
-                <p data-i18n="heroCard2Text">
-                  Retrieval, copilots, and agents embedded into operations instead of living
-                  as isolated experiments.
-                </p>
-              </article>
+              </div>
 
-              <article class="board-panel">
-                <div class="board-row">
-                  <span class="board-label" data-i18n="heroCard3Eyebrow">Cloud delivery</span>
-                  <strong data-i18n="heroCard3Value">Reliable releases</strong>
+              <div class="glass-card absolute bottom-10 left-0 z-20 w-72 rounded-[1.6rem] p-6 shadow-soft">
+                <div class="mb-4 flex items-center gap-4">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <span class="material-symbols-outlined text-primary">data_object</span>
+                  </div>
+                  <span class="text-sm font-bold text-on-surface">System.execute()</span>
                 </div>
-                <p data-i18n="heroCard3Text">
-                  CI/CD, observability, release control, and infrastructure decisions that
-                  protect speed and stability together.
-                </p>
-              </article>
-            </div>
-
-            <div class="board-footer">
-              <span data-i18n="heroStrip1">Architecture-first</span>
-              <span data-i18n="heroStrip2">Senior execution</span>
-              <span data-i18n="heroStrip3">Operational scale</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="client-band">
-        <div class="container client-band-shell reveal">
-          <div class="client-band-head">
-            <p class="eyebrow" data-i18n="clientsEyebrow">Selected clients</p>
-            <p class="client-band-copy" data-i18n="clientsSub">
-              Teams across finance, commerce, operations, and professional services trust
-              UNIA to build, automate, and evolve critical software.
-            </p>
-          </div>
-
-          <div class="client-marquee" aria-label="Client logos">
-            <div class="client-track">
-              <div class="client-pill"><img src="./client-banco-falabella.png" alt="Banco Falabella" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./image-removebg-preview.png" alt="Nudara Smart" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-fief.svg" alt="Fief" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-banco-de-chile.png" alt="Banco de Chile" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-bym.png" alt="Boda y Playa" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-loulous.png" alt="Loulous TCruz" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-gestorcapitax.png" alt="GestorCapitax" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-lorak-logo.png" alt="LoraK Realtor" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-slim4life.png" alt="Slim4Life" loading="lazy" decoding="async" /></div>
-            </div>
-            <div class="client-track" aria-hidden="true">
-              <div class="client-pill"><img src="./client-banco-falabella.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./image-removebg-preview.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-fief.svg" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-banco-de-chile.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-bym.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-loulous.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-gestorcapitax.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-lorak-logo.png" alt="" loading="lazy" decoding="async" /></div>
-              <div class="client-pill"><img src="./client-slim4life.png" alt="" loading="lazy" decoding="async" /></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="editorial-section">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="servicesEyebrow">Capabilities</p>
-            <h2 data-i18n-html="servicesTitleHtml">
-              A software factory built around <span>execution quality</span>
-            </h2>
-            <p class="section-sub" data-i18n="servicesSub">
-              We do not sell isolated features. We design systems that improve how the
-              business operates, decides, and scales.
-            </p>
-          </div>
-
-          <div class="feature-rail">
-            <article class="feature-row reveal">
-              <div class="feature-main">
-                <p class="feature-kicker" data-i18n="service1Eyebrow">Custom platforms</p>
-                <h3 data-i18n="service1Title">Platforms and internal systems that become the operating layer</h3>
-                <p data-i18n="service1Text">
-                  When spreadsheets, inboxes, and disconnected tools start slowing the
-                  business down, we replace them with software shaped around real workflows.
-                </p>
-                <ul class="feature-list">
-                  <li data-i18n="service1Point1">Client portals and internal dashboards</li>
-                  <li data-i18n="service1Point2">Process-specific APIs and integrations</li>
-                  <li data-i18n="service1Point3">Products built for operational traceability</li>
-                </ul>
+                <div class="grid grid-cols-4 gap-2">
+                  <div class="h-6 rounded bg-slate-50"></div>
+                  <div class="h-6 rounded bg-slate-50"></div>
+                  <div class="h-6 rounded bg-primary/20"></div>
+                  <div class="h-6 rounded bg-slate-50"></div>
+                </div>
               </div>
-              <aside class="feature-aside">
-                <span class="feature-index">01</span>
-                <p data-i18n="service1Aside">
-                  Useful when the business needs one source of truth instead of more manual coordination.
-                </p>
-              </aside>
-            </article>
+            </div>
+          </div>
+        </div>
 
-            <article class="feature-row feature-row-reverse reveal">
-              <div class="feature-main">
-                <p class="feature-kicker" data-i18n="service2Eyebrow">AI systems</p>
-                <h3 data-i18n="service2Title">Applied AI that assists teams and activates the next step</h3>
-                <p data-i18n="service2Text">
-                  We implement copilots, retrieval systems, and agents that live inside the
-                  operating flow instead of sitting outside the work.
-                </p>
-                <ul class="feature-list">
-                  <li data-i18n="service2Point1">RAG and knowledge retrieval for internal teams</li>
-                  <li data-i18n="service2Point2">Agents connected to tools, data, and action rules</li>
-                  <li data-i18n="service2Point3">Decision support for repetitive high-volume tasks</li>
-                </ul>
+        <div class="border-y border-slate-100 bg-white/60 backdrop-blur-md">
+          <div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-5 gap-y-6 px-6 py-8 lg:grid-cols-4 lg:gap-x-6 lg:px-8">
+            <div class="flex min-w-0 items-center gap-3 lg:justify-center">
+              <span class="material-symbols-outlined text-primary">schedule</span>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-on-surface-variant lg:text-[10px]" data-i18n="trust.cadence">
+                2-Week Delivery Cadence
+              </span>
+            </div>
+            <div class="flex min-w-0 items-center gap-3 lg:justify-center">
+              <span class="material-symbols-outlined text-primary">language</span>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-on-surface-variant lg:text-[10px]" data-i18n="trust.execution">
+                Multi-Region Execution
+              </span>
+            </div>
+            <div class="flex min-w-0 items-center gap-3 lg:justify-center">
+              <span class="material-symbols-outlined text-primary">psychology</span>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-on-surface-variant lg:text-[10px]" data-i18n="trust.aiAgents">
+                Applied AI Agents
+              </span>
+            </div>
+            <div class="flex min-w-0 items-center gap-3 lg:justify-center">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-on-surface-variant lg:text-[10px]" data-i18n="trust.production">
+                Production-Ready Systems
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden border-b border-slate-100 bg-white py-12">
+        <div class="mx-auto mb-8 max-w-7xl px-6 lg:px-8">
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent to-slate-200"></div>
+            <span class="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.34em] text-on-surface-variant/70" data-i18n="tech.heading">
+              Engineered with Modern Infrastructure
+            </span>
+            <div class="h-px flex-1 bg-gradient-to-l from-transparent to-slate-200"></div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="slider-track" aria-label="Technology stack">
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/typescript.svg" alt="TypeScript logo" loading="lazy" />
+              <span class="tech-label">TypeScript</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo tech-logo-wide" src="/tech/aws.svg" alt="AWS logo" loading="lazy" />
+              <span class="tech-label">AWS</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/postgresql.svg" alt="PostgreSQL logo" loading="lazy" />
+              <span class="tech-label">PostgreSQL</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/docker.svg" alt="Docker logo" loading="lazy" />
+              <span class="tech-label">Docker</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/kubernetes.svg" alt="Kubernetes logo" loading="lazy" />
+              <span class="tech-label">Kubernetes</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/cloudflare.svg" alt="Cloudflare logo" loading="lazy" />
+              <span class="tech-label">Cloudflare</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/openai.svg" alt="OpenAI logo" loading="lazy" />
+              <span class="tech-label">OpenAI</span>
+            </div>
+            <div class="tech-item">
+              <img class="tech-logo" src="/tech/nodejs.svg" alt="Node.js logo" loading="lazy" />
+              <span class="tech-label">Node.js</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/typescript.svg" alt="" loading="lazy" />
+              <span class="tech-label">TypeScript</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo tech-logo-wide" src="/tech/aws.svg" alt="" loading="lazy" />
+              <span class="tech-label">AWS</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/postgresql.svg" alt="" loading="lazy" />
+              <span class="tech-label">PostgreSQL</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/docker.svg" alt="" loading="lazy" />
+              <span class="tech-label">Docker</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/kubernetes.svg" alt="" loading="lazy" />
+              <span class="tech-label">Kubernetes</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/cloudflare.svg" alt="" loading="lazy" />
+              <span class="tech-label">Cloudflare</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/openai.svg" alt="" loading="lazy" />
+              <span class="tech-label">OpenAI</span>
+            </div>
+            <div class="tech-item" aria-hidden="true">
+              <img class="tech-logo" src="/tech/nodejs.svg" alt="" loading="lazy" />
+              <span class="tech-label">Node.js</span>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent"></div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="bg-white py-28 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mb-20 space-y-4" data-reveal>
+            <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
+              Capabilities
+            </h2>
+            <p class="max-w-2xl text-xl text-on-surface-variant">
+              We bridge the gap between high-level strategy and low-level code.
+            </p>
+          </div>
+
+          <div class="capabilities-showcase">
+            <article class="cap-showcase-card cap-showcase-tile cap-showcase-lilac" data-reveal>
+              <div class="cap-showcase-icon">
+                <span class="material-symbols-outlined text-[1.7rem] text-slate-900">smart_toy</span>
               </div>
-              <aside class="feature-aside">
-                <span class="feature-index">02</span>
-                <p data-i18n="service2Aside">
-                  Useful when teams need better throughput without adding more human routing and context switching.
+              <div class="cap-showcase-copy">
+                <h3 class="cap-showcase-title">AI Agents &amp; RAG</h3>
+                <p class="cap-showcase-text">
+                  Cognitive architectures that act on your data in real time.
                 </p>
-              </aside>
-            </article>
-
-            <article class="feature-row reveal">
-              <div class="feature-main">
-                <p class="feature-kicker" data-i18n="service3Eyebrow">Automation and cloud delivery</p>
-                <h3 data-i18n="service3Title">Automation, release control, and cloud reliability in the same layer</h3>
-                <p data-i18n="service3Text">
-                  We connect business logic, orchestration, CI/CD, observability, and
-                  infrastructure choices so the product can move faster without breaking trust.
-                </p>
-                <ul class="feature-list">
-                  <li data-i18n="service3Point1">Cross-functional workflow automation</li>
-                  <li data-i18n="service3Point2">Cloud architecture and release governance</li>
-                  <li data-i18n="service3Point3">Monitoring and operational support after launch</li>
-                </ul>
               </div>
-              <aside class="feature-aside">
-                <span class="feature-index">03</span>
-                <p data-i18n="service3Aside">
-                  Useful when growth is no longer limited by ideas, but by execution friction and unstable delivery.
+            </article>
+
+            <article class="cap-showcase-card cap-showcase-tile cap-showcase-mint" data-reveal>
+              <div class="cap-showcase-icon">
+                <span class="material-symbols-outlined text-[1.7rem] text-slate-900">account_tree</span>
+              </div>
+              <div class="cap-showcase-copy">
+                <h3 class="cap-showcase-title">Workflow Automation</h3>
+                <p class="cap-showcase-text">
+                  Eliminating friction from complex operational pipelines.
                 </p>
-              </aside>
+              </div>
+            </article>
+
+            <article class="cap-showcase-card cap-showcase-feature cap-showcase-sky" data-reveal>
+              <div class="cap-showcase-icon">
+                <span class="material-symbols-outlined text-[1.8rem] text-slate-900">code</span>
+              </div>
+              <div class="cap-showcase-copy">
+                <h3 class="cap-showcase-title cap-showcase-title-display">
+                  Custom software built on a resilient and high-performance core
+                </h3>
+                <p class="cap-showcase-text cap-showcase-text-feature">
+                  Proprietary engines built for speed and durability. No off-the-shelf compromises.
+                </p>
+              </div>
+              <div class="cap-showcase-visual cap-showcase-visual-dashboard" aria-hidden="true">
+                <div class="cap-dashboard-shell">
+                  <div class="cap-dashboard-top">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="cap-dashboard-head">
+                    <div class="cap-dashboard-title-group">
+                      <div class="cap-dashboard-title"></div>
+                      <div class="cap-dashboard-subtitle"></div>
+                    </div>
+                    <div class="cap-dashboard-pill">Live</div>
+                  </div>
+                  <div class="cap-dashboard-chart">
+                    <div class="cap-dashboard-grid"></div>
+                    <div class="cap-dashboard-curve"></div>
+                    <div class="cap-dashboard-point"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap-showcase-card cap-showcase-tile cap-showcase-sand" data-reveal>
+              <div class="cap-showcase-icon">
+                <span class="material-symbols-outlined text-[1.7rem] text-slate-900">layers</span>
+              </div>
+              <div class="cap-showcase-copy">
+                <h3 class="cap-showcase-title">Product Design</h3>
+                <p class="cap-showcase-text">
+                  Systems that are as functional as they are intuitive.
+                </p>
+              </div>
+            </article>
+
+            <article class="cap-showcase-card cap-showcase-tile cap-showcase-rose" data-reveal>
+              <div class="cap-showcase-icon">
+                <span class="material-symbols-outlined text-[1.7rem] text-slate-900">hub</span>
+              </div>
+              <div class="cap-showcase-copy">
+                <h3 class="cap-showcase-title">Systems Integration</h3>
+                <p class="cap-showcase-text">
+                  Unifying fragmented tech stacks into a single cohesive core.
+                </p>
+              </div>
+            </article>
+
+            <article class="cap-showcase-card cap-showcase-wide cap-showcase-ice" data-reveal>
+              <div class="cap-showcase-wide-copy">
+                <div class="cap-showcase-icon">
+                  <span class="material-symbols-outlined text-[1.8rem] text-slate-900">cloud_done</span>
+                </div>
+                <h3 class="cap-showcase-title cap-showcase-title-wide">
+                  Cloud Architecture
+                </h3>
+                <p class="cap-showcase-text cap-showcase-text-wide">
+                  Distributed systems designed to handle global-scale demand without breaking a sweat.
+                </p>
+              </div>
+              <div class="cap-showcase-visual cap-showcase-visual-cloud" aria-hidden="true">
+                <div class="cap-showcase-cloud-panel">
+                  <div class="cap-showcase-cloud-node cap-showcase-cloud-node-a"></div>
+                  <div class="cap-showcase-cloud-node cap-showcase-cloud-node-b"></div>
+                  <div class="cap-showcase-cloud-node cap-showcase-cloud-node-c"></div>
+                  <div class="cap-showcase-cloud-node cap-showcase-cloud-node-d"></div>
+                  <div class="cap-showcase-cloud-link cap-showcase-cloud-link-a"></div>
+                  <div class="cap-showcase-cloud-link cap-showcase-cloud-link-b"></div>
+                  <div class="cap-showcase-cloud-link cap-showcase-cloud-link-c"></div>
+                  <div class="cap-showcase-cloud-hub"></div>
+                  <div class="cap-showcase-cloud-widget">
+                    <div class="cap-showcase-cloud-widget-top"></div>
+                    <div class="cap-showcase-cloud-widget-bars"><span></span><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="solutions" class="split-section">
-        <div class="container split-layout">
-          <div class="split-copy reveal">
-            <p class="eyebrow" data-i18n="solutionsEyebrow">Factory model</p>
-            <h2 data-i18n-html="solutionsTitleHtml">
-              Work with UNIA as a <span>build partner</span>
-            </h2>
-            <p class="section-sub" data-i18n="solutionsSub">
-              We adapt around your product stage, internal team, and operational urgency.
-              The structure changes, but the standard of execution does not.
-            </p>
-          </div>
+      <section id="insights" class="bg-slate-950 py-28 text-white lg:py-32">
+        <div class="mx-auto max-w-5xl px-6 text-center lg:px-8" data-reveal>
+          <span class="mb-8 block text-sm font-bold uppercase tracking-[0.32em] text-primary">
+            The UNIA Philosophy
+          </span>
+          <h2 class="font-headline text-5xl font-black tracking-[-0.07em] md:text-7xl">
+            Moving Beyond Apps.
+          </h2>
+          <p class="mx-auto mt-10 max-w-4xl text-2xl leading-relaxed text-slate-400 md:text-3xl">
+            Most agencies build apps. We design
+            <span class="font-semibold text-white">software infrastructure</span>
+            for operations in motion. Strategic depth combined with relentless execution.
+          </p>
+        </div>
+      </section>
 
-          <div class="model-stack reveal">
-            <article class="model-block">
-              <p class="feature-kicker" data-i18n="model1Eyebrow">Model 01</p>
-              <h3 data-i18n="model1Title">Software Partnership</h3>
-              <p data-i18n="model1Text">
-                A dedicated senior team to design, build, and evolve core software with a
-                shared roadmap and controlled delivery rhythm.
+      <section class="bg-surface py-28 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 class="mb-16 font-headline text-4xl font-extrabold tracking-[-0.05em] text-on-surface" data-reveal>
+            Core Solutions
+          </h2>
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+            <article class="group" data-reveal>
+              <div class="solution-card mb-8">
+                <div class="solution-glow from-primary/20 via-primary/5 to-transparent"></div>
+                <span class="material-symbols-outlined text-5xl text-primary">monitoring</span>
+              </div>
+              <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Operational Platforms</h3>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                The central nervous system for daily operations, from logistics to resource management.
               </p>
             </article>
-            <article class="model-block">
-              <p class="feature-kicker" data-i18n="model2Eyebrow">Model 02</p>
-              <h3 data-i18n="model2Title">Embedded Factory</h3>
-              <p data-i18n="model2Text">
-                Senior product and engineering capacity embedded into your operation to
-                modernize systems, automate flows, and raise throughput.
+
+            <article class="group" data-reveal>
+              <div class="solution-card mb-8">
+                <div class="solution-glow from-secondary/25 via-secondary/5 to-transparent"></div>
+                <span class="material-symbols-outlined text-5xl text-secondary">neurology</span>
+              </div>
+              <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">AI Copilots</h3>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                Human-AI interfaces that augment decisions and accelerate complex knowledge work.
               </p>
             </article>
-            <article class="model-note">
-              <strong data-i18n="modelNoteTitle">The objective</strong>
-              <p data-i18n="modelNoteText">
-                Reduce coordination drag, centralize critical workflows, and leave the team
-                with software leverage it can keep compounding.
+
+            <article class="group" data-reveal>
+              <div class="solution-card mb-8">
+                <div class="solution-glow from-primary/20 via-primary/5 to-transparent"></div>
+                <span class="material-symbols-outlined text-5xl text-primary">conversion_path</span>
+              </div>
+              <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Back-Office Automation</h3>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                Invisible infrastructure for finance, HR, and compliance workflows that need to scale.
+              </p>
+            </article>
+
+            <article class="group" data-reveal>
+              <div class="solution-card mb-8">
+                <div class="solution-glow from-secondary/25 via-secondary/5 to-transparent"></div>
+                <span class="material-symbols-outlined text-5xl text-secondary">devices</span>
+              </div>
+              <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Customer Products</h3>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                High-performance digital products designed to convert and retain at enterprise scale.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="methodology" class="process-section">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow" data-i18n="methodologyEyebrow">Process</p>
-            <h2 data-i18n-html="methodologyTitleHtml">
-              From diagnosis to <span>production discipline</span>
-            </h2>
-            <p class="section-sub" data-i18n="methodologySub">
-              Business context, architecture, and delivery are handled as one continuous system.
-            </p>
-          </div>
-
-          <div class="process-grid">
-            <article class="process-card reveal">
-              <span>01</span>
-              <h3 data-i18n="method1Title">Map the operation</h3>
-              <p data-i18n="method1Text">
-                We define constraints, bottlenecks, stakeholders, and operating risk before committing to scope.
-              </p>
-            </article>
-            <article class="process-card reveal">
-              <span>02</span>
-              <h3 data-i18n="method2Title">Design the system</h3>
-              <p data-i18n="method2Text">
-                Product structure, interfaces, automation logic, and architecture are aligned around the workflow.
-              </p>
-            </article>
-            <article class="process-card reveal">
-              <span>03</span>
-              <h3 data-i18n="method3Title">Ship in increments</h3>
-              <p data-i18n="method3Text">
-                Two-week releases and clear priorities keep progress visible while preserving rigor.
-              </p>
-            </article>
-            <article class="process-card reveal">
-              <span>04</span>
-              <h3 data-i18n="method4Title">Stabilize and evolve</h3>
-              <p data-i18n="method4Text">
-                After launch, we continue improving performance, automation depth, and operational fit.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="stack" class="stack-section">
-        <div class="container stack-layout">
-          <div class="stack-intro reveal">
-            <p class="eyebrow" data-i18n="stackEyebrow">Stack</p>
-            <h2 data-i18n-html="stackTitleHtml">
-              Technologies chosen for <span>reliability and speed</span>
-            </h2>
-            <p class="section-sub" data-i18n="stackSub">
-              The goal is a stack that can be maintained, scaled, and evolved under real business pressure.
-            </p>
-          </div>
-
-          <div class="stack-columns reveal">
-            <article class="stack-column">
-              <h3 data-i18n="stack1Title">Applications & APIs</h3>
-              <p data-i18n="stack1Text">
-                Modern applications, internal platforms, and API layers built around operational throughput.
-              </p>
-              <ul class="stack-tags">
-                <li>JavaScript</li>
-                <li>Node.js</li>
-                <li>REST APIs</li>
-                <li>Integrations</li>
-              </ul>
-            </article>
-            <article class="stack-column">
-              <h3 data-i18n="stack2Title">Data, AI & Automation</h3>
-              <p data-i18n="stack2Text">
-                Retrieval systems, agents, orchestration logic, automation pipelines, and operational analytics.
-              </p>
-              <ul class="stack-tags">
-                <li>RAG</li>
-                <li>AI Agents</li>
-                <li>Automation</li>
-                <li>Analytics</li>
-              </ul>
-            </article>
-            <article class="stack-column">
-              <h3 data-i18n="stack3Title">Cloud & Delivery</h3>
-              <p data-i18n="stack3Text">
-                Cloudflare, CI/CD, observability, performance control, and security practices for production systems.
-              </p>
-              <ul class="stack-tags">
-                <li>Cloudflare</li>
-                <li>CI/CD</li>
-                <li>Observability</li>
-                <li>Security</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="cta-section">
-        <div class="container">
-          <div class="cta-shell reveal">
-            <div class="cta-copy">
-              <p class="eyebrow" data-i18n="ctaEyebrow">Start the build</p>
-              <h2 data-i18n-html="ctaTitleHtml">
-                Turn operational complexity into <span>software leverage</span>
+      <section id="process" class="overflow-hidden bg-white py-28 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mb-20 flex flex-col gap-8 md:mb-24 md:flex-row md:items-end md:justify-between">
+            <div class="space-y-4" data-reveal>
+              <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
+                Process
               </h2>
-              <p data-i18n="ctaText">
-                We can start with discovery, architecture review, automation opportunities,
-                or a phased execution roadmap.
+              <p class="text-xl text-on-surface-variant">
+                The refined flow from concept to global scale.
               </p>
             </div>
-            <div class="cta-actions">
-              <a
-                class="btn btn-primary"
-                href="#contact"
-                data-email-user="dgukovsky"
-                data-email-domain="unia.cl"
-                data-i18n="contactEmailCta"
-              >Email UNIA</a>
-              <a
-                class="btn btn-secondary"
-                href="https://www.linkedin.com/company/uniafinance/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="contactLinkedinCta"
-              >Connect on LinkedIn</a>
-              <a
-                class="text-link"
-                href="https://www.unia.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="contactWebsiteCta"
-              >Visit unia.cl</a>
+            <div class="flex gap-2" data-reveal>
+              <div class="h-1 w-12 rounded-full bg-primary"></div>
+              <div class="h-1 w-12 rounded-full bg-slate-100"></div>
+              <div class="h-1 w-12 rounded-full bg-slate-100"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
+            <article class="process-card" data-reveal>
+              <span class="process-number">01</span>
+              <div class="process-icon">
+                <span class="material-symbols-outlined text-3xl text-primary">search</span>
+              </div>
+              <h4 class="font-headline text-2xl font-bold text-on-surface">Discovery</h4>
+              <p class="text-on-surface-variant">
+                Deep immersion into your operational bottlenecks and business logic.
+              </p>
+            </article>
+
+            <article class="process-card" data-reveal>
+              <span class="process-number">02</span>
+              <div class="process-icon">
+                <span class="material-symbols-outlined text-3xl text-primary">architecture</span>
+              </div>
+              <h4 class="font-headline text-2xl font-bold text-on-surface">Architecture</h4>
+              <p class="text-on-surface-variant">
+                Mapping the technical foundation to ensure future-proof scalability.
+              </p>
+            </article>
+
+            <article class="process-card" data-reveal>
+              <span class="process-number">03</span>
+              <div class="process-icon">
+                <span class="material-symbols-outlined text-3xl text-primary">draw</span>
+              </div>
+              <h4 class="font-headline text-2xl font-bold text-on-surface">Design</h4>
+              <p class="text-on-surface-variant">
+                Crafting high-fidelity interfaces that balance beauty and utility.
+              </p>
+            </article>
+
+            <article class="process-card" data-reveal>
+              <span class="process-number">04</span>
+              <div class="process-icon">
+                <span class="material-symbols-outlined text-3xl text-primary">precision_manufacturing</span>
+              </div>
+              <h4 class="font-headline text-2xl font-bold text-on-surface">Build</h4>
+              <p class="text-on-surface-variant">
+                Sprint-based execution with production-quality code from day one.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="case-studies" class="py-28 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="grid overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-2xl lg:grid-cols-2">
+            <div class="flex flex-col justify-center bg-slate-900 p-12 lg:p-16" data-reveal>
+              <span class="mb-6 text-sm font-bold uppercase tracking-[0.25em] text-secondary">
+                Case Study: FinTech Global
+              </span>
+              <h2 class="mb-12 font-headline text-4xl font-extrabold tracking-[-0.06em] text-white md:text-5xl">
+                Automating $4B in Yearly Transaction Flow
+              </h2>
+
+              <div class="space-y-10">
+                <div class="flex gap-4">
+                  <span class="material-symbols-outlined text-primary">warning</span>
+                  <div>
+                    <h4 class="mb-1 font-bold text-white">Challenge</h4>
+                    <p class="text-lg text-slate-400">
+                      Legacy systems caused 15% manual reconciliation overhead and critical data silos.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <span class="material-symbols-outlined text-primary">settings</span>
+                  <div>
+                    <h4 class="mb-1 font-bold text-white">Solution</h4>
+                    <p class="text-lg text-slate-400">
+                      A custom RAG-powered agent automated ledger matching across fragmented systems.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <span class="material-symbols-outlined text-primary">trending_up</span>
+                  <div>
+                    <h4 class="mb-1 font-bold text-white">Result</h4>
+                    <p class="text-lg text-slate-400">
+                      98.5% automation of reconciliation, cutting operational costs by 40%.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study-panel relative min-h-[420px]" data-reveal>
+              <img
+                class="absolute inset-0 h-full w-full object-cover opacity-75"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoh21PdH7TXyinxhyZgHvd5NdKsL4t2xLWkbMqbG_LaYxH9TCz8vRYbc38DEsDZx48wv-PSWWKxqx0KwyfGzVcBl5chmdPs7UQUOrWJI-zhHyLd1gUfs8ulQLbV3f-WDkPUh9Levb_zbygqe0W5qB6n53Kz7cnfEgTbK9W_rGl3MzdFPZd-N1GlxXxsRgND796bagVuqcQDYin7K1FL3UI7UcKZbJjv8iE5cvx5HPh9ql3oSCfY3B7kypTlYosG1q7qZ4pjVB4ZWA"
+                alt="Engineers working on infrastructure and automation systems"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,209,178,0.26),transparent_32%),radial-gradient(circle_at_70%_45%,rgba(123,208,255,0.24),transparent_28%)]"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/35 to-slate-900/10"></div>
+              <div class="absolute bottom-10 left-10 right-10 rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="rounded-2xl bg-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Accuracy</p>
+                    <p class="mt-4 text-3xl font-bold text-white">98.5%</p>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Cost Down</p>
+                    <p class="mt-4 text-3xl font-bold text-white">40%</p>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-400">Volume</p>
+                    <p class="mt-4 text-3xl font-bold text-white">$4B</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-28 lg:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 class="mb-20 text-center font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:mb-24 md:text-5xl" data-reveal>
+            Why UNIA Labs?
+          </h2>
+
+          <div class="grid gap-16 md:grid-cols-3">
+            <article class="text-center" data-reveal>
+              <div class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[1.75rem] bg-primary/5">
+                <span class="material-symbols-outlined text-4xl text-primary">handshake</span>
+              </div>
+              <h3 class="mb-4 font-headline text-2xl font-bold text-on-surface">
+                Business &amp; Execution
+              </h3>
+              <p class="text-lg leading-relaxed text-on-surface-variant">
+                We do not just write code. We understand the P&amp;L impact of every technical decision.
+              </p>
+            </article>
+
+            <article class="text-center" data-reveal>
+              <div class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[1.75rem] bg-secondary/10">
+                <span class="material-symbols-outlined text-4xl text-secondary">grid_view</span>
+              </div>
+              <h3 class="mb-4 font-headline text-2xl font-bold text-on-surface">
+                Custom Architecture
+              </h3>
+              <p class="text-lg leading-relaxed text-on-surface-variant">
+                Zero reliance on generic templates. We build bespoke systems that match your DNA.
+              </p>
+            </article>
+
+            <article class="text-center" data-reveal>
+              <div class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[1.75rem] bg-primary/5">
+                <span class="material-symbols-outlined text-4xl text-primary">speed</span>
+              </div>
+              <h3 class="mb-4 font-headline text-2xl font-bold text-on-surface">
+                Scalable Systems
+              </h3>
+              <p class="text-lg leading-relaxed text-on-surface-variant">
+                Infrastructure built to grow and designed for the high-volume realities of modern operations.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-slate-50 py-28 lg:py-32">
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+          <div class="relative overflow-hidden rounded-[3rem] border border-slate-100 bg-white p-12 text-center shadow-soft md:p-20" data-reveal>
+            <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-primary/5 blur-[100px]"></div>
+            <div class="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-secondary/10 blur-[100px]"></div>
+
+            <h2 class="relative z-10 font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-7xl">
+              Ready to scale your digital infrastructure?
+            </h2>
+            <p class="relative z-10 mx-auto mt-8 max-w-2xl text-xl text-on-surface-variant md:text-2xl">
+              Let's build the systems that will power your next decade of growth.
+            </p>
+            <div class="relative z-10 mt-12">
+              <a class="cta-button inline-flex rounded-xl px-12 py-5 text-xl font-bold text-white" href="mailto:hello@unialabs.com">
+                Book a Discovery Call
+              </a>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-shell">
-        <img
-          class="footer-logo"
-          src="./unia-logo.svg"
-          alt="UNIA Software Factory logo"
-          width="140"
-          height="44"
-        />
-        <p class="footer-tagline" data-i18n="footerTagline">
-          Software Factory for custom platforms, AI systems, and automation
-        </p>
+    <footer class="border-t border-slate-200/20 bg-slate-50">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-12 px-6 py-20 font-footer text-sm text-slate-500 md:grid-cols-4 lg:px-8">
+        <div class="col-span-2 space-y-6 md:col-span-1">
+          <img
+            src="/logo_unia.png"
+            alt="UNIA Labs"
+            class="h-10 w-auto object-contain"
+            loading="lazy"
+          />
+          <p class="max-w-xs leading-relaxed">
+            Software Infrastructure for Operations in Motion. Building the future of AI-driven business systems.
+          </p>
+          <div class="flex gap-4">
+            <a class="text-teal-500 transition-opacity hover:opacity-70" href="https://www.linkedin.com" aria-label="LinkedIn">
+              <span class="material-symbols-outlined">public</span>
+            </a>
+            <a class="text-teal-500 transition-opacity hover:opacity-70" href="mailto:hello@unialabs.com" aria-label="Email">
+              <span class="material-symbols-outlined">alternate_email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="text-xs font-semibold uppercase tracking-[0.24em] text-teal-500">Capabilities</h5>
+          <ul class="space-y-3">
+            <li><a class="footer-link" href="#capabilities">Custom Software</a></li>
+            <li><a class="footer-link" href="#capabilities">AI Agents</a></li>
+            <li><a class="footer-link" href="#capabilities">Automation</a></li>
+            <li><a class="footer-link" href="#capabilities">Cloud Architecture</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="text-xs font-semibold uppercase tracking-[0.24em] text-teal-500">Methodology</h5>
+          <ul class="space-y-3">
+            <li><a class="footer-link" href="#process">Discovery</a></li>
+            <li><a class="footer-link" href="#process">Architecture</a></li>
+            <li><a class="footer-link" href="#process">Design</a></li>
+            <li><a class="footer-link" href="#process">Build</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h5 class="text-xs font-semibold uppercase tracking-[0.24em] text-teal-500">Contact</h5>
+          <ul class="space-y-3">
+            <li><a class="footer-link" href="mailto:hello@unialabs.com">hello@unialabs.com</a></li>
+            <li><a class="footer-link" href="#case-studies">Case Studies</a></li>
+            <li><a class="footer-link" href="#insights">Insights</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-200/20 px-6 py-8 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
+          <p class="text-xs text-slate-400">
+            © <span data-year></span> UNIA Labs. Software Infrastructure for Operations in Motion.
+          </p>
+          <div class="flex gap-8">
+            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="#">
+              Privacy Policy
+            </a>
+            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="#">
+              Terms of Service
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
-
-    <script src="./main.js"></script>
   </body>
 </html>
