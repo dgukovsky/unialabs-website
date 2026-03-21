@@ -98,6 +98,37 @@ h5 {
   color: transparent;
 }
 
+.hero-section {
+  isolation: isolate;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0.98));
+}
+
+.hero-background,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-background {
+  z-index: -3;
+  background:
+    linear-gradient(90deg, rgba(248, 250, 252, 0.9) 0%, rgba(248, 250, 252, 0.72) 38%, rgba(248, 250, 252, 0.42) 58%, rgba(248, 250, 252, 0.8) 100%),
+    url("/hero-background.png");
+  background-position: center, right center;
+  background-repeat: no-repeat;
+  background-size: cover, cover;
+  opacity: 0.92;
+}
+
+.hero-overlay {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(0, 209, 178, 0.12), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(123, 208, 255, 0.16), transparent 22%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.12), rgba(248, 250, 252, 0.22));
+}
+
 .hero-orb {
   position: absolute;
   border-radius: 9999px;
@@ -311,7 +342,7 @@ h5 {
 
 .cap-showcase-title-wide {
   max-width: 18rem;
-  font-size: clamp(2.4rem, 3.2vw, 3.3rem);
+  font-size: clamp(1rem, 5vw, 2rem);
 }
 
 .cap-showcase-text {
@@ -1401,6 +1432,14 @@ h5 {
 @media (max-width: 767px) {
   html {
     --tech-item-width: 132px;
+  }
+
+  .hero-background {
+    background:
+      linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(248, 250, 252, 0.78) 36%, rgba(248, 250, 252, 0.92) 100%),
+      url("/hero-background.png");
+    background-position: center, 70% center;
+    background-size: cover, cover;
   }
 
   .slider-track {
