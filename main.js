@@ -4,6 +4,86 @@ const menuLinks = document.querySelectorAll("[data-menu-link]");
 const nav = document.querySelector("[data-nav]");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const yearNodes = document.querySelectorAll("[data-year]");
+const heroTitleNode = document.querySelector("[data-hero-title]");
+const heroTitleHeading = heroTitleNode?.closest(".hero-title");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let heroTitleStarted = false;
+
+const getHeroTitleText = () => {
+  if (!heroTitleNode) {
+    return "";
+  }
+
+  const existingText = heroTitleNode.dataset.fullText;
+
+  if (existingText) {
+    return existingText;
+  }
+
+  const normalizedText = heroTitleNode.textContent
+    .split("\n")
+    .map((line) => line.replace(/\s+/g, " ").trim())
+    .filter(Boolean)
+    .join("\n");
+
+  heroTitleNode.dataset.fullText = normalizedText;
+  heroTitleHeading?.setAttribute("aria-label", normalizedText.replace(/\n/g, " "));
+
+  return normalizedText;
+};
+
+const renderHeroTitleImmediately = () => {
+  if (!heroTitleNode) {
+    return;
+  }
+
+  heroTitleNode.textContent = getHeroTitleText();
+  heroTitleHeading?.classList.add("is-complete");
+};
+
+const startHeroTitleTyping = () => {
+  if (!heroTitleNode || heroTitleStarted) {
+    return;
+  }
+
+  if (prefersReducedMotion.matches) {
+    renderHeroTitleImmediately();
+    heroTitleStarted = true;
+    return;
+  }
+
+  heroTitleStarted = true;
+
+  const fullText = getHeroTitleText();
+  let currentIndex = 0;
+
+  heroTitleNode.textContent = "";
+
+  const typeNextCharacter = () => {
+    currentIndex += 1;
+    heroTitleNode.textContent = fullText.slice(0, currentIndex);
+
+    if (currentIndex >= fullText.length) {
+      heroTitleHeading?.classList.add("is-complete");
+      return;
+    }
+
+    const currentCharacter = fullText[currentIndex - 1];
+    let delay = 28;
+
+    if (currentCharacter === "\n") {
+      delay = 230;
+    } else if (/[.,]/.test(currentCharacter)) {
+      delay = 110;
+    } else if (/\s/.test(currentCharacter)) {
+      delay = 18;
+    }
+
+    window.setTimeout(typeNextCharacter, delay);
+  };
+
+  window.setTimeout(typeNextCharacter, 220);
+};
 
 const closeMenu = () => {
   if (!menuToggle || !mobileMenu) {
@@ -53,6 +133,11 @@ if ("IntersectionObserver" in window) {
         }
 
         entry.target.classList.add("is-visible");
+
+        if (heroTitleNode && entry.target.contains(heroTitleNode)) {
+          startHeroTitleTyping();
+        }
+
         observer.unobserve(entry.target);
       });
     },
@@ -65,4 +150,10 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+  startHeroTitleTyping();
+}
+
+if (heroTitleNode && prefersReducedMotion.matches) {
+  renderHeroTitleImmediately();
+  heroTitleStarted = true;
 }

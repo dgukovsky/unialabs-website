@@ -146,7 +146,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -230,23 +230,29 @@
           <div class="hero-shell relative z-10 w-full text-center" data-reveal>
             <div class="mb-6 flex items-center justify-center gap-3">
               <div class="ai-pulse h-2 w-2 rounded-full bg-primary"></div>
-              <span class="text-xs font-bold uppercase tracking-[0.28em] text-primary" data-i18n="hero.eyebrow">
-                Engineered for Momentum
+              <span class="hero-eyebrow text-xs font-bold uppercase tracking-[0.28em] text-primary" data-i18n="hero.eyebrow">
+                Software Factory for Modern Operations
               </span>
             </div>
 
-            <h1 class="mx-auto max-w-5xl font-headline text-5xl font-extrabold leading-[0.98] tracking-[-0.07em] text-on-surface md:text-7xl xl:text-[5.4rem]" data-i18n-html="hero.title">
-              Software
-              <span class="text-gradient">Infrastructure</span>
-              for Operations in Motion.
+            <h1 class="hero-title mx-auto max-w-5xl text-4xl font-semibold leading-[1.04] text-on-surface md:text-6xl xl:text-[5.1rem]">
+              <span class="hero-title-text" data-hero-title data-i18n="hero.title">
+                Custom software systems
+                for operations that
+                cannot slow down.
+              </span>
+              <span class="hero-title-caret" aria-hidden="true"></span>
             </h1>
 
-            <p class="hero-copy mx-auto mt-8 max-w-3xl text-lg leading-8 text-on-surface-variant md:text-[1.45rem] md:leading-9" data-i18n="hero.body">
-              UNIA builds custom software, AI agents, and workflow automation for
-              the world's most ambitious companies.
+            <p class="hero-copy mx-auto mt-8 max-w-3xl text-lg leading-8 text-on-surface-variant md:text-[1.34rem] md:leading-9" data-i18n="hero.body">
+              UNIA designs and ships production-ready platforms, AI agents, and workflow automation for companies that need cleaner execution, fewer manual bottlenecks, and infrastructure that scales with the business.
             </p>
 
-            <div class="hero-actions mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <p class="hero-kicker mx-auto mt-6 max-w-3xl" data-i18n="hero.kicker">
+              Custom Platforms  •  AI Agents  •  Workflow Automation
+            </p>
+
+            <div class="hero-actions mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-i18n="common.bookCall">
                 Book a Discovery Call
               </a>
