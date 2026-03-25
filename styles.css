@@ -100,7 +100,10 @@ h5 {
 
 .hero-section {
   isolation: isolate;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0.98));
+  background:
+    radial-gradient(circle at top left, rgba(0, 209, 178, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(123, 208, 255, 0.08), transparent 24%),
+    linear-gradient(180deg, #f8fafc 0%, #f2f7f6 100%);
 }
 
 .hero-background,
@@ -113,20 +116,16 @@ h5 {
 .hero-background {
   z-index: -3;
   background:
-    linear-gradient(90deg, rgba(248, 250, 252, 0.9) 0%, rgba(248, 250, 252, 0.72) 38%, rgba(248, 250, 252, 0.42) 58%, rgba(248, 250, 252, 0.8) 100%),
-    url("/hero-background.png");
-  background-position: center, right center;
-  background-repeat: no-repeat;
-  background-size: cover, cover;
-  opacity: 0.92;
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.45) 44%, transparent 72%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0));
+  opacity: 1;
 }
 
 .hero-overlay {
   z-index: -2;
   background:
-    radial-gradient(circle at 16% 28%, rgba(0, 209, 178, 0.12), transparent 24%),
-    radial-gradient(circle at 82% 24%, rgba(123, 208, 255, 0.16), transparent 22%),
-    linear-gradient(180deg, rgba(248, 250, 252, 0.12), rgba(248, 250, 252, 0.22));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(248, 250, 252, 0.08)),
+    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.82), transparent 40%);
 }
 
 .hero-orb {
@@ -150,6 +149,38 @@ h5 {
   height: 15rem;
   width: 15rem;
   background: rgba(123, 208, 255, 0.2);
+}
+
+.hero-shell {
+  position: relative;
+  max-width: 78rem;
+  padding: clamp(3.25rem, 6vw, 6.5rem) clamp(1.5rem, 5vw, 4.5rem);
+  border: 2px solid rgba(15, 23, 42, 0.78);
+  border-radius: 2.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94)),
+    linear-gradient(135deg, rgba(0, 209, 178, 0.03), rgba(123, 208, 255, 0.03));
+  box-shadow:
+    0 40px 90px -50px rgba(15, 23, 42, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+.hero-copy {
+  text-wrap: balance;
+}
+
+.hero-actions {
+  position: relative;
+  z-index: 1;
 }
 
 .ai-pulse {
@@ -1436,10 +1467,18 @@ h5 {
 
   .hero-background {
     background:
-      linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(248, 250, 252, 0.78) 36%, rgba(248, 250, 252, 0.92) 100%),
-      url("/hero-background.png");
-    background-position: center, 70% center;
-    background-size: cover, cover;
+      radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.48) 52%, transparent 78%),
+      linear-gradient(180deg, rgba(248, 250, 252, 0.72) 0%, rgba(248, 250, 252, 0.96) 100%);
+  }
+
+  .hero-shell {
+    padding: 2.5rem 1.25rem;
+    border-radius: 2rem;
+  }
+
+  .hero-shell::before {
+    inset: 0.7rem;
+    border-radius: 1.45rem;
   }
 
   .slider-track {
