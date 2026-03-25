@@ -169,19 +169,19 @@ h5 {
 .hero-title {
   font-family: "IBM Plex Mono", monospace;
   letter-spacing: -0.04em;
-  white-space: pre-line;
   text-wrap: balance;
 }
 
 .hero-title-text {
   display: inline;
+  white-space: pre-line;
 }
 
 .hero-title-caret {
   display: inline-block;
   width: 0.12em;
   height: 0.9em;
-  margin-left: 0.14em;
+  margin-left: 0.08em;
   border-radius: 999px;
   background: linear-gradient(180deg, #00d1b2 0%, #7bd0ff 100%);
   vertical-align: -0.08em;
@@ -1517,7 +1517,7 @@ h5 {
   }
 
   .hero-title {
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
   }
 
   .hero-kicker {
