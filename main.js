@@ -41,6 +41,28 @@ const renderHeroTitleImmediately = () => {
   heroTitleHeading?.classList.add("is-complete");
 };
 
+const getTypingDelay = (currentCharacter, nextCharacter) => {
+  if (currentCharacter === "\n") {
+    return 380;
+  }
+
+  if (/[.,:;]/.test(currentCharacter)) {
+    return 210 + Math.floor(Math.random() * 120);
+  }
+
+  if (/\s/.test(currentCharacter)) {
+    return 36 + Math.floor(Math.random() * 34);
+  }
+
+  let delay = 54 + Math.floor(Math.random() * 42);
+
+  if (nextCharacter && /[A-Z]/.test(nextCharacter)) {
+    delay += 26;
+  }
+
+  return delay;
+};
+
 const startHeroTitleTyping = () => {
   if (!heroTitleNode || heroTitleStarted) {
     return;
@@ -69,20 +91,13 @@ const startHeroTitleTyping = () => {
     }
 
     const currentCharacter = fullText[currentIndex - 1];
-    let delay = 28;
-
-    if (currentCharacter === "\n") {
-      delay = 230;
-    } else if (/[.,]/.test(currentCharacter)) {
-      delay = 110;
-    } else if (/\s/.test(currentCharacter)) {
-      delay = 18;
-    }
+    const nextCharacter = fullText[currentIndex];
+    const delay = getTypingDelay(currentCharacter, nextCharacter);
 
     window.setTimeout(typeNextCharacter, delay);
   };
 
-  window.setTimeout(typeNextCharacter, 220);
+  window.setTimeout(typeNextCharacter, 320);
 };
 
 const closeMenu = () => {
