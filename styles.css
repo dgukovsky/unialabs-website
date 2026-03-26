@@ -298,6 +298,10 @@ h5 {
   font-size: 0.95rem;
 }
 
+.tech-heading {
+  text-align: center;
+}
+
 .capabilities-showcase {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1445,6 +1449,10 @@ h5 {
     linear-gradient(150deg, #0f172a 0%, #111827 55%, #020617 100%);
 }
 
+.case-study-metric-value {
+  line-height: 0.95;
+}
+
 .footer-link {
   transition:
     color 180ms ease,
@@ -1524,6 +1532,17 @@ h5 {
     font-size: 0.74rem;
     letter-spacing: 0.08em;
     line-height: 1.8;
+  }
+
+  .tech-heading-rail {
+    gap: 0.8rem;
+  }
+
+  .tech-heading {
+    max-width: 12.5rem;
+    white-space: normal;
+    line-height: 1.45;
+    letter-spacing: 0.24em;
   }
 
   .slider-track {
@@ -1757,6 +1776,37 @@ h5 {
 
   .cap-integration-chip-b { right: 1.8rem; }
   .cap-integration-chip-c { left: 1.8rem; }
+
+  .case-study-panel {
+    min-height: 33rem;
+  }
+
+  .case-study-metrics {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .case-study-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .case-study-metric {
+    padding: 0.95rem 1rem;
+  }
+
+  .case-study-metric-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+  }
+
+  .case-study-metric-value {
+    margin-top: 0.7rem;
+    font-size: 1.7rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

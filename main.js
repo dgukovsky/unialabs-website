@@ -43,7 +43,7 @@ const renderHeroTitleImmediately = () => {
 
 const getTypingDelay = (currentCharacter, nextCharacter) => {
   if (currentCharacter === "\n") {
-    return 380;
+    return 42 + Math.floor(Math.random() * 22);
   }
 
   if (/[.,:;]/.test(currentCharacter)) {
