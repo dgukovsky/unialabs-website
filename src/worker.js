@@ -25,12 +25,8 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.protocol !== "https:") {
+    if (url.protocol !== "https:" || url.hostname === WWW_HOST) {
       url.protocol = "https:";
-      return redirect(url);
-    }
-
-    if (url.hostname === WWW_HOST) {
       url.hostname = ROOT_HOST;
       return redirect(url);
     }
