@@ -33,6 +33,13 @@ h5 {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='rgba(15,23,42,0.05)' stroke-width='1'%3E%3Cpath d='M0 90h180M90 0v180'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+@supports (content-visibility: auto) {
+  .deferred-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 960px;
+  }
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
 }
@@ -68,6 +75,11 @@ h5 {
 .nav-link:hover::after,
 .nav-link:focus-visible::after {
   transform: scaleX(1);
+}
+
+.footer-link-static {
+  color: #64748b;
+  cursor: default;
 }
 
 .language-switcher {

@@ -8,10 +8,10 @@
       name="description"
       content="UNIA Labs desarrolla software a medida, agentes IA, automatización de procesos y arquitectura cloud para empresas en Ecuador que necesitan operar con menos fricción."
     />
-    <link rel="canonical" href="https://unialabs.com/ecuador.html" />
+    <link rel="canonical" href="https://unialabs.com/ecuador/" />
     <link rel="alternate" hreflang="en" href="https://unialabs.com/" />
-    <link rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador.html" />
-    <link rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia.html" />
+    <link rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador/" />
+    <link rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia/" />
     <link rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
     <meta
       name="robots"
@@ -19,7 +19,7 @@
     />
     <meta property="og:site_name" content="UNIA Labs" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://unialabs.com/ecuador.html" />
+    <meta property="og:url" content="https://unialabs.com/ecuador/" />
     <meta property="og:locale" content="es_EC" />
     <meta
       property="og:title"
@@ -31,7 +31,7 @@
     />
     <meta property="og:image" content="https://unialabs.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://unialabs.com/ecuador.html" />
+    <meta name="twitter:url" content="https://unialabs.com/ecuador/" />
     <meta
       name="twitter:title"
       content="Desarrollo de software, agentes IA y automatización en Ecuador | UNIA Labs"
@@ -55,15 +55,29 @@
             "name": "UNIA Labs",
             "url": "https://unialabs.com/",
             "logo": "https://unialabs.com/unia-logo.svg",
-            "email": "hello@unialabs.com"
+            "sameAs": [
+              "https://www.linkedin.com/company/unialabs/",
+              "https://x.com/UniaFinance"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            }
           },
           {
             "@type": "Service",
-            "@id": "https://unialabs.com/ecuador.html#service",
+            "@id": "https://unialabs.com/ecuador/#service",
             "name": "Desarrollo de software y automatización para Ecuador",
             "provider": { "@id": "https://unialabs.com/#organization" },
             "areaServed": "Ecuador",
             "availableLanguage": ["Spanish", "English"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "url": "https://unialabs.com/ecuador/#contact",
+              "availableLanguage": ["Spanish", "English"]
+            },
             "serviceType": [
               "Desarrollo de software a medida",
               "Agentes IA",
@@ -73,13 +87,13 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://unialabs.com/ecuador.html#webpage",
-            "url": "https://unialabs.com/ecuador.html",
+            "@id": "https://unialabs.com/ecuador/#webpage",
+            "url": "https://unialabs.com/ecuador/",
             "name": "Desarrollo de software, agentes IA y automatización en Ecuador | UNIA Labs",
             "description": "UNIA Labs desarrolla software a medida, agentes IA, automatización de procesos y arquitectura cloud para empresas en Ecuador que necesitan operar con menos fricción.",
             "inLanguage": "es-EC",
             "about": { "@id": "https://unialabs.com/#organization" },
-            "mainEntity": { "@id": "https://unialabs.com/ecuador.html#service" }
+            "mainEntity": { "@id": "https://unialabs.com/ecuador/#service" }
           }
         ]
       }
@@ -133,11 +147,11 @@
         </a>
         <div class="hidden items-center gap-8 md:flex">
           <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/europe.html">Europe</a>
-          <a class="nav-link" href="/ecuador.html">Ecuador</a>
-          <a class="nav-link" href="/serbia.html">Serbia</a>
+          <a class="nav-link" href="/europe/">Europe</a>
+          <a class="nav-link" href="/ecuador/">Ecuador</a>
+          <a class="nav-link" href="/serbia/">Serbia</a>
         </div>
-        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="mailto:hello@unialabs.com">
+        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="#contact" data-email-link data-email-label="Agenda una llamada" data-email-subject="Consulta UNIA Labs Ecuador">
           Agenda una llamada
         </a>
       </div>
@@ -158,7 +172,7 @@
             UNIA Labs ayuda a equipos en Ecuador a construir plataformas internas, automatizaciones y sistemas impulsados por IA para operar con menos fricción, más visibilidad y mejor capacidad de escalar.
           </p>
           <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Hablar de Ecuador" data-email-subject="Consulta UNIA Labs Ecuador">
               Hablar de Ecuador
             </a>
             <a class="inline-flex min-w-[16rem] items-center justify-center rounded-2xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/">
@@ -168,7 +182,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-20 lg:py-24">
+      <section class="deferred-section bg-white py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -201,7 +215,7 @@
         </div>
       </section>
 
-      <section class="bg-surface py-20 lg:py-24">
+      <section class="deferred-section bg-surface py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -240,7 +254,7 @@
         </div>
       </section>
 
-      <section class="bg-slate-950 py-20 text-white lg:py-24">
+      <section class="deferred-section bg-slate-950 py-20 text-white lg:py-24">
         <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
             <span class="text-sm font-bold uppercase tracking-[0.28em] text-primary">Modelo de trabajo</span>
@@ -263,7 +277,7 @@
         </div>
       </section>
 
-      <section id="contact" class="bg-white py-24 lg:py-28">
+      <section id="contact" class="deferred-section bg-white py-24 lg:py-28">
         <div class="mx-auto max-w-6xl px-6 lg:px-8">
           <div class="rounded-[2.5rem] border border-slate-200 bg-surface p-12 text-center shadow-soft md:p-16">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-6xl">
@@ -273,7 +287,7 @@
               Podemos ayudarte a definir la arquitectura, el producto o la automatización que tu operación necesita para crecer sin fricción.
             </p>
             <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Escríbenos" data-email-subject="Consulta UNIA Labs Ecuador">
                 Escríbenos
               </a>
               <a class="inline-flex rounded-xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/">
@@ -290,10 +304,11 @@
         <p>UNIA Labs desarrolla software a medida, agentes IA y automatización para equipos que necesitan operar mejor.</p>
         <div class="flex flex-wrap gap-5">
           <a class="footer-link" href="/">Home</a>
-          <a class="footer-link" href="/europe.html">Europe</a>
-          <a class="footer-link" href="/serbia.html">Serbia</a>
-          <a class="footer-link" href="/privacy.html">Privacy</a>
-          <a class="footer-link" href="/terms.html">Terms</a>
+          <a class="footer-link" href="/europe/">Europe</a>
+          <a class="footer-link" href="/serbia/">Serbia</a>
+          <a class="footer-link" href="/privacy/">Privacy</a>
+          <a class="footer-link" href="/terms/">Terms</a>
+          <span class="footer-link footer-link-static">London, United Kingdom</span>
         </div>
       </div>
     </footer>

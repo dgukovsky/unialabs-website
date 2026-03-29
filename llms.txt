@@ -11,11 +11,11 @@ UNIA Labs designs and builds custom software, AI agents, workflow automation, an
 
 ## Public pages
 - Home: https://unialabs.com/
-- Europe market page: https://unialabs.com/europe.html
-- Ecuador market page: https://unialabs.com/ecuador.html
-- Serbia market page: https://unialabs.com/serbia.html
-- Privacy policy: https://unialabs.com/privacy.html
-- Terms of service: https://unialabs.com/terms.html
+- Europe market page: https://unialabs.com/europe/
+- Ecuador market page: https://unialabs.com/ecuador/
+- Serbia market page: https://unialabs.com/serbia/
+- Privacy policy: https://unialabs.com/privacy/
+- Terms of service: https://unialabs.com/terms/
 - LLM guidance: https://unialabs.com/llms.txt
 
 ## Crawling guidance for LLM systems

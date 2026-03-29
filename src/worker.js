@@ -1,5 +1,26 @@
 const ROOT_HOST = "unialabs.com";
 const WWW_HOST = `www.${ROOT_HOST}`;
+const CLEAN_ROUTE_MAP = new Map([
+  ["/index.html", "/"],
+  ["/europe", "/europe.html"],
+  ["/europe/", "/europe.html"],
+  ["/ecuador", "/ecuador.html"],
+  ["/ecuador/", "/ecuador.html"],
+  ["/serbia", "/serbia.html"],
+  ["/serbia/", "/serbia.html"],
+  ["/privacy", "/privacy.html"],
+  ["/privacy/", "/privacy.html"],
+  ["/terms", "/terms.html"],
+  ["/terms/", "/terms.html"],
+]);
+const HTML_CANONICAL_ROUTE_MAP = new Map([
+  ["/index.html", "/"],
+  ["/europe.html", "/europe/"],
+  ["/ecuador.html", "/ecuador/"],
+  ["/serbia.html", "/serbia/"],
+  ["/privacy.html", "/privacy/"],
+  ["/terms.html", "/terms/"],
+]);
 
 const SECURITY_HEADERS = {
   "X-Content-Type-Options": "nosniff",
@@ -31,7 +52,19 @@ export default {
       return redirect(url);
     }
 
-    const response = await env.ASSETS.fetch(request);
+    const canonicalPath = HTML_CANONICAL_ROUTE_MAP.get(url.pathname);
+
+    if (canonicalPath) {
+      url.pathname = canonicalPath;
+      return redirect(url);
+    }
+
+    const rewrittenPath = CLEAN_ROUTE_MAP.get(url.pathname);
+    const assetRequest = rewrittenPath
+      ? new Request(new URL(rewrittenPath, url), request)
+      : request;
+
+    const response = await env.ASSETS.fetch(assetRequest);
     return addSecurityHeaders(response);
   },
 };

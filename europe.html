@@ -8,14 +8,14 @@
       name="description"
       content="UNIA Labs helps European companies build custom software, AI agents, workflow automation, and cloud architecture for cross-border operations and scalable delivery."
     />
-    <link rel="canonical" href="https://unialabs.com/europe.html" />
+    <link rel="canonical" href="https://unialabs.com/europe/" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta property="og:site_name" content="UNIA Labs" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://unialabs.com/europe.html" />
+    <meta property="og:url" content="https://unialabs.com/europe/" />
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
@@ -27,7 +27,7 @@
     />
     <meta property="og:image" content="https://unialabs.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://unialabs.com/europe.html" />
+    <meta name="twitter:url" content="https://unialabs.com/europe/" />
     <meta
       name="twitter:title"
       content="Software Development, AI Agents &amp; Automation for Europe | UNIA Labs"
@@ -51,15 +51,29 @@
             "name": "UNIA Labs",
             "url": "https://unialabs.com/",
             "logo": "https://unialabs.com/unia-logo.svg",
-            "email": "hello@unialabs.com"
+            "sameAs": [
+              "https://www.linkedin.com/company/unialabs/",
+              "https://x.com/UniaFinance"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            }
           },
           {
             "@type": "Service",
-            "@id": "https://unialabs.com/europe.html#service",
+            "@id": "https://unialabs.com/europe/#service",
             "name": "Custom software development and AI automation for Europe",
             "provider": { "@id": "https://unialabs.com/#organization" },
             "areaServed": "Europe",
             "availableLanguage": ["English"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "url": "https://unialabs.com/europe/#contact",
+              "availableLanguage": ["English"]
+            },
             "serviceType": [
               "Custom software development",
               "AI agents",
@@ -69,13 +83,13 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://unialabs.com/europe.html#webpage",
-            "url": "https://unialabs.com/europe.html",
+            "@id": "https://unialabs.com/europe/#webpage",
+            "url": "https://unialabs.com/europe/",
             "name": "Software Development, AI Agents & Automation for Europe | UNIA Labs",
             "description": "UNIA Labs helps European companies build custom software, AI agents, workflow automation, and cloud architecture for cross-border operations and scalable delivery.",
             "inLanguage": "en",
             "about": { "@id": "https://unialabs.com/#organization" },
-            "mainEntity": { "@id": "https://unialabs.com/europe.html#service" }
+            "mainEntity": { "@id": "https://unialabs.com/europe/#service" }
           }
         ]
       }
@@ -129,11 +143,11 @@
         </a>
         <div class="hidden items-center gap-8 md:flex">
           <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/europe.html">Europe</a>
-          <a class="nav-link" href="/ecuador.html">Ecuador</a>
-          <a class="nav-link" href="/serbia.html">Serbia</a>
+          <a class="nav-link" href="/europe/">Europe</a>
+          <a class="nav-link" href="/ecuador/">Ecuador</a>
+          <a class="nav-link" href="/serbia/">Serbia</a>
         </div>
-        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="mailto:hello@unialabs.com">
+        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="#contact" data-email-link data-email-label="Book a Discovery Call" data-email-subject="UNIA Labs Europe inquiry">
           Book a Discovery Call
         </a>
       </div>
@@ -154,7 +168,7 @@
             UNIA Labs helps European teams replace manual operations with custom platforms, enterprise automation, and AI systems built for multi-country execution, complex processes, and long-term scale.
           </p>
           <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Talk About Europe" data-email-subject="UNIA Labs Europe inquiry">
               Talk About Europe
             </a>
             <a class="inline-flex min-w-[16rem] items-center justify-center rounded-2xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/#capabilities">
@@ -164,7 +178,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-20 lg:py-24">
+      <section class="deferred-section bg-white py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -197,7 +211,7 @@
         </div>
       </section>
 
-      <section class="bg-surface py-20 lg:py-24">
+      <section class="deferred-section bg-surface py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -236,7 +250,7 @@
         </div>
       </section>
 
-      <section class="bg-slate-950 py-20 text-white lg:py-24">
+      <section class="deferred-section bg-slate-950 py-20 text-white lg:py-24">
         <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
             <span class="text-sm font-bold uppercase tracking-[0.28em] text-primary">Delivery Model</span>
@@ -259,7 +273,7 @@
         </div>
       </section>
 
-      <section id="contact" class="bg-white py-24 lg:py-28">
+      <section id="contact" class="deferred-section bg-white py-24 lg:py-28">
         <div class="mx-auto max-w-6xl px-6 lg:px-8">
           <div class="rounded-[2.5rem] border border-slate-200 bg-surface p-12 text-center shadow-soft md:p-16">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-6xl">
@@ -269,7 +283,7 @@
               We can scope the platform, automation, or AI layer that removes friction from your regional operations.
             </p>
             <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Email UNIA Labs" data-email-subject="UNIA Labs Europe inquiry">
                 Email UNIA Labs
               </a>
               <a class="inline-flex rounded-xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/">
@@ -286,10 +300,11 @@
         <p>UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture.</p>
         <div class="flex flex-wrap gap-5">
           <a class="footer-link" href="/">Home</a>
-          <a class="footer-link" href="/ecuador.html">Ecuador</a>
-          <a class="footer-link" href="/serbia.html">Serbia</a>
-          <a class="footer-link" href="/privacy.html">Privacy</a>
-          <a class="footer-link" href="/terms.html">Terms</a>
+          <a class="footer-link" href="/ecuador/">Ecuador</a>
+          <a class="footer-link" href="/serbia/">Serbia</a>
+          <a class="footer-link" href="/privacy/">Privacy</a>
+          <a class="footer-link" href="/terms/">Terms</a>
+          <span class="footer-link footer-link-static">London, United Kingdom</span>
         </div>
       </div>
     </footer>

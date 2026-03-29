@@ -8,10 +8,10 @@
       name="description"
       content="UNIA Labs razvija softver po meri, AI agente, automatizaciju procesa i cloud arhitekturu za kompanije u Srbiji kojima je potrebna brža i čistija operacija."
     />
-    <link rel="canonical" href="https://unialabs.com/serbia.html" />
+    <link rel="canonical" href="https://unialabs.com/serbia/" />
     <link rel="alternate" hreflang="en" href="https://unialabs.com/" />
-    <link rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador.html" />
-    <link rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia.html" />
+    <link rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador/" />
+    <link rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia/" />
     <link rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
     <meta
       name="robots"
@@ -19,7 +19,7 @@
     />
     <meta property="og:site_name" content="UNIA Labs" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://unialabs.com/serbia.html" />
+    <meta property="og:url" content="https://unialabs.com/serbia/" />
     <meta property="og:locale" content="sr_RS" />
     <meta
       property="og:title"
@@ -31,7 +31,7 @@
     />
     <meta property="og:image" content="https://unialabs.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://unialabs.com/serbia.html" />
+    <meta name="twitter:url" content="https://unialabs.com/serbia/" />
     <meta
       name="twitter:title"
       content="Razvoj softvera, AI agenti i automatizacija u Srbiji | UNIA Labs"
@@ -55,15 +55,29 @@
             "name": "UNIA Labs",
             "url": "https://unialabs.com/",
             "logo": "https://unialabs.com/unia-logo.svg",
-            "email": "hello@unialabs.com"
+            "sameAs": [
+              "https://www.linkedin.com/company/unialabs/",
+              "https://x.com/UniaFinance"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            }
           },
           {
             "@type": "Service",
-            "@id": "https://unialabs.com/serbia.html#service",
+            "@id": "https://unialabs.com/serbia/#service",
             "name": "Razvoj softvera i automatizacija za Srbiju",
             "provider": { "@id": "https://unialabs.com/#organization" },
             "areaServed": "Serbia",
             "availableLanguage": ["Serbian", "English"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "url": "https://unialabs.com/serbia/#contact",
+              "availableLanguage": ["Serbian", "English"]
+            },
             "serviceType": [
               "Razvoj softvera po meri",
               "AI agenti",
@@ -73,13 +87,13 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://unialabs.com/serbia.html#webpage",
-            "url": "https://unialabs.com/serbia.html",
+            "@id": "https://unialabs.com/serbia/#webpage",
+            "url": "https://unialabs.com/serbia/",
             "name": "Razvoj softvera, AI agenti i automatizacija u Srbiji | UNIA Labs",
             "description": "UNIA Labs razvija softver po meri, AI agente, automatizaciju procesa i cloud arhitekturu za kompanije u Srbiji kojima je potrebna brža i čistija operacija.",
             "inLanguage": "sr-RS",
             "about": { "@id": "https://unialabs.com/#organization" },
-            "mainEntity": { "@id": "https://unialabs.com/serbia.html#service" }
+            "mainEntity": { "@id": "https://unialabs.com/serbia/#service" }
           }
         ]
       }
@@ -133,11 +147,11 @@
         </a>
         <div class="hidden items-center gap-8 md:flex">
           <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/europe.html">Europe</a>
-          <a class="nav-link" href="/ecuador.html">Ecuador</a>
-          <a class="nav-link" href="/serbia.html">Serbia</a>
+          <a class="nav-link" href="/europe/">Europe</a>
+          <a class="nav-link" href="/ecuador/">Ecuador</a>
+          <a class="nav-link" href="/serbia/">Serbia</a>
         </div>
-        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="mailto:hello@unialabs.com">
+        <a class="cta-button inline-flex rounded-xl px-5 py-3 text-sm font-bold text-white" href="#contact" data-email-link data-email-label="Zakaži razgovor" data-email-subject="UNIA Labs Serbia inquiry">
           Zakaži razgovor
         </a>
       </div>
@@ -158,7 +172,7 @@
             UNIA Labs pomaže kompanijama u Srbiji da izgrade interne platforme, automatizuju procese i uvedu AI sisteme koji ubrzavaju operacije bez gubitka kontrole.
           </p>
           <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+            <a class="cta-button inline-flex min-w-[16rem] items-center justify-center rounded-2xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Pričajmo o Srbiji" data-email-subject="UNIA Labs Serbia inquiry">
               Pričajmo o Srbiji
             </a>
             <a class="inline-flex min-w-[16rem] items-center justify-center rounded-2xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/">
@@ -168,7 +182,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-20 lg:py-24">
+      <section class="deferred-section bg-white py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -201,7 +215,7 @@
         </div>
       </section>
 
-      <section class="bg-surface py-20 lg:py-24">
+      <section class="deferred-section bg-surface py-20 lg:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-14 max-w-3xl space-y-4">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
@@ -240,7 +254,7 @@
         </div>
       </section>
 
-      <section class="bg-slate-950 py-20 text-white lg:py-24">
+      <section class="deferred-section bg-slate-950 py-20 text-white lg:py-24">
         <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
             <span class="text-sm font-bold uppercase tracking-[0.28em] text-primary">Model saradnje</span>
@@ -263,7 +277,7 @@
         </div>
       </section>
 
-      <section id="contact" class="bg-white py-24 lg:py-28">
+      <section id="contact" class="deferred-section bg-white py-24 lg:py-28">
         <div class="mx-auto max-w-6xl px-6 lg:px-8">
           <div class="rounded-[2.5rem] border border-slate-200 bg-surface p-12 text-center shadow-soft md:p-16">
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-6xl">
@@ -273,7 +287,7 @@
               Možemo pomoći oko platforme, automatizacije ili AI sistema koji će stvarno unaprediti operaciju.
             </p>
             <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="mailto:hello@unialabs.com">
+              <a class="cta-button inline-flex rounded-xl px-10 py-4 text-lg font-bold text-white" href="#contact" data-email-link data-email-label="Pošaljite email" data-email-subject="UNIA Labs Serbia inquiry">
                 Pošaljite email
               </a>
               <a class="inline-flex rounded-xl border border-slate-300 bg-white px-10 py-4 text-lg font-bold text-on-surface shadow-sm transition hover:bg-slate-50" href="/">
@@ -290,10 +304,11 @@
         <p>UNIA Labs gradi softver po meri, AI agente i automatizaciju za timove kojima treba ozbiljna tehnička podrška.</p>
         <div class="flex flex-wrap gap-5">
           <a class="footer-link" href="/">Home</a>
-          <a class="footer-link" href="/europe.html">Europe</a>
-          <a class="footer-link" href="/ecuador.html">Ecuador</a>
-          <a class="footer-link" href="/privacy.html">Privacy</a>
-          <a class="footer-link" href="/terms.html">Terms</a>
+          <a class="footer-link" href="/europe/">Europe</a>
+          <a class="footer-link" href="/ecuador/">Ecuador</a>
+          <a class="footer-link" href="/privacy/">Privacy</a>
+          <a class="footer-link" href="/terms/">Terms</a>
+          <span class="footer-link footer-link-static">London, United Kingdom</span>
         </div>
       </div>
     </footer>

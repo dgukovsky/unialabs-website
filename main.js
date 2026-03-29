@@ -7,7 +7,42 @@ const yearNodes = document.querySelectorAll("[data-year]");
 const heroTitleNode = document.querySelector("[data-hero-title]");
 const heroTitleHeading = heroTitleNode?.closest(".hero-title");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const CONTACT_EMAIL_USER_CODES = [104, 101, 108, 108, 111];
+const CONTACT_EMAIL_DOMAIN_CODES = [117, 110, 105, 97, 108, 97, 98, 115, 46, 99, 111, 109];
 let heroTitleStarted = false;
+
+const decodeEmailPart = (codes) => String.fromCharCode(...codes);
+
+const getContactEmail = () =>
+  `${decodeEmailPart(CONTACT_EMAIL_USER_CODES)}@${decodeEmailPart(CONTACT_EMAIL_DOMAIN_CODES)}`;
+
+const hydrateEmailLinks = () => {
+  const email = getContactEmail();
+  const emailLinks = document.querySelectorAll("[data-email-link]");
+  const emailTextNodes = document.querySelectorAll("[data-email-text]");
+
+  emailLinks.forEach((link) => {
+    const subject = link.dataset.emailSubject?.trim();
+    const emailLabel = link.dataset.emailLabel?.trim();
+    const ariaLabel = link.dataset.emailAria?.trim() || "Email UNIA Labs";
+    let mailto = `mailto:${email}`;
+
+    if (subject) {
+      mailto += `?subject=${encodeURIComponent(subject)}`;
+    }
+
+    link.setAttribute("href", mailto);
+    link.setAttribute("aria-label", ariaLabel);
+
+    if (emailLabel) {
+      link.textContent = emailLabel;
+    }
+  });
+
+  emailTextNodes.forEach((node) => {
+    node.textContent = email;
+  });
+};
 
 const getHeroTitleText = () => {
   if (!heroTitleNode) {
@@ -138,6 +173,8 @@ window.addEventListener("scroll", handleNavState, { passive: true });
 yearNodes.forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
+
+hydrateEmailLinks();
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(

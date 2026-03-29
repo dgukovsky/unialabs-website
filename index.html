@@ -7,12 +7,12 @@
     <meta
       id="meta-description"
       name="description"
-      content="UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and across Europe."
+      content="UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
     />
     <link id="canonical-link" rel="canonical" href="https://unialabs.com/" />
     <link id="alternate-en" rel="alternate" hreflang="en" href="https://unialabs.com/" />
-    <link id="alternate-es" rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador.html" />
-    <link id="alternate-sr" rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia.html" />
+    <link id="alternate-es" rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador/" />
+    <link id="alternate-sr" rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia/" />
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
     <meta
       name="robots"
@@ -37,7 +37,7 @@
     <meta
       id="meta-og-description"
       property="og:description"
-      content="Custom software, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and across Europe."
+      content="Custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
     />
     <meta id="meta-og-image" property="og:image" content="https://unialabs.com/og-image.png" />
     <meta id="meta-og-image-secure" property="og:image:secure_url" content="https://unialabs.com/og-image.png" />
@@ -59,7 +59,7 @@
     <meta
       id="meta-twitter-description"
       name="twitter:description"
-      content="Custom software, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and across Europe."
+      content="Custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
     />
     <meta id="meta-twitter-image" name="twitter:image" content="https://unialabs.com/og-image.png" />
     <meta
@@ -82,12 +82,16 @@
             "url": "https://unialabs.com/",
             "logo": "https://unialabs.com/unia-logo.svg",
             "image": "https://unialabs.com/og-image.png",
-            "email": "hello@unialabs.com",
-            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and across Europe.",
+            "description": "UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe.",
             "sameAs": [
               "https://www.linkedin.com/company/unialabs/",
               "https://x.com/UniaFinance"
             ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            },
             "areaServed": ["United States", "Ecuador", "Serbia", "Europe"],
             "knowsAbout": [
               "Custom software development",
@@ -101,7 +105,7 @@
               {
                 "@type": "ContactPoint",
                 "contactType": "sales",
-                "email": "hello@unialabs.com",
+                "url": "https://unialabs.com/#contact",
                 "availableLanguage": ["English", "Spanish", "Serbian"]
               }
             ]
@@ -114,6 +118,11 @@
             "description": "Custom software development, AI agents, workflow automation, and cloud architecture for operations that need to scale without friction.",
             "provider": {
               "@id": "https://unialabs.com/#organization"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
             },
             "areaServed": ["United States", "Ecuador", "Serbia", "Europe"],
             "availableLanguage": ["English", "Spanish", "Serbian"],
@@ -167,7 +176,7 @@
             "@id": "https://unialabs.com/#webpage",
             "url": "https://unialabs.com/",
             "name": "Custom Software, AI Agents & Automation | UNIA Labs",
-            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and across Europe.",
+            "description": "UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe.",
             "isPartOf": {
               "@id": "https://unialabs.com/#website"
             },
@@ -188,6 +197,7 @@
       data-domain="unialabs.com"
       src="https://plausible.io/js/script.js"
     ></script>
+    <link rel="dns-prefetch" href="//plausible.io" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
       tailwind.config = {
@@ -250,8 +260,8 @@
           </div>
           <div class="language-switcher">
             <a class="language-button is-active" href="/">EN</a>
-            <a class="language-button" href="/ecuador.html" hreflang="es-EC" lang="es">ES</a>
-            <a class="language-button" href="/serbia.html" hreflang="sr-RS" lang="sr">SR</a>
+            <a class="language-button" href="/ecuador/" hreflang="es-EC" lang="es">ES</a>
+            <a class="language-button" href="/serbia/" hreflang="sr-RS" lang="sr">SR</a>
           </div>
         </div>
 
@@ -279,8 +289,8 @@
         <div class="flex flex-col gap-4 text-sm font-semibold text-slate-700">
           <div class="language-switcher language-switcher-mobile">
             <a class="language-button is-active" href="/">English</a>
-            <a class="language-button" href="/ecuador.html" hreflang="es-EC" lang="es">Español</a>
-            <a class="language-button" href="/serbia.html" hreflang="sr-RS" lang="sr">Srpski</a>
+            <a class="language-button" href="/ecuador/" hreflang="es-EC" lang="es">Español</a>
+            <a class="language-button" href="/serbia/" hreflang="sr-RS" lang="sr">Srpski</a>
           </div>
           <a href="#capabilities" data-menu-link data-i18n="nav.capabilities">Capabilities</a>
           <a href="#process" data-menu-link data-i18n="nav.process">Process</a>
@@ -364,7 +374,7 @@
         </div>
       </section>
 
-      <section class="overflow-hidden border-b border-slate-100 bg-white py-12">
+      <section class="deferred-section overflow-hidden border-b border-slate-100 bg-white py-12">
         <div class="mx-auto mb-8 max-w-7xl px-6 lg:px-8">
           <div class="tech-heading-rail flex items-center gap-4">
             <div class="h-px flex-1 bg-gradient-to-r from-transparent to-slate-200"></div>
@@ -447,14 +457,14 @@
         </div>
       </section>
 
-      <section id="capabilities" class="bg-white py-28 lg:py-32">
+      <section id="capabilities" class="deferred-section bg-white py-28 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-20 space-y-4" data-reveal>
             <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
-              Capabilities
+              Custom Software, AI Agents &amp; Automation
             </h2>
             <p class="max-w-2xl text-xl text-on-surface-variant">
-              We bridge the gap between high-level strategy and low-level code.
+              We bridge strategy and execution with custom software development, AI systems, and workflow automation.
             </p>
           </div>
 
@@ -573,7 +583,7 @@
         </div>
       </section>
 
-      <section id="insights" class="bg-slate-950 py-28 text-white lg:py-32">
+      <section id="insights" class="deferred-section bg-slate-950 py-28 text-white lg:py-32">
         <div class="mx-auto max-w-5xl px-6 text-center lg:px-8" data-reveal>
           <span class="mb-8 block text-sm font-bold uppercase tracking-[0.32em] text-primary">
             The UNIA Philosophy
@@ -589,7 +599,7 @@
         </div>
       </section>
 
-      <section class="bg-surface py-28 lg:py-32">
+      <section class="deferred-section bg-surface py-28 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 class="mb-16 font-headline text-4xl font-extrabold tracking-[-0.05em] text-on-surface" data-reveal>
             Core Solutions
@@ -642,12 +652,12 @@
         </div>
       </section>
 
-      <section id="process" class="overflow-hidden bg-white py-28 lg:py-32">
+      <section id="process" class="deferred-section overflow-hidden bg-white py-28 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-20 flex flex-col gap-8 md:mb-24 md:flex-row md:items-end md:justify-between">
             <div class="space-y-4" data-reveal>
               <h2 class="font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:text-5xl">
-                Process
+                Software Factory Process
               </h2>
               <p class="text-xl text-on-surface-variant">
                 The refined flow from concept to global scale.
@@ -708,7 +718,7 @@
         </div>
       </section>
 
-      <section id="case-studies" class="py-28 lg:py-32">
+      <section id="case-studies" class="deferred-section py-28 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="grid overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-2xl lg:grid-cols-2">
             <div class="flex flex-col justify-center bg-slate-900 p-12 lg:p-16" data-reveal>
@@ -782,7 +792,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-28 lg:py-32">
+      <section class="deferred-section bg-white py-28 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 class="mb-20 text-center font-headline text-4xl font-extrabold tracking-[-0.06em] text-on-surface md:mb-24 md:text-5xl" data-reveal>
             Why UNIA Labs?
@@ -828,7 +838,7 @@
         </div>
       </section>
 
-      <section id="markets" class="bg-surface py-24 lg:py-28">
+      <section id="markets" class="deferred-section bg-surface py-24 lg:py-28">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mb-16 max-w-3xl space-y-4" data-reveal>
             <span class="text-sm font-bold uppercase tracking-[0.28em] text-primary">
@@ -843,7 +853,7 @@
           </div>
 
           <div class="grid gap-6 md:grid-cols-3">
-            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/europe.html" data-reveal>
+            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/europe/" data-reveal>
               <span class="mb-4 inline-flex rounded-full bg-primary/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-primary">
                 Europe
               </span>
@@ -855,7 +865,7 @@
               </p>
             </a>
 
-            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/ecuador.html" data-reveal>
+            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/ecuador/" data-reveal>
               <span class="mb-4 inline-flex rounded-full bg-secondary/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-sky-700">
                 Ecuador
               </span>
@@ -867,7 +877,7 @@
               </p>
             </a>
 
-            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/serbia.html" data-reveal>
+            <a class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft transition hover:-translate-y-1 hover:border-slate-300" href="/serbia/" data-reveal>
               <span class="mb-4 inline-flex rounded-full bg-primary/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-primary">
                 Serbia
               </span>
@@ -882,7 +892,7 @@
         </div>
       </section>
 
-      <section id="contact" class="bg-slate-50 py-28 lg:py-32">
+      <section id="contact" class="deferred-section bg-slate-50 py-28 lg:py-32">
         <div class="mx-auto max-w-6xl px-6 lg:px-8">
           <div class="relative overflow-hidden rounded-[3rem] border border-slate-100 bg-white p-12 text-center shadow-soft md:p-20" data-reveal>
             <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-primary/5 blur-[100px]"></div>
@@ -895,7 +905,13 @@
               Let's build the systems that will power your next decade of growth.
             </p>
             <div class="relative z-10 mt-12">
-              <a class="cta-button inline-flex rounded-xl px-12 py-5 text-xl font-bold text-white" href="mailto:hello@unialabs.com">
+              <a
+                class="cta-button inline-flex rounded-xl px-12 py-5 text-xl font-bold text-white"
+                href="/#contact"
+                data-email-link
+                data-email-label="Book a Discovery Call"
+                data-email-subject="UNIA Labs discovery call"
+              >
                 Book a Discovery Call
               </a>
             </div>
@@ -917,13 +933,13 @@
             Software Infrastructure for Operations in Motion. Building the future of AI-driven business systems.
           </p>
           <div class="flex gap-4">
-            <a class="text-teal-500 transition-opacity hover:opacity-70" href="https://www.linkedin.com/company/unialabs/" aria-label="UNIA Labs on LinkedIn">
+            <a class="text-teal-500 transition-opacity hover:opacity-70" href="https://www.linkedin.com/company/unialabs/" aria-label="UNIA Labs on LinkedIn" rel="noopener noreferrer">
               <span class="material-symbols-outlined">groups</span>
             </a>
-            <a class="text-teal-500 transition-opacity hover:opacity-70" href="https://x.com/UniaFinance" aria-label="UNIA Labs on X">
+            <a class="text-teal-500 transition-opacity hover:opacity-70" href="https://x.com/UniaFinance" aria-label="UNIA Labs on X" rel="noopener noreferrer">
               <span class="material-symbols-outlined">alternate_email</span>
             </a>
-            <a class="text-teal-500 transition-opacity hover:opacity-70" href="mailto:hello@unialabs.com" aria-label="Email">
+            <a class="text-teal-500 transition-opacity hover:opacity-70" href="/#contact" data-email-link data-email-subject="UNIA Labs website inquiry" aria-label="Email UNIA Labs">
               <span class="material-symbols-outlined">alternate_email</span>
             </a>
           </div>
@@ -952,10 +968,11 @@
         <div class="space-y-4">
           <p class="text-xs font-semibold uppercase tracking-[0.24em] text-teal-500">Contact</p>
           <ul class="space-y-3">
-            <li><a class="footer-link" href="mailto:hello@unialabs.com">hello@unialabs.com</a></li>
-            <li><a class="footer-link" href="/europe.html">Europe</a></li>
-            <li><a class="footer-link" href="/ecuador.html">Ecuador</a></li>
-            <li><a class="footer-link" href="/serbia.html">Serbia</a></li>
+            <li><a class="footer-link" href="/#contact" data-email-link data-email-label="Email UNIA Labs" data-email-subject="UNIA Labs website inquiry">Email UNIA Labs</a></li>
+            <li><span class="footer-link footer-link-static">London, United Kingdom</span></li>
+            <li><a class="footer-link" href="/europe/">Europe</a></li>
+            <li><a class="footer-link" href="/ecuador/">Ecuador</a></li>
+            <li><a class="footer-link" href="/serbia/">Serbia</a></li>
           </ul>
         </div>
       </div>
@@ -966,10 +983,10 @@
             © <span data-year></span> UNIA Labs. Software Infrastructure for Operations in Motion.
           </p>
           <div class="flex gap-8">
-            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="/privacy.html">
+            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="/privacy/">
               Privacy Policy
             </a>
-            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="/terms.html">
+            <a class="text-xs text-slate-400 transition-colors hover:text-teal-500" href="/terms/">
               Terms of Service
             </a>
           </div>
