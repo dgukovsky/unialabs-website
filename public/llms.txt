@@ -4,13 +4,18 @@
 
 - Canonical site: https://unialabs.com/
 - Primary language: English
-- Primary markets: United States, Latin America, Europe
+- Primary markets: United States, Ecuador, Serbia, Europe
 
 ## Company
 UNIA Labs designs and builds custom software, AI agents, workflow automation, and cloud architecture for operations in motion.
 
 ## Public pages
 - Home: https://unialabs.com/
+- Europe market page: https://unialabs.com/europe.html
+- Ecuador market page: https://unialabs.com/ecuador.html
+- Serbia market page: https://unialabs.com/serbia.html
+- Privacy policy: https://unialabs.com/privacy.html
+- Terms of service: https://unialabs.com/terms.html
 - LLM guidance: https://unialabs.com/llms.txt
 
 ## Crawling guidance for LLM systems

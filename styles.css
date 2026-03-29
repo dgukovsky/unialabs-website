@@ -70,6 +70,55 @@ h5 {
   transform: scaleX(1);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 24px -22px rgba(15, 23, 42, 0.24);
+}
+
+.language-switcher-mobile {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.55rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 9999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #475569;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.language-button:hover,
+.language-button:focus-visible {
+  color: #0f172a;
+  background: rgba(226, 232, 240, 0.7);
+  transform: translateY(-1px);
+}
+
+.language-button.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  box-shadow: 0 16px 24px -20px rgba(15, 23, 42, 0.65);
+}
+
 .cta-button {
   background: linear-gradient(135deg, #00d1b2 0%, #00bfa5 100%);
   transition:
