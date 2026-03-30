@@ -1,5 +1,6 @@
 const ROOT_HOST = "unialabs.com";
 const WWW_HOST = `www.${ROOT_HOST}`;
+const INTERNAL_ASSET_REWRITE_HEADER = "x-unia-asset-rewrite";
 const CLEAN_ROUTE_MAP = new Map([
   ["/index.html", "/"],
   ["/europe", "/europe.html"],
@@ -45,6 +46,7 @@ const addSecurityHeaders = (response) => {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const isInternalAssetRewrite = request.headers.get(INTERNAL_ASSET_REWRITE_HEADER) === "1";
 
     if (url.protocol !== "https:" || url.hostname === WWW_HOST) {
       url.protocol = "https:";
@@ -54,15 +56,23 @@ export default {
 
     const canonicalPath = HTML_CANONICAL_ROUTE_MAP.get(url.pathname);
 
-    if (canonicalPath) {
+    if (canonicalPath && !isInternalAssetRewrite) {
       url.pathname = canonicalPath;
       return redirect(url);
     }
 
     const rewrittenPath = CLEAN_ROUTE_MAP.get(url.pathname);
-    const assetRequest = rewrittenPath
-      ? new Request(new URL(rewrittenPath, url), request)
-      : request;
+    let assetRequest = request;
+
+    if (rewrittenPath) {
+      const assetHeaders = new Headers(request.headers);
+      assetHeaders.set(INTERNAL_ASSET_REWRITE_HEADER, "1");
+      assetRequest = new Request(new URL(rewrittenPath, url), {
+        method: request.method,
+        headers: assetHeaders,
+        redirect: "manual",
+      });
+    }
 
     const response = await env.ASSETS.fetch(assetRequest);
     return addSecurityHeaders(response);
