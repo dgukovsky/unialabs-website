@@ -1,7 +1,6 @@
 const ROOT_HOST = "unialabs.com";
 const WWW_HOST = `www.${ROOT_HOST}`;
-const INTERNAL_ASSET_REWRITE_HEADER = "x-unia-asset-rewrite";
-const CLEAN_ROUTE_MAP = new Map([
+const CANONICAL_REDIRECT_MAP = new Map([
   ["/index.html", "/"],
   ["/europe", "/europe.html"],
   ["/europe/", "/europe.html"],
@@ -13,14 +12,6 @@ const CLEAN_ROUTE_MAP = new Map([
   ["/privacy/", "/privacy.html"],
   ["/terms", "/terms.html"],
   ["/terms/", "/terms.html"],
-]);
-const HTML_CANONICAL_ROUTE_MAP = new Map([
-  ["/index.html", "/"],
-  ["/europe.html", "/europe/"],
-  ["/ecuador.html", "/ecuador/"],
-  ["/serbia.html", "/serbia/"],
-  ["/privacy.html", "/privacy/"],
-  ["/terms.html", "/terms/"],
 ]);
 
 const SECURITY_HEADERS = {
@@ -46,7 +37,6 @@ const addSecurityHeaders = (response) => {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const isInternalAssetRewrite = request.headers.get(INTERNAL_ASSET_REWRITE_HEADER) === "1";
 
     if (url.protocol !== "https:" || url.hostname === WWW_HOST) {
       url.protocol = "https:";
@@ -54,27 +44,14 @@ export default {
       return redirect(url);
     }
 
-    const canonicalPath = HTML_CANONICAL_ROUTE_MAP.get(url.pathname);
+    const canonicalPath = CANONICAL_REDIRECT_MAP.get(url.pathname);
 
-    if (canonicalPath && !isInternalAssetRewrite) {
+    if (canonicalPath) {
       url.pathname = canonicalPath;
       return redirect(url);
     }
 
-    const rewrittenPath = CLEAN_ROUTE_MAP.get(url.pathname);
-    let assetRequest = request;
-
-    if (rewrittenPath) {
-      const assetHeaders = new Headers(request.headers);
-      assetHeaders.set(INTERNAL_ASSET_REWRITE_HEADER, "1");
-      assetRequest = new Request(new URL(rewrittenPath, url), {
-        method: request.method,
-        headers: assetHeaders,
-        redirect: "manual",
-      });
-    }
-
-    const response = await env.ASSETS.fetch(assetRequest);
+    const response = await env.ASSETS.fetch(request);
     return addSecurityHeaders(response);
   },
 };
