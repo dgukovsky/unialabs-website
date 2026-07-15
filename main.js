@@ -224,36 +224,48 @@ const initParticleHero = () => {
   }
 
   const points = [];
-  const latitudeSteps = 66;
-  const longitudeSteps = 108;
+  const longitudeSteps = 148;
+  const sectionSteps = 148;
 
-  for (let latitude = 1; latitude < latitudeSteps; latitude += 1) {
-    const theta = (latitude / latitudeSteps) * Math.PI;
+  for (let longitude = 0; longitude < longitudeSteps; longitude += 1) {
+    const longitudeAngle = (longitude / longitudeSteps) * Math.PI * 2;
 
-    for (let longitude = 0; longitude < longitudeSteps; longitude += 1) {
-      const phi = (longitude / longitudeSteps) * Math.PI * 2;
-      const ridge =
-        0.22 * Math.sin(phi * 3 + theta * 1.7) +
-        0.15 * Math.sin(theta * 5 - phi * 2.1) +
-        0.09 * Math.cos(phi * 7 + theta * 2.4);
-      const radius = 1 + ridge;
-      const sinTheta = Math.sin(theta);
-      let x = radius * sinTheta * Math.cos(phi);
-      let y = radius * Math.cos(theta) * 0.92;
-      let z = radius * sinTheta * Math.sin(phi);
+    for (let section = 0; section < sectionSteps; section += 1) {
+      const sectionAngle = (section / sectionSteps) * Math.PI * 2;
+      const majorRadius =
+        0.22 +
+        0.065 * Math.sin(longitudeAngle * 3 + sectionAngle * 0.8) +
+        0.035 * Math.cos(longitudeAngle * 5 - sectionAngle * 1.7);
+      const minorRadius =
+        0.79 +
+        0.09 * Math.sin(sectionAngle * 2.7 - longitudeAngle * 2.15) +
+        0.05 * Math.cos(longitudeAngle * 4.2 + sectionAngle * 1.4);
+      const ringRadius = majorRadius + minorRadius * Math.cos(sectionAngle);
+      let x = ringRadius * Math.cos(longitudeAngle);
+      let y = minorRadius * Math.sin(sectionAngle) * 1.17;
+      let z = ringRadius * Math.sin(longitudeAngle);
 
-      x += 0.2 * Math.sin(y * 3.3 + z * 1.4);
-      y += 0.15 * Math.sin(z * 3.1 - x * 1.8);
-      z += 0.13 * Math.cos(x * 3.6 + y * 1.5);
+      // The spindle surface folds over itself; this warp keeps each lobe asymmetric.
+      x += 0.055 * Math.sin(sectionAngle * 3 + longitudeAngle * 1.7);
+      y += 0.05 * Math.sin(longitudeAngle * 3.2 - sectionAngle * 1.25);
+      z += 0.055 * Math.cos(sectionAngle * 2.4 + longitudeAngle * 2.2);
 
-      points.push({ x, y, z, phase: theta * 2 + phi });
+      points.push({
+        x: x / 1.08,
+        y: y / 1.08,
+        z: z / 1.08,
+        longitudeAngle,
+        sectionAngle,
+      });
     }
   }
 
   let width = 0;
   let height = 0;
   let animationFrame = 0;
+  let lastDrawTime = 0;
   let isDocumentVisible = !document.hidden;
+  let isCanvasVisible = true;
 
   const resizeCanvas = () => {
     const bounds = canvas.getBoundingClientRect();
@@ -266,30 +278,50 @@ const initParticleHero = () => {
   };
 
   const draw = (timestamp = 0) => {
+    const frameInterval = width < 640 ? 48 : 32;
+
+    if (!prefersReducedMotion.matches && timestamp - lastDrawTime < frameInterval) {
+      animationFrame = window.requestAnimationFrame(draw);
+      return;
+    }
+
+    lastDrawTime = timestamp;
     context.clearRect(0, 0, width, height);
 
-    const time = prefersReducedMotion.matches ? 0 : timestamp * 0.00011;
-    const rotationY = -0.34 + time;
-    const rotationX = -0.12 + Math.sin(time * 0.7) * 0.025;
+    const time = prefersReducedMotion.matches ? 0 : timestamp * 0.00006;
+    const rotationY = -0.46 + time * 0.48;
+    const rotationX = -0.1 + Math.sin(time * 0.68) * 0.02;
     const cosY = Math.cos(rotationY);
     const sinY = Math.sin(rotationY);
     const cosX = Math.cos(rotationX);
     const sinX = Math.sin(rotationX);
-    const radius = Math.min(width * 0.4, height * 0.39);
+    const radius = Math.min(width * 0.395, height * 0.42);
     const centerX = width * 0.4;
-    const centerY = height * 0.43;
+    const centerY = height * 0.425;
     const projectedPoints = [];
 
-    for (const point of points) {
-      const breathing = 1 + Math.sin(time * 2.1 + point.phase) * 0.014;
-      const baseX = point.x * breathing;
-      const baseY = point.y * breathing;
-      const baseZ = point.z * breathing;
+    for (let pointIndex = 0; pointIndex < points.length; pointIndex += 1) {
+      const point = points[pointIndex];
+      const breathing = 1 + Math.sin(time * 0.9) * 0.008;
+      const surfaceMotion =
+        1 +
+        Math.sin(
+          point.longitudeAngle * 2.8 + point.sectionAngle * 1.9 + time * 1.8,
+        ) *
+          0.016 +
+        Math.cos(
+          point.longitudeAngle * 1.7 - point.sectionAngle * 2.6 - time * 1.1,
+        ) *
+          0.009;
+      const morph = breathing * surfaceMotion;
+      const baseX = point.x * morph;
+      const baseY = point.y * morph;
+      const baseZ = point.z * morph;
       const rotatedX = baseX * cosY - baseZ * sinY;
       const rotatedZ = baseX * sinY + baseZ * cosY;
       const rotatedY = baseY * cosX - rotatedZ * sinX;
       const depth = baseY * sinX + rotatedZ * cosX;
-      const perspective = 2.7 / (3.15 - depth * 0.42);
+      const perspective = 2.95 / (3.4 - depth * 0.34);
 
       projectedPoints.push({
         x: centerX + rotatedX * radius * perspective,
@@ -302,11 +334,11 @@ const initParticleHero = () => {
     projectedPoints.sort((a, b) => a.depth - b.depth);
 
     for (const point of projectedPoints) {
-      const normalizedDepth = Math.max(0, Math.min(1, (point.depth + 1.35) / 2.7));
-      const opacity = 0.48 + normalizedDepth * 0.51;
-      const dotRadius = Math.max(0.72, radius * 0.0061 * point.perspective);
-      const red = Math.round(82 - normalizedDepth * 48);
-      const green = Math.round(177 - normalizedDepth * 65);
+      const normalizedDepth = Math.max(0, Math.min(1, (point.depth + 1.28) / 2.56));
+      const opacity = 0.3 + normalizedDepth * 0.68;
+      const dotRadius = Math.max(0.48, radius * 0.00455 * point.perspective);
+      const red = Math.round(98 - normalizedDepth * 58);
+      const green = Math.round(190 - normalizedDepth * 70);
 
       context.beginPath();
       context.fillStyle = `rgba(${red}, ${green}, 255, ${opacity})`;
@@ -315,30 +347,48 @@ const initParticleHero = () => {
     }
 
     const beamGradient = context.createLinearGradient(0, centerY + radius * 0.72, 0, height * 0.94);
-    beamGradient.addColorStop(0, "rgba(74, 164, 255, 0.2)");
+    beamGradient.addColorStop(0, "rgba(74, 164, 255, 0.13)");
     beamGradient.addColorStop(1, "rgba(74, 164, 255, 0)");
     context.fillStyle = beamGradient;
     context.beginPath();
-    context.moveTo(centerX - radius * 0.04, centerY + radius * 0.7);
-    context.lineTo(centerX + radius * 0.04, centerY + radius * 0.7);
-    context.lineTo(centerX + radius * 0.18, height * 0.94);
-    context.lineTo(centerX - radius * 0.18, height * 0.94);
+    context.moveTo(centerX - radius * 0.025, centerY + radius * 0.7);
+    context.lineTo(centerX + radius * 0.025, centerY + radius * 0.7);
+    context.lineTo(centerX + radius * 0.1, height * 0.94);
+    context.lineTo(centerX - radius * 0.1, height * 0.94);
     context.closePath();
     context.fill();
 
-    if (!prefersReducedMotion.matches && isDocumentVisible) {
+    if (!prefersReducedMotion.matches && isDocumentVisible && isCanvasVisible) {
       animationFrame = window.requestAnimationFrame(draw);
     }
   };
 
   const restartAnimation = () => {
     window.cancelAnimationFrame(animationFrame);
+    lastDrawTime = 0;
     resizeCanvas();
     draw(performance.now());
   };
 
   const resizeObserver = new ResizeObserver(restartAnimation);
   resizeObserver.observe(canvas);
+
+  if ("IntersectionObserver" in window) {
+    const canvasObserver = new IntersectionObserver(
+      ([entry]) => {
+        isCanvasVisible = entry.isIntersecting;
+
+        if (isCanvasVisible && isDocumentVisible) {
+          restartAnimation();
+        } else {
+          window.cancelAnimationFrame(animationFrame);
+        }
+      },
+      { rootMargin: "180px 0px", threshold: 0 },
+    );
+
+    canvasObserver.observe(canvas);
+  }
 
   document.addEventListener("visibilitychange", () => {
     isDocumentVisible = !document.hidden;
@@ -541,6 +591,160 @@ const initMethodologyCarousel = () => {
 };
 
 initMethodologyCarousel();
+
+const initPremiumMotion = () => {
+  const progressBar = document.querySelector("[data-scroll-progress] span");
+  const motionItems = Array.from(
+    document.querySelectorAll(
+      ".pp-service-card, .pp-case-card, .pp-method-card, .pp-contact-form, .pp-contact-assurance",
+    ),
+  );
+  const tiltItems = Array.from(
+    document.querySelectorAll(".pp-service-card, .pp-case-card, .pp-method-card"),
+  );
+  const staggerGroups = Array.from(
+    document.querySelectorAll(
+      ".pp-services-header, .pp-method-header, .pp-cases-header, .pp-contact-copy",
+    ),
+  );
+  const darkSections = Array.from(document.querySelectorAll(".pp-services, .pp-cases"));
+  const magneticButtons = Array.from(document.querySelectorAll(".pp-button"));
+  const finePointer = window.matchMedia("(pointer: fine)");
+
+  motionItems.forEach((item, index) => {
+    item.classList.add("motion-reveal");
+    item.style.setProperty("--motion-delay", `${(index % 6) * 65}ms`);
+  });
+
+  tiltItems.forEach((item) => item.classList.add("motion-tilt"));
+  staggerGroups.forEach((group) => group.classList.add("motion-stagger"));
+
+  if (prefersReducedMotion.matches) {
+    motionItems.forEach((item) => item.classList.add("is-motion-visible"));
+    return;
+  }
+
+  if ("IntersectionObserver" in window) {
+    const motionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const item = entry.target;
+          const delay = Number.parseInt(item.style.getPropertyValue("--motion-delay"), 10) || 0;
+
+          item.classList.add("is-motion-visible");
+          window.setTimeout(() => item.style.setProperty("--motion-delay", "0ms"), delay + 1050);
+          motionObserver.unobserve(item);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -7% 0px" },
+    );
+
+    motionItems.forEach((item) => motionObserver.observe(item));
+  } else {
+    motionItems.forEach((item) => item.classList.add("is-motion-visible"));
+  }
+
+  if (finePointer.matches) {
+    tiltItems.forEach((item) => {
+      let tiltFrame = 0;
+
+      item.addEventListener("pointermove", (event) => {
+        window.cancelAnimationFrame(tiltFrame);
+        tiltFrame = window.requestAnimationFrame(() => {
+          const bounds = item.getBoundingClientRect();
+          const x = (event.clientX - bounds.left) / bounds.width;
+          const y = (event.clientY - bounds.top) / bounds.height;
+          const tiltX = (0.5 - y) * 5.5;
+          const tiltY = (x - 0.5) * 6.5;
+
+          item.classList.add("is-tilting");
+          item.style.setProperty("--tilt-x", `${tiltX}deg`);
+          item.style.setProperty("--tilt-y", `${tiltY}deg`);
+          item.style.setProperty("--glow-x", `${x * 100}%`);
+          item.style.setProperty("--glow-y", `${y * 100}%`);
+          item.style.transform = `perspective(1100px) translate3d(0, -0.35rem, 0) rotateX(${tiltX.toFixed(3)}deg) rotateY(${tiltY.toFixed(3)}deg) scale(1)`;
+        });
+      });
+
+      item.addEventListener("pointerleave", () => {
+        window.cancelAnimationFrame(tiltFrame);
+        item.classList.remove("is-tilting");
+        item.style.setProperty("--tilt-x", "0deg");
+        item.style.setProperty("--tilt-y", "0deg");
+        item.style.setProperty("--glow-x", "50%");
+        item.style.setProperty("--glow-y", "50%");
+        item.style.removeProperty("transform");
+      });
+    });
+
+    darkSections.forEach((section) => {
+      section.addEventListener("pointermove", (event) => {
+        const bounds = section.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+        const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+        section.style.setProperty("--spot-x", `${x}%`);
+        section.style.setProperty("--spot-y", `${y}%`);
+      });
+
+      section.addEventListener("pointerleave", () => {
+        section.style.setProperty("--spot-x", "72%");
+        section.style.setProperty("--spot-y", "20%");
+      });
+    });
+
+    magneticButtons.forEach((button) => {
+      button.addEventListener("pointermove", (event) => {
+        const bounds = button.getBoundingClientRect();
+        const x = (event.clientX - bounds.left - bounds.width / 2) * 0.08;
+        const y = (event.clientY - bounds.top - bounds.height / 2) * 0.1;
+
+        button.style.setProperty("--magnetic-x", `${x.toFixed(2)}px`);
+        button.style.setProperty("--magnetic-y", `${y.toFixed(2)}px`);
+      });
+
+      button.addEventListener("pointerleave", () => {
+        button.style.setProperty("--magnetic-x", "0px");
+        button.style.setProperty("--magnetic-y", "0px");
+      });
+    });
+  }
+
+  let scrollFrame = 0;
+
+  const updateScrollMotion = () => {
+    scrollFrame = 0;
+    const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = scrollRange > 0 ? window.scrollY / scrollRange : 0;
+
+    progressBar?.style.setProperty("--page-progress", String(scrollProgress));
+
+    darkSections.forEach((section) => {
+      const bounds = section.getBoundingClientRect();
+      const sectionCenter = bounds.top + bounds.height / 2;
+      const viewportCenter = window.innerHeight / 2;
+      const normalized = Math.max(-1, Math.min(1, (viewportCenter - sectionCenter) / window.innerHeight));
+
+      section.style.setProperty("--ambient-shift", `${normalized * 30}px`);
+    });
+  };
+
+  const requestScrollMotion = () => {
+    if (!scrollFrame) {
+      scrollFrame = window.requestAnimationFrame(updateScrollMotion);
+    }
+  };
+
+  window.addEventListener("scroll", requestScrollMotion, { passive: true });
+  window.addEventListener("resize", requestScrollMotion, { passive: true });
+  updateScrollMotion();
+};
+
+initPremiumMotion();
 
 const initContactForm = () => {
   const form = document.querySelector("[data-contact-form]");
