@@ -288,35 +288,39 @@ const initParticleHero = () => {
     lastDrawTime = timestamp;
     context.clearRect(0, 0, width, height);
 
-    const time = prefersReducedMotion.matches ? 0 : timestamp * 0.00006;
-    const rotationY = -0.46 + time * 0.48;
-    const rotationX = -0.1 + Math.sin(time * 0.68) * 0.02;
+    const time = prefersReducedMotion.matches ? 0 : timestamp * 0.00032;
+    const rotationY = -0.46 + time * 0.34;
+    const rotationX = -0.1 + Math.sin(time * 0.72) * 0.035;
     const cosY = Math.cos(rotationY);
     const sinY = Math.sin(rotationY);
     const cosX = Math.cos(rotationX);
     const sinX = Math.sin(rotationX);
     const radius = Math.min(width * 0.395, height * 0.42);
-    const centerX = width * 0.4;
-    const centerY = height * 0.425;
+    const centerX = width * 0.4 + Math.sin(time * 0.58) * width * 0.004;
+    const centerY = height * 0.425 + Math.sin(time * 0.82) * height * 0.008;
     const projectedPoints = [];
+    const breath = 1 + Math.sin(time * 1.08) * 0.024 + Math.sin(time * 2.16) * 0.006;
+    const heartbeat = 1 + Math.pow(Math.max(0, Math.sin(time * 2.35)), 10) * 0.018;
 
     for (let pointIndex = 0; pointIndex < points.length; pointIndex += 1) {
       const point = points[pointIndex];
-      const breathing = 1 + Math.sin(time * 0.9) * 0.008;
       const surfaceMotion =
         1 +
         Math.sin(
-          point.longitudeAngle * 2.8 + point.sectionAngle * 1.9 + time * 1.8,
+          point.longitudeAngle * 2.8 + point.sectionAngle * 1.9 + time * 2.7,
         ) *
-          0.016 +
+          0.027 +
         Math.cos(
-          point.longitudeAngle * 1.7 - point.sectionAngle * 2.6 - time * 1.1,
+          point.longitudeAngle * 1.7 - point.sectionAngle * 2.6 - time * 1.65,
         ) *
-          0.009;
-      const morph = breathing * surfaceMotion;
-      const baseX = point.x * morph;
-      const baseY = point.y * morph;
-      const baseZ = point.z * morph;
+          0.014;
+      const travelingPulse =
+        Math.sin(point.longitudeAngle * 4.2 - point.sectionAngle * 1.3 - time * 3.4) * 0.012;
+      const morph = breath * heartbeat * (surfaceMotion + travelingPulse);
+      const axisFlow = Math.sin(point.sectionAngle * 2.2 + time * 1.9) * 0.013;
+      const baseX = point.x * morph * (1 + axisFlow);
+      const baseY = point.y * morph * (1 - axisFlow * 0.7);
+      const baseZ = point.z * morph * (1 + axisFlow * 0.45);
       const rotatedX = baseX * cosY - baseZ * sinY;
       const rotatedZ = baseX * sinY + baseZ * cosY;
       const rotatedY = baseY * cosX - rotatedZ * sinX;
@@ -328,6 +332,9 @@ const initParticleHero = () => {
         y: centerY + rotatedY * radius * perspective,
         depth,
         perspective,
+        energy:
+          0.5 +
+          Math.sin(point.longitudeAngle * 2.6 + point.sectionAngle * 1.7 - time * 2.9) * 0.5,
       });
     }
 
@@ -335,10 +342,13 @@ const initParticleHero = () => {
 
     for (const point of projectedPoints) {
       const normalizedDepth = Math.max(0, Math.min(1, (point.depth + 1.28) / 2.56));
-      const opacity = 0.3 + normalizedDepth * 0.68;
-      const dotRadius = Math.max(0.48, radius * 0.00455 * point.perspective);
-      const red = Math.round(98 - normalizedDepth * 58);
-      const green = Math.round(190 - normalizedDepth * 70);
+      const opacity = Math.min(1, 0.26 + normalizedDepth * 0.62 + point.energy * 0.16);
+      const dotRadius = Math.max(
+        0.48,
+        radius * 0.00455 * point.perspective * (0.94 + point.energy * 0.16),
+      );
+      const red = Math.round(96 - normalizedDepth * 54 + point.energy * 8);
+      const green = Math.round(184 - normalizedDepth * 64 + point.energy * 15);
 
       context.beginPath();
       context.fillStyle = `rgba(${red}, ${green}, 255, ${opacity})`;
@@ -664,8 +674,6 @@ const initPremiumMotion = () => {
           item.classList.add("is-tilting");
           item.style.setProperty("--tilt-x", `${tiltX}deg`);
           item.style.setProperty("--tilt-y", `${tiltY}deg`);
-          item.style.setProperty("--glow-x", `${x * 100}%`);
-          item.style.setProperty("--glow-y", `${y * 100}%`);
           item.style.transform = `perspective(1100px) translate3d(0, -0.35rem, 0) rotateX(${tiltX.toFixed(3)}deg) rotateY(${tiltY.toFixed(3)}deg) scale(1)`;
         });
       });
@@ -675,25 +683,7 @@ const initPremiumMotion = () => {
         item.classList.remove("is-tilting");
         item.style.setProperty("--tilt-x", "0deg");
         item.style.setProperty("--tilt-y", "0deg");
-        item.style.setProperty("--glow-x", "50%");
-        item.style.setProperty("--glow-y", "50%");
         item.style.removeProperty("transform");
-      });
-    });
-
-    darkSections.forEach((section) => {
-      section.addEventListener("pointermove", (event) => {
-        const bounds = section.getBoundingClientRect();
-        const x = ((event.clientX - bounds.left) / bounds.width) * 100;
-        const y = ((event.clientY - bounds.top) / bounds.height) * 100;
-
-        section.style.setProperty("--spot-x", `${x}%`);
-        section.style.setProperty("--spot-y", `${y}%`);
-      });
-
-      section.addEventListener("pointerleave", () => {
-        section.style.setProperty("--spot-x", "72%");
-        section.style.setProperty("--spot-y", "20%");
       });
     });
 

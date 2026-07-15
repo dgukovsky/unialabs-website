@@ -6504,3 +6504,169 @@ h5 {
     flex-basis: calc((100vw - 8.8rem) / 4.5);
   }
 }
+
+/* Give each chapter a deliberate pause without changing its visual language. */
+#top {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 1.8vw, 2rem);
+  background:
+    radial-gradient(circle at 12% 36%, rgba(189, 211, 240, 0.16), transparent 24rem),
+    #f4f5f6;
+}
+
+.pp-site-footer {
+  margin-top: clamp(1.25rem, 1.8vw, 2rem);
+}
+
+.pp-services-inner {
+  padding-top: 4.8rem;
+  padding-bottom: 2.8rem;
+}
+
+.pp-services-grid {
+  margin-top: 2.2rem;
+}
+
+.pp-services-footer {
+  margin-top: 2.55rem;
+}
+
+.pp-method-inner {
+  padding-bottom: 2.5rem;
+}
+
+.pp-method-viewport {
+  margin-top: 1.85rem;
+}
+
+.pp-method-footer {
+  margin-top: 2rem;
+}
+
+.pp-cases-inner {
+  padding-top: 3.5rem;
+  padding-bottom: 3.2rem;
+}
+
+.pp-cases-viewport {
+  margin-top: 2.4rem;
+}
+
+.pp-cases-footer {
+  margin-top: 2.75rem;
+}
+
+.pp-contact-inner {
+  padding-top: 4.3rem;
+  padding-bottom: 1.3rem;
+}
+
+/* Ambient light stays fixed; it no longer follows the pointer. */
+.pp-services,
+.pp-cases {
+  --ambient-shift: 0px;
+}
+
+.pp-services::before,
+.pp-cases::before {
+  background: radial-gradient(
+    circle 32rem at 76% 16%,
+    rgba(255, 255, 255, 0.06),
+    rgba(207, 181, 145, 0.025) 40%,
+    transparent 72%
+  );
+}
+
+.pp-service-card::after,
+.pp-case-card::before,
+.pp-case-visual::after {
+  display: none;
+}
+
+.pp-canvas-glow {
+  animation: pp-living-aura 5.8s ease-in-out infinite;
+}
+
+.pp-orbit-one {
+  animation: pp-living-orbit 6.6s ease-in-out infinite;
+}
+
+.pp-orbit-two {
+  animation: pp-living-orbit 6.6s ease-in-out -3.3s infinite reverse;
+}
+
+@keyframes pp-living-aura {
+  0%, 100% {
+    opacity: 0.68;
+    transform: translate3d(-1.2%, 1%, 0) scale(0.94);
+  }
+  45% {
+    opacity: 1;
+    transform: translate3d(1.5%, -1.2%, 0) scale(1.08);
+  }
+  58% {
+    opacity: 0.86;
+    transform: translate3d(0.7%, -0.4%, 0) scale(1.025);
+  }
+}
+
+@keyframes pp-living-orbit {
+  0%, 100% {
+    opacity: 0.55;
+    filter: blur(0);
+    transform: perspective(500px) rotateX(64deg) scale(0.96);
+  }
+  48% {
+    opacity: 0.95;
+    filter: blur(0.4px);
+    transform: perspective(500px) rotateX(64deg) scale(1.055);
+  }
+}
+
+@media (max-width: 1023px) {
+  .pp-services-inner {
+    padding-top: 4.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .pp-contact-inner {
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 639px) {
+  #top {
+    gap: 0.85rem;
+  }
+
+  .pp-site-footer {
+    margin-top: 0.85rem;
+  }
+
+  .pp-services-grid,
+  .pp-method-viewport,
+  .pp-cases-viewport {
+    margin-top: 2rem;
+  }
+
+  .pp-services-footer,
+  .pp-method-footer,
+  .pp-cases-footer {
+    margin-top: 2rem;
+  }
+
+  .pp-cases-inner {
+    padding-top: 4rem;
+    padding-bottom: 3.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-canvas-glow,
+  .pp-orbit-one,
+  .pp-orbit-two {
+    animation: none;
+  }
+}
