@@ -7,12 +7,13 @@
     <meta
       id="meta-description"
       name="description"
-      content="UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
+      content="UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide."
     />
     <link id="canonical-link" rel="canonical" href="https://unialabs.com/" />
-    <link id="alternate-en" rel="alternate" hreflang="en" href="https://unialabs.com/" />
-    <link id="alternate-es" rel="alternate" hreflang="es-EC" href="https://unialabs.com/ecuador.html" />
-    <link id="alternate-sr" rel="alternate" hreflang="sr-RS" href="https://unialabs.com/serbia.html" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="https://unialabs.com/?lang=en" />
+    <link id="alternate-es" rel="alternate" hreflang="es" href="https://unialabs.com/?lang=es" />
+    <link id="alternate-zh" rel="alternate" hreflang="zh-Hans" href="https://unialabs.com/?lang=zh" />
+    <link id="alternate-fr" rel="alternate" hreflang="fr" href="https://unialabs.com/?lang=fr" />
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="https://unialabs.com/" />
     <meta
       name="robots"
@@ -27,8 +28,9 @@
     <meta property="og:type" content="website" />
     <meta id="meta-og-url" property="og:url" content="https://unialabs.com/" />
     <meta id="meta-og-locale" property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="es_EC" />
-    <meta property="og:locale:alternate" content="sr_RS" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="fr_FR" />
     <meta
       id="meta-og-title"
       property="og:title"
@@ -37,7 +39,7 @@
     <meta
       id="meta-og-description"
       property="og:description"
-      content="Custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
+      content="Custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide."
     />
     <meta id="meta-og-image" property="og:image" content="https://unialabs.com/og-unia-labs.png" />
     <meta id="meta-og-image-secure" property="og:image:secure_url" content="https://unialabs.com/og-unia-labs.png" />
@@ -59,7 +61,7 @@
     <meta
       id="meta-twitter-description"
       name="twitter:description"
-      content="Custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe."
+      content="Custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide."
     />
     <meta id="meta-twitter-image" name="twitter:image" content="https://unialabs.com/og-unia-labs.png" />
     <meta
@@ -79,7 +81,7 @@
             "url": "https://unialabs.com/",
             "logo": "https://unialabs.com/unia-logo.svg",
             "image": "https://unialabs.com/og-unia-labs.png",
-            "description": "UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe.",
+            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide.",
             "sameAs": [
               "https://www.linkedin.com/company/unialabs/",
               "https://x.com/UniaFinance"
@@ -89,7 +91,7 @@
               "addressLocality": "London",
               "addressCountry": "GB"
             },
-            "areaServed": ["United States", "Ecuador", "Serbia", "Europe"],
+            "areaServed": "Worldwide",
             "knowsAbout": [
               "Custom software development",
               "AI agents",
@@ -103,7 +105,7 @@
                 "@type": "ContactPoint",
                 "contactType": "sales",
                 "url": "https://unialabs.com/#contact",
-                "availableLanguage": ["English", "Spanish", "Serbian"]
+                "availableLanguage": ["English", "Spanish", "Chinese", "French"]
               }
             ]
           },
@@ -121,8 +123,8 @@
               "addressLocality": "London",
               "addressCountry": "GB"
             },
-            "areaServed": ["United States", "Ecuador", "Serbia", "Europe"],
-            "availableLanguage": ["English", "Spanish", "Serbian"],
+            "areaServed": "Worldwide",
+            "availableLanguage": ["English", "Spanish", "Chinese", "French"],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "UNIA Labs Services",
@@ -166,14 +168,14 @@
             "publisher": {
               "@id": "https://unialabs.com/#organization"
             },
-            "inLanguage": "en"
+            "inLanguage": ["en", "es", "zh-CN", "fr"]
           },
           {
             "@type": "WebPage",
             "@id": "https://unialabs.com/#webpage",
             "url": "https://unialabs.com/",
             "name": "Custom Software, AI Agents & Automation | UNIA Labs",
-            "description": "UNIA Labs builds custom software development, AI agents, workflow automation, and cloud architecture for teams in the US, Ecuador, Serbia, and Europe.",
+            "description": "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide.",
             "isPartOf": {
               "@id": "https://unialabs.com/#website"
             },
@@ -184,7 +186,7 @@
               "@id": "https://unialabs.com/#service"
             },
             "primaryImageOfPage": "https://unialabs.com/og-unia-labs.png",
-            "inLanguage": "en"
+            "inLanguage": ["en", "es", "zh-CN", "fr"]
           }
         ]
       }
@@ -229,7 +231,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css?v=20260714-closer-orb-labels" />
-    <script defer type="module" src="/main.js?v=20260714-interactive-orb"></script>
+    <script defer type="module" src="/main.js?v=20260714-runtime-i18n-v2"></script>
   </head>
   <body class="bg-surface font-body text-on-surface selection:bg-primary/20">
     <div class="page-noise" aria-hidden="true"></div>
@@ -279,9 +281,10 @@
           <a href="#case-studies" data-menu-link>Case Studies</a>
           <a href="#contact" data-menu-link>Contact</a>
           <div class="pp-mobile-languages">
-            <a class="is-active" href="/">EN</a>
-            <a href="/ecuador.html" hreflang="es-EC" lang="es">ES</a>
-            <a href="/serbia.html" hreflang="sr-RS" lang="sr">SR</a>
+            <a class="is-active" href="/?lang=en" hreflang="en" lang="en" data-language="en" aria-current="page">EN</a>
+            <a href="/?lang=es" hreflang="es" lang="es" data-language="es">ES</a>
+            <a href="/?lang=zh" hreflang="zh-Hans" lang="zh-CN" data-language="zh">CH</a>
+            <a href="/?lang=fr" hreflang="fr" lang="fr" data-language="fr">FR</a>
           </div>
           <a class="pp-button pp-button-dark" href="#contact" data-menu-link>Start a project</a>
         </div>
@@ -792,12 +795,6 @@
               <a href="#process">Our Methodology</a>
               <a href="#contact">Contact</a>
               <a href="/#contact" data-email-link data-email-subject="UNIA Labs website inquiry" data-email-aria="Email UNIA Labs">Email us</a>
-            </div>
-            <div class="pp-footer-column">
-              <p>Markets</p>
-              <a href="/europe.html">Europe</a>
-              <a href="/ecuador.html">Ecuador</a>
-              <a href="/serbia.html">Serbia</a>
               <span>London, United Kingdom</span>
             </div>
           </nav>
@@ -806,9 +803,10 @@
         <div class="pp-footer-meta">
           <div class="pp-footer-languages" aria-label="Choose language">
             <span>Language</span>
-            <a class="is-active" href="/" lang="en" aria-current="page">EN</a>
-            <a href="/ecuador.html" lang="es">ES</a>
-            <a href="/serbia.html" lang="sr">SR</a>
+            <a class="is-active" href="/?lang=en" hreflang="en" lang="en" data-language="en" aria-current="page">EN</a>
+            <a href="/?lang=es" hreflang="es" lang="es" data-language="es">ES</a>
+            <a href="/?lang=zh" hreflang="zh-Hans" lang="zh-CN" data-language="zh">CH</a>
+            <a href="/?lang=fr" hreflang="fr" lang="fr" data-language="fr">FR</a>
           </div>
 
           <div class="pp-footer-socials" aria-label="UNIA Labs social profiles">

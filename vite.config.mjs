@@ -10,9 +10,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: htmlEntry("./index.html"),
-        europe: htmlEntry("./europe.html"),
-        ecuador: htmlEntry("./ecuador.html"),
-        serbia: htmlEntry("./serbia.html"),
         privacy: htmlEntry("./privacy.html"),
         terms: htmlEntry("./terms.html"),
       },

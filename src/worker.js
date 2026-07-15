@@ -2,16 +2,21 @@ const ROOT_HOST = "unialabs.com";
 const WWW_HOST = `www.${ROOT_HOST}`;
 const CANONICAL_REDIRECT_MAP = new Map([
   ["/index.html", "/"],
-  ["/europe", "/europe.html"],
-  ["/europe/", "/europe.html"],
-  ["/ecuador", "/ecuador.html"],
-  ["/ecuador/", "/ecuador.html"],
-  ["/serbia", "/serbia.html"],
-  ["/serbia/", "/serbia.html"],
   ["/privacy", "/privacy.html"],
   ["/privacy/", "/privacy.html"],
   ["/terms", "/terms.html"],
   ["/terms/", "/terms.html"],
+]);
+const LEGACY_LANGUAGE_PATHS = new Set([
+  "/europe",
+  "/europe/",
+  "/europe.html",
+  "/ecuador",
+  "/ecuador/",
+  "/ecuador.html",
+  "/serbia",
+  "/serbia/",
+  "/serbia.html",
 ]);
 
 const SECURITY_HEADERS = {
@@ -45,6 +50,11 @@ export default {
     }
 
     const canonicalPath = CANONICAL_REDIRECT_MAP.get(url.pathname);
+
+    if (LEGACY_LANGUAGE_PATHS.has(url.pathname)) {
+      url.pathname = "/";
+      return redirect(url);
+    }
 
     if (canonicalPath) {
       url.pathname = canonicalPath;
