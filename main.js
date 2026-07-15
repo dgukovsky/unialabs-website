@@ -266,6 +266,15 @@ const initParticleHero = () => {
   let lastDrawTime = 0;
   let isDocumentVisible = !document.hidden;
   let isCanvasVisible = true;
+  const pointerInteraction = {
+    x: 0.5,
+    y: 0.5,
+    targetX: 0.5,
+    targetY: 0.5,
+    strength: 0,
+    targetStrength: 0,
+    pulse: 0,
+  };
 
   const resizeCanvas = () => {
     const bounds = canvas.getBoundingClientRect();
@@ -288,19 +297,36 @@ const initParticleHero = () => {
     lastDrawTime = timestamp;
     context.clearRect(0, 0, width, height);
 
+    pointerInteraction.x += (pointerInteraction.targetX - pointerInteraction.x) * 0.1;
+    pointerInteraction.y += (pointerInteraction.targetY - pointerInteraction.y) * 0.1;
+    pointerInteraction.strength +=
+      (pointerInteraction.targetStrength - pointerInteraction.strength) * 0.09;
+    pointerInteraction.pulse *= 0.92;
+
     const time = prefersReducedMotion.matches ? 0 : timestamp * 0.00032;
-    const rotationY = -0.46 + time * 0.34;
-    const rotationX = -0.1 + Math.sin(time * 0.72) * 0.035;
+    const pointerYaw = (pointerInteraction.x - 0.5) * 0.62 * pointerInteraction.strength;
+    const pointerPitch = (pointerInteraction.y - 0.5) * 0.38 * pointerInteraction.strength;
+    const rotationY = -0.46 + time * 0.34 + pointerYaw;
+    const rotationX = -0.1 + Math.sin(time * 0.72) * 0.035 + pointerPitch;
     const cosY = Math.cos(rotationY);
     const sinY = Math.sin(rotationY);
     const cosX = Math.cos(rotationX);
     const sinX = Math.sin(rotationX);
     const radius = Math.min(width * 0.395, height * 0.42);
-    const centerX = width * 0.4 + Math.sin(time * 0.58) * width * 0.004;
-    const centerY = height * 0.425 + Math.sin(time * 0.82) * height * 0.008;
+    const centerX =
+      width * 0.4 +
+      Math.sin(time * 0.58) * width * 0.004 +
+      (pointerInteraction.x - 0.5) * width * 0.018 * pointerInteraction.strength;
+    const centerY =
+      height * 0.425 +
+      Math.sin(time * 0.82) * height * 0.008 +
+      (pointerInteraction.y - 0.5) * height * 0.014 * pointerInteraction.strength;
     const projectedPoints = [];
     const breath = 1 + Math.sin(time * 1.08) * 0.024 + Math.sin(time * 2.16) * 0.006;
     const heartbeat = 1 + Math.pow(Math.max(0, Math.sin(time * 2.35)), 10) * 0.018;
+    const pointerX = pointerInteraction.x * width;
+    const pointerY = pointerInteraction.y * height;
+    const interactionRadius = radius * 0.72;
 
     for (let pointIndex = 0; pointIndex < points.length; pointIndex += 1) {
       const point = points[pointIndex];
@@ -326,10 +352,27 @@ const initParticleHero = () => {
       const rotatedY = baseY * cosX - rotatedZ * sinX;
       const depth = baseY * sinX + rotatedZ * cosX;
       const perspective = 2.95 / (3.4 - depth * 0.34);
+      let projectedX = centerX + rotatedX * radius * perspective;
+      let projectedY = centerY + rotatedY * radius * perspective;
+      const pointerDeltaX = projectedX - pointerX;
+      const pointerDeltaY = projectedY - pointerY;
+      const pointerDistance = Math.hypot(pointerDeltaX, pointerDeltaY);
+      const proximity =
+        pointerInteraction.strength * Math.max(0, 1 - pointerDistance / interactionRadius);
+
+      if (proximity > 0) {
+        const directionX = pointerDistance > 0.1 ? pointerDeltaX / pointerDistance : rotatedX;
+        const directionY = pointerDistance > 0.1 ? pointerDeltaY / pointerDistance : rotatedY;
+        const displacement =
+          proximity * proximity * radius * (0.045 + pointerInteraction.pulse * 0.055);
+
+        projectedX += directionX * displacement;
+        projectedY += directionY * displacement;
+      }
 
       projectedPoints.push({
-        x: centerX + rotatedX * radius * perspective,
-        y: centerY + rotatedY * radius * perspective,
+        x: projectedX,
+        y: projectedY,
         depth,
         perspective,
         energy:
@@ -382,6 +425,36 @@ const initParticleHero = () => {
 
   const resizeObserver = new ResizeObserver(restartAnimation);
   resizeObserver.observe(canvas);
+
+  const updatePointerInteraction = (event) => {
+    if (prefersReducedMotion.matches || event.pointerType === "touch") {
+      return;
+    }
+
+    const bounds = canvas.getBoundingClientRect();
+    pointerInteraction.targetX = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+    pointerInteraction.targetY = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+    pointerInteraction.targetStrength = 1;
+  };
+
+  canvas.addEventListener("pointerenter", updatePointerInteraction);
+  canvas.addEventListener("pointermove", updatePointerInteraction);
+  canvas.addEventListener("pointerleave", () => {
+    pointerInteraction.targetX = 0.5;
+    pointerInteraction.targetY = 0.5;
+    pointerInteraction.targetStrength = 0;
+    canvas.classList.remove("is-interacting");
+  });
+  canvas.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch" || prefersReducedMotion.matches) {
+      return;
+    }
+
+    updatePointerInteraction(event);
+    pointerInteraction.pulse = 1;
+    canvas.classList.add("is-interacting");
+  });
+  window.addEventListener("pointerup", () => canvas.classList.remove("is-interacting"));
 
   if ("IntersectionObserver" in window) {
     const canvasObserver = new IntersectionObserver(

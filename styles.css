@@ -2326,7 +2326,12 @@ h5 {
   z-index: 2;
   width: 100%;
   height: 100%;
+  cursor: grab;
   filter: drop-shadow(0 18px 25px rgba(73, 157, 255, 0.11));
+}
+
+.pp-particle-canvas.is-interacting {
+  cursor: grabbing;
 }
 
 .pp-canvas-glow {
@@ -6505,19 +6510,7 @@ h5 {
   }
 }
 
-/* Give each chapter a deliberate pause without changing its visual language. */
-#top {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.25rem, 1.8vw, 2rem);
-  background:
-    radial-gradient(circle at 12% 36%, rgba(189, 211, 240, 0.16), transparent 24rem),
-    #f4f5f6;
-}
-
-.pp-site-footer {
-  margin-top: clamp(1.25rem, 1.8vw, 2rem);
-}
+/* Give each chapter more room inside while keeping section transitions flush. */
 
 .pp-services-inner {
   padding-top: 4.8rem;
@@ -6637,14 +6630,6 @@ h5 {
 }
 
 @media (max-width: 639px) {
-  #top {
-    gap: 0.85rem;
-  }
-
-  .pp-site-footer {
-    margin-top: 0.85rem;
-  }
-
   .pp-services-grid,
   .pp-method-viewport,
   .pp-cases-viewport {
