@@ -12,6 +12,33 @@ const CONTACT_EMAIL_DOMAIN_CODES = [117, 110, 105, 97, 108, 97, 98, 115, 46, 99,
 let heroTitleStarted = false;
 let activeLanguage = "en";
 
+const alignHashTarget = () => {
+  if (!window.location.hash) return;
+
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+
+  document.querySelectorAll(".deferred-section").forEach((section) => {
+    section.style.contentVisibility = "visible";
+  });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const scrollMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - scrollMargin;
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+
+      root.style.scrollBehavior = "auto";
+      root.scrollTop = targetTop;
+      root.style.scrollBehavior = previousScrollBehavior;
+    });
+  });
+};
+
+window.addEventListener("load", alignHashTarget, { once: true });
+window.addEventListener("hashchange", alignHashTarget);
+
 const LANGUAGE_CONFIG = {
   en: { html: "en", locale: "en_US" },
   es: { html: "es", locale: "es_ES" },
@@ -26,6 +53,7 @@ const TRANSLATION_ROWS = [
   ["Case Studies", "Casos de éxito", "客户案例", "Études de cas"],
   ["Contact", "Contacto", "联系我们", "Contact"],
   ["Book a call", "Agenda una llamada", "预约通话", "Réserver un appel"],
+  ["Book a discovery call", "Agenda una llamada de descubrimiento", "预约需求沟通", "Réserver un appel découverte"],
   ["Start a project", "Inicia un proyecto", "启动项目", "Démarrer un projet"],
   ["Intelligent systems. Real results.", "Sistemas inteligentes. Resultados reales.", "智能系统，真实成果。", "Systèmes intelligents. Résultats concrets."],
   ["Custom software systems", "Sistemas de software a medida", "定制软件系统", "Des systèmes logiciels sur mesure"],
@@ -92,9 +120,42 @@ const TRANSLATION_ROWS = [
   ["Impactful", "Con impacto", "高影响力", "Impactant"],
   ["Focused on real outcomes.", "Enfocado en resultados reales.", "专注真实成果。", "Centré sur des résultats concrets."],
   ["Start your project", "Inicia tu proyecto", "启动您的项目", "Démarrer votre projet"],
+  ["BUILT FOR SCALE", "DISEÑADO PARA ESCALAR", "为规模化而生", "CONÇU POUR ÉVOLUER"],
+  ["Production-ready systems for ambitious teams", "Sistemas listos para producción para equipos ambiciosos", "面向进取型团队的生产级系统", "Des systèmes prêts pour la production pour les équipes ambitieuses"],
+  ["Where software and", "Donde el software y", "让软件与", "Quand le logiciel et"],
+  ["intelligence build together.", "la inteligencia construyen juntos.", "智能协同构建。", "l’intelligence construisent ensemble."],
+  ["One engineering partner for custom software, AI agents, and automation.", "Un solo socio de ingeniería para software a medida, agentes de IA y automatización.", "一个工程伙伴，覆盖定制软件、AI 智能体与自动化。", "Un seul partenaire d’ingénierie pour les logiciels sur mesure, les agents IA et l’automatisation."],
+  ["We design, build, and ship secure systems that move your business forward.", "Diseñamos, construimos y entregamos sistemas seguros que impulsan tu negocio.", "我们设计、构建并交付安全系统，持续推动您的业务发展。", "Nous concevons, développons et livrons des systèmes sécurisés qui font avancer votre entreprise."],
+  ["Explore our services", "Explora nuestros servicios", "探索我们的服务", "Découvrir nos services"],
+  ["Enterprise Security", "Seguridad empresarial", "企业级安全", "Sécurité d’entreprise"],
+  ["FEATURES", "CAPACIDADES", "核心能力", "CAPACITÉS"],
+  ["Your technology", "Tu socio tecnológico", "您的技术", "Votre partenaire"],
+  ["partner for", "para", "合作伙伴，", "technologique pour"],
+  ["building", "construir", "共同构建", "construire"],
+  ["what’s next.", "lo que sigue.", "未来。", "la suite."],
+  ["We design, build, and scale digital products, AI systems,", "Diseñamos, construimos y escalamos productos digitales y sistemas de IA,", "我们设计、构建并扩展数字产品、AI 系统", "Nous concevons, développons et faisons évoluer des produits numériques et des systèmes IA,"],
+  ["and business-critical platforms with clarity and", "además de plataformas críticas para el negocio con claridad y", "以及业务关键平台，以清晰的方向和", "ainsi que des plateformes critiques avec clarté et"],
+  ["speed—from idea to impact and beyond.", "velocidad: desde la idea hasta el impacto y más allá.", "高效的速度，从创意走向成果并持续进化。", "rapidité, de l’idée à l’impact et au-delà."],
+  ["Explore how we build", "Descubre cómo construimos", "探索我们的构建方式", "Découvrir notre méthode"],
+  ["Strategic Product Thinking", "Estrategia de producto", "战略产品思维", "Stratégie produit"],
+  ["We turn complex problems into clear, human-centered strategies that align business, technology, and customers from day one.", "Convertimos problemas complejos en estrategias claras y centradas en las personas, alineando negocio, tecnología y clientes desde el primer día.", "我们将复杂问题转化为清晰、以人为本的战略，从第一天起协调业务、技术与客户需求。", "Nous transformons les problèmes complexes en stratégies claires et centrées sur l’humain, alignant activité, technologie et clients dès le premier jour."],
+  ["Custom Engineering", "Ingeniería a medida", "定制工程", "Ingénierie sur mesure"],
+  ["From web and mobile to AI and business platforms, we build scalable products with modern architectures and meticulous attention to detail.", "Desde web y móvil hasta IA y plataformas empresariales, construimos productos escalables con arquitecturas modernas y atención meticulosa al detalle.", "从 Web、移动端到 AI 与业务平台，我们运用现代架构和对细节的严谨关注，打造可扩展产品。", "Du web et du mobile à l’IA et aux plateformes métier, nous créons des produits évolutifs avec des architectures modernes et un soin méticuleux du détail."],
+  ["System Integration", "Integración de sistemas", "系统集成", "Intégration de systèmes"],
+  ["We connect tools, data, and workflows to streamline operations and unlock action at scale.", "Conectamos herramientas, datos y flujos para optimizar operaciones y habilitar acciones a escala.", "我们连接工具、数据与工作流，精简运营并释放规模化行动能力。", "Nous connectons outils, données et workflows pour fluidifier les opérations et permettre l’action à grande échelle."],
+  ["Scale with Confidence", "Escala con confianza", "自信扩展", "Évoluer en confiance"],
+  ["We help you launch, measure, adapt, and scale with modern infrastructure and world-class DevOps.", "Te ayudamos a lanzar, medir, adaptar y escalar con infraestructura moderna y DevOps de primer nivel.", "我们通过现代基础设施和一流 DevOps，帮助您发布、衡量、调整并持续扩展。", "Nous vous aidons à lancer, mesurer, adapter et évoluer avec une infrastructure moderne et un DevOps de premier plan."],
+  ["Discuss strategic product thinking", "Hablar sobre estrategia de producto", "探讨战略产品思维", "Discuter de stratégie produit"],
+  ["Discuss custom engineering", "Hablar sobre ingeniería a medida", "探讨定制工程", "Discuter d’ingénierie sur mesure"],
+  ["Discuss system integration", "Hablar sobre integración de sistemas", "探讨系统集成", "Discuter d’intégration de systèmes"],
+  ["Discuss scalable infrastructure", "Hablar sobre infraestructura escalable", "探讨可扩展基础设施", "Discuter d’infrastructure évolutive"],
   ["Schedule a call", "Agenda una llamada", "预约通话", "Planifier un appel"],
   ["Systems built around", "Sistemas creados para", "围绕真实业务", "Des systèmes conçus autour"],
   ["real operations.", "operaciones reales.", "构建的系统。", "des opérations réelles."],
+  ["CASE STUDIES / PROJECTS", "CASOS DE ÉXITO / PROYECTOS", "客户案例 / 项目", "ÉTUDES DE CAS / PROJETS"],
+  ["From AI-augmented tools to enterprise platforms, scalable real-", "Desde herramientas potenciadas con IA hasta plataformas empresariales, sistemas reales", "从 AI 增强工具到企业平台，打造可扩展的真实业务", "Des outils augmentés par l’IA aux plateformes d’entreprise, des systèmes concrets et évolutifs"],
+  ["world systems designed to adapt to how you actually work.", "y escalables diseñados para adaptarse a cómo trabajas realmente.", "系统，真正适应您的工作方式。", "conçus pour s’adapter à votre manière de travailler."],
+  ["Explore Projects", "Explorar proyectos", "探索项目", "Découvrir les projets"],
   ["From tax automation and financial infrastructure to digital memberships", "Desde automatización fiscal e infraestructura financiera hasta membresías digitales", "从税务自动化和金融基础设施，到数字会员体系", "De l’automatisation fiscale et l’infrastructure financière aux adhésions numériques"],
   ["and algorithmic trading, we design platforms that perform in the real world.", "y trading algorítmico, diseñamos plataformas que rinden en el mundo real.", "和算法交易，我们设计经得起真实环境考验的平台。", "et au trading algorithmique, nous concevons des plateformes performantes dans le monde réel."],
   ["Tax Case Management", "Gestión de casos tributarios", "税务案件管理", "Gestion des dossiers fiscaux"],
@@ -125,6 +186,28 @@ const TRANSLATION_ROWS = [
   ["Explore a project", "Explora un proyecto", "探索项目", "Découvrir un projet"],
   ["Discuss your system", "Hablemos de tu sistema", "讨论您的系统", "Parlons de votre système"],
   ["Built for high-stakes operations.", "Diseñado para operaciones críticas.", "专为关键运营而建。", "Conçu pour les opérations critiques."],
+  ["LET’S TALK", "HABLEMOS", "联系我们", "ÉCHANGEONS"],
+  ["Let’s build", "Construyamos", "共同构建", "Construisons"],
+  ["Big projects start with a simple conversation. Tell us", "Los grandes proyectos empiezan con una conversación. Cuéntanos", "伟大的项目始于一次简单的交流。请告诉我们", "Les grands projets commencent par une simple conversation. Parlez-nous"],
+  ["about your goals, challenges, and ideas—we’ll follow", "tus objetivos, desafíos e ideas; nosotros te responderemos", "您的目标、挑战与想法，我们会提供", "de vos objectifs, défis et idées ; nous vous proposerons"],
+  ["up with thoughtful, practical next steps.", "con próximos pasos claros, prácticos y bien pensados.", "周全且务实的后续方案。", "des prochaines étapes réfléchies et concrètes."],
+  ["Email us", "Escríbenos", "发送邮件", "Écrivez-nous"],
+  ["Our location", "Nuestra ubicación", "我们的位置", "Notre adresse"],
+  ["Response time", "Tiempo de respuesta", "响应时间", "Délai de réponse"],
+  ["Usually within 24 hours", "Normalmente en 24 horas", "通常在 24 小时内", "Généralement sous 24 heures"],
+  ["Your name", "Tu nombre", "您的姓名", "Votre nom"],
+  ["Work email", "Correo laboral", "工作邮箱", "E-mail professionnel"],
+  ["Project type", "Tipo de proyecto", "项目类型", "Type de projet"],
+  ["Select project type", "Selecciona el tipo de proyecto", "选择项目类型", "Sélectionnez le type de projet"],
+  ["Message", "Mensaje", "留言", "Message"],
+  ["Tell us about your project, goals, and timeline...", "Cuéntanos sobre tu proyecto, objetivos y plazos...", "请介绍您的项目、目标与时间安排……", "Parlez-nous de votre projet, de vos objectifs et de vos délais..."],
+  ["Start the conversation", "Iniciar la conversación", "开始交流", "Démarrer la conversation"],
+  ["Your information is secure and never shared.", "Tu información está segura y nunca se comparte.", "您的信息安全且绝不会被分享。", "Vos informations sont sécurisées et ne sont jamais partagées."],
+  ["Prefer email?", "¿Prefieres el correo?", "更喜欢邮件？", "Vous préférez l’e-mail ?"],
+  ["Schedule a 30-minute intro", "Agenda una introducción de 30 minutos", "预约 30 分钟沟通", "Planifier un échange de 30 minutes"],
+  ["Usually reply within 24 hours", "Respondemos normalmente en 24 horas", "通常在 24 小时内回复", "Réponse généralement sous 24 heures"],
+  ["We’ll get back to you quickly", "Te responderemos rápidamente", "我们会尽快回复您", "Nous vous répondrons rapidement"],
+  ["London, United Kingdom", "Londres, Reino Unido", "英国伦敦", "Londres, Royaume-Uni"],
   ["Let’s build the system", "Construyamos el sistema", "共同构建真正符合", "Construisons le système"],
   ["your business actually needs.", "que tu negocio realmente necesita.", "您业务需求的系统。", "dont votre entreprise a vraiment besoin."],
   ["Tell us what you’re building, where operations are breaking down,", "Cuéntanos qué estás construyendo, dónde fallan las operaciones", "告诉我们您正在构建什么、运营瓶颈在哪里，", "Dites-nous ce que vous construisez et où vos opérations rencontrent des difficultés,"],
@@ -155,6 +238,11 @@ const TRANSLATION_ROWS = [
   ["Architected to grow with your business", "Arquitectura que crece con tu negocio", "架构随您的业务共同成长", "Une architecture qui grandit avec votre entreprise"],
   ["and adapt to what’s next.", "y se adapta a lo que sigue.", "并适应未来变化。", "et s’adapte à la suite."],
   ["Available for selected projects", "Disponible para proyectos seleccionados", "承接精选项目", "Disponible pour des projets sélectionnés"],
+  ["AI-native systems, digital products,", "Sistemas nativos de IA, productos digitales,", "AI 原生系统、数字产品，", "Systèmes natifs de l’IA, produits numériques,"],
+  ["and infrastructure built for", "e infraestructura creada para", "以及专为进取团队打造的", "et infrastructures conçus pour"],
+  ["ambitious teams.", "equipos ambiciosos.", "基础设施。", "les équipes ambitieuses."],
+  ["Remote-first", "Remoto primero", "远程优先", "Priorité au distanciel"],
+  ["Global", "Global", "全球", "International"],
   ["ENGINEERING FOR OPERATIONS IN MOTION", "INGENIERÍA PARA OPERACIONES EN MOVIMIENTO", "为持续运转的业务提供工程能力", "INGÉNIERIE POUR DES OPÉRATIONS EN MOUVEMENT"],
   ["Build the system", "Construye el sistema", "构建您的业务", "Construisez le système"],
   ["your business needs next.", "que tu negocio necesita ahora.", "下一步所需的系统。", "dont votre entreprise a besoin ensuite."],
@@ -278,6 +366,8 @@ const applyLanguage = (language, updateUrl = false) => {
     language === "en" ? url.searchParams.delete("lang") : url.searchParams.set("lang", language);
     window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
   }
+
+  alignHashTarget();
 };
 
 const initLanguage = () => {
@@ -492,6 +582,9 @@ const handleNavState = () => {
   }
 
   nav.classList.toggle("is-compact", window.scrollY > 18);
+  const hero = document.querySelector(".pp-hero");
+  const heroBoundary = hero ? hero.offsetTop + hero.offsetHeight - 96 : 0;
+  nav.classList.toggle("is-over-hero", window.scrollY < heroBoundary);
 };
 
 handleNavState();
@@ -1003,22 +1096,130 @@ const initMethodologyCarousel = () => {
 
 initMethodologyCarousel();
 
+const initFeatureWaves = () => {
+  const card = document.querySelector("[data-feature-wave-card]");
+  const paths = Array.from(document.querySelectorAll("[data-wave]"));
+
+  if (!card || paths.length === 0) {
+    return;
+  }
+
+  let frame = 0;
+  let isVisible = true;
+  let targetX = 0.5;
+  let targetY = 0.5;
+  let pointerX = 0.5;
+  let pointerY = 0.5;
+  let energy = 0;
+  let targetEnergy = 0;
+  const finePointer = window.matchMedia("(pointer: fine)");
+
+  const drawWaves = (time = 0) => {
+    frame = 0;
+    pointerX += (targetX - pointerX) * 0.055;
+    pointerY += (targetY - pointerY) * 0.055;
+    energy += (targetEnergy - energy) * 0.045;
+
+    paths.forEach((path, layer) => {
+      const points = [];
+      const baseY = 82 + layer * 9;
+      const amplitude = 36 + layer * 8 + energy * (22 - layer * 2);
+      const frequency = 0.0145 + layer * 0.0017;
+      const speed = 0.00045 + layer * 0.00008;
+      const influenceCenter = pointerX * 360;
+
+      for (let x = -24; x <= 384; x += 8) {
+        const distance = Math.abs(x - influenceCenter);
+        const influence = Math.max(0, 1 - distance / 175) * energy;
+        const primary = Math.sin(x * frequency + time * speed + layer * 0.82);
+        const secondary = Math.sin(x * frequency * 0.54 - time * speed * 0.72 + layer * 1.35) * 0.58;
+        const pointerLift = influence * (pointerY - 0.5) * 46;
+        const y = baseY + (primary + secondary) * amplitude + pointerLift;
+        points.push([x, y]);
+      }
+
+      const pathData = points.reduce((data, point, index) => {
+        if (index === 0) {
+          return `M ${point[0].toFixed(1)} ${point[1].toFixed(1)}`;
+        }
+
+        const previous = points[index - 1];
+        const midX = (previous[0] + point[0]) / 2;
+        const midY = (previous[1] + point[1]) / 2;
+        return `${data} Q ${previous[0].toFixed(1)} ${previous[1].toFixed(1)} ${midX.toFixed(1)} ${midY.toFixed(1)}`;
+      }, "");
+
+      path.setAttribute("d", pathData);
+    });
+
+    if (isVisible && !prefersReducedMotion.matches) {
+      frame = window.requestAnimationFrame(drawWaves);
+    }
+  };
+
+  const startWaves = () => {
+    if (!frame && !prefersReducedMotion.matches) {
+      frame = window.requestAnimationFrame(drawWaves);
+    }
+  };
+
+  if (finePointer.matches) {
+    card.addEventListener("pointerenter", () => {
+      targetEnergy = 1;
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      const bounds = card.getBoundingClientRect();
+      targetX = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+      targetY = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+    });
+
+    card.addEventListener("pointerleave", () => {
+      targetX = 0.5;
+      targetY = 0.5;
+      targetEnergy = 0;
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+
+        if (isVisible) {
+          startWaves();
+        } else if (frame) {
+          window.cancelAnimationFrame(frame);
+          frame = 0;
+        }
+      },
+      { rootMargin: "140px 0px" },
+    );
+
+    observer.observe(card);
+  }
+
+  drawWaves(0);
+};
+
+initFeatureWaves();
+
 const initPremiumMotion = () => {
   const progressBar = document.querySelector("[data-scroll-progress] span");
   const motionItems = Array.from(
     document.querySelectorAll(
-      ".pp-service-card, .pp-case-card, .pp-method-card, .pp-contact-form, .pp-contact-assurance",
+      ".pp-feature-card, .pp-case-card, .pp-method-card, .pp-contact-form, .pp-contact-assurance",
     ),
   );
   const tiltItems = Array.from(
-    document.querySelectorAll(".pp-service-card, .pp-case-card, .pp-method-card"),
+    document.querySelectorAll(".pp-case-card, .pp-method-card"),
   );
   const staggerGroups = Array.from(
     document.querySelectorAll(
-      ".pp-services-header, .pp-method-header, .pp-cases-header, .pp-contact-copy",
+      ".pp-features-header, .pp-method-header, .pp-cases-header, .pp-contact-copy",
     ),
   );
-  const darkSections = Array.from(document.querySelectorAll(".pp-services, .pp-cases"));
+  const darkSections = Array.from(document.querySelectorAll(".pp-cases"));
   const magneticButtons = Array.from(document.querySelectorAll(".pp-button"));
   const finePointer = window.matchMedia("(pointer: fine)");
 

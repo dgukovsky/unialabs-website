@@ -230,34 +230,35 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20260714-smartphone-refinement-v2" />
-    <script defer type="module" src="/main.js?v=20260714-smartphone-refinement-v2"></script>
+    <link rel="preload" as="image" href="/hero-unia-cosmos.webp" fetchpriority="high" />
+    <link rel="stylesheet" href="/styles.css?v=20260812-cosmic-footer" />
+    <script defer type="module" src="/main.js?v=20260812-cosmic-footer"></script>
   </head>
   <body class="bg-surface font-body text-on-surface selection:bg-primary/20">
     <div class="page-noise" aria-hidden="true"></div>
     <div class="pp-scroll-progress" data-scroll-progress aria-hidden="true"><span></span></div>
 
-    <nav class="pp-nav" data-nav>
+    <nav class="pp-nav pp-nav-cosmic" data-nav>
       <div class="pp-nav-inner">
         <a href="#top" class="pp-wordmark" aria-label="UNIA Labs home">
+          <span class="pp-wordmark-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="img">
+              <path d="M30.8595 0H13.0707C9.60472 0 6.28074 1.37684 3.82995 3.82763C1.37916 6.27842 0 9.6024 0 13.0683V30.8571C0 34.3231 1.37916 37.6471 3.82995 40.0979C6.28074 42.5486 9.60472 43.9255 13.0707 43.9255H30.8595C34.3254 43.9255 37.6494 42.5486 40.1002 40.0979C42.551 37.6471 43.9278 34.3231 43.9278 30.8571V13.0715C43.9282 11.3551 43.5905 9.65539 42.9339 8.0695C42.2774 6.48361 41.3148 5.0426 40.1013 3.82875C38.8877 2.61491 37.447 1.65202 35.8612 0.995073C34.2755 0.338129 32.5759 0 30.8595 0ZM32.1267 25.9949H29.2992V14.7736C29.2992 13.7255 29.0333 12.8835 28.5016 12.2478C27.9699 11.6121 27.269 11.2937 26.3988 11.2926H23.8089C22.9224 11.2926 22.2095 11.611 21.6704 12.2478C21.1313 12.8846 20.8615 13.7265 20.861 14.7736V20.1411H23.0596V17.9551H25.8856V29.2232C25.8856 30.4001 25.644 31.4356 25.1609 32.3295C24.6973 33.203 23.9921 33.9245 23.1293 34.4078C22.2602 34.8972 21.2536 35.142 20.1094 35.142H17.5226C16.3943 35.142 15.3952 34.8962 14.5256 34.4046C13.6646 33.9235 12.9632 33.2011 12.5075 32.3263C12.0323 31.4314 11.7947 30.3959 11.7947 29.22V17.9551H14.623V29.1749C14.623 30.223 14.8889 31.0649 15.4206 31.7006C15.9523 32.3364 16.6532 32.6548 17.5234 32.6558H20.1101C20.9956 32.6558 21.7084 32.3374 22.2486 31.7006C22.7888 31.0639 23.0588 30.2219 23.0588 29.1749V22.9686H20.8602V25.9949H18.0319V20.1411H18.0319V14.7253C18.0319 13.5483 18.2737 12.5129 18.7574 11.6189C19.2205 10.7457 19.9252 10.0242 20.7873 9.54069C21.658 9.04858 22.6652 8.80279 23.8089 8.80331H26.3956C27.5235 8.80331 28.5225 9.0491 29.3926 9.54069C30.2532 10.0224 30.9545 10.7446 31.4107 11.6189C31.8859 12.5129 32.1235 13.5483 32.1235 14.7253L32.1267 25.9949Z" />
+            </svg>
+          </span>
           <span class="pp-wordmark-unia">UNIA</span><span class="pp-wordmark-labs">Labs</span>
         </a>
 
         <div class="pp-nav-links" aria-label="Primary navigation">
-          <a href="#capabilities">Platforms</a>
+          <a href="#capabilities">Services</a>
           <a href="#capabilities">AI Agents</a>
-          <a href="#process">Automation</a>
+          <a href="#process">Our Methodology</a>
           <a href="#case-studies">Case Studies</a>
-          <a href="#contact">Contact</a>
         </div>
 
         <div class="pp-nav-actions">
-          <a class="pp-button pp-button-outline pp-nav-book" href="#contact">
-            <span>Book a call</span>
-            <span class="material-symbols-outlined" aria-hidden="true">calendar_today</span>
-          </a>
-          <a class="pp-button pp-button-dark pp-nav-start" href="#contact">
-            <span>Start a project</span>
+          <a class="pp-button pp-button-outline pp-nav-start" href="#contact">
+            <span>Book a discovery call</span>
             <span class="material-symbols-outlined" aria-hidden="true">north_east</span>
           </a>
           <button
@@ -275,9 +276,9 @@
 
       <div id="mobile-menu" class="pp-mobile-menu hidden" data-mobile-menu>
         <div class="pp-mobile-links">
-          <a href="#capabilities" data-menu-link>Platforms</a>
+          <a href="#capabilities" data-menu-link>Services</a>
           <a href="#capabilities" data-menu-link>AI Agents</a>
-          <a href="#process" data-menu-link>Automation</a>
+          <a href="#process" data-menu-link>Our Methodology</a>
           <a href="#case-studies" data-menu-link>Case Studies</a>
           <a href="#contact" data-menu-link>Contact</a>
           <div class="pp-mobile-languages">
@@ -286,196 +287,146 @@
             <a href="/?lang=zh" hreflang="zh-Hans" lang="zh-CN" data-language="zh">CH</a>
             <a href="/?lang=fr" hreflang="fr" lang="fr" data-language="fr">FR</a>
           </div>
-          <a class="pp-button pp-button-dark" href="#contact" data-menu-link>Start a project</a>
+          <a class="pp-button pp-button-dark" href="#contact" data-menu-link>Book a discovery call</a>
         </div>
       </div>
     </nav>
 
     <main id="top">
       <section class="pp-hero" aria-labelledby="hero-title">
-        <div class="pp-hero-grid">
-          <div class="pp-hero-copy" data-hero-copy>
-            <div class="pp-eyebrow">
-              <span class="pp-eyebrow-dot" aria-hidden="true"></span>
-              <span>Intelligent systems. Real results.</span>
-            </div>
+        <div class="pp-hero-backdrop" aria-hidden="true"></div>
+        <div class="pp-hero-cosmic-inner">
+          <div class="pp-hero-copy" data-hero-copy data-reveal>
+            <a class="pp-hero-announcement" href="#capabilities">
+              <strong>BUILT FOR SCALE</strong>
+              <span>Production-ready systems for ambitious teams</span>
+              <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </a>
 
             <h1 id="hero-title" class="pp-hero-title">
-              Custom software systems<br />
-              for operations that<br />
-              cannot slow down.
+              <span>Where software and</span>
+              <span>intelligence build together.</span>
             </h1>
 
             <p class="pp-hero-description">
-              UNIA designs and ships production-ready platforms, AI agents, and workflow automation for companies that need cleaner execution, fewer manual bottlenecks, and infrastructure that scales with the business.
+              One engineering partner for custom software, AI agents, and automation.<br />
+              We design, build, and ship secure systems that move your business forward.
             </p>
 
-            <div class="pp-capability-list" aria-label="Core capabilities">
-              <div class="pp-capability">
-                <span class="pp-capability-icon material-symbols-outlined" aria-hidden="true">layers</span>
-                <span>Custom Platforms</span>
-              </div>
-              <span class="pp-capability-separator" aria-hidden="true"></span>
-              <div class="pp-capability">
-                <span class="pp-capability-icon material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-                <span>AI Agents</span>
-              </div>
-              <span class="pp-capability-separator" aria-hidden="true"></span>
-              <div class="pp-capability">
-                <span class="pp-capability-icon material-symbols-outlined" aria-hidden="true">account_tree</span>
-                <span>Workflow Automation</span>
-              </div>
-            </div>
-
             <div class="pp-hero-actions">
-              <a class="pp-button pp-button-dark pp-button-large" href="#contact">
-                <span>Start a project</span>
-                <span class="material-symbols-outlined" aria-hidden="true">north_east</span>
+              <a class="pp-button pp-button-light pp-button-large" href="#contact">
+                <span>Start your project</span>
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
               </a>
-              <a class="pp-button pp-button-outline pp-button-large" href="#contact">
-                <span>Book a call</span>
-                <span class="material-symbols-outlined" aria-hidden="true">calendar_today</span>
+              <a class="pp-button pp-button-ghost pp-button-large" href="#capabilities">
+                <span>Explore our services</span>
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
               </a>
-            </div>
-
-            <div class="pp-security-note">
-              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
-              <span>Enterprise-grade security. Built for scale.</span>
             </div>
           </div>
 
-          <div class="pp-hero-visual" data-hero-visual aria-label="An abstract intelligent system connecting UNIA Labs capabilities">
-            <div class="pp-canvas-glow" aria-hidden="true"></div>
-            <canvas class="pp-particle-canvas" data-hero-particles aria-hidden="true"></canvas>
-            <div class="pp-orbit pp-orbit-one" aria-hidden="true"></div>
-            <div class="pp-orbit pp-orbit-two" aria-hidden="true"></div>
-
-            <div class="pp-visual-label pp-visual-label-ai">
-              <span class="pp-label-line" aria-hidden="true"></span>
-              <span class="pp-label-dot" aria-hidden="true"></span>
-              <span class="pp-label-copy"><strong>AI AGENTS</strong><small>Autonomous by design</small></span>
-            </div>
-            <div class="pp-visual-label pp-visual-label-automation">
-              <span class="pp-label-line" aria-hidden="true"></span>
-              <span class="pp-label-dot" aria-hidden="true"></span>
-              <span class="pp-label-copy"><strong>AUTOMATION</strong><small>Workflows that scale</small></span>
-            </div>
-            <div class="pp-visual-label pp-visual-label-platforms">
-              <span class="pp-label-line" aria-hidden="true"></span>
-              <span class="pp-label-dot" aria-hidden="true"></span>
-              <span class="pp-label-copy"><strong>PLATFORMS</strong><small>Built for what’s next</small></span>
-            </div>
-          </div>
-
-          <div class="pp-trust-bar" aria-label="Delivery principles">
-            <div class="pp-trust-item">
-              <span class="material-symbols-outlined" aria-hidden="true">group</span>
-              <span><strong>Trusted by</strong><small>Forward-thinking teams</small></span>
-            </div>
-            <div class="pp-trust-item">
-              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
-              <span><strong>Enterprise-grade</strong><small>Security &amp; compliance</small></span>
-            </div>
-            <div class="pp-trust-item">
-              <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
-              <span><strong>Built for scale</strong><small>From day one</small></span>
+          <div class="pp-hero-trust" aria-label="Core capabilities">
+            <p>ENGINEERING FOR OPERATIONS IN MOTION</p>
+            <div class="pp-hero-trust-list">
+              <span><span class="material-symbols-outlined" aria-hidden="true">deployed_code</span>Custom Software</span>
+              <span><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span>AI Agents &amp; RAG</span>
+              <span><span class="material-symbols-outlined" aria-hidden="true">account_tree</span>Workflow Automation</span>
+              <span><span class="material-symbols-outlined" aria-hidden="true">cloud</span>Cloud Architecture</span>
+              <span><span class="material-symbols-outlined" aria-hidden="true">verified_user</span>Enterprise Security</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="capabilities" class="pp-services deferred-section" aria-labelledby="services-title">
-        <div class="pp-services-inner">
-          <header class="pp-services-header" data-reveal>
-            <div class="pp-services-copy">
-              <div class="pp-services-eyebrow">
-                <span aria-hidden="true"></span>
-                <span>Services</span>
-              </div>
-              <h2 id="services-title">Services built for<br />operational scale.</h2>
-              <p>
-                UNIA Labs designs high-performance systems, AI infrastructure,<br class="pp-services-copy-break" />
-                and automation for companies with demanding operations.
-              </p>
+      <section id="capabilities" class="pp-features deferred-section" aria-labelledby="features-title">
+        <div class="pp-features-inner">
+          <header class="pp-features-header" data-reveal>
+            <div class="pp-features-heading">
+              <p class="pp-features-kicker">FEATURES</p>
+              <h2 id="features-title">
+                <span>Your technology</span>
+                <span>partner for</span>
+                <span>building <em>what’s next.</em></span>
+              </h2>
             </div>
-            <div class="pp-services-signals" aria-hidden="true">
-              <span></span>
-              <span></span>
+            <div class="pp-features-intro">
+              <p>
+                We design, build, and scale digital products, AI systems,<br />
+                and business-critical platforms with clarity and<br />
+                speed—from idea to impact and beyond.
+              </p>
+              <a class="pp-button pp-features-cta" href="#process">
+                <span>Explore how we build</span>
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
             </div>
           </header>
 
-          <div class="pp-services-grid">
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></div>
-              <div class="pp-service-copy">
-                <h3>AI Agents &amp; RAG</h3>
-                <p>Cognitive architectures that act on your data in real time.</p>
+          <div class="pp-features-grid">
+            <article class="pp-feature-card" data-reveal>
+              <div class="pp-feature-card-head">
+                <span class="pp-feature-icon material-symbols-outlined" aria-hidden="true">bar_chart</span>
+                <span class="pp-feature-number">01</span>
               </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
+              <div class="pp-feature-copy">
+                <h3>Strategic Product Thinking</h3>
+                <p>We turn complex problems into clear, human-centered strategies that align business, technology, and customers from day one.</p>
+              </div>
+              <a href="#contact" class="pp-feature-link" aria-label="Discuss strategic product thinking">
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
             </article>
 
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">account_tree</span></div>
-              <div class="pp-service-copy">
-                <h3>Workflow Automation</h3>
-                <p>Eliminating friction from complex operational pipelines.</p>
+            <article class="pp-feature-card pp-feature-card-highlight" data-feature-wave-card data-reveal>
+              <div class="pp-feature-waves" aria-hidden="true">
+                <svg viewBox="0 0 360 220" preserveAspectRatio="none" data-feature-waves>
+                  <path data-wave="0"></path>
+                  <path data-wave="1"></path>
+                  <path data-wave="2"></path>
+                  <path data-wave="3"></path>
+                </svg>
               </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
+              <div class="pp-feature-card-head">
+                <span class="pp-feature-icon pp-feature-code-icon" aria-hidden="true">&lt;/&gt;</span>
+                <span class="pp-feature-number">02</span>
+              </div>
+              <div class="pp-feature-copy">
+                <h3>Custom Engineering</h3>
+                <p>From web and mobile to AI and business platforms, we build scalable products with modern architectures and meticulous attention to detail.</p>
+              </div>
+              <a href="#contact" class="pp-feature-link" aria-label="Discuss custom engineering">
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
             </article>
 
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">code</span></div>
-              <div class="pp-service-copy">
-                <h3>Custom Software</h3>
-                <p>Custom software built on a resilient and high-performance core. Proprietary engines built for speed and durability. No off-the-shelf compromises.</p>
+            <article class="pp-feature-card" data-reveal>
+              <div class="pp-feature-card-head">
+                <span class="pp-feature-icon material-symbols-outlined" aria-hidden="true">hub</span>
+                <span class="pp-feature-number">03</span>
               </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
+              <div class="pp-feature-copy">
+                <h3>System Integration</h3>
+                <p>We connect tools, data, and workflows to streamline operations and unlock action at scale.</p>
+              </div>
+              <a href="#contact" class="pp-feature-link" aria-label="Discuss system integration">
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
             </article>
 
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">draw</span></div>
-              <div class="pp-service-copy">
-                <h3>Product Design</h3>
-                <p>Systems that are as functional as they are intuitive.</p>
+            <article class="pp-feature-card" data-reveal>
+              <div class="pp-feature-card-head">
+                <span class="pp-feature-icon material-symbols-outlined" aria-hidden="true">layers</span>
+                <span class="pp-feature-number">04</span>
               </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
-            </article>
-
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">extension</span></div>
-              <div class="pp-service-copy">
-                <h3>Systems Integration</h3>
-                <p>Unifying fragmented tech stacks into a single cohesive core.</p>
+              <div class="pp-feature-copy">
+                <h3>Scale with Confidence</h3>
+                <p>We help you launch, measure, adapt, and scale with modern infrastructure and world-class DevOps.</p>
               </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
-            </article>
-
-            <article class="pp-service-card" data-reveal>
-              <div class="pp-service-icon"><span class="material-symbols-outlined" aria-hidden="true">cloud</span></div>
-              <div class="pp-service-copy">
-                <h3>Cloud Architecture</h3>
-                <p>Distributed systems designed to handle global-scale demand without breaking a sweat.</p>
-              </div>
-              <span class="pp-service-dot" aria-hidden="true"></span>
+              <a href="#contact" class="pp-feature-link" aria-label="Discuss scalable infrastructure">
+                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </a>
             </article>
           </div>
-
-          <footer class="pp-services-footer">
-            <div class="pp-services-actions">
-              <a class="pp-button pp-button-dark pp-button-large" href="#contact">
-                <span>Discuss your project</span>
-                <span class="material-symbols-outlined" aria-hidden="true">north_east</span>
-              </a>
-              <a class="pp-button pp-button-outline pp-button-large" href="#case-studies">
-                <span>Explore case studies</span>
-                <span class="material-symbols-outlined" aria-hidden="true">web_asset</span>
-              </a>
-            </div>
-            <div class="pp-services-security">
-              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
-              <span>Enterprise-grade security. Built for scale.</span>
-            </div>
-          </footer>
         </div>
       </section>
 
@@ -569,11 +520,11 @@
         <div class="pp-cases-inner">
           <header class="pp-cases-header" data-reveal>
             <div class="pp-cases-heading">
-              <div class="pp-cases-eyebrow"><span aria-hidden="true"></span><span>Case Studies</span></div>
-              <h2 id="case-studies-title">Systems built around<br /> real operations.</h2>
+              <p class="pp-cases-kicker">CASE STUDIES / PROJECTS</p>
+              <h2 id="case-studies-title"><span>Systems built around</span><em>real operations.</em></h2>
               <p>
-                From tax automation and financial infrastructure to digital memberships<br class="pp-cases-copy-break" />
-                and algorithmic trading, we design platforms that perform in the real world.
+                From AI-augmented tools to enterprise platforms, scalable real-<br class="pp-cases-copy-break" />
+                world systems designed to adapt to how you actually work.
               </p>
             </div>
 
@@ -661,8 +612,8 @@
 
           <footer class="pp-cases-footer">
             <div class="pp-cases-actions">
-              <a class="pp-button pp-button-dark pp-button-large" href="#contact"><span>Explore a project</span><span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
-              <a class="pp-button pp-button-outline pp-button-large" href="#contact"><span>Discuss your system</span><span class="material-symbols-outlined" aria-hidden="true">web_asset</span></a>
+              <a class="pp-button pp-button-dark pp-button-large" href="#contact"><span class="material-symbols-outlined pp-cases-action-leading" aria-hidden="true">rocket_launch</span><span>Explore Projects</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+              <a class="pp-button pp-button-outline pp-button-large" href="#contact"><span class="material-symbols-outlined pp-cases-action-leading" aria-hidden="true">chat_bubble</span><span>Discuss your system</span></a>
             </div>
             <div class="pp-cases-security"><span class="material-symbols-outlined" aria-hidden="true">verified_user</span><span>Built for high-stakes operations.</span></div>
           </footer>
@@ -672,53 +623,48 @@
       <section id="contact" class="pp-contact deferred-section" aria-labelledby="contact-title">
         <div class="pp-contact-inner">
           <div class="pp-contact-copy" data-reveal>
-            <div class="pp-contact-eyebrow"><span aria-hidden="true"></span><span>Contact</span></div>
-            <h2 id="contact-title">Let’s build the system<br /> your business actually needs.</h2>
+            <div class="pp-contact-eyebrow"><span aria-hidden="true"></span><span>LET’S TALK</span></div>
+            <h2 id="contact-title"><span>Let’s build</span><em>what’s next.</em></h2>
             <p class="pp-contact-intro">
-              Tell us what you’re building, where operations are breaking down,<br class="pp-contact-copy-break" />
-              or where AI and automation can unlock scale. We’ll help you define<br class="pp-contact-copy-break" />
-              the right platform, workflow, and technical path forward.
+              Big projects start with a simple conversation. Tell us<br class="pp-contact-copy-break" />
+              about your goals, challenges, and ideas—we’ll follow<br class="pp-contact-copy-break" />
+              up with thoughtful, practical next steps.
             </p>
 
-            <div class="pp-contact-capabilities" aria-label="Available capabilities">
-              <div><span class="material-symbols-outlined" aria-hidden="true">layers</span><span>Custom Platforms</span></div>
-              <i aria-hidden="true"></i>
-              <div><span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span><span>AI Agents</span></div>
-              <i aria-hidden="true"></i>
-              <div><span class="material-symbols-outlined" aria-hidden="true">account_tree</span><span>Workflow Automation</span></div>
-              <i aria-hidden="true"></i>
-              <div><span class="material-symbols-outlined" aria-hidden="true">extension</span><span>Systems Integration</span></div>
-            </div>
-
-            <div class="pp-contact-actions">
-              <a class="pp-button pp-button-dark pp-button-large" href="#contact-form">Start a project <span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
-              <a class="pp-button pp-button-outline pp-button-large" href="/#contact" data-email-link data-email-subject="UNIA Labs discovery call" data-email-aria="Book a call with UNIA Labs">Book a call <span class="material-symbols-outlined" aria-hidden="true">calendar_today</span></a>
-            </div>
-
-            <div class="pp-contact-visual" aria-hidden="true">
-              <div class="pp-contact-mesh"></div>
-              <div class="pp-contact-sphere"></div>
+            <div class="pp-contact-details">
+              <a class="pp-contact-detail" href="/#contact" data-email-link data-email-subject="UNIA Labs project inquiry" data-email-aria="Email UNIA Labs">
+                <span class="pp-contact-detail-icon material-symbols-outlined" aria-hidden="true">mail</span>
+                <span><strong>Email us</strong><small data-email-text></small></span>
+              </a>
+              <div class="pp-contact-detail">
+                <span class="pp-contact-detail-icon material-symbols-outlined" aria-hidden="true">location_on</span>
+                <span><strong>Our location</strong><small>London, United Kingdom</small></span>
+              </div>
+              <div class="pp-contact-detail">
+                <span class="pp-contact-detail-icon material-symbols-outlined" aria-hidden="true">schedule</span>
+                <span><strong>Response time</strong><small>Usually within 24 hours</small></span>
+              </div>
             </div>
           </div>
 
           <form id="contact-form" class="pp-contact-form" data-contact-form>
-            <div class="pp-contact-field">
+            <div class="pp-contact-field pp-contact-field-half">
               <label for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+              <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
             </div>
-            <div class="pp-contact-field">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <div class="pp-contact-field pp-contact-field-half">
+              <label for="contact-email">Work email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required />
             </div>
             <div class="pp-contact-field">
               <label for="contact-company">Company</label>
               <input id="contact-company" name="company" type="text" autocomplete="organization" placeholder="Company name" required />
             </div>
             <div class="pp-contact-field">
-              <label for="contact-need">What do you need?</label>
+              <label for="contact-need">Project type</label>
               <div class="pp-contact-select-wrap">
                 <select id="contact-need" name="need" required>
-                  <option value="" selected disabled>Select an option</option>
+                  <option value="" selected disabled>Select project type</option>
                   <option>Custom platform</option>
                   <option>AI agents and RAG</option>
                   <option>Workflow automation</option>
@@ -730,106 +676,84 @@
               </div>
             </div>
             <div class="pp-contact-field">
-              <label for="contact-brief">Project brief</label>
-              <textarea id="contact-brief" name="brief" rows="3" placeholder="Tell us about your goals, challenges,&#10;and what success looks like." required></textarea>
+              <label for="contact-brief">Message</label>
+              <textarea id="contact-brief" name="brief" rows="3" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
             </div>
-            <button class="pp-contact-submit" type="submit">Send inquiry <span class="material-symbols-outlined" aria-hidden="true">north_east</span></button>
+            <button class="pp-contact-submit" type="submit">Start the conversation <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+            <p class="pp-contact-privacy"><span class="material-symbols-outlined" aria-hidden="true">lock</span>Your information is secure and never shared.</p>
           </form>
 
           <div class="pp-contact-assurances">
+            <a class="pp-contact-assurance" href="/#contact" data-email-link data-email-subject="UNIA Labs project inquiry" data-email-aria="Email UNIA Labs">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              <span><strong>Prefer email?</strong><small data-email-text></small></span>
+              <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </a>
+            <a class="pp-contact-assurance" href="/#contact" data-email-link data-email-subject="UNIA Labs discovery call" data-email-aria="Book a call with UNIA Labs">
+              <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
+              <span><strong>Book a call</strong><small>Schedule a 30-minute intro</small></span>
+              <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+            </a>
             <div class="pp-contact-assurance">
-              <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
-              <div><strong>Senior technical leadership</strong><small>Deep expertise across AI, automation,<br />cloud, and scalable systems.</small></div>
-            </div>
-            <div class="pp-contact-assurance">
-              <span class="material-symbols-outlined" aria-hidden="true">layers</span>
-              <div><strong>Production-ready delivery</strong><small>Built with engineering rigor, tested<br />for reliability, and designed to last.</small></div>
-            </div>
-            <div class="pp-contact-assurance">
-              <span class="material-symbols-outlined" aria-hidden="true">trending_up</span>
-              <div><strong>Built for scale</strong><small>Architected to grow with your business<br />and adapt to what’s next.</small></div>
+              <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+              <span><strong>Usually reply within 24 hours</strong><small>We’ll get back to you quickly</small></span>
+              <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="pp-site-footer" aria-label="UNIA Labs footer">
-      <div class="pp-footer-glow" aria-hidden="true"></div>
+    <footer id="footer" class="pp-site-footer pp-cosmic-footer" aria-label="UNIA Labs footer">
+      <div class="pp-footer-stars" aria-hidden="true"></div>
+      <div class="pp-footer-horizon" aria-hidden="true"></div>
+      <div class="pp-footer-planet" aria-hidden="true"></div>
+
       <div class="pp-footer-inner">
-        <div class="pp-footer-head">
-          <a class="pp-footer-wordmark" href="#top" aria-label="UNIA Labs home">
-            <span>UNIA</span><span>Labs</span>
+        <div class="pp-footer-content">
+          <a class="pp-footer-brand" href="#top" aria-label="UNIA Labs home">
+            <img src="/favicon.svg" alt="" width="44" height="44" />
+            <span><strong>UNIA</strong> Labs</span>
           </a>
-          <div class="pp-footer-availability">
-            <span aria-hidden="true"></span>
-            Available for selected projects
-          </div>
-        </div>
 
-        <div class="pp-footer-main">
-          <div class="pp-footer-pitch">
-            <p class="pp-footer-kicker">ENGINEERING FOR OPERATIONS IN MOTION</p>
-            <h2>Build the system<br /> your business needs next.</h2>
-            <p class="pp-footer-summary">
-              Production-ready software, AI agents, and automation designed for ambitious companies operating at scale.
-            </p>
-            <a class="pp-footer-cta" href="#contact">
-              Start a project
-              <span class="material-symbols-outlined" aria-hidden="true">north_east</span>
-            </a>
-          </div>
-
-          <nav class="pp-footer-nav" aria-label="Footer navigation">
-            <div class="pp-footer-column">
-              <p>Services</p>
-              <a href="#capabilities">Custom Software</a>
-              <a href="#capabilities">AI Agents &amp; RAG</a>
-              <a href="#capabilities">Workflow Automation</a>
-              <a href="#capabilities">Systems Integration</a>
-              <a href="#capabilities">Cloud Architecture</a>
-            </div>
-            <div class="pp-footer-column">
-              <p>Company</p>
-              <a href="#case-studies">Case Studies</a>
-              <a href="#process">Our Methodology</a>
-              <a href="#contact">Contact</a>
-              <a href="/#contact" data-email-link data-email-subject="UNIA Labs website inquiry" data-email-aria="Email UNIA Labs">Email us</a>
-              <span>London, United Kingdom</span>
-            </div>
-          </nav>
-        </div>
-
-        <div class="pp-footer-meta">
-          <div class="pp-footer-languages" aria-label="Choose language">
-            <span>Language</span>
-            <a class="is-active" href="/?lang=en" hreflang="en" lang="en" data-language="en" aria-current="page">EN</a>
-            <a href="/?lang=es" hreflang="es" lang="es" data-language="es">ES</a>
-            <a href="/?lang=zh" hreflang="zh-Hans" lang="zh-CN" data-language="zh">CH</a>
-            <a href="/?lang=fr" hreflang="fr" lang="fr" data-language="fr">FR</a>
-          </div>
+          <p class="pp-footer-statement">
+            AI-native systems, digital products,<br />
+            and infrastructure built for<br />
+            ambitious teams.
+          </p>
 
           <div class="pp-footer-socials" aria-label="UNIA Labs social profiles">
-            <a href="https://www.linkedin.com/company/unialabs/" target="_blank" rel="noopener noreferrer" aria-label="UNIA Labs on LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56A1.97 1.97 0 0 0 5.2 3a1.98 1.98 0 1 0 1.96 1.94ZM20.44 13.03c0-3.45-1.84-5.06-4.3-5.06-1.98 0-2.86 1.1-3.35 1.86V8.5H9.4c.04.88 0 11.5 0 11.5h3.39v-6.42c0-.34.03-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.05 1.88 2.59V20H20v-6.97h.44Z" />
-              </svg>
-            </a>
             <a href="https://x.com/UniaFinance" target="_blank" rel="noopener noreferrer" aria-label="UNIA Labs on X">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                 <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.95L5.96 22H2.84l7.24-8.28L.8 2H7.2l4.43 6.3L18.9 2Zm-1.1 18h1.72L6.26 3.9H4.42L17.8 20Z" />
               </svg>
             </a>
+            <a href="https://www.linkedin.com/company/unialabs/" target="_blank" rel="noopener noreferrer" aria-label="UNIA Labs on LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56A1.97 1.97 0 0 0 5.2 3a1.98 1.98 0 1 0 1.96 1.94ZM20.44 13.03c0-3.45-1.84-5.06-4.3-5.06-1.98 0-2.86 1.1-3.35 1.86V8.5H9.4c.04.88 0 11.5 0 11.5h3.39v-6.42c0-.34.03-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.05 1.88 2.59V20H20v-6.97h.44Z" />
+              </svg>
+            </a>
             <a href="/#contact" data-email-link data-email-subject="UNIA Labs website inquiry" data-email-aria="Email UNIA Labs" aria-label="Email UNIA Labs">
-              <span class="material-symbols-outlined" aria-hidden="true">alternate_email</span>
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
             </a>
           </div>
+
+          <a class="pp-footer-email" href="/#contact" data-email-link data-email-subject="UNIA Labs website inquiry" data-email-aria="Email UNIA Labs">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            <span data-email-text></span>
+          </a>
         </div>
 
         <div class="pp-footer-bottom">
           <p>© <span data-year></span> UNIA Labs. All rights reserved.</p>
-          <p>Software infrastructure for operations in motion.</p>
-          <div>
+          <div class="pp-footer-languages" aria-label="Choose language">
+            <a class="is-active" href="/?lang=en" hreflang="en" lang="en" data-language="en" aria-current="page">EN</a>
+            <a href="/?lang=es" hreflang="es" lang="es" data-language="es">ES</a>
+            <a href="/?lang=zh" hreflang="zh-Hans" lang="zh-CN" data-language="zh">CH</a>
+            <a href="/?lang=fr" hreflang="fr" lang="fr" data-language="fr">FR</a>
+          </div>
+          <div class="pp-footer-legal">
+            <span>Remote-first</span><i aria-hidden="true"></i><span>Global</span>
             <a href="/privacy.html">Privacy</a>
             <a href="/terms.html">Terms</a>
           </div>
