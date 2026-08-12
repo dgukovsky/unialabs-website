@@ -995,107 +995,6 @@ const initCaseStudiesCarousel = () => {
 
 initCaseStudiesCarousel();
 
-const initMethodologyCarousel = () => {
-  const viewport = document.querySelector("[data-method-viewport]");
-  const track = document.querySelector("[data-method-track]");
-  const previousButton = document.querySelector("[data-method-prev]");
-  const nextButton = document.querySelector("[data-method-next]");
-  const currentNode = document.querySelector("[data-method-current]");
-  const totalNode = document.querySelector("[data-method-total]");
-  const progressNode = document.querySelector("[data-method-progress]");
-
-  if (!viewport || !track || !previousButton || !nextButton) {
-    return;
-  }
-
-  const cards = Array.from(track.children);
-  let currentPage = 0;
-  let pointerStart = null;
-  let pageCount = 2;
-
-  if (!cards.length) {
-    return;
-  }
-
-  viewport.setAttribute("tabindex", "0");
-  viewport.setAttribute("aria-label", "Methodology steps carousel");
-
-  const updateCarousel = () => {
-    const isMobile = window.matchMedia("(max-width: 639px)").matches;
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const trackStyles = window.getComputedStyle(track);
-    const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
-    const trackWidth = cards.length * cardWidth + (cards.length - 1) * gap;
-    const maxOffset = Math.max(0, trackWidth - viewport.getBoundingClientRect().width);
-
-    pageCount = isMobile ? cards.length : 2;
-    currentPage = Math.min(currentPage, pageCount - 1);
-
-    const offset = isMobile
-      ? Math.min(maxOffset, currentPage * (cardWidth + gap))
-      : currentPage === 0
-        ? 0
-        : maxOffset;
-
-    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
-    previousButton.disabled = currentPage === 0;
-    nextButton.disabled = currentPage === pageCount - 1;
-    currentNode && (currentNode.textContent = String(currentPage + 1));
-    totalNode && (totalNode.textContent = String(pageCount));
-
-    if (progressNode) {
-      progressNode.style.width = `${100 / pageCount}%`;
-      progressNode.style.transform = `translateX(${currentPage * 100}%)`;
-    }
-  };
-
-  const goToPage = (page) => {
-    currentPage = Math.max(0, Math.min(pageCount - 1, page));
-    updateCarousel();
-  };
-
-  previousButton.addEventListener("click", () => goToPage(currentPage - 1));
-  nextButton.addEventListener("click", () => goToPage(currentPage + 1));
-
-  viewport.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      goToPage(currentPage - 1);
-    }
-
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      goToPage(currentPage + 1);
-    }
-  });
-
-  viewport.addEventListener("pointerdown", (event) => {
-    pointerStart = event.clientX;
-  });
-
-  viewport.addEventListener("pointerup", (event) => {
-    if (pointerStart === null) {
-      return;
-    }
-
-    const distance = event.clientX - pointerStart;
-    pointerStart = null;
-
-    if (Math.abs(distance) >= 42) {
-      goToPage(currentPage + (distance < 0 ? 1 : -1));
-    }
-  });
-
-  viewport.addEventListener("pointercancel", () => {
-    pointerStart = null;
-  });
-
-  window.addEventListener("resize", updateCarousel, { passive: true });
-  updateCarousel();
-};
-
-initMethodologyCarousel();
-
 const initFeatureWaves = () => {
   const card = document.querySelector("[data-feature-wave-card]");
   const paths = Array.from(document.querySelectorAll("[data-wave]"));
@@ -1208,15 +1107,15 @@ const initPremiumMotion = () => {
   const progressBar = document.querySelector("[data-scroll-progress] span");
   const motionItems = Array.from(
     document.querySelectorAll(
-      ".pp-feature-card, .pp-case-card, .pp-method-card, .pp-contact-form, .pp-contact-assurance",
+      ".pp-feature-card, .pp-case-card, .pp-contact-form, .pp-contact-assurance",
     ),
   );
   const tiltItems = Array.from(
-    document.querySelectorAll(".pp-case-card, .pp-method-card"),
+    document.querySelectorAll(".pp-case-card"),
   );
   const staggerGroups = Array.from(
     document.querySelectorAll(
-      ".pp-features-header, .pp-method-header, .pp-cases-header, .pp-contact-copy",
+      ".pp-features-header, .pp-cases-header, .pp-contact-copy",
     ),
   );
   const darkSections = Array.from(document.querySelectorAll(".pp-cases"));
