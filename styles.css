@@ -127,23 +127,14 @@ html {
 .pp-footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
   color: #fff;
-  font-size: clamp(1.9rem, 2.5vw, 2.6rem);
-  font-weight: 300;
-  letter-spacing: -0.045em;
 }
 
 .pp-footer-brand img {
-  width: 3.7rem;
-  height: 3.7rem;
-  border-radius: 0.88rem;
-  background: #fff;
+  display: block;
+  width: 14rem;
+  height: auto;
   filter: invert(1);
-}
-
-.pp-footer-brand strong {
-  font-weight: 680;
 }
 
 .pp-footer-statement {
@@ -345,13 +336,11 @@ html {
   }
 
   .pp-footer-brand {
-    gap: 0.78rem;
-    font-size: 1.85rem;
+    width: max-content;
   }
 
   .pp-footer-brand img {
-    width: 3.15rem;
-    height: 3.15rem;
+    width: 11.25rem;
   }
 
   .pp-footer-statement {
@@ -7664,6 +7653,13 @@ h5 {
   fill: currentColor;
 }
 
+.pp-wordmark-logo {
+  display: block;
+  width: 8.75rem;
+  height: auto;
+  transition: filter 240ms ease;
+}
+
 .pp-nav-cosmic.is-over-hero {
   color: #f6fbff;
 }
@@ -7671,6 +7667,10 @@ h5 {
 .pp-nav-cosmic.is-over-hero .pp-wordmark,
 .pp-nav-cosmic.is-over-hero .pp-nav-links a {
   color: #f6fbff;
+}
+
+.pp-nav-cosmic.is-over-hero .pp-wordmark-logo {
+  filter: invert(1);
 }
 
 .pp-nav-cosmic.is-over-hero .pp-nav-links a::after {
@@ -7973,6 +7973,10 @@ h5 {
     margin-right: 0.55rem;
   }
 
+  .pp-wordmark-logo {
+    width: 7.95rem;
+  }
+
   .pp-hero-cosmic-inner {
     padding-top: 10rem;
   }
@@ -8004,6 +8008,10 @@ h5 {
     width: 2rem;
     height: 2rem;
     margin-right: 0.42rem;
+  }
+
+  .pp-nav-cosmic .pp-wordmark-logo {
+    width: 7.15rem;
   }
 
   .pp-nav-cosmic .pp-wordmark-unia,
