@@ -7768,6 +7768,7 @@ h5 {
   display: flex;
   width: min(100%, 62rem);
   max-width: none;
+  align-self: center;
   align-items: center;
   flex-direction: column;
   padding: 0;
@@ -8635,7 +8636,7 @@ h5 {
   position: relative;
   z-index: 1;
   min-height: max(56.5rem, calc(100svh - 4.7rem));
-  padding: 1.25rem 0 1.5rem;
+  padding: 5rem 0 4rem;
 }
 
 .pp-cases-header {
@@ -8879,7 +8880,8 @@ h5 {
 
 @media (max-width: 1023px) {
   .pp-cases-inner {
-    padding-top: 3.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
   }
 
   .pp-cases-header {
