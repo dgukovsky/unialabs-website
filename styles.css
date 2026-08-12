@@ -7827,6 +7827,7 @@ h5 {
 }
 
 .pp-hero .pp-hero-title > span:last-child {
+  padding-bottom: 0.12em;
   color: #4bcdf8;
   background: linear-gradient(90deg, #57d6ff 0%, #3bc9f8 52%, #7de0ff 100%);
   background-clip: text;
@@ -7849,15 +7850,22 @@ h5 {
   margin-top: 2.35rem;
 }
 
-.pp-button-light,
-.pp-button-ghost {
-  min-width: 16.5rem;
-  min-height: 4.25rem;
-  justify-content: space-between;
-  border-radius: 1.15rem;
-  padding-right: 1.7rem;
-  padding-left: 1.7rem;
-  font-size: 1rem;
+.pp-hero-actions .pp-button-light,
+.pp-hero-actions .pp-button-ghost {
+  position: relative;
+  min-width: 14.5rem;
+  min-height: 3.55rem;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.75rem 2.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.pp-hero-actions .pp-button .material-symbols-outlined {
+  position: absolute;
+  right: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .pp-button-light {
@@ -8120,13 +8128,13 @@ h5 {
     margin-top: 1.65rem;
   }
 
-  .pp-button-light,
-  .pp-button-ghost {
+  .pp-hero-actions .pp-button-light,
+  .pp-hero-actions .pp-button-ghost {
     width: 100%;
     min-width: 0;
-    min-height: 3.65rem;
-    border-radius: 1rem;
-    font-size: 0.9rem;
+    min-height: 3.25rem;
+    border-radius: 0.9rem;
+    font-size: 0.84rem;
   }
 
   .pp-hero-trust {
@@ -8303,7 +8311,10 @@ h5 {
   transition:
     border-color 350ms ease,
     box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    padding 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 350ms ease;
 }
 
 .pp-feature-card::after {
@@ -8318,28 +8329,23 @@ h5 {
   transition: opacity 350ms ease;
 }
 
-.pp-feature-card:hover {
+.pp-feature-card:hover,
+.pp-feature-card:focus-within {
+  height: 31rem;
   border-color: rgba(126, 187, 225, 0.58);
+  padding-top: 8.45rem;
+  background:
+    radial-gradient(circle at 50% 4%, rgba(116, 205, 250, 0.17), transparent 17rem),
+    linear-gradient(180deg, rgba(239, 249, 255, 0.92), rgba(249, 253, 255, 0.8));
   box-shadow:
     0 2.1rem 4.8rem -2.9rem rgba(35, 128, 184, 0.35),
     inset 0 1px #fff;
   transform: translateY(-0.55rem);
 }
 
-.pp-feature-card:hover::after {
+.pp-feature-card:hover::after,
+.pp-feature-card:focus-within::after {
   opacity: 1;
-}
-
-.pp-feature-card-highlight {
-  height: 31rem;
-  border-color: rgba(151, 207, 239, 0.52);
-  padding-top: 8.45rem;
-  background:
-    radial-gradient(circle at 50% 4%, rgba(116, 205, 250, 0.17), transparent 17rem),
-    linear-gradient(180deg, rgba(239, 249, 255, 0.92), rgba(249, 253, 255, 0.8));
-  box-shadow:
-    0 2rem 4.8rem -2.8rem rgba(20, 139, 203, 0.38),
-    inset 0 1px #fff;
 }
 
 .pp-feature-card-head,
@@ -8386,7 +8392,8 @@ h5 {
   margin-top: 2.65rem;
 }
 
-.pp-feature-card-highlight .pp-feature-copy {
+.pp-feature-card:hover .pp-feature-copy,
+.pp-feature-card:focus-within .pp-feature-copy {
   margin-top: 2.25rem;
 }
 
@@ -8437,8 +8444,16 @@ h5 {
   height: 13.7rem;
   overflow: hidden;
   pointer-events: none;
+  opacity: 0;
   filter: drop-shadow(0 1rem 1.6rem rgba(11, 133, 203, 0.18));
-  transform: translateZ(0);
+  transform: translate3d(0, -0.7rem, 0) scale(0.98);
+  transition: opacity 280ms ease, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pp-feature-card:hover .pp-feature-waves,
+.pp-feature-card:focus-within .pp-feature-waves {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .pp-feature-waves::after {
@@ -8505,9 +8520,13 @@ h5 {
     align-items: stretch;
   }
 
-  .pp-feature-card,
-  .pp-feature-card-highlight {
+  .pp-feature-card {
     height: 28rem;
+  }
+
+  .pp-feature-card:hover,
+  .pp-feature-card:focus-within {
+    height: 31rem;
   }
 }
 
@@ -8555,15 +8574,16 @@ h5 {
     margin-top: 2.5rem;
   }
 
-  .pp-feature-card,
-  .pp-feature-card-highlight {
+  .pp-feature-card {
     height: auto;
     min-height: 24rem;
     border-radius: 1.05rem;
     padding: 1.6rem 1.4rem;
   }
 
-  .pp-feature-card-highlight {
+  .pp-feature-card:hover,
+  .pp-feature-card:focus-within {
+    height: auto;
     min-height: 29rem;
     padding-top: 8.7rem;
   }
