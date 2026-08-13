@@ -465,29 +465,30 @@ const renderHeroTitleImmediately = () => {
 
 const getTypingDelay = (currentCharacter, nextCharacter) => {
   if (currentCharacter === "\n") {
-    return 70 + Math.floor(Math.random() * 80);
+    return 45 + Math.floor(Math.random() * 30);
   }
 
   if (/[.!?]/.test(currentCharacter)) {
-    return 260 + Math.floor(Math.random() * 220);
+    return 180 + Math.floor(Math.random() * 80);
   }
 
   if (/[,;:]/.test(currentCharacter)) {
-    return 140 + Math.floor(Math.random() * 150);
+    return 90 + Math.floor(Math.random() * 50);
   }
 
   if (/\s/.test(currentCharacter)) {
-    return 45 + Math.floor(Math.random() * 80);
+    return 32 + Math.floor(Math.random() * 22);
   }
 
-  let delay = 58 + Math.floor(Math.random() * 72);
+  let delay = 38 + Math.floor(Math.random() * 29);
 
-  if (Math.random() < 0.09) {
-    delay += 120 + Math.floor(Math.random() * 240);
+  // A skilled typist keeps a steady cadence with only occasional micro-pauses.
+  if (Math.random() < 0.025) {
+    delay += 55 + Math.floor(Math.random() * 55);
   }
 
   if (nextCharacter && /[A-Z]/.test(nextCharacter)) {
-    delay += 45;
+    delay += 18;
   }
 
   return delay;
@@ -549,7 +550,7 @@ const startHeroTitleTyping = (restart = false) => {
     heroTypingTimer = window.setTimeout(typeNextCharacter, delay);
   };
 
-  heroTypingTimer = window.setTimeout(typeNextCharacter, restart ? 120 : 380);
+  heroTypingTimer = window.setTimeout(typeNextCharacter, restart ? 100 : 320);
 };
 
 const closeMenu = () => {
