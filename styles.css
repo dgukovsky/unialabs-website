@@ -2958,7 +2958,7 @@ h5 {
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1399px) {
   .pp-nav-inner {
     grid-template-columns: minmax(9rem, 0.8fr) auto minmax(15rem, 0.8fr);
   }
@@ -7787,11 +7787,19 @@ h5 {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background-image: url("/hero-unia-cosmos.webp");
+  overflow: hidden;
+  background: #020a15 url("/hero-unia-cosmos-video.webp") center center / cover no-repeat;
   background-position: center center;
   background-size: cover;
   transform: scale(1.015);
-  animation: pp-cosmos-breathe 15s ease-in-out infinite alternate;
+}
+
+.pp-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .pp-hero-backdrop::before,
@@ -8219,6 +8227,10 @@ h5 {
     transform: scale(1.02);
   }
 
+  .pp-hero-video {
+    object-position: center bottom;
+  }
+
   .pp-hero-backdrop::before {
     background:
       linear-gradient(180deg, rgba(0, 7, 16, 0.12) 0%, rgba(0, 7, 16, 0.1) 48%, rgba(0, 5, 12, 0.72) 100%),
@@ -8328,6 +8340,12 @@ h5 {
   .pp-hero-backdrop,
   .pp-hero .pp-hero-copy {
     animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-hero-video {
+    display: none;
   }
 }
 
