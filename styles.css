@@ -7826,13 +7826,60 @@ h5 {
   white-space: nowrap;
 }
 
+.pp-hero-title-line {
+  position: relative;
+  display: block;
+  width: max-content;
+  align-self: center;
+}
+
+.pp-hero-title-reserve {
+  visibility: hidden;
+}
+
+.pp-hero-title-typed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  white-space: nowrap;
+}
+
+.pp-hero-title-line.is-typing .pp-hero-title-typed::after {
+  display: inline-block;
+  width: 0.075em;
+  height: 0.82em;
+  margin-left: 0.08em;
+  border-radius: 0.08em;
+  content: "";
+  background: currentColor;
+  vertical-align: -0.04em;
+  box-shadow: 0 0 1rem rgba(79, 207, 250, 0.45);
+  animation: pp-code-caret 0.82s steps(1, end) infinite;
+}
+
+.pp-hero-title.is-complete .pp-hero-title-line.is-typing .pp-hero-title-typed::after {
+  animation-iteration-count: 4;
+}
+
 .pp-hero .pp-hero-title > span:last-child {
   padding-bottom: 0.12em;
   color: #4bcdf8;
-  background: linear-gradient(90deg, #57d6ff 0%, #3bc9f8 52%, #7de0ff 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: #4bcdf8;
+}
+
+.pp-hero .pp-hero-title > span:last-child .pp-hero-title-typed {
+  color: #4bcdf8;
+  -webkit-text-fill-color: #4bcdf8;
   text-shadow: 0 0 2.5rem rgba(61, 199, 248, 0.14);
+}
+
+@keyframes pp-code-caret {
+  0%, 48% { opacity: 1; }
+  49%, 100% { opacity: 0; }
 }
 
 .pp-hero .pp-hero-description {
@@ -8108,6 +8155,15 @@ h5 {
 
   .pp-hero .pp-hero-title > span {
     display: block;
+    white-space: normal;
+  }
+
+  .pp-hero-title-line {
+    width: 100%;
+  }
+
+  .pp-hero-title-reserve,
+  .pp-hero-title-typed {
     white-space: normal;
   }
 

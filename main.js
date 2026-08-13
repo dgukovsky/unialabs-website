@@ -5,11 +5,13 @@ const nav = document.querySelector("[data-nav]");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const yearNodes = document.querySelectorAll("[data-year]");
 const heroTitleNode = document.querySelector("[data-hero-title]");
-const heroTitleHeading = heroTitleNode?.closest(".hero-title");
+const heroTitleLines = Array.from(document.querySelectorAll("[data-hero-title-line]"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const CONTACT_EMAIL_USER_CODES = [104, 101, 108, 108, 111];
 const CONTACT_EMAIL_DOMAIN_CODES = [117, 110, 105, 97, 108, 97, 98, 115, 46, 99, 111, 109];
 let heroTitleStarted = false;
+let heroTypingTimer = 0;
+let heroTypingRun = 0;
 let activeLanguage = "en";
 
 const alignHashTarget = () => {
@@ -402,6 +404,7 @@ const initLanguage = () => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       applyLanguage(link.dataset.language, true);
+      startHeroTitleTyping(true);
       hydrateEmailLinks();
       closeMenu();
     });
@@ -442,63 +445,62 @@ const hydrateEmailLinks = () => {
 };
 
 const getHeroTitleText = () => {
-  if (!heroTitleNode) {
-    return "";
-  }
-
-  const existingText = heroTitleNode.dataset.fullText;
-
-  if (existingText) {
-    return existingText;
-  }
-
-  const normalizedText = heroTitleNode.textContent
-    .split("\n")
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean)
+  return heroTitleLines
+    .map((line) => translateText(line.dataset.heroTitleLine))
     .join("\n");
-
-  heroTitleNode.dataset.fullText = normalizedText;
-  heroTitleHeading?.setAttribute("aria-label", normalizedText.replace(/\n/g, " "));
-
-  return normalizedText;
 };
 
 const renderHeroTitleImmediately = () => {
-  if (!heroTitleNode) {
-    return;
-  }
+  const translatedLines = getHeroTitleText().split("\n");
 
-  heroTitleNode.textContent = getHeroTitleText();
-  heroTitleHeading?.classList.add("is-complete");
+  heroTitleLines.forEach((line, index) => {
+    const text = translatedLines[index] || "";
+    line.querySelector(".pp-hero-title-reserve").textContent = text;
+    line.querySelector(".pp-hero-title-typed").textContent = text;
+  });
+
+  heroTitleNode?.setAttribute("aria-label", translatedLines.join(" "));
+  heroTitleNode?.classList.add("is-complete");
 };
 
 const getTypingDelay = (currentCharacter, nextCharacter) => {
   if (currentCharacter === "\n") {
-    return 42 + Math.floor(Math.random() * 22);
+    return 70 + Math.floor(Math.random() * 80);
   }
 
-  if (/[.,:;]/.test(currentCharacter)) {
-    return 210 + Math.floor(Math.random() * 120);
+  if (/[.!?]/.test(currentCharacter)) {
+    return 260 + Math.floor(Math.random() * 220);
+  }
+
+  if (/[,;:]/.test(currentCharacter)) {
+    return 140 + Math.floor(Math.random() * 150);
   }
 
   if (/\s/.test(currentCharacter)) {
-    return 36 + Math.floor(Math.random() * 34);
+    return 45 + Math.floor(Math.random() * 80);
   }
 
-  let delay = 54 + Math.floor(Math.random() * 42);
+  let delay = 58 + Math.floor(Math.random() * 72);
+
+  if (Math.random() < 0.09) {
+    delay += 120 + Math.floor(Math.random() * 240);
+  }
 
   if (nextCharacter && /[A-Z]/.test(nextCharacter)) {
-    delay += 26;
+    delay += 45;
   }
 
   return delay;
 };
 
-const startHeroTitleTyping = () => {
-  if (!heroTitleNode || heroTitleStarted) {
+const startHeroTitleTyping = (restart = false) => {
+  if (!heroTitleNode || heroTitleLines.length === 0 || (heroTitleStarted && !restart)) {
     return;
   }
+
+  window.clearTimeout(heroTypingTimer);
+  heroTypingRun += 1;
+  const currentRun = heroTypingRun;
 
   if (prefersReducedMotion.matches) {
     renderHeroTitleImmediately();
@@ -507,18 +509,36 @@ const startHeroTitleTyping = () => {
   }
 
   heroTitleStarted = true;
+  heroTitleNode.classList.remove("is-complete");
 
-  const fullText = getHeroTitleText();
+  const translatedLines = getHeroTitleText().split("\n");
+  const fullText = translatedLines.join("\n");
+  const typedNodes = heroTitleLines.map((line, index) => {
+    const text = translatedLines[index] || "";
+    line.querySelector(".pp-hero-title-reserve").textContent = text;
+    const typed = line.querySelector(".pp-hero-title-typed");
+    typed.textContent = "";
+    return typed;
+  });
   let currentIndex = 0;
-
-  heroTitleNode.textContent = "";
+  heroTitleNode.setAttribute("aria-label", translatedLines.join(" "));
 
   const typeNextCharacter = () => {
+    if (currentRun !== heroTypingRun) {
+      return;
+    }
+
     currentIndex += 1;
-    heroTitleNode.textContent = fullText.slice(0, currentIndex);
+    const visibleText = fullText.slice(0, currentIndex);
+    const visibleLines = visibleText.split("\n");
+
+    typedNodes.forEach((node, index) => {
+      node.textContent = visibleLines[index] || "";
+      heroTitleLines[index].classList.toggle("is-typing", index === visibleLines.length - 1);
+    });
 
     if (currentIndex >= fullText.length) {
-      heroTitleHeading?.classList.add("is-complete");
+      heroTitleNode.classList.add("is-complete");
       return;
     }
 
@@ -526,10 +546,10 @@ const startHeroTitleTyping = () => {
     const nextCharacter = fullText[currentIndex];
     const delay = getTypingDelay(currentCharacter, nextCharacter);
 
-    window.setTimeout(typeNextCharacter, delay);
+    heroTypingTimer = window.setTimeout(typeNextCharacter, delay);
   };
 
-  window.setTimeout(typeNextCharacter, 320);
+  heroTypingTimer = window.setTimeout(typeNextCharacter, restart ? 120 : 380);
 };
 
 const closeMenu = () => {
