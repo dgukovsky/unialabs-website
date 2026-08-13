@@ -307,28 +307,32 @@ const updateLanguageMetadata = (language) => {
   const metadata = {
     en: {
       title: "Custom Software, AI Agents & Automation | UNIA Labs",
+      socialTitle: "Where Software and Intelligence Build Together | UNIA Labs",
       description: "UNIA Labs builds custom software, AI agents, workflow automation, and cloud architecture for ambitious teams worldwide.",
     },
     es: {
       title: "Software a medida, agentes de IA y automatización | UNIA Labs",
+      socialTitle: "Donde el software y la inteligencia construyen juntos | UNIA Labs",
       description: "UNIA Labs crea software a medida, agentes de IA, automatización y arquitectura cloud para empresas ambiciosas en todo el mundo.",
     },
     zh: {
       title: "定制软件、AI 智能体与自动化 | UNIA Labs",
+      socialTitle: "软件与智能，共同构建未来 | UNIA Labs",
       description: "UNIA Labs 为全球进取型企业打造定制软件、AI 智能体、工作流自动化与云架构。",
     },
     fr: {
       title: "Logiciels sur mesure, agents IA et automatisation | UNIA Labs",
+      socialTitle: "Quand le logiciel et l'intelligence construisent ensemble | UNIA Labs",
       description: "UNIA Labs conçoit des logiciels sur mesure, des agents IA, des automatisations et des architectures cloud pour des entreprises ambitieuses dans le monde entier.",
     },
   }[language];
 
   document.title = metadata.title;
   document.querySelector("#meta-description")?.setAttribute("content", metadata.description);
-  document.querySelector("#meta-og-title")?.setAttribute("content", metadata.title);
+  document.querySelector("#meta-og-title")?.setAttribute("content", metadata.socialTitle);
   document.querySelector("#meta-og-description")?.setAttribute("content", metadata.description);
   document.querySelector("#meta-og-locale")?.setAttribute("content", LANGUAGE_CONFIG[language].locale);
-  document.querySelector("#meta-twitter-title")?.setAttribute("content", metadata.title);
+  document.querySelector("#meta-twitter-title")?.setAttribute("content", metadata.socialTitle);
   document.querySelector("#meta-twitter-description")?.setAttribute("content", metadata.description);
 };
 
@@ -946,6 +950,10 @@ const initCaseStudiesCarousel = () => {
   const cards = Array.from(track.children);
   let currentIndex = 0;
   let pointerStart = null;
+  let wheelDistance = 0;
+  let wheelDirection = 0;
+  let wheelLocked = false;
+  let wheelUnlockTimer = 0;
 
   if (!cards.length) {
     return;
@@ -986,6 +994,55 @@ const initCaseStudiesCarousel = () => {
       goToCase(currentIndex + 1);
     }
   });
+
+  viewport.addEventListener(
+    "wheel",
+    (event) => {
+      const horizontalDelta = event.shiftKey && Math.abs(event.deltaY) > Math.abs(event.deltaX)
+        ? event.deltaY
+        : event.deltaX;
+      const isHorizontalGesture = Math.abs(horizontalDelta) > Math.abs(event.deltaY) * 0.75 || event.shiftKey;
+
+      if (!isHorizontalGesture || horizontalDelta === 0) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (wheelLocked) {
+        window.clearTimeout(wheelUnlockTimer);
+        wheelUnlockTimer = window.setTimeout(() => {
+          wheelLocked = false;
+          wheelDirection = 0;
+        }, 180);
+        return;
+      }
+
+      const direction = Math.sign(horizontalDelta);
+
+      if (direction !== wheelDirection) {
+        wheelDistance = 0;
+        wheelDirection = direction;
+      }
+
+      const modeMultiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : event.deltaMode === WheelEvent.DOM_DELTA_PAGE ? viewport.clientWidth : 1;
+      wheelDistance += horizontalDelta * modeMultiplier;
+
+      if (Math.abs(wheelDistance) < 36) {
+        return;
+      }
+
+      goToCase(currentIndex + (wheelDistance > 0 ? 1 : -1));
+      wheelDistance = 0;
+      wheelLocked = true;
+      window.clearTimeout(wheelUnlockTimer);
+      wheelUnlockTimer = window.setTimeout(() => {
+        wheelLocked = false;
+        wheelDirection = 0;
+      }, 180);
+    },
+    { passive: false },
+  );
 
   viewport.addEventListener("pointerdown", (event) => {
     pointerStart = event.clientX;
