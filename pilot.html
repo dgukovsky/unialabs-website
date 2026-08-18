@@ -12,14 +12,23 @@
     <meta property="og:url" content="https://unialabs.com/pilot" />
     <meta property="og:title" content="Programa Piloto de Software | UNIA Labs" />
     <meta property="og:description" content="Un primer módulo operativo desde USD 500 para validar una solución antes de comprometerte con un proyecto mayor." />
-    <meta property="og:image" content="https://unialabs.com/og-unia-labs-v2.png" />
+    <meta property="og:image" content="https://unialabs.com/pilot-og.png" />
+    <meta property="og:image:secure_url" content="https://unialabs.com/pilot-og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Programa Piloto de UNIA Labs: resolvamos un problema real de tu empresa con un primer módulo desde USD 500." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Programa Piloto de Software | UNIA Labs" />
+    <meta name="twitter:description" content="Un primer módulo operativo desde USD 500 para validar una solución antes de comprometerte con un proyecto mayor." />
+    <meta name="twitter:image" content="https://unialabs.com/pilot-og.png" />
+    <meta name="twitter:image:alt" content="Programa Piloto de UNIA Labs: resolvamos un problema real de tu empresa." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="/hero-unia-cosmos-video.webp" />
     <link rel="preload" as="image" href="/pilot-dashboard.webp" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" />
-    <link rel="stylesheet" href="/pilot.css?v=20260817-pilot-v7" />
-    <script type="module" src="/pilot.js?v=20260817-pilot-v7" defer></script>
+    <link rel="stylesheet" href="/pilot.css?v=20260817-pilot-v10" />
+    <script type="module" src="/pilot.js?v=20260817-pilot-v10" defer></script>
   </head>
   <body>
     <header class="pilot-nav">
@@ -27,7 +36,13 @@
         <img src="/unia-logo.svg" alt="UNIA Labs" width="140" height="44" />
       </a>
       <span class="pilot-nav-label" data-i18n="navLabel">Programa Piloto</span>
-      <a class="pilot-btn pilot-btn-small" href="#aplicar"><span data-i18n="navCta">Agendar reunion</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+      <div class="pilot-nav-actions">
+        <div class="pilot-nav-language" role="group" aria-label="Selector de idioma">
+          <button class="is-active" type="button" data-lang="es" aria-label="Español">ES</button>
+          <button type="button" data-lang="en" aria-label="English">EN</button>
+        </div>
+        <button class="pilot-btn pilot-btn-small" type="button" data-meeting-trigger><span data-i18n="navCta">Agendar reunión</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+      </div>
     </header>
 
     <main>
@@ -37,7 +52,7 @@
           <div class="pilot-hero-copy">
             <h1><span data-i18n="heroLine1">Resolvamos un</span><span data-i18n="heroLine2">problema real de</span><em data-i18n="heroLine3">tu empresa.</em></h1>
             <p data-i18n="heroBody">Construimos un primer modulo operativo desde USD 500, para que puedas validar una solucion antes de comprometerte con un proyecto mayor.</p>
-            <a class="pilot-btn pilot-btn-primary" href="#aplicar"><span data-i18n="heroCta">Agendar una reunion de 30 minutos</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+            <button class="pilot-btn pilot-btn-primary" type="button" data-meeting-trigger><span data-i18n="heroCta">Agendar una reunión de 30 minutos</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
             <div class="pilot-limit"><span class="material-symbols-outlined" aria-hidden="true">groups</span><span data-i18n="heroLimit">Maximo 10 empresas en esta primera etapa.</span></div>
           </div>
           <div class="pilot-dashboard-wrap">
@@ -155,5 +170,33 @@
       </div>
       <div class="pilot-footer-bottom"><span>© <span data-year></span> UNIA Labs. <span data-i18n="rights">Todos los derechos reservados.</span></span><div><button class="is-active" data-lang="es">ES</button><button data-lang="en">EN</button></div></div>
     </footer>
+
+    <div class="pilot-meeting-modal" data-meeting-modal hidden>
+      <div class="pilot-meeting-backdrop" data-meeting-close></div>
+      <section class="pilot-meeting-dialog" role="dialog" aria-modal="true" aria-labelledby="meeting-title" aria-describedby="meeting-description">
+        <button class="pilot-meeting-close" type="button" aria-label="Cerrar" data-i18n-aria-label="meetingClose" data-meeting-close>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+        <div class="pilot-meeting-mark" aria-hidden="true">
+          <span class="material-symbols-outlined">calendar_month</span>
+        </div>
+        <p class="pilot-meeting-kicker" data-i18n="meetingKicker">REUNIÓN DE 30 MINUTOS</p>
+        <h2 id="meeting-title" data-i18n="meetingTitle">¿Cómo prefieres reunirnos?</h2>
+        <p id="meeting-description" data-i18n="meetingDescription">Elige el formato que te resulte más cómodo. Ambas opciones abren nuestra agenda en Cal.com.</p>
+        <div class="pilot-meeting-options">
+          <a class="pilot-meeting-option" href="https://cal.com/daniel-gukovsky-fju40u/30-min-meeting-in-situ" target="_blank" rel="noopener noreferrer">
+            <span class="pilot-meeting-option-icon material-symbols-outlined" aria-hidden="true">location_on</span>
+            <span class="pilot-meeting-option-copy"><strong data-i18n="meetingInPerson">Presencial</strong><small data-i18n="meetingInPersonBody">Nos encontramos en tus oficinas para conocer tu operación de cerca.</small></span>
+            <span class="material-symbols-outlined pilot-meeting-arrow" aria-hidden="true">arrow_forward</span>
+          </a>
+          <a class="pilot-meeting-option" href="https://cal.com/daniel-gukovsky-fju40u/30min" target="_blank" rel="noopener noreferrer">
+            <span class="pilot-meeting-option-icon material-symbols-outlined" aria-hidden="true">videocam</span>
+            <span class="pilot-meeting-option-copy"><strong data-i18n="meetingOnline">Online</strong><small data-i18n="meetingOnlineBody">Nos conectamos por videollamada desde cualquier lugar.</small></span>
+            <span class="material-symbols-outlined pilot-meeting-arrow" aria-hidden="true">arrow_forward</span>
+          </a>
+        </div>
+        <p class="pilot-meeting-note"><span class="material-symbols-outlined" aria-hidden="true">schedule</span><span data-i18n="meetingNote">Verás la disponibilidad en tiempo real antes de confirmar.</span></p>
+      </section>
+    </div>
   </body>
 </html>

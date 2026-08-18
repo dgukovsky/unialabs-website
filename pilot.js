@@ -10,6 +10,15 @@ const translations = {
     heroBody: "Construimos un primer módulo operativo desde USD 500, para que puedas validar una solución antes de comprometerte con un proyecto mayor.",
     heroCta: "Agendar una reunión de 30 minutos",
     heroLimit: "Máximo 10 empresas en esta primera etapa.",
+    meetingClose: "Cerrar",
+    meetingKicker: "REUNIÓN DE 30 MINUTOS",
+    meetingTitle: "¿Cómo prefieres reunirnos?",
+    meetingDescription: "Elige el formato que te resulte más cómodo. Ambas opciones abren nuestra agenda en Cal.com.",
+    meetingInPerson: "Presencial",
+    meetingInPersonBody: "Nos encontramos en tus oficinas para conocer tu operación de cerca.",
+    meetingOnline: "Online",
+    meetingOnlineBody: "Nos conectamos por videollamada desde cualquier lugar.",
+    meetingNote: "Verás la disponibilidad en tiempo real antes de confirmar.",
     approachKicker: "NUESTRO ENFOQUE",
     approachTitle: "En 3 pasos",
     approachAccent: "simples.",
@@ -98,6 +107,15 @@ const translations = {
     heroBody: "We build a first operational module starting at USD 500, so you can validate a solution before committing to a larger project.",
     heroCta: "Book a 30-minute meeting",
     heroLimit: "Limited to 10 companies in this first stage.",
+    meetingClose: "Close",
+    meetingKicker: "30-MINUTE MEETING",
+    meetingTitle: "How would you like to meet?",
+    meetingDescription: "Choose the format that works best for you. Both options open our live availability on Cal.com.",
+    meetingInPerson: "In person",
+    meetingInPersonBody: "We meet at your office to understand your operation up close.",
+    meetingOnline: "Online",
+    meetingOnlineBody: "We connect by video call from wherever you are.",
+    meetingNote: "You will see real-time availability before confirming.",
     approachKicker: "OUR APPROACH",
     approachTitle: "In 3 simple",
     approachAccent: "steps.",
@@ -195,6 +213,10 @@ const setLanguage = (language) => {
     const value = dictionary[element.dataset.i18nPlaceholder];
     if (value) element.placeholder = value;
   });
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const value = dictionary[element.dataset.i18nAriaLabel];
+    if (value) element.setAttribute("aria-label", value);
+  });
   languageButtons.forEach((button) => {
     const isActive = button.dataset.lang === lang;
     button.classList.toggle("is-active", isActive);
@@ -220,6 +242,75 @@ document.querySelectorAll("[data-email-text]").forEach((element) => {
 
 document.querySelectorAll('.pilot-socials a[aria-label="Email"]').forEach((element) => {
   element.setAttribute("href", `mailto:${email}`);
+});
+
+const meetingModal = document.querySelector("[data-meeting-modal]");
+const meetingTriggers = [...document.querySelectorAll("[data-meeting-trigger]")];
+let lastMeetingTrigger = null;
+let meetingCloseTimer = null;
+
+const getMeetingFocusableElements = () => meetingModal
+  ? [...meetingModal.querySelectorAll('button:not([disabled]), a[href]')]
+  : [];
+
+const openMeetingModal = (trigger) => {
+  if (!meetingModal) return;
+  window.clearTimeout(meetingCloseTimer);
+  lastMeetingTrigger = trigger;
+  meetingModal.hidden = false;
+  document.body.classList.add("is-meeting-modal-open");
+  window.requestAnimationFrame(() => {
+    meetingModal.classList.add("is-open");
+    getMeetingFocusableElements()[0]?.focus();
+  });
+};
+
+const closeMeetingModal = () => {
+  if (!meetingModal || meetingModal.hidden) return;
+  meetingModal.classList.remove("is-open");
+  document.body.classList.remove("is-meeting-modal-open");
+  const finishClose = () => {
+    meetingModal.hidden = true;
+    lastMeetingTrigger?.focus();
+  };
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    finishClose();
+  } else {
+    meetingCloseTimer = window.setTimeout(finishClose, 420);
+  }
+};
+
+meetingTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => openMeetingModal(trigger));
+});
+
+meetingModal?.querySelectorAll("[data-meeting-close]").forEach((element) => {
+  element.addEventListener("click", closeMeetingModal);
+});
+
+meetingModal?.querySelectorAll(".pilot-meeting-option").forEach((option) => {
+  option.addEventListener("click", closeMeetingModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!meetingModal || meetingModal.hidden) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeMeetingModal();
+    return;
+  }
+  if (event.key !== "Tab") return;
+
+  const focusableElements = getMeetingFocusableElements();
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements.at(-1);
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement?.focus();
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement?.focus();
+  }
 });
 
 document.querySelector("[data-pilot-form]")?.addEventListener("submit", (event) => {

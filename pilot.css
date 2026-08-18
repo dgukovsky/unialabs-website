@@ -11,6 +11,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--pilot-ink); background: #fff; font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; }
+body.is-meeting-modal-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
 .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
@@ -33,7 +34,11 @@ button, input { font: inherit; }
 .pilot-logo { width: max-content; }
 .pilot-logo img { display: block; width: 8.75rem; height: auto; filter: invert(1); }
 .pilot-nav-label { font-size: 0.9rem; font-weight: 600; }
-.pilot-nav > .pilot-btn { justify-self: end; }
+.pilot-nav-actions { display: flex; align-items: center; justify-self: end; gap: .75rem; }
+.pilot-nav-language { display: flex; align-items: center; gap: .15rem; border: 1px solid rgba(173,204,229,.34); border-radius: 999px; padding: .25rem; background: rgba(2,14,27,.42); box-shadow: inset 0 1px rgba(255,255,255,.05); backdrop-filter: blur(12px); }
+.pilot-nav-language button { display: grid; min-width: 2.15rem; height: 2.15rem; place-items: center; border: 0; border-radius: 999px; color: #9eb1c4; background: transparent; font-size: .68rem; font-weight: 700; letter-spacing: .04em; cursor: pointer; transition: color .2s ease, background .2s ease, box-shadow .2s ease; }
+.pilot-nav-language button:hover, .pilot-nav-language button:focus-visible { color: #fff; outline: none; background: rgba(81,201,247,.12); }
+.pilot-nav-language button.is-active { color: #071321; background: #f7fbff; box-shadow: 0 .4rem 1.2rem rgba(0,0,0,.22); }
 
 .pilot-btn {
   display: inline-flex;
@@ -69,7 +74,7 @@ button, input { font: inherit; }
 .pilot-btn-primary { min-width: 24rem; }
 .pilot-limit { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.4rem; color: #bbc8d7; font-size: 0.9rem; }
 .pilot-limit .material-symbols-outlined { font-size: 1.65rem; }
-.pilot-dashboard-wrap { position: relative; width: min(46rem, calc(100% + 9rem)); max-width: none; justify-self: end; filter: drop-shadow(0 2rem 4rem rgba(0,0,0,.44)); }
+.pilot-dashboard-wrap { position: relative; width: min(46rem, calc(100% + 9rem)); max-width: none; justify-self: end; opacity: 1; visibility: visible; filter: drop-shadow(0 2rem 4rem rgba(0,0,0,.44)); }
 .pilot-dashboard-wrap::before { position: absolute; z-index: -1; inset: 8% 5%; border-radius: 2rem; content: ""; background: #27b6f2; opacity: .2; filter: blur(2.8rem); }
 .pilot-dashboard-wrap img { display: block; width: 100%; height: auto; border-radius: 1rem; }
 
@@ -151,6 +156,50 @@ button, input { font: inherit; }
 .pilot-footer-bottom button { border: 0; border-radius: 999px; padding: .3rem .45rem; color: #7f91a4; background: transparent; font-size: .62rem; cursor: pointer; }
 .pilot-footer-bottom button.is-active { border: 1px solid #2c8fc7; color: #dff7ff; background: rgba(42,145,202,.15); }
 
+.pilot-meeting-modal[hidden] { display: none; }
+.pilot-meeting-modal { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 1.5rem; }
+.pilot-meeting-backdrop { position: absolute; inset: 0; background: rgba(1,7,15,.76); opacity: 0; backdrop-filter: blur(10px); transition: opacity .3s ease; }
+.pilot-meeting-dialog {
+  position: relative;
+  width: min(100%,48rem);
+  overflow: hidden;
+  border: 1px solid rgba(113,196,241,.28);
+  border-radius: 1.6rem;
+  padding: 2.7rem;
+  color: #f5f9fd;
+  background:
+    radial-gradient(circle at 82% 0%,rgba(52,190,247,.16),transparent 38%),
+    linear-gradient(145deg,rgba(9,31,51,.98),rgba(2,13,25,.99));
+  box-shadow: 0 2.5rem 7rem rgba(0,0,0,.6), inset 0 1px rgba(255,255,255,.06);
+  opacity: 0;
+  transform: translateY(1.5rem) scale(.965);
+  transition: opacity .3s ease, transform .42s cubic-bezier(.22,1,.36,1);
+}
+.pilot-meeting-dialog::before { position: absolute; top: 0; right: 10%; left: 10%; height: 1px; content: ""; background: linear-gradient(90deg,transparent,#4bcafa,transparent); box-shadow: 0 0 2rem #29baf2; }
+.pilot-meeting-modal.is-open .pilot-meeting-backdrop { opacity: 1; }
+.pilot-meeting-modal.is-open .pilot-meeting-dialog { opacity: 1; transform: translateY(0) scale(1); }
+.pilot-meeting-close { position: absolute; top: 1.25rem; right: 1.25rem; display: grid; width: 2.7rem; height: 2.7rem; place-items: center; border: 1px solid rgba(151,190,220,.24); border-radius: 50%; color: #c4d3e1; background: rgba(255,255,255,.035); cursor: pointer; transition: color .2s ease, background .2s ease, transform .2s ease; }
+.pilot-meeting-close:hover, .pilot-meeting-close:focus-visible { color: #fff; background: rgba(66,200,248,.12); transform: rotate(5deg); }
+.pilot-meeting-close .material-symbols-outlined { font-size: 1.25rem; }
+.pilot-meeting-mark { display: grid; width: 3.6rem; height: 3.6rem; place-items: center; margin-bottom: 1.4rem; border: 1px solid rgba(76,200,249,.38); border-radius: 1rem; color: #52cefb; background: linear-gradient(145deg,rgba(49,179,232,.18),rgba(30,104,158,.08)); box-shadow: 0 1rem 2.8rem -1.3rem rgba(50,193,247,.75); }
+.pilot-meeting-mark .material-symbols-outlined { font-size: 1.75rem; }
+.pilot-meeting-kicker { margin: 0 0 .8rem; color: #55cdf9; font-size: .73rem; font-weight: 700; letter-spacing: .18em; }
+.pilot-meeting-dialog h2 { max-width: 36rem; margin: 0; font-size: clamp(2rem,4vw,3rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.08; }
+.pilot-meeting-dialog > p:not(.pilot-meeting-kicker):not(.pilot-meeting-note) { max-width: 38rem; margin: 1rem 0 0; color: #9fb0c1; font-size: .98rem; line-height: 1.6; }
+.pilot-meeting-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.pilot-meeting-option { position: relative; display: grid; grid-template-columns: auto 1fr auto; min-height: 9.6rem; align-items: center; gap: 1rem; overflow: hidden; border: 1px solid rgba(120,174,214,.25); border-radius: 1.1rem; padding: 1.35rem; background: rgba(255,255,255,.035); transition: border-color .3s ease, background .3s ease, box-shadow .3s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+.pilot-meeting-option::after { position: absolute; inset: 0; content: ""; pointer-events: none; background: linear-gradient(120deg,transparent 25%,rgba(74,200,250,.11),transparent 72%); opacity: 0; transform: translateX(-55%); transition: opacity .3s ease, transform .65s cubic-bezier(.22,1,.36,1); }
+.pilot-meeting-option:hover, .pilot-meeting-option:focus-visible { border-color: rgba(80,204,250,.65); outline: none; background: rgba(44,155,208,.1); box-shadow: 0 1.7rem 3.5rem -2rem rgba(25,153,215,.52); transform: translateY(-.25rem); }
+.pilot-meeting-option:hover::after, .pilot-meeting-option:focus-visible::after { opacity: 1; transform: translateX(55%); }
+.pilot-meeting-option-icon { display: grid; width: 3.35rem; height: 3.35rem; place-items: center; border-radius: .9rem; color: #48c9fa; background: rgba(56,178,230,.12); }
+.pilot-meeting-option-copy { display: flex; min-width: 0; flex-direction: column; gap: .45rem; }
+.pilot-meeting-option-copy strong { font-size: 1.05rem; font-weight: 600; }
+.pilot-meeting-option-copy small { color: #95a8ba; font-size: .78rem; line-height: 1.5; }
+.pilot-meeting-arrow { color: #7f96aa; font-size: 1.2rem; transition: color .25s ease, transform .25s ease; }
+.pilot-meeting-option:hover .pilot-meeting-arrow, .pilot-meeting-option:focus-visible .pilot-meeting-arrow { color: #54cdfa; transform: translateX(.25rem); }
+.pilot-meeting-note { display: flex; align-items: center; justify-content: center; gap: .5rem; margin: 1.35rem 0 0; color: #788da1; font-size: .76rem; }
+.pilot-meeting-note .material-symbols-outlined { font-size: 1rem; }
+
 /* Motion is opt-in so content remains visible if JavaScript is unavailable. */
 .pilot-motion-ready .pilot-nav {
   opacity: 0;
@@ -181,10 +230,9 @@ button, input { font: inherit; }
 .pilot-motion-ready .pilot-dashboard-wrap {
   --pilot-tilt-x: 0deg;
   --pilot-tilt-y: 0deg;
-  opacity: 0;
-  clip-path: inset(8% 10% 8% 10% round 1.4rem);
+  clip-path: inset(0 0 0 0 round 1rem);
   transform: perspective(1200px) rotateX(var(--pilot-tilt-x)) rotateY(var(--pilot-tilt-y));
-  animation: pilot-dashboard-enter 1.15s cubic-bezier(.22,1,.36,1) .38s forwards;
+  animation: pilot-dashboard-enter 1.15s cubic-bezier(.22,1,.36,1) .38s backwards;
   transition: transform .35s cubic-bezier(.22,1,.36,1);
   will-change: transform;
 }
@@ -317,6 +365,9 @@ button, input { font: inherit; }
   .pilot-nav { grid-template-columns: 1fr auto; width: calc(100% - 2rem); }
   .pilot-nav-label { display: none; }
   .pilot-logo img { width: 6.8rem; }
+  .pilot-nav-actions { gap: .4rem; }
+  .pilot-nav-language { gap: .05rem; padding: .16rem; }
+  .pilot-nav-language button { min-width: 1.65rem; height: 1.65rem; font-size: .55rem; }
   .pilot-btn-small { min-height: 2.45rem; padding: .55rem .8rem; font-size: .68rem; }
   .pilot-hero { min-height: 100svh; }
   .pilot-hero-inner { width: calc(100% - 2rem); min-height: 100svh; padding: 6.75rem 0 3rem; }
@@ -340,6 +391,13 @@ button, input { font: inherit; }
   .pilot-footer-brand { grid-column: 1/-1; }
   .pilot-footer-inner > div:last-child { display: none; }
   .pilot-footer-bottom { align-items: flex-start; gap: 1rem; flex-direction: column; }
+  .pilot-meeting-modal { align-items: end; padding: .75rem; }
+  .pilot-meeting-dialog { border-radius: 1.35rem; padding: 2rem 1.15rem 1.35rem; }
+  .pilot-meeting-mark { width: 3rem; height: 3rem; }
+  .pilot-meeting-dialog h2 { max-width: calc(100% - 2rem); font-size: 2rem; }
+  .pilot-meeting-options { grid-template-columns: 1fr; }
+  .pilot-meeting-option { min-height: 7.5rem; }
+  .pilot-meeting-note { align-items: flex-start; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pilot-btn { transition: none; } }
