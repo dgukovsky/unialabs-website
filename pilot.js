@@ -241,3 +241,65 @@ document.querySelector("[data-pilot-form]")?.addEventListener("submit", (event) 
 
   window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reducedMotion) {
+  document.documentElement.classList.add("pilot-motion-ready");
+
+  const revealSelectors = [
+    ".pilot-section .pilot-kicker",
+    ".pilot-section h2",
+    ".pilot-step",
+    ".pilot-note",
+    ".pilot-included-grid article",
+    ".pilot-disclaimer",
+    ".pilot-examples-grid article",
+    ".pilot-apply-copy > *",
+    ".pilot-form",
+    ".pilot-footer-inner > div",
+    ".pilot-footer-bottom",
+  ];
+  const revealTargets = [];
+
+  revealSelectors.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add("pilot-reveal");
+      element.style.setProperty("--pilot-reveal-delay", `${Math.min(index, 7) * 65}ms`);
+      revealTargets.push(element);
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.12 });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealTargets.forEach((element) => element.classList.add("is-visible"));
+  }
+
+  const hero = document.querySelector(".pilot-hero");
+  const dashboard = document.querySelector(".pilot-dashboard-wrap");
+  const precisePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (hero && dashboard && precisePointer) {
+    hero.addEventListener("pointermove", (event) => {
+      const bounds = hero.getBoundingClientRect();
+      const horizontal = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const vertical = (event.clientY - bounds.top) / bounds.height - 0.5;
+      dashboard.style.setProperty("--pilot-tilt-x", `${vertical * -3.5}deg`);
+      dashboard.style.setProperty("--pilot-tilt-y", `${horizontal * 4.5}deg`);
+    }, { passive: true });
+
+    hero.addEventListener("pointerleave", () => {
+      dashboard.style.setProperty("--pilot-tilt-x", "0deg");
+      dashboard.style.setProperty("--pilot-tilt-y", "0deg");
+    });
+  }
+}

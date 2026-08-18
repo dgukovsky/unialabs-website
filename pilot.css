@@ -151,6 +151,157 @@ button, input { font: inherit; }
 .pilot-footer-bottom button { border: 0; border-radius: 999px; padding: .3rem .45rem; color: #7f91a4; background: transparent; font-size: .62rem; cursor: pointer; }
 .pilot-footer-bottom button.is-active { border: 1px solid #2c8fc7; color: #dff7ff; background: rgba(42,145,202,.15); }
 
+/* Motion is opt-in so content remains visible if JavaScript is unavailable. */
+.pilot-motion-ready .pilot-nav {
+  opacity: 0;
+  animation: pilot-nav-enter .8s cubic-bezier(.22,1,.36,1) .08s forwards;
+}
+.pilot-motion-ready .pilot-hero > .pilot-cosmos {
+  animation: pilot-cosmos-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.pilot-motion-ready .pilot-hero h1 > * {
+  opacity: 0;
+  transform: translateY(.75em);
+  animation: pilot-title-enter .9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.pilot-motion-ready .pilot-hero h1 > :nth-child(1) { animation-delay: .18s; }
+.pilot-motion-ready .pilot-hero h1 > :nth-child(2) { animation-delay: .3s; }
+.pilot-motion-ready .pilot-hero h1 > :nth-child(3) { animation-delay: .42s; }
+.pilot-motion-ready .pilot-hero-copy > p,
+.pilot-motion-ready .pilot-hero-copy > .pilot-btn,
+.pilot-motion-ready .pilot-hero-copy > .pilot-limit {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  animation: pilot-copy-enter .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+.pilot-motion-ready .pilot-hero-copy > p { animation-delay: .58s; }
+.pilot-motion-ready .pilot-hero-copy > .pilot-btn { animation-delay: .7s; }
+.pilot-motion-ready .pilot-hero-copy > .pilot-limit { animation-delay: .8s; }
+.pilot-motion-ready .pilot-dashboard-wrap {
+  --pilot-tilt-x: 0deg;
+  --pilot-tilt-y: 0deg;
+  opacity: 0;
+  clip-path: inset(8% 10% 8% 10% round 1.4rem);
+  transform: perspective(1200px) rotateX(var(--pilot-tilt-x)) rotateY(var(--pilot-tilt-y));
+  animation: pilot-dashboard-enter 1.15s cubic-bezier(.22,1,.36,1) .38s forwards;
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
+}
+.pilot-motion-ready .pilot-dashboard-wrap img {
+  animation: pilot-dashboard-breathe 7s ease-in-out 1.6s infinite;
+}
+.pilot-motion-ready .pilot-reveal {
+  opacity: 0;
+  transform: translateY(2rem) scale(.985);
+  transition:
+    opacity .8s cubic-bezier(.22,1,.36,1) var(--pilot-reveal-delay, 0ms),
+    transform .9s cubic-bezier(.22,1,.36,1) var(--pilot-reveal-delay, 0ms);
+}
+.pilot-motion-ready .pilot-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.pilot-step,
+.pilot-included-grid article,
+.pilot-examples-grid article {
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s cubic-bezier(.22,1,.36,1), border-color .4s ease, box-shadow .4s ease, background-color .4s ease;
+}
+.pilot-step::after,
+.pilot-included-grid article::after,
+.pilot-examples-grid article::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 18%, rgba(95,202,255,.11) 48%, transparent 76%);
+  opacity: 0;
+  transform: translateX(-55%);
+  transition: opacity .35s ease, transform .65s cubic-bezier(.22,1,.36,1);
+}
+.pilot-icon,
+.pilot-included-grid article > .material-symbols-outlined {
+  transition: transform .45s cubic-bezier(.22,1,.36,1), color .35s ease, text-shadow .35s ease;
+}
+.pilot-btn {
+  position: relative;
+  overflow: hidden;
+}
+.pilot-btn::before {
+  position: absolute;
+  top: -60%;
+  bottom: -60%;
+  left: -35%;
+  width: 25%;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(82,202,255,.24), transparent);
+  transform: skewX(-20deg);
+  transition: left .65s cubic-bezier(.22,1,.36,1);
+}
+.pilot-btn:hover::before,
+.pilot-btn:focus-visible::before { left: 115%; }
+.pilot-btn .material-symbols-outlined { transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.pilot-btn:hover .material-symbols-outlined,
+.pilot-btn:focus-visible .material-symbols-outlined { transform: translateX(.25rem); }
+
+@media (hover: hover) and (pointer: fine) {
+  .pilot-step:hover,
+  .pilot-examples-grid article:hover {
+    z-index: 2;
+    border-color: rgba(37,141,221,.42);
+    box-shadow: 0 2.2rem 4rem -2.3rem rgba(15,77,128,.42);
+    transform: translateY(-.55rem);
+  }
+  .pilot-included-grid article:hover {
+    z-index: 2;
+    border-color: rgba(67,200,250,.62);
+    background: linear-gradient(145deg,rgba(16,53,82,.96),rgba(5,29,50,.92));
+    box-shadow: 0 2rem 4rem -2rem rgba(17,129,188,.35), inset 0 1px rgba(255,255,255,.08);
+    transform: translateY(-.55rem);
+  }
+  .pilot-step:hover::after,
+  .pilot-included-grid article:hover::after,
+  .pilot-examples-grid article:hover::after {
+    opacity: 1;
+    transform: translateX(55%);
+  }
+  .pilot-step:hover .pilot-icon,
+  .pilot-examples-grid article:hover .pilot-icon,
+  .pilot-included-grid article:hover > .material-symbols-outlined {
+    color: #26baf1;
+    text-shadow: 0 0 1.4rem rgba(38,186,241,.36);
+    transform: translateY(-.2rem) rotate(-3deg) scale(1.06);
+  }
+}
+
+@keyframes pilot-nav-enter {
+  from { opacity: 0; transform: translateY(-1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pilot-cosmos-drift {
+  from { transform: scale(1.015) translate3d(0,0,0); }
+  to { transform: scale(1.06) translate3d(-.7%,-.5%,0); }
+}
+@keyframes pilot-title-enter {
+  from { opacity: 0; transform: translateY(.75em); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes pilot-copy-enter {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pilot-dashboard-enter {
+  from { opacity: 0; clip-path: inset(8% 10% 8% 10% round 1.4rem); filter: blur(10px); }
+  to { opacity: 1; clip-path: inset(0 0 0 0 round 1rem); filter: blur(0); }
+}
+@keyframes pilot-dashboard-breathe {
+  0%, 100% { transform: translateY(0); filter: brightness(1); }
+  50% { transform: translateY(-.45rem); filter: brightness(1.06); }
+}
+
 @media (max-width: 1080px) {
   .pilot-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 8rem; }
   .pilot-hero-copy { max-width: 38rem; }
