@@ -60,16 +60,16 @@ button, input { font: inherit; }
 .pilot-hero { min-height: max(53rem, 100svh); }
 .pilot-cosmos { position: absolute; z-index: -2; inset: 0; background: url("/hero-unia-cosmos-video.webp") center bottom / cover no-repeat; transform: scale(1.01); }
 .pilot-cosmos::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(2,9,18,.28), rgba(2,9,18,.08) 58%, rgba(2,9,18,.3)), linear-gradient(180deg, rgba(2,8,17,.1), rgba(2,8,17,.02) 58%, rgba(1,7,14,.45)); }
-.pilot-hero-inner { display: grid; grid-template-columns: minmax(36rem, .92fr) minmax(38rem, 1.08fr); width: min(100% - 4rem, 92rem); min-height: max(53rem, 100svh); align-items: center; gap: 3rem; margin: 0 auto; padding: 8rem 0 4rem; }
+.pilot-hero-inner { display: grid; grid-template-columns: minmax(0, 1.16fr) minmax(0, .84fr); width: min(100% - 4rem, 92rem); min-height: max(53rem, 100svh); align-items: center; gap: 3rem; margin: 0 auto; padding: 8rem 0 4rem; }
 .pilot-hero-copy { position: relative; z-index: 2; }
-.pilot-hero h1 { display: flex; flex-direction: column; margin: 0; font-size: clamp(3.8rem, 4.5vw, 4.2rem); font-weight: 400; letter-spacing: -.06em; line-height: 1.02; }
+.pilot-hero h1 { display: flex; flex-direction: column; margin: 0; font-size: clamp(4.3rem, 5.4vw, 5.25rem); font-weight: 400; letter-spacing: -.062em; line-height: 1.02; }
 .pilot-hero h1 > span, .pilot-hero h1 > em { white-space: nowrap; }
 .pilot-hero h1 em { color: #45c9fa; font-style: normal; }
-.pilot-hero-copy > p { max-width: 35rem; margin: 2rem 0 2.1rem; color: #c0ccda; font-size: 1.1rem; line-height: 1.65; }
+.pilot-hero-copy > p { max-width: 39rem; margin: 2rem 0 2.1rem; color: #c0ccda; font-size: 1.1rem; line-height: 1.65; }
 .pilot-btn-primary { min-width: 24rem; }
 .pilot-limit { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.4rem; color: #bbc8d7; font-size: 0.9rem; }
 .pilot-limit .material-symbols-outlined { font-size: 1.65rem; }
-.pilot-dashboard-wrap { position: relative; margin-right: -2rem; filter: drop-shadow(0 2rem 4rem rgba(0,0,0,.44)); }
+.pilot-dashboard-wrap { position: relative; width: min(100%, 40rem); justify-self: end; filter: drop-shadow(0 2rem 4rem rgba(0,0,0,.44)); }
 .pilot-dashboard-wrap::before { position: absolute; z-index: -1; inset: 8% 5%; border-radius: 2rem; content: ""; background: #27b6f2; opacity: .2; filter: blur(2.8rem); }
 .pilot-dashboard-wrap img { display: block; width: 100%; height: auto; border-radius: 1rem; }
 
