@@ -2,6 +2,8 @@ const ROOT_HOST = "unialabs.com";
 const WWW_HOST = `www.${ROOT_HOST}`;
 const CANONICAL_REDIRECT_MAP = new Map([
   ["/index.html", "/"],
+  ["/pilot.html", "/pilot"],
+  ["/pilot/", "/pilot"],
   ["/privacy", "/privacy.html"],
   ["/privacy/", "/privacy.html"],
   ["/terms", "/terms.html"],
@@ -59,6 +61,12 @@ export default {
     if (canonicalPath) {
       url.pathname = canonicalPath;
       return redirect(url);
+    }
+
+    if (url.pathname === "/pilot") {
+      url.pathname = "/pilot.html";
+      const response = await env.ASSETS.fetch(new Request(url, request));
+      return addSecurityHeaders(response);
     }
 
     const response = await env.ASSETS.fetch(request);

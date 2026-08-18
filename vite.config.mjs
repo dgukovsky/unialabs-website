@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: htmlEntry("./index.html"),
+        pilot: htmlEntry("./pilot.html"),
         privacy: htmlEntry("./privacy.html"),
         terms: htmlEntry("./terms.html"),
       },
